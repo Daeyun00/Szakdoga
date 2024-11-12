@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl484ntdysrqc"]
+
+[ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_dcq2j"]
+[ext_resource type="Texture2D" uid="uid://xleqqlmqueap" path="res://Assets/Art/Sprites/Characters/FinFino.png" id="1_leru7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh1ny"]
+size = Vector2(23, 24)
+
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_dcq2j")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("1_leru7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_fh1ny")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(3.295, 3.295)
+drag_left_margin = 0.19

@@ -1,0 +1,1891 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.51f1 (9f9d16c45e54) revision 10460438'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'hu' Physical Memory: 32679 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+Q:\tÃ©nyleg unity\2022.3.51f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/szent/OneDrive/Dokumentumok/Destruction
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+63680
+Successfully changed project path to: C:/Users/szent/OneDrive/Dokumentumok/Destruction
+C:/Users/szent/OneDrive/Dokumentumok/Destruction
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [11260]  Target information:
+
+Player connection [11260]  * "[IP] 192.168.1.67 [Port] 0 [Flags] 2 [Guid] 2130773704 [EditorId] 2130773704 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-OEFLOR0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [11260] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [11260] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+Refreshing native plugins compatible for Editor in 18.60 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.51f1 (9f9d16c45e54)
+[Subsystems] Discovering subsystems at path Q:/tÃ©nyleg unity/2022.3.51f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/szent/OneDrive/Dokumentumok/Destruction/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon RX 5600 XT (ID=0x731f)
+    Vendor:   ATI
+    VRAM:     6103 MB
+    Driver:   32.0.11027.1003
+Initialize mono
+Mono path[0] = 'Q:/tÃ©nyleg unity/2022.3.51f1/Editor/Data/Managed'
+Mono path[1] = 'Q:/tÃ©nyleg unity/2022.3.51f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'Q:/tÃ©nyleg unity/2022.3.51f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56204
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: Q:/tÃ©nyleg unity/2022.3.51f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.005306 seconds.
+- Loaded All Assemblies, in  0.433 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.287 seconds
+Domain Reload Profiling: 720ms
+	BeginReloadAssembly (159ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (154ms)
+		LoadAssemblies (159ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (152ms)
+			TypeCache.Refresh (150ms)
+				TypeCache.ScanAssembly (138ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (288ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (241ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (170ms)
+			ProcessInitializeOnLoadMethodAttributes (53ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.701 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.880 seconds
+Domain Reload Profiling: 1578ms
+	BeginReloadAssembly (182ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (416ms)
+		LoadAssemblies (351ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (192ms)
+			TypeCache.Refresh (165ms)
+				TypeCache.ScanAssembly (151ms)
+			ScanForSourceGeneratedMonoScriptInfo (20ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (880ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (735ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (68ms)
+			ProcessInitializeOnLoadAttributes (623ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 7.27 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4110 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 51 unused Assets / (312.5 KB). Loaded Objects now: 4573.
+Memory consumption went from 141.6 MB to 141.3 MB.
+Total: 4.532400 ms (FindLiveObjects: 0.455600 ms CreateObjectMapping: 0.131200 ms MarkObjects: 3.686000 ms  DeleteObjects: 0.258000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 853.753845 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles.png
+  artifactKey: Guid(ea5355013b8ce4d43bb747938ec10582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles.png using Guid(ea5355013b8ce4d43bb747938ec10582) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '657489f1a8c0d0bc00fc9ba97d3752f1') in 0.083787 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 22.185816 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles.png
+  artifactKey: Guid(ea5355013b8ce4d43bb747938ec10582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles.png using Guid(ea5355013b8ce4d43bb747938ec10582) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9778bbd28925e1f6c51601697d4d9dd7') in 0.011812 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 87.183175 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles.png
+  artifactKey: Guid(ea5355013b8ce4d43bb747938ec10582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles.png using Guid(ea5355013b8ce4d43bb747938ec10582) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7d61c418ad02dfc20d2ea386b2c38d0b') in 0.438717 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 370
+========================================================================
+Received Import Request.
+  Time since last request: 54.822934 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_0.asset
+  artifactKey: Guid(4db55cbf13c94e14896bcc5fd50559cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_0.asset using Guid(4db55cbf13c94e14896bcc5fd50559cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2d331b4fb196980a8b8425b21b7fdac0') in 0.015685 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.008618 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_2.asset
+  artifactKey: Guid(21c5472a61a419446aaedcadf6dfb327) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_2.asset using Guid(21c5472a61a419446aaedcadf6dfb327) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '37e30362756abeda1f2821f2b4ff8689') in 0.013287 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_9.asset
+  artifactKey: Guid(ba9d18b2cbd657744bae93f37f449131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_9.asset using Guid(ba9d18b2cbd657744bae93f37f449131) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '96c3a84c71f2accd4692522b60655161') in 0.011859 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_25.asset
+  artifactKey: Guid(674cdf4773856c64aabd4da9e0f1d3c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_25.asset using Guid(674cdf4773856c64aabd4da9e0f1d3c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2a61f715ae12d3511c2a612777dbd783') in 0.014472 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_35.asset
+  artifactKey: Guid(bbdd0699b46cba5439d3d79d59059966) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_35.asset using Guid(bbdd0699b46cba5439d3d79d59059966) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c0cf23195e00ca229eb5c0f7ce02713a') in 0.011667 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_16.asset
+  artifactKey: Guid(1f12021ea39c6e74e88dea7eb5e0b206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_16.asset using Guid(1f12021ea39c6e74e88dea7eb5e0b206) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a5df0919da4162f72913fb5cabe79f95') in 0.011475 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_10.asset
+  artifactKey: Guid(7e6f78b7a3618db4896f3dbfae8bcdf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_10.asset using Guid(7e6f78b7a3618db4896f3dbfae8bcdf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'efa489b294396142ff62db8da8c4937f') in 0.009754 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_7.asset
+  artifactKey: Guid(85bdfc75d86ae1843a844831af87a173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_7.asset using Guid(85bdfc75d86ae1843a844831af87a173) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f8284c918ba6aa87cd8b19e017c3b384') in 0.010783 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_48.asset
+  artifactKey: Guid(aa207b379dddcb643a23c7bd9bd59781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_48.asset using Guid(aa207b379dddcb643a23c7bd9bd59781) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b6b0abece2333139e07c5e8975ed47ec') in 0.011096 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_26.asset
+  artifactKey: Guid(9b527f00c8098b64f91f282bac4a4875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_26.asset using Guid(9b527f00c8098b64f91f282bac4a4875) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '76f0de066ecb8ff10a3b658ed998bd1b') in 0.010804 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_39.asset
+  artifactKey: Guid(5fa0b700ac7860945b7f2ee66a864e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_39.asset using Guid(5fa0b700ac7860945b7f2ee66a864e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '492534f1db5862d72df6fe9a94821c3a') in 0.010332 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_15.asset
+  artifactKey: Guid(dd377ac2c1a2edd4da811a9028b7684e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_15.asset using Guid(dd377ac2c1a2edd4da811a9028b7684e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c5a3c0f340edd09e62ddd5ff612d51d4') in 0.009991 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_42.asset
+  artifactKey: Guid(65a627ce1391ca841ab147ae9cc046e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_42.asset using Guid(65a627ce1391ca841ab147ae9cc046e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9da35a378354d1148440195d15672a0f') in 0.013069 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_22.asset
+  artifactKey: Guid(c353d3d34a925fd43abcd2c7ef0f82d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_22.asset using Guid(c353d3d34a925fd43abcd2c7ef0f82d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bb6770fe2c288cc3bdd8c098a50c4db5') in 0.012016 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_46.asset
+  artifactKey: Guid(4cbfca05accdc1e4a884feb60274e702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_46.asset using Guid(4cbfca05accdc1e4a884feb60274e702) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '69504f54b3c5bab62b7c224ab5b73b4f') in 0.012391 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_20.asset
+  artifactKey: Guid(901ec80a16fb49c4c808d1fae85453ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_20.asset using Guid(901ec80a16fb49c4c808d1fae85453ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fd4dc2669963b88a2824fe8fbddfef0d') in 0.011114 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_17.asset
+  artifactKey: Guid(844b174a1328c4443b13b24a9d0909f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_17.asset using Guid(844b174a1328c4443b13b24a9d0909f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f84d57f0020385eb59deb4714718fb37') in 0.012651 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_21.asset
+  artifactKey: Guid(ac23f3cdd1afd46449c0fa5b3917972c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_21.asset using Guid(ac23f3cdd1afd46449c0fa5b3917972c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b7e4c3e9d43e69e32c1851ca002d9527') in 0.011594 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_37.asset
+  artifactKey: Guid(503529ab1aa3b3743b5dabf742d725c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_37.asset using Guid(503529ab1aa3b3743b5dabf742d725c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dce15ac09eeb8c598c2d5ceb23882b46') in 0.010817 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_47.asset
+  artifactKey: Guid(142d0562f11ef9b47acf6582f23a1105) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_47.asset using Guid(142d0562f11ef9b47acf6582f23a1105) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1ead77cf80fd9518234184b7edd4841c') in 0.011589 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_4.asset
+  artifactKey: Guid(0e2b6ffd5fc51794d9690cc4f505707c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_4.asset using Guid(0e2b6ffd5fc51794d9690cc4f505707c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3f8e79011b46f9457fe6e6a860291de3') in 0.012370 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_11.asset
+  artifactKey: Guid(db40965f8abd9f54e97303309d28706f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_11.asset using Guid(db40965f8abd9f54e97303309d28706f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'de20cc1f93692a9b0e235ec2bf4f2c19') in 0.012955 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_50.asset
+  artifactKey: Guid(085d747b5f80d1e4b87f0fbf399dfb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_50.asset using Guid(085d747b5f80d1e4b87f0fbf399dfb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd35a57fa5b60bbd9e1adae71d0774fc6') in 0.011939 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_6.asset
+  artifactKey: Guid(c2237ae4a475b31409ff42b07782b5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_6.asset using Guid(c2237ae4a475b31409ff42b07782b5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '79d6cc0db03c38acdaaa2b4372b3b9d2') in 0.012215 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_18.asset
+  artifactKey: Guid(0084f46a593b89148a33e337b57a6290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_18.asset using Guid(0084f46a593b89148a33e337b57a6290) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c27455d227e14dc9d43f94dd91e13020') in 0.011767 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_8.asset
+  artifactKey: Guid(8f1c67c75ee2d3c4588bac5e0ed4c1bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_8.asset using Guid(8f1c67c75ee2d3c4588bac5e0ed4c1bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ee3dc53a3f84d331e2fa48d30168cbd6') in 0.012339 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_28.asset
+  artifactKey: Guid(33daed2d5b9cc1e4fa8174bc7a7aa742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_28.asset using Guid(33daed2d5b9cc1e4fa8174bc7a7aa742) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9cc56db38572669f67732e1929493f9d') in 0.011648 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_32.asset
+  artifactKey: Guid(f5c0c888b1a9f2e4aa8a4e2b56e5f9a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_32.asset using Guid(f5c0c888b1a9f2e4aa8a4e2b56e5f9a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1ff85d39fae15ef7061be5cef50757ab') in 0.010949 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_33.asset
+  artifactKey: Guid(2a4e5427469c0944c8fdd761d24af1cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_33.asset using Guid(2a4e5427469c0944c8fdd761d24af1cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '536728e0d6735450acd3b9a03dbc734f') in 0.012193 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 35.897921 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_0.asset
+  artifactKey: Guid(4db55cbf13c94e14896bcc5fd50559cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_0.asset using Guid(4db55cbf13c94e14896bcc5fd50559cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'df19b22f19fda60057396bf81342eec8') in 0.012365 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_35.asset
+  artifactKey: Guid(bbdd0699b46cba5439d3d79d59059966) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_35.asset using Guid(bbdd0699b46cba5439d3d79d59059966) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '99dfdbfb58ea756014ba45413b53d714') in 0.005225 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_16.asset
+  artifactKey: Guid(1f12021ea39c6e74e88dea7eb5e0b206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_16.asset using Guid(1f12021ea39c6e74e88dea7eb5e0b206) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8ea6b83f545c0313908440fb732be3c9') in 0.005347 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_10.asset
+  artifactKey: Guid(7e6f78b7a3618db4896f3dbfae8bcdf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_10.asset using Guid(7e6f78b7a3618db4896f3dbfae8bcdf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '902e107d0385552e68413c76785fb00f') in 0.004901 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_41.asset
+  artifactKey: Guid(98876aa857fa1784ebed071c96b5fcc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_41.asset using Guid(98876aa857fa1784ebed071c96b5fcc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8af595a1891928e5ae3d37574613e2d2') in 0.005534 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_49.asset
+  artifactKey: Guid(94301b171163e3841b4bec58b0e1ce6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_49.asset using Guid(94301b171163e3841b4bec58b0e1ce6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '65b5cd45c4e9961413eec548a90c2f38') in 0.006592 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_30.asset
+  artifactKey: Guid(2da7f816944dacc42805f4e04f402643) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_30.asset using Guid(2da7f816944dacc42805f4e04f402643) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '51227a3e882369033e29b5726cf02d84') in 0.005598 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_34.asset
+  artifactKey: Guid(0dd4ee0932661414baac9cc144efb236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_34.asset using Guid(0dd4ee0932661414baac9cc144efb236) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7d5bb6463da2e736c2936f1717e7c474') in 0.005654 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_15.asset
+  artifactKey: Guid(dd377ac2c1a2edd4da811a9028b7684e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_15.asset using Guid(dd377ac2c1a2edd4da811a9028b7684e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ca3ca9320ee376a91f0112f61801f96b') in 0.005546 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_19.asset
+  artifactKey: Guid(bbba5dc2c1e7f694dbc98eea6959b736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_19.asset using Guid(bbba5dc2c1e7f694dbc98eea6959b736) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '712a92464b1d202b3913cdb39a5e45e7') in 0.005825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_46.asset
+  artifactKey: Guid(4cbfca05accdc1e4a884feb60274e702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_46.asset using Guid(4cbfca05accdc1e4a884feb60274e702) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2f20d0072850760f213dac50ea76212e') in 0.005472 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_20.asset
+  artifactKey: Guid(901ec80a16fb49c4c808d1fae85453ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_20.asset using Guid(901ec80a16fb49c4c808d1fae85453ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dee2375acdc1caa3855342c1cac7e619') in 0.004899 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_31.asset
+  artifactKey: Guid(1e58f54f36f71084bbff193c22b43aec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_31.asset using Guid(1e58f54f36f71084bbff193c22b43aec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '39e5a7bbf139b707a64341bfdefdc624') in 0.005749 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_14.asset
+  artifactKey: Guid(f82dabbb51248074baf298511681ff02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_14.asset using Guid(f82dabbb51248074baf298511681ff02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5534cb524c7fa6992f5dc0fc0d3372fa') in 0.005068 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_21.asset
+  artifactKey: Guid(ac23f3cdd1afd46449c0fa5b3917972c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_21.asset using Guid(ac23f3cdd1afd46449c0fa5b3917972c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5d0c5a5d4feff6783af14cb6ecb3609b') in 0.006376 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_37.asset
+  artifactKey: Guid(503529ab1aa3b3743b5dabf742d725c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_37.asset using Guid(503529ab1aa3b3743b5dabf742d725c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ddd0c8b0ef6b1e00bd8ac86222c3a144') in 0.004957 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_27.asset
+  artifactKey: Guid(d3210b8798897ff479f731b33c0fada0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_27.asset using Guid(d3210b8798897ff479f731b33c0fada0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bd4e5be876aaef09240399cbd2e4b1f9') in 0.005784 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_44.asset
+  artifactKey: Guid(c1e82d6cd680e3b4f8c1be7d278e3ac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_44.asset using Guid(c1e82d6cd680e3b4f8c1be7d278e3ac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0dca8ef191526c85597d24bfadee437c') in 0.005248 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_43.asset
+  artifactKey: Guid(50c1c3f6b328f884b911cdbd71346c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_43.asset using Guid(50c1c3f6b328f884b911cdbd71346c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'af252de2d43766bc3f6f24a83bf082a6') in 0.006041 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_29.asset
+  artifactKey: Guid(604bae0acde126c4f978cc687dccfe89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_29.asset using Guid(604bae0acde126c4f978cc687dccfe89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '73178d95c17b08c3852704f3185b819c') in 0.005916 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_6.asset
+  artifactKey: Guid(c2237ae4a475b31409ff42b07782b5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_6.asset using Guid(c2237ae4a475b31409ff42b07782b5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '12d2ee91771f1b1e644321c3279d5d38') in 0.004990 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_18.asset
+  artifactKey: Guid(0084f46a593b89148a33e337b57a6290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_18.asset using Guid(0084f46a593b89148a33e337b57a6290) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b23af1bd152c911602fc16a81fdd997c') in 0.004723 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_51.asset
+  artifactKey: Guid(a0a425f4762e71f46b020bc7ab39ee28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_51.asset using Guid(a0a425f4762e71f46b020bc7ab39ee28) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '76c9d01d632acaf22ef6b2ae1527631b') in 0.005422 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_24.asset
+  artifactKey: Guid(377c9fc7f61c0754398b0368e7fea99d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_24.asset using Guid(377c9fc7f61c0754398b0368e7fea99d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6ed026190b0cb335d41f66c775dabfe4') in 0.005602 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_32.asset
+  artifactKey: Guid(f5c0c888b1a9f2e4aa8a4e2b56e5f9a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_32.asset using Guid(f5c0c888b1a9f2e4aa8a4e2b56e5f9a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9d2dda0fefc091c231bd47672f4ac21f') in 0.005964 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_5.asset
+  artifactKey: Guid(727ada75561d3ef4697af29692b5bf2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_5.asset using Guid(727ada75561d3ef4697af29692b5bf2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c36b2b88938920790a8b2b1ac04fee56') in 0.005219 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 14.957326 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_0.asset
+  artifactKey: Guid(4db55cbf13c94e14896bcc5fd50559cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_0.asset using Guid(4db55cbf13c94e14896bcc5fd50559cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2b924cf9af85c9b425ce80b178cc322e') in 0.010067 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_25.asset
+  artifactKey: Guid(674cdf4773856c64aabd4da9e0f1d3c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_25.asset using Guid(674cdf4773856c64aabd4da9e0f1d3c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '969b0cd993e700570ffbfba0bfddd674') in 0.005015 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_16.asset
+  artifactKey: Guid(1f12021ea39c6e74e88dea7eb5e0b206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_16.asset using Guid(1f12021ea39c6e74e88dea7eb5e0b206) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'db4bbfa517401ea0a6ebe9bd72ea8393') in 0.005454 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_10.asset
+  artifactKey: Guid(7e6f78b7a3618db4896f3dbfae8bcdf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_10.asset using Guid(7e6f78b7a3618db4896f3dbfae8bcdf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e9d164c165308405d5fc302ca242b690') in 0.006102 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_48.asset
+  artifactKey: Guid(aa207b379dddcb643a23c7bd9bd59781) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_48.asset using Guid(aa207b379dddcb643a23c7bd9bd59781) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '188bd93d70c06346284682cffe7e20b4') in 0.005365 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_26.asset
+  artifactKey: Guid(9b527f00c8098b64f91f282bac4a4875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_26.asset using Guid(9b527f00c8098b64f91f282bac4a4875) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bd3655e0ebab485da69361a7725fd8c2') in 0.005271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_30.asset
+  artifactKey: Guid(2da7f816944dacc42805f4e04f402643) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_30.asset using Guid(2da7f816944dacc42805f4e04f402643) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3a2d9a6fd971e78eb9ffa9a2009220ec') in 0.006110 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_34.asset
+  artifactKey: Guid(0dd4ee0932661414baac9cc144efb236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_34.asset using Guid(0dd4ee0932661414baac9cc144efb236) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4d0afbbd51c92d68cfbc476d00c15df4') in 0.005215 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_15.asset
+  artifactKey: Guid(dd377ac2c1a2edd4da811a9028b7684e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_15.asset using Guid(dd377ac2c1a2edd4da811a9028b7684e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd2c1b5e588b68580ab28cb7562c44370') in 0.005811 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_19.asset
+  artifactKey: Guid(bbba5dc2c1e7f694dbc98eea6959b736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_19.asset using Guid(bbba5dc2c1e7f694dbc98eea6959b736) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '78169343ef5889b56eb9fd5c48fd93f9') in 0.005209 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_12.asset
+  artifactKey: Guid(de6f652c8d924ab49b42b95d2657fd17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_12.asset using Guid(de6f652c8d924ab49b42b95d2657fd17) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '53f3883575f8bb5c480916fe29936c09') in 0.005841 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_38.asset
+  artifactKey: Guid(ede33759bb96d0b4282cea701452059a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_38.asset using Guid(ede33759bb96d0b4282cea701452059a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '99e87bead34c0dd36493213eec3763b2') in 0.006445 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_31.asset
+  artifactKey: Guid(1e58f54f36f71084bbff193c22b43aec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_31.asset using Guid(1e58f54f36f71084bbff193c22b43aec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '55bea9590825189ee13bb1e6c02a40e2') in 0.005544 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_17.asset
+  artifactKey: Guid(844b174a1328c4443b13b24a9d0909f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_17.asset using Guid(844b174a1328c4443b13b24a9d0909f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f3fa6154570a1cc2fcdc48a291b200db') in 0.005593 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_2.asset
+  artifactKey: Guid(21c5472a61a419446aaedcadf6dfb327) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_2.asset using Guid(21c5472a61a419446aaedcadf6dfb327) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6e9a575867212e753d1c26986bae7bc4') in 0.005090 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_36.asset
+  artifactKey: Guid(69da9f105a505324da7538a20f4fdc6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_36.asset using Guid(69da9f105a505324da7538a20f4fdc6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b18ad693c40919eeb360dc47f401b0d1') in 0.005802 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_27.asset
+  artifactKey: Guid(d3210b8798897ff479f731b33c0fada0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_27.asset using Guid(d3210b8798897ff479f731b33c0fada0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd4f14d7e8e340d9a29f994289400da85') in 0.005636 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_44.asset
+  artifactKey: Guid(c1e82d6cd680e3b4f8c1be7d278e3ac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_44.asset using Guid(c1e82d6cd680e3b4f8c1be7d278e3ac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '30284e189cd5730814130bcdfe2ca1db') in 0.005464 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_43.asset
+  artifactKey: Guid(50c1c3f6b328f884b911cdbd71346c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_43.asset using Guid(50c1c3f6b328f884b911cdbd71346c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4d7cf5897cd7d07db79f66a79c6e64fc') in 0.005417 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_50.asset
+  artifactKey: Guid(085d747b5f80d1e4b87f0fbf399dfb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_50.asset using Guid(085d747b5f80d1e4b87f0fbf399dfb39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a029c5eb06e715097e489328b3450930') in 0.005157 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_40.asset
+  artifactKey: Guid(3aab623b5ba32bd4ca7f78ff80dbdf25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_40.asset using Guid(3aab623b5ba32bd4ca7f78ff80dbdf25) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fcd75a44de9c471d867d111876701a81') in 0.010750 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_51.asset
+  artifactKey: Guid(a0a425f4762e71f46b020bc7ab39ee28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_51.asset using Guid(a0a425f4762e71f46b020bc7ab39ee28) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e015363f0e95b2177713cce182a3315b') in 0.005476 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_24.asset
+  artifactKey: Guid(377c9fc7f61c0754398b0368e7fea99d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_24.asset using Guid(377c9fc7f61c0754398b0368e7fea99d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1e713ac9b2a6d337b4a1a4d4888adada') in 0.005438 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_28.asset
+  artifactKey: Guid(33daed2d5b9cc1e4fa8174bc7a7aa742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_28.asset using Guid(33daed2d5b9cc1e4fa8174bc7a7aa742) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9c61b7e5725b592bd96d3b8b1a18bfa8') in 0.005462 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_23.asset
+  artifactKey: Guid(692374ad84d89e6419608fda5d0d9eec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_23.asset using Guid(692374ad84d89e6419608fda5d0d9eec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f22c2b03865e74d5caceeb53d2060f1d') in 0.005310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_33.asset
+  artifactKey: Guid(2a4e5427469c0944c8fdd761d24af1cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_33.asset using Guid(2a4e5427469c0944c8fdd761d24af1cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1b99f58fdf3f825ca495f2ce873611ec') in 0.005669 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 26.848400 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_54.asset
+  artifactKey: Guid(b070fd1dea44b25449946d4b2833a5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_54.asset using Guid(b070fd1dea44b25449946d4b2833a5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1845a3b3ae4312951f5eecc0897cc850') in 0.011711 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_60.asset
+  artifactKey: Guid(a153057b0b44c5c45abb414b3e00f4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_60.asset using Guid(a153057b0b44c5c45abb414b3e00f4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5c7fe8a667a85476e8f3cc75f21825a9') in 0.011376 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_61.asset
+  artifactKey: Guid(d60db7c9f09e7d84e88ff5fd7035ee09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_61.asset using Guid(d60db7c9f09e7d84e88ff5fd7035ee09) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fa38da3bf88c0e05b99abd6c0a0c3d19') in 0.009243 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_67.asset
+  artifactKey: Guid(698dd5e9897d1e5498fe04f178c499f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_67.asset using Guid(698dd5e9897d1e5498fe04f178c499f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5ea4980977745d867fce3e935c19655e') in 0.010535 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_64.asset
+  artifactKey: Guid(87a049a2928fdc74899c1743b5cac6d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_64.asset using Guid(87a049a2928fdc74899c1743b5cac6d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fa41a684c408fe8b4201c8a6fa79322d') in 0.011825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.076613 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_69.asset
+  artifactKey: Guid(c500e39f1b1798c43a1aa9012afd6967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_69.asset using Guid(c500e39f1b1798c43a1aa9012afd6967) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7aea20e13433dcd8d630e3b8f0c24e74') in 0.010238 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_77.asset
+  artifactKey: Guid(1fad6dc521b7c6947bb8667b4092a942) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_77.asset using Guid(1fad6dc521b7c6947bb8667b4092a942) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3c2820ea69f2b0d7373e0024fffaf302') in 0.010269 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_82.asset
+  artifactKey: Guid(08847215a59810c4086f40a81f694a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_82.asset using Guid(08847215a59810c4086f40a81f694a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '783cc5b5eea1478706d501005a3f63ef') in 0.011081 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_74.asset
+  artifactKey: Guid(f8cbeea895163504689d1f8564344da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_74.asset using Guid(f8cbeea895163504689d1f8564344da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2340aa8349b72d314528fad2db6e0553') in 0.010276 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_71.asset
+  artifactKey: Guid(aa53c051dc4a0fc47baf6806dd2e42c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_71.asset using Guid(aa53c051dc4a0fc47baf6806dd2e42c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cc5ed01b64a14d2e6f7b40c15e4d93b5') in 0.010785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.031177 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_84.asset
+  artifactKey: Guid(fe6c9098d4bf52448a4bd0e516653f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_84.asset using Guid(fe6c9098d4bf52448a4bd0e516653f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '52d8bf88de4b6de5ff3b9f0cdb03b62a') in 0.011171 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_88.asset
+  artifactKey: Guid(0606fc07fb1b31146b0135752cee8a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_88.asset using Guid(0606fc07fb1b31146b0135752cee8a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '620147a97cb986c1ab5d8f73b8856091') in 0.010982 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_94.asset
+  artifactKey: Guid(ed4e45579b6640242b763841de563ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_94.asset using Guid(ed4e45579b6640242b763841de563ed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '44819293b7dcb7118806b8a99fb21da3') in 0.010308 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_89.asset
+  artifactKey: Guid(9c168877f926cb44ca6e1460d2d5f83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_89.asset using Guid(9c168877f926cb44ca6e1460d2d5f83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cb790e782b17cca4d429d3779f495041') in 0.011790 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_96.asset
+  artifactKey: Guid(46900ec9f755534449e3728d7186a000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_96.asset using Guid(46900ec9f755534449e3728d7186a000) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7ce530da373fea051bb71aa05c0b78ef') in 0.009573 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.026978 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_99.asset
+  artifactKey: Guid(b13c39881a1a9454b836273b615900e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_99.asset using Guid(b13c39881a1a9454b836273b615900e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4a4847dfa4ee347e66b81b5d556307c6') in 0.009884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_107.asset
+  artifactKey: Guid(38ced5efe3d48be418d905a93ab5d7c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_107.asset using Guid(38ced5efe3d48be418d905a93ab5d7c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '61fe1fab828c4e5f891286cde6d01797') in 0.010767 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_108.asset
+  artifactKey: Guid(31df8a27b2e30964a8f412ba6cd83b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_108.asset using Guid(31df8a27b2e30964a8f412ba6cd83b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ecf96aecbb27618001e667ee6bae578a') in 0.015762 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_124.asset
+  artifactKey: Guid(113a9b633c205ea4cbff23f6ce221fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_124.asset using Guid(113a9b633c205ea4cbff23f6ce221fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6d013885398b5b6a5fbc32114463586a') in 0.011212 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_125.asset
+  artifactKey: Guid(13b70a34189a34843992539078e930d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_125.asset using Guid(13b70a34189a34843992539078e930d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '11161d5d5f59a3bb45d6d91cdfa896df') in 0.009704 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_112.asset
+  artifactKey: Guid(b6ff12a83bcb2954db9d4cff6b8a690e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_112.asset using Guid(b6ff12a83bcb2954db9d4cff6b8a690e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b446bac7a99753fbbe1077db4b82ed8c') in 0.009676 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_113.asset
+  artifactKey: Guid(032b9ce1fb7a1284a99631d773593625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_113.asset using Guid(032b9ce1fb7a1284a99631d773593625) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ce4608d1112e422abea5226c66d13486') in 0.009435 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_122.asset
+  artifactKey: Guid(e846ab3d8a230f04cb895ba599cc3efa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_122.asset using Guid(e846ab3d8a230f04cb895ba599cc3efa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fe903236be2b78cd0fe722dd2fd2aa0c') in 0.010901 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_117.asset
+  artifactKey: Guid(d44d85b07714852419cebc33a92617ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_117.asset using Guid(d44d85b07714852419cebc33a92617ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '53de5e6b2442b6aa0b5d7893ce67316f') in 0.008555 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_123.asset
+  artifactKey: Guid(f418cab9daee49246b40bccf5e1fda3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_123.asset using Guid(f418cab9daee49246b40bccf5e1fda3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4417ad0046c286dedc790848f0c8a865') in 0.010248 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.110105 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_129.asset
+  artifactKey: Guid(499070d41737f9d4b8d50c7262d5b43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_129.asset using Guid(499070d41737f9d4b8d50c7262d5b43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dc9bbcb2f1e44b5d5a0fda3768b92476') in 0.011349 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_137.asset
+  artifactKey: Guid(25ac7a4d7d9809f489c79982237cb2a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_137.asset using Guid(25ac7a4d7d9809f489c79982237cb2a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '15ec8e7e03a3ac5c39a815fad1944213') in 0.011144 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_136.asset
+  artifactKey: Guid(78114976cf5a817479142425ba5f1b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_136.asset using Guid(78114976cf5a817479142425ba5f1b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b83efba1f4ba5cae5f061dec0ea0aeb2') in 0.009269 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_133.asset
+  artifactKey: Guid(a1072433ad9f2bd4698b95652e1501ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_133.asset using Guid(a1072433ad9f2bd4698b95652e1501ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '25c843ead923c75310aaadf8bd2bbd56') in 0.012017 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_131.asset
+  artifactKey: Guid(296f12fcd45c72146bf99a5fd87e6810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_131.asset using Guid(296f12fcd45c72146bf99a5fd87e6810) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ae6cc0359a19ffec73ef95e452dfd495') in 0.010836 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.248041 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_144.asset
+  artifactKey: Guid(81eb47ed2fb528b4da228dac37c90b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_144.asset using Guid(81eb47ed2fb528b4da228dac37c90b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '020f4caab9107c8148cd7948030b13ed') in 0.011226 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_155.asset
+  artifactKey: Guid(eaf8861b8448767468ea03d5f2b3b6d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_155.asset using Guid(eaf8861b8448767468ea03d5f2b3b6d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3ef30f3ee3f62fdefd8c2c711f281498') in 0.010274 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_156.asset
+  artifactKey: Guid(e161884b4d716984f9a093eb585ba11a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_156.asset using Guid(e161884b4d716984f9a093eb585ba11a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '382fc7475fae92ddb19f80cbbcbf7053') in 0.010791 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_152.asset
+  artifactKey: Guid(2602c506b3ad47b47a49e866806a114a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_152.asset using Guid(2602c506b3ad47b47a49e866806a114a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8189803535818796b12c1d9c370641da') in 0.010553 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_149.asset
+  artifactKey: Guid(753b30c05a3ef2247b2c3ba3d4168308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_149.asset using Guid(753b30c05a3ef2247b2c3ba3d4168308) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7bf8d7e4086b3cbcbbadcc83f7d34ea4') in 0.011424 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.005358 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_159.asset
+  artifactKey: Guid(6795f938fa224c94dae8a03baab339b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_159.asset using Guid(6795f938fa224c94dae8a03baab339b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e1a96a397adcbd5bbbf37382983b9f58') in 0.009706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_165.asset
+  artifactKey: Guid(b3004dd092d88454fa861274730a1d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_165.asset using Guid(b3004dd092d88454fa861274730a1d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2a9480a0045f57ba50cdda3ab2dfdd4a') in 0.011801 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_178.asset
+  artifactKey: Guid(36f93e40089b14042a0bea0e62bcf83b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_178.asset using Guid(36f93e40089b14042a0bea0e62bcf83b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '787771e39faaa076acd276d953eed8a4') in 0.010434 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_186.asset
+  artifactKey: Guid(9edb5aa4f4d561c428327e574ce38a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_186.asset using Guid(9edb5aa4f4d561c428327e574ce38a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c0462d6249245e9689d330ba2d8ced93') in 0.011669 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_195.asset
+  artifactKey: Guid(468a1cdf69b3ada44986c7f54edbd56b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_195.asset using Guid(468a1cdf69b3ada44986c7f54edbd56b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '83c736761a6954c7e6e4f167726ed1ff') in 0.008983 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_197.asset
+  artifactKey: Guid(7e1f5f6787c5838429ab0f0c8137355f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_197.asset using Guid(7e1f5f6787c5838429ab0f0c8137355f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '09eda557e5b38d9df16a18d57362f8a7') in 0.010351 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_161.asset
+  artifactKey: Guid(36a58903d3a5dbf46a7b2822910e5b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_161.asset using Guid(36a58903d3a5dbf46a7b2822910e5b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0e3ec2b9ef8a0ca6e53e9fb8c9ad72a5') in 0.010768 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_173.asset
+  artifactKey: Guid(99832d2eb25db484e9470cfd696c1426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_173.asset using Guid(99832d2eb25db484e9470cfd696c1426) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd5c3b99f82ff8f54f237879b06792f27') in 0.010373 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_224.asset
+  artifactKey: Guid(3857f800593da364c859d991e22dc591) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_224.asset using Guid(3857f800593da364c859d991e22dc591) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9727d1ccf5db08ac8f630769c3886d07') in 0.011434 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_176.asset
+  artifactKey: Guid(122335cdfe49b3f43a88f5f43bcd5853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_176.asset using Guid(122335cdfe49b3f43a88f5f43bcd5853) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '013ab1f41f83ee7a8e46d94288ec989c') in 0.009401 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_193.asset
+  artifactKey: Guid(93fd6dc5f3d75c049a685b6b8726a9c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_193.asset using Guid(93fd6dc5f3d75c049a685b6b8726a9c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6869e68cafa3275af83c9f4ee34e81e6') in 0.012003 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_198.asset
+  artifactKey: Guid(c53ae99e75a798844b19c66e2807cdb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_198.asset using Guid(c53ae99e75a798844b19c66e2807cdb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e186961d209010b1fdba4d3625ddc7bc') in 0.011211 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_185.asset
+  artifactKey: Guid(3cc84e715a0642f43b24d99e94554250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_185.asset using Guid(3cc84e715a0642f43b24d99e94554250) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2ec49fb185bacdd8d3e42d9d0f249bd9') in 0.012029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_164.asset
+  artifactKey: Guid(038fd313313443f4fa8c0757b6eb673d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_164.asset using Guid(038fd313313443f4fa8c0757b6eb673d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c4ef74e6de7cbb64f8cc499c6831d7bb') in 0.010684 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_212.asset
+  artifactKey: Guid(2d2adf0cd04cc6043b3424fa0730cbac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_212.asset using Guid(2d2adf0cd04cc6043b3424fa0730cbac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dfadb551bf75eb1d322604019e9f5eef') in 0.011786 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_206.asset
+  artifactKey: Guid(bbd790e918b8fa34abe52097b3f97101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_206.asset using Guid(bbd790e918b8fa34abe52097b3f97101) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fbcd6d28002a11f305e22923ed7c2289') in 0.011541 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_174.asset
+  artifactKey: Guid(df8e68e22fa342e4d9f3c63a95bed789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_174.asset using Guid(df8e68e22fa342e4d9f3c63a95bed789) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dabca6da39860fa735aa4d7e1b77d550') in 0.011092 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_203.asset
+  artifactKey: Guid(a36eda64d376f1148a2fdb5c4c0eb918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_203.asset using Guid(a36eda64d376f1148a2fdb5c4c0eb918) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '06ad4714ee8572675fe6473f7c550104') in 0.011473 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_179.asset
+  artifactKey: Guid(b94741ec019a3ef4f9ac8bfa2dae9320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_179.asset using Guid(b94741ec019a3ef4f9ac8bfa2dae9320) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c859e8f07ef6f9f2b845aa9dc4280b85') in 0.010602 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_192.asset
+  artifactKey: Guid(76671dfbe381a274ba5d9714d79481aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_192.asset using Guid(76671dfbe381a274ba5d9714d79481aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'da2dc7f74880f5a6fb90e5145486dcb6') in 0.012061 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_221.asset
+  artifactKey: Guid(b6a02ec8bc0766c4e911f0d9df45e6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_221.asset using Guid(b6a02ec8bc0766c4e911f0d9df45e6c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9938564aa20fc20e1c27404042125762') in 0.012155 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_204.asset
+  artifactKey: Guid(2925930c70a7de546a41c1c3fe18ecdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_204.asset using Guid(2925930c70a7de546a41c1c3fe18ecdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '58baa8f22532a1cafddec131143f3433') in 0.011085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_205.asset
+  artifactKey: Guid(05bd57bdc367e6840aff32a11078763c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_205.asset using Guid(05bd57bdc367e6840aff32a11078763c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0f881f67cc5c93589ae0c1a077c4af31') in 0.011855 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_200.asset
+  artifactKey: Guid(cdc2742bcb2f3704099f00c804342392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_200.asset using Guid(cdc2742bcb2f3704099f00c804342392) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6c96c7d17e423697a6d3b4bf09979396') in 0.010679 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_215.asset
+  artifactKey: Guid(03120c0c585b8ca4687f35719dc5ec7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_215.asset using Guid(03120c0c585b8ca4687f35719dc5ec7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ff742d055f650e73b0c25f07c45e2671') in 0.011227 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.103099 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_234.asset
+  artifactKey: Guid(3e7dfc99a78001147bca7ced4b95e61c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_234.asset using Guid(3e7dfc99a78001147bca7ced4b95e61c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '958546bd441c808520089723c1581e1d') in 0.010564 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_241.asset
+  artifactKey: Guid(d0299a5eeaed9be4a80ad0ab2e6260c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_241.asset using Guid(d0299a5eeaed9be4a80ad0ab2e6260c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '76dbd676a2085d52ae4a4fc3e4fa8d48') in 0.011832 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_253.asset
+  artifactKey: Guid(182e2ccd8519384499df98831176c8c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_253.asset using Guid(182e2ccd8519384499df98831176c8c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd21a986231d583e0105737e8d2c0dbe3') in 0.011456 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_259.asset
+  artifactKey: Guid(a1191f010b0405a47b856703f9e2b9d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_259.asset using Guid(a1191f010b0405a47b856703f9e2b9d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '47b3ce2dc892820bdfb49c9df2dc5f70') in 0.011999 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_257.asset
+  artifactKey: Guid(29898cf2cb22fc84e918bdfff1198211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_257.asset using Guid(29898cf2cb22fc84e918bdfff1198211) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd305683e9f689f4a4f8cb289be5f8e14') in 0.012011 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_236.asset
+  artifactKey: Guid(6afd20e6dc828104bbf3fbab4df7a69e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_236.asset using Guid(6afd20e6dc828104bbf3fbab4df7a69e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7662d061f90663ba7f2e7ea103976580') in 0.012332 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_255.asset
+  artifactKey: Guid(ae51ca69d1f552b4aa50deb6931c9027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_255.asset using Guid(ae51ca69d1f552b4aa50deb6931c9027) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4535dc4e9964d52509e6e9436539fc09') in 0.013218 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_278.asset
+  artifactKey: Guid(c8a86b7be0c6b4c4690b3c1eb5e4f40a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_278.asset using Guid(c8a86b7be0c6b4c4690b3c1eb5e4f40a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2f390d5ce5d288caa7fbd39e95d52523') in 0.011216 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_277.asset
+  artifactKey: Guid(c9ec897095d8e214ba36a1ba91742f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_277.asset using Guid(c9ec897095d8e214ba36a1ba91742f35) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b6aafe5f018957f162bc425eac080409') in 0.010011 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_279.asset
+  artifactKey: Guid(d35a51cc3ab4ec44eb4e7810374013ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_279.asset using Guid(d35a51cc3ab4ec44eb4e7810374013ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fd13f9e88b65352bac9f3f7fcb278be9') in 0.011215 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_297.asset
+  artifactKey: Guid(569ae59abaef7234fa0d8e2e86cd6af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_297.asset using Guid(569ae59abaef7234fa0d8e2e86cd6af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4b0fc1958d6d28396fccfd08875acc1b') in 0.009996 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_319.asset
+  artifactKey: Guid(047f69a2308d587479d05ca34d1eb810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_319.asset using Guid(047f69a2308d587479d05ca34d1eb810) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bc21abaae0087a2acee05b4255ab4802') in 0.010787 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_308.asset
+  artifactKey: Guid(f6e25e985a3e83945a3080927760842a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_308.asset using Guid(f6e25e985a3e83945a3080927760842a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '871b1099f1c526e76999a735737da663') in 0.011981 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_310.asset
+  artifactKey: Guid(13d8f40a3e1a1174d89d737b8e835be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_310.asset using Guid(13d8f40a3e1a1174d89d737b8e835be2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f29e1ffa92dab66b09213f9f204dc0fd') in 0.010640 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_304.asset
+  artifactKey: Guid(90c92055eb6f03d43a162a0e680f4934) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_304.asset using Guid(90c92055eb6f03d43a162a0e680f4934) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e70dfaa731a385ebefa5b062cfb425b0') in 0.012576 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_291.asset
+  artifactKey: Guid(2b47347121773a84eae52cf4767b1126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_291.asset using Guid(2b47347121773a84eae52cf4767b1126) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b1cdf3b6a3f123c25dab90e4d92b649b') in 0.010849 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_264.asset
+  artifactKey: Guid(31ad4f34807e361499b3fb9317ccbaee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_264.asset using Guid(31ad4f34807e361499b3fb9317ccbaee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7749de9af8a4721f68e84e80b45590ad') in 0.012196 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_313.asset
+  artifactKey: Guid(7818d2157471ed146a833f9f40891693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_313.asset using Guid(7818d2157471ed146a833f9f40891693) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '896f29d108f3cb6fd58753301f2826e8') in 0.013158 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_289.asset
+  artifactKey: Guid(590854ae5ec523843982384a86450998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_289.asset using Guid(590854ae5ec523843982384a86450998) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '57e2906c2716bb282e9de2650ed52534') in 0.013265 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_299.asset
+  artifactKey: Guid(64cebd94994ec754fb7b4d1f462e5eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_299.asset using Guid(64cebd94994ec754fb7b4d1f462e5eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd3036753ee262462dca11044b54c74f5') in 0.015488 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_280.asset
+  artifactKey: Guid(ca8dff6e2a7b0df4cba3ec305df83691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_280.asset using Guid(ca8dff6e2a7b0df4cba3ec305df83691) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fc00be0a05416f0cb67c6bb65c832080') in 0.015029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_298.asset
+  artifactKey: Guid(20bfe766805953b429b4b2046b60cd7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_298.asset using Guid(20bfe766805953b429b4b2046b60cd7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3c96435ee7ecd3a1d2a78811fe84430e') in 0.019186 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_321.asset
+  artifactKey: Guid(cd920fbc79f2873428bbe7da70b03a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_321.asset using Guid(cd920fbc79f2873428bbe7da70b03a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '47e52f24b4fb4fb843d6705325e5ed1d') in 0.018173 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_316.asset
+  artifactKey: Guid(7546856497b98be4fa91b6d8cd104b3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_316.asset using Guid(7546856497b98be4fa91b6d8cd104b3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f0fd94462d559ae0a96be7f9b7b5266f') in 0.018339 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_284.asset
+  artifactKey: Guid(92c4694c1fa798249ae65740fb20e117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_284.asset using Guid(92c4694c1fa798249ae65740fb20e117) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '463b6a85a8fa38364f7d1bd3edf27a47') in 0.016556 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_292.asset
+  artifactKey: Guid(250bc8cb9526ada44a16addbc084bba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_292.asset using Guid(250bc8cb9526ada44a16addbc084bba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '05ec0b5cbf7939229746e9a125bda7ad') in 0.014460 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_320.asset
+  artifactKey: Guid(34f74b66057a63840861dd1080f3d8b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_320.asset using Guid(34f74b66057a63840861dd1080f3d8b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c1deeba39219e47549bc0c7cc4c01712') in 0.012296 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_265.asset
+  artifactKey: Guid(94db81f19fd684247b3927f8654b7cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_265.asset using Guid(94db81f19fd684247b3927f8654b7cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3648636fecb2ea2d7be0f66040e989cb') in 0.012465 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_302.asset
+  artifactKey: Guid(789b852bdc79b0947bc82e42e0f54ddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_302.asset using Guid(789b852bdc79b0947bc82e42e0f54ddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f015cb212b519575593819f30025d557') in 0.013092 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_283.asset
+  artifactKey: Guid(f46430809e046ab44af5f519d7d30c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_283.asset using Guid(f46430809e046ab44af5f519d7d30c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '67a9fc4c49bfa3d7377db7e8147a39c0') in 0.012661 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.051744 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_324.asset
+  artifactKey: Guid(c64e77bcaef10a1438f8e9a842333c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_324.asset using Guid(c64e77bcaef10a1438f8e9a842333c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '65f6c7b38f1337a899dd20680038521a') in 0.013503 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_333.asset
+  artifactKey: Guid(8ac158c37d8270c4f9fc68eea274f07c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_333.asset using Guid(8ac158c37d8270c4f9fc68eea274f07c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '774252863ef6c22e486a941121442235') in 0.013171 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_344.asset
+  artifactKey: Guid(86edb6eed58c7314cbad6d2b67a60bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_344.asset using Guid(86edb6eed58c7314cbad6d2b67a60bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c820f958b7d118fd86a5ffb05ea6cc7f') in 0.012277 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_346.asset
+  artifactKey: Guid(0afa98ddbaf48d44791ab301de1a16c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_346.asset using Guid(0afa98ddbaf48d44791ab301de1a16c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fa1f62ce4d8a7c96ea231d2cbe8b325a') in 0.014281 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_360.asset
+  artifactKey: Guid(f5d22591398743d439341a40181e470c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_360.asset using Guid(f5d22591398743d439341a40181e470c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '578a3508c0b9d4e3b60ccf867b237ab6') in 0.011727 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_356.asset
+  artifactKey: Guid(0d6e8279882e6a248a2abf50e46e962a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_356.asset using Guid(0d6e8279882e6a248a2abf50e46e962a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0c582b331a2023d298052f5351323abb') in 0.013415 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_330.asset
+  artifactKey: Guid(74c3e8f173cebea47933d0229a4dbc3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_330.asset using Guid(74c3e8f173cebea47933d0229a4dbc3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8aa52e7353e9d1db7f867ed09d010073') in 0.012607 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_354.asset
+  artifactKey: Guid(5000276037dccef42b8a4c34d7b2cad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_354.asset using Guid(5000276037dccef42b8a4c34d7b2cad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bcf0e7560bd45a3cfd97a8fd951937e7') in 0.013425 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_364.asset
+  artifactKey: Guid(6fbc47ce72813d549b9320b118902c0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_364.asset using Guid(6fbc47ce72813d549b9320b118902c0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '43ccd661e4abb4722bdd6cb9bb5fa692') in 0.012308 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_361.asset
+  artifactKey: Guid(57a6e14edc8b581408b31baa9d76eafb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_361.asset using Guid(57a6e14edc8b581408b31baa9d76eafb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2706a22387f3634b58bfda5041f822ef') in 0.012514 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_334.asset
+  artifactKey: Guid(45668d865546b0647b85395efe71fe5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_334.asset using Guid(45668d865546b0647b85395efe71fe5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '94a32b357d2cfe3a230e36655909bf19') in 0.012244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_349.asset
+  artifactKey: Guid(997a79837338eab45a350dbf12fd75f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_349.asset using Guid(997a79837338eab45a350dbf12fd75f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c022c62598eec3494b51fe0ed95dbe90') in 0.011425 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_328.asset
+  artifactKey: Guid(fdad07922b261fc4eadfc1121a737edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_328.asset using Guid(fdad07922b261fc4eadfc1121a737edb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '55d2ff69c44a344b589ec14192748bf3') in 0.012676 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_359.asset
+  artifactKey: Guid(3e97250fc9f96e04ca50a2010923424b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_359.asset using Guid(3e97250fc9f96e04ca50a2010923424b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c2854572126e1573e68d31963f21f6f8') in 0.011572 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/Tileset/Solaria Demo Tiles_367.asset
+  artifactKey: Guid(17604cf5e037dd8488f0eb52bf53cf68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Tileset/Solaria Demo Tiles_367.asset using Guid(17604cf5e037dd8488f0eb52bf53cf68) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3e09522d874676bb2106e02445a720b6') in 0.011097 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Az I/O mûvelet megszakítva. (Egy folyamat véget ért, vagy egy alkalmazás megszakította az I/O mûveletet.)
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
