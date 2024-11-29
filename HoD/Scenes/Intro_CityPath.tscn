@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://5c0yt0smp5a1"]
 
 [ext_resource type="Texture2D" uid="uid://ceyw2uo2sljix" path="res://Assets/Art/Sprites/Tileset/Solaria Demo Tiles.png" id="1_fa537"]
-[ext_resource type="PackedScene" uid="uid://dl484ntdysrqc" path="res://Scenes/player.tscn" id="2_3psf6"]
+[ext_resource type="PackedScene" uid="uid://ci65lw3op2sg8" path="res://Scenes/player.tscn" id="2_3psf6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k64vy"]
 texture = ExtResource("1_fa537")
@@ -1115,6 +1115,7 @@ sources/0 = SubResource("TileSetAtlasSource_k64vy")
 [node name="City" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_s4par")
 format = 2
 layer_0/name = "Ground Layer"

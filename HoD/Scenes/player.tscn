@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl484ntdysrqc"]
+[gd_scene load_steps=4 format=3 uid="uid://ci65lw3op2sg8"]
 
-[ext_resource type="Script" path="res://Scenes/CharacterBody2D.gd" id="1_dcq2j"]
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_ilnds"]
 [ext_resource type="Texture2D" uid="uid://xleqqlmqueap" path="res://Assets/Art/Sprites/Characters/FinFino.png" id="1_leru7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh1ny"]
@@ -9,9 +9,10 @@ size = Vector2(23, 24)
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_dcq2j")
+script = ExtResource("1_ilnds")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("1_leru7")
 
