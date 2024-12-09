@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Heroes of Demontide"
-run/main_scene="res://Scenes/Outskirts_1.tscn"
+run/main_scene="res://Scenes/intro.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -46,5 +46,5 @@ moveDown={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.266667, 0.2, 0.305882, 1)
+environment/defaults/default_clear_color=Color(0.145098, 0.101961, 0.168627, 1)
 textures/canvas_textures/default_texture_filter=0
