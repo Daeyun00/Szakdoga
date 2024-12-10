@@ -23,3 +23,9 @@ shape = SubResource("RectangleShape2D_fh1ny")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(3.295, 3.295)
 drag_left_margin = 0.19
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_fh1ny")

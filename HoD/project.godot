@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Heroes of Demontide"
-run/main_scene="res://Scenes/intro.tscn"
+run/main_scene="res://Scenes/Outskirts_1.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Art/Sprites/Other/asaba-harumasa.png"
 
 [display]
 

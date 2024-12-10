@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmjlknuptq8ho"]
+[gd_scene load_steps=2 format=3 uid="uid://fb0m64o18ppi"]
 
-[ext_resource type="Script" path="res://Scenes/RichTextLabel.gd" id="1_m0t8a"]
+[ext_resource type="Script" path="res://Scripts/RichTextLabel.gd" id="1_c5duw"]
 
 [node name="Intro" type="Node"]
 
@@ -8,7 +8,7 @@
 texture_filter = 2
 offset_left = 389.0
 offset_top = 287.0
-offset_right = 768.0
+offset_right = 899.0
 offset_bottom = 345.0
 text = "Nobody would believe how fragile the peace is..."
-script = ExtResource("1_m0t8a")
+script = ExtResource("1_c5duw")
