@@ -8,9 +8,6 @@ const friction = 500
 var blend_position: Vector2 = Vector2.ZERO
 
 
-
-
-
 func _physics_process(delta):
 	move(delta)
 
