@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp5xlyc726bmo"]
+[gd_scene load_steps=7 format=3 uid="uid://cp5xlyc726bmo"]
 
 [ext_resource type="Texture2D" uid="uid://ceyw2uo2sljix" path="res://Assets/Art/Sprites/Tileset/Solaria Demo Tiles.png" id="1_txsh7"]
 [ext_resource type="PackedScene" uid="uid://ci65lw3op2sg8" path="res://Scenes/player.tscn" id="2_bm47g"]
 [ext_resource type="PackedScene" uid="uid://dilqbfn4h5mfk" path="res://Scenes/Harumasa.tscn" id="3_dpo5q"]
+[ext_resource type="PackedScene" uid="uid://bs3kkmbiqqpvd" path="res://Scenes/Inventory_Item.tscn" id="4_5ywse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k64vy"]
 texture = ExtResource("1_txsh7")
@@ -1142,3 +1143,5 @@ position = Vector2(119, 112)
 
 [node name="Harumasa_PLACEHOLDER" parent="." instance=ExtResource("3_dpo5q")]
 position = Vector2(66, 82)
+
+[node name="Inventory_Item" parent="." instance=ExtResource("4_5ywse")]

@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends CharacterBody2D 
 
 
 const max_spd = 120
@@ -6,6 +6,10 @@ const accel = 800
 const friction = 500
 
 var blend_position: Vector2 = Vector2.ZERO
+
+func _ready():
+	Global.set_player_reference(self)
+	
 
 
 func _physics_process(delta):
