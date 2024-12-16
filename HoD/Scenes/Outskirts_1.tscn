@@ -1,10 +1,23 @@
 [gd_scene load_steps=9 format=3 uid="uid://5c0yt0smp5a1"]
 
-[ext_resource type="Script" path="res://Scripts/Outskirts_1.gd" id="1_kjo16"]
 [ext_resource type="Texture2D" uid="uid://ceyw2uo2sljix" path="res://Assets/Art/Sprites/Tileset/Solaria Demo Tiles.png" id="1_n7rcp"]
 [ext_resource type="PackedScene" uid="uid://ci65lw3op2sg8" path="res://Scenes/player.tscn" id="2_jh833"]
 [ext_resource type="Texture2D" uid="uid://c5knxr35hb7k7" path="res://Assets/Art/Sprites/Characters/Crystal.png" id="3_8ty6y"]
 [ext_resource type="Script" path="res://Scripts/Dialogue_Crystal_1.gd" id="5_j1v6e"]
+
+[sub_resource type="GDScript" id="GDScript_1ad3q"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Cock()
+	
+func Cock():
+	var dialogue = Bonnie.new()
+	dialogue.load_dialogue(\"jezus.bonnie\", \"this_is_a_basic_block\")
+	dialogue.start(\"this_is_a_basic_block\")
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k64vy"]
 texture = ExtResource("1_n7rcp")
@@ -1105,7 +1118,7 @@ a = Vector2(435, 108)
 b = Vector2(576, 108)
 
 [node name="Outskirts" type="Node"]
-script = ExtResource("1_kjo16")
+script = SubResource("GDScript_1ad3q")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -1130,18 +1143,18 @@ layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("2_jh833")]
-position = Vector2(531, 649)
+position = Vector2(517, 635)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Crystal" type="Sprite2D" parent="."]
 position = Vector2(559, 105)
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("3_8ty6y")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="Area2D" type="Area2D" parent="Crystal"]
 position = Vector2(-271.176, -51.1765)
 scale = Vector2(0.588235, 0.588235)
 script = ExtResource("5_j1v6e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crystal/Area2D"]
 position = Vector2(-108.001, 12.0001)
 shape = SubResource("SegmentShape2D_vhnw2")
