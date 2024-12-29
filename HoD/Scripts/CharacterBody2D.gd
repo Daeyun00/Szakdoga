@@ -1,6 +1,8 @@
 extends CharacterBody2D 
 
 
+@onready var interact_ui = $InteractUI
+
 const max_spd = 120
 const accel = 800
 const friction = 500
