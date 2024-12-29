@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @onready var interact_ui = $InteractUI
+@onready var inventory_ui = $InventoryUI
 
 const max_spd = 120
 const accel = 800
@@ -37,3 +38,7 @@ func applyMovement(amount) -> void:
 	velocity += amount
 	velocity = velocity.limit_length(max_spd)
 
+func _input(event):
+	if event.is_action_pressed("ui_inventory"):
+		inventory_ui.visible = !inventory_ui.visible
+		get_tree().paused = !get_tree().paused

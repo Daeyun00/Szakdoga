@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci65lw3op2sg8"]
+[gd_scene load_steps=5 format=3 uid="uid://ci65lw3op2sg8"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_ilnds"]
 [ext_resource type="Texture2D" uid="uid://xleqqlmqueap" path="res://Assets/Art/Sprites/Characters/FinFino.png" id="1_leru7"]
+[ext_resource type="PackedScene" uid="uid://bdalilel624yx" path="res://inventory_UI.tscn" id="3_gn1dc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh1ny"]
 size = Vector2(23, 24)
@@ -60,3 +61,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Press 'E' to pick up"
+
+[node name="InventoryUI" type="CanvasLayer" parent="CharacterBody2D"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D/InventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.376471, 0.321569, 1)
+
+[node name="Label" type="Label" parent="CharacterBody2D/InventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 50.0
+offset_right = 37.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Inventory"
+
+[node name="Inventory_UI" parent="CharacterBody2D/InventoryUI/ColorRect" instance=ExtResource("3_gn1dc")]
+process_mode = 3
