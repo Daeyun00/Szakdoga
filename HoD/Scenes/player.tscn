@@ -98,6 +98,7 @@ script = ExtResource("1_pmswk")
 [node name="InteractCollision" type="CollisionShape2D" parent="InteractArea"]
 position = Vector2(-1.5, -21)
 shape = SubResource("RectangleShape2D_ixt2i")
+debug_color = Color(0.964706, 0, 0.490196, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -111,6 +112,3 @@ frame_progress = 0.0588146
 [node name="CharacterCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -21)
 shape = SubResource("RectangleShape2D_ixt2i")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)

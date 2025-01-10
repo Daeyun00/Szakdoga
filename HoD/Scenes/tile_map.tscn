@@ -465,5 +465,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dulu4")
 
 [node name="TileMap" type="TileMap"]
+texture_filter = 1
 tile_set = SubResource("TileSet_r2gia")
 format = 2
