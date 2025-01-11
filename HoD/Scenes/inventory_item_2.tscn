@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://4f3rh5jrv7lv"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory_Item.gd" id="1_dkrcx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4c0qm"]
+
+[node name="Inventory_Item2" type="Node2D"]
+script = ExtResource("1_dkrcx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4c0qm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
