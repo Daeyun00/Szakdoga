@@ -10,6 +10,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	Global.set_player_reference(self)
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 
 func _physics_process(delta):
