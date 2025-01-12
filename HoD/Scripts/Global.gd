@@ -8,13 +8,23 @@ signal inventory_updated
 var player_node: Node = null
 
 
-<<<<<<< Updated upstream
 
 func _ready():
 	inventory.resize(30)
 
-func add_item():
-	inventory_updated.emit()
+func add_item(item):
+	for i in range(inventory.size()):
+		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["effect"] == item["effect"]:
+			inventory[i]["quantity"] += item["quantity"]
+			inventory_updated.emit()
+			print("Item added", inventory)
+			return true
+		elif inventory[i] == null:
+			inventory[i] = item
+			inventory_updated.emit()
+			print("Item added", inventory)
+			return true
+		return false
 
 func remove_item():
 	inventory_updated.emit()
@@ -22,16 +32,5 @@ func remove_item():
 func increase_inventory_size():
 	inventory_updated.emit()
 	
-=======
-func _ready():
-	inventory.resize(30)
-func add_item():
-	inventory_updated.emit()
-func remove_item():
-	inventory_updated.emit()
-func increase_inventory_size():
-	inventory_updated.emit()
-
->>>>>>> Stashed changes
 func set_player_reference(player):
 	player_node = player

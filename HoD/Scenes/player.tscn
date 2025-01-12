@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dno3ktvfyu4q8"]
+[gd_scene load_steps=24 format=3 uid="uid://dno3ktvfyu4q8"]
 
 [ext_resource type="Texture2D" uid="uid://css1bduwlostk" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="1_5cmkm"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_pmswk"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://cwmm4okgi76it" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_7.png" id="16_43gj0"]
 [ext_resource type="Texture2D" uid="uid://dtl0555gku8mu" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_8.png" id="17_t2k0v"]
 [ext_resource type="Texture2D" uid="uid://7ct4alnitw6j" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_9.png" id="18_o8m4d"]
+[ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/Inventory_UI.tscn" id="20_35uxx"]
+[ext_resource type="Script" path="res://Scripts/Inventory_UI.gd" id="21_7p000"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixt2i"]
 size = Vector2(25, 40)
@@ -90,7 +92,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+process_mode = 3
 script = ExtResource("1_pmswk")
 
 [node name="InteractArea" type="Area2D" parent="."]
@@ -112,3 +115,53 @@ frame_progress = 0.0588146
 [node name="CharacterCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -21)
 shape = SubResource("RectangleShape2D_ixt2i")
+
+[node name="InteractUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 260.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "Press \"E\" to pick up"
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.376471, 0.321569, 1)
+
+[node name="Label" type="Label" parent="InventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 50.0
+offset_right = 37.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Inventory"
+
+[node name="Inventory_UI" parent="InventoryUI/ColorRect" instance=ExtResource("20_35uxx")]
+script = ExtResource("21_7p000")

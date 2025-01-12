@@ -5,15 +5,14 @@ var jump_speed = -400
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 
+@onready var interact_ui = $InteractUI
+@onready var inventory_ui = $InventoryUI
+
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	Global.set_player_reference(self)
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
 
 func _physics_process(delta):
@@ -38,3 +37,8 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("Idle")
 		velocity.x = 0
 	move_and_slide()
+	
+func _input(event):
+	if event.is_action_pressed("ui_inventory"):
+		inventory_ui.visible = !interact_ui.visible
+		get_tree().paused = !get_tree().paused

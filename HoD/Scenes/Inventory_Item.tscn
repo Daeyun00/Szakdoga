@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq4pbqaokhqa2"]
+[gd_scene load_steps=3 format=3 uid="uid://ur804mngsy50"]
 
-[ext_resource type="Script" path="res://Scripts/Inventory_Item.gd" id="1_64o8c"]
-[ext_resource type="Texture2D" uid="uid://o84hwacm3emq" path="res://Assets/Wooden UI/Wooden UI/Items/Mana Potion.png" id="2_033oy"]
+[ext_resource type="Script" path="res://Scripts/Inventory_Item.gd" id="1_q6jin"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_18g3r"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_llqm3"]
 
-[node name="Inventory_Item" type="Node2D" groups=["Items"]]
-script = ExtResource("1_64o8c")
+[node name="Invenory_Item" type="Node2D" groups=["Items"]]
+script = ExtResource("1_q6jin")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_18g3r")
+shape = SubResource("CircleShape2D_llqm3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_033oy")
+scale = Vector2(0.3, 0.3)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
