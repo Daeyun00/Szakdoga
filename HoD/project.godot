@@ -13,7 +13,7 @@ config_version=5
 config/name="HoD"
 run/main_scene="res://Scenes/PTR.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://lotus.svg"
 
 [autoload]
 
@@ -24,7 +24,6 @@ Debug="*res://Scripts/debug.gd"
 
 window/size/viewport_width=1366
 window/size/viewport_height=768
-window/size/borderless=true
 window/stretch/mode="viewport"
 
 [gui]
