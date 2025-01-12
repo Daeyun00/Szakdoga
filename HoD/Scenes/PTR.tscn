@@ -36,9 +36,12 @@ layer_2/tile_data = PackedInt32Array(-196614, 196608, 5, -131078, 196608, 6, -65
 [node name="Invenory_Item" parent="." instance=ExtResource("3_1hyxd")]
 position = Vector2(-79, 90)
 item_type = "Consumable"
+item_name = "Soda"
 item_texture = ExtResource("4_ch7ps")
+item_effect = "Stamina"
 
 [node name="Inventory_Item2" parent="." groups=["Items"] instance=ExtResource("4_sl3sw")]
 position = Vector2(31, 91)
 item_type = "Quest"
+item_name = "Potion"
 item_texture = ExtResource("6_nonjn")
