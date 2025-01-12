@@ -53,7 +53,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -88,7 +88,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 10.0
+"speed": 9.0
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
@@ -107,9 +107,9 @@ texture_filter = 1
 position = Vector2(0, -27)
 scale = Vector2(1, 0.990909)
 sprite_frames = SubResource("SpriteFrames_bffow")
-animation = &"Idle"
+animation = &"Run"
 autoplay = "Idle"
-frame_progress = 0.0588146
+frame_progress = 0.00462209
 
 [node name="CharacterCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -21)

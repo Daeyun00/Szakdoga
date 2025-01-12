@@ -99,6 +99,20 @@ offset_top = 612.0
 offset_right = 882.0
 offset_bottom = 698.0
 
+[node name="Battle_ally2" parent="Players" instance=ExtResource("4_o04v0")]
+layout_mode = 0
+offset_left = 929.0
+offset_top = 596.0
+offset_right = 982.0
+offset_bottom = 682.0
+
+[node name="Battle_ally3" parent="Players" instance=ExtResource("4_o04v0")]
+layout_mode = 0
+offset_left = 757.0
+offset_top = 653.0
+offset_right = 810.0
+offset_bottom = 739.0
+
 [node name="Enemies" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -108,6 +122,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Battle_enemy" parent="Enemies" instance=ExtResource("5_manfw")]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 637.0
+offset_right = 344.0
+offset_bottom = 701.0
+
+[node name="Battle_enemy2" parent="Enemies" instance=ExtResource("5_manfw")]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 696.0
+offset_right = 393.0
+offset_bottom = 760.0
+
+[node name="Battle_enemy3" parent="Enemies" instance=ExtResource("5_manfw")]
 layout_mode = 0
 offset_left = 398.0
 offset_top = 666.0
