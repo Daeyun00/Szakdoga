@@ -21,9 +21,15 @@ Global="*res://Scripts/Global.gd"
 
 [display]
 
-window/size/viewport_width=1368
+window/size/viewport_width=1366
 window/size/viewport_height=768
-window/size/resizable=false
+window/size/borderless=true
+window/stretch/mode="viewport"
+
+[gui]
+
+theme/custom="res://Utility/themes/default.tres"
+theme/custom_font="res://Utility/themes/default_font.tres"
 
 [input]
 
