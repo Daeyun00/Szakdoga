@@ -6,7 +6,7 @@ extends Node2D
 @export var item_name = ""
 @export var item_texture: Texture
 @export var item_effect = ""
-var scene_path: String = "res://Scenes/Inventory_Item.tscn"
+var scene_path: String = "res://Scenes/Other/inventory_item.tscn"
 @onready var icon_sprite = $Sprite2D 
 
 var player_in_range = false
@@ -50,3 +50,10 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
 		body.interact_ui.visible = true
+
+
+func set_item_data(data):
+	item_type = data["type"]
+	item_name = data["name"]
+	item_effect = data["effect"]
+	item_texture = data["texture"]

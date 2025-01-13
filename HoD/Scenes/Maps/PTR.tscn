@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://82n8mxba2qxy"]
+[gd_scene load_steps=8 format=3 uid="uid://82n8mxba2qxy"]
 
 [ext_resource type="PackedScene" uid="uid://btoufs273wrah" path="res://Scenes/Other/tile_map.tscn" id="2_bn0ho"]
 [ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="2_wnpdi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bqwljsimhmfwx" path="res://Assets/Wooden UI/Items/Mana Potion.png" id="4_ch7ps"]
 [ext_resource type="PackedScene" uid="uid://4f3rh5jrv7lv" path="res://Scenes/Other/inventory_item_2.tscn" id="4_sl3sw"]
 [ext_resource type="Texture2D" uid="uid://doxlc3wyhs5bo" path="res://Assets/Wooden UI/Items/Riptide Dagger.png" id="6_nonjn"]
+[ext_resource type="Texture2D" uid="uid://bbyry4gm1tvmy" path="res://Assets/Wooden UI/Items/Health Potion.png" id="7_d5jwf"]
 
 [node name="PTR" type="Node2D"]
 
@@ -32,8 +33,15 @@ item_name = "Soda"
 item_texture = ExtResource("4_ch7ps")
 item_effect = "Stamina"
 
-[node name="Inventory_Item2" parent="." groups=["Items"] instance=ExtResource("4_sl3sw")]
+[node name="Inventory_Item22" parent="." groups=["Items"] instance=ExtResource("4_sl3sw")]
 position = Vector2(31, 91)
 item_type = "Quest"
 item_name = "Potion"
 item_texture = ExtResource("6_nonjn")
+
+[node name="Invenory_Item3" parent="." instance=ExtResource("3_1hyxd")]
+position = Vector2(-26, 88)
+item_type = "Boost"
+item_name = "Health"
+item_texture = ExtResource("7_d5jwf")
+item_effect = "Slot Boost"
