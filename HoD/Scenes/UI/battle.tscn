@@ -94,24 +94,20 @@ grow_vertical = 2
 
 [node name="Battle_ally" parent="Players" instance=ExtResource("4_o04v0")]
 layout_mode = 0
-offset_left = 829.0
-offset_top = 612.0
-offset_right = 882.0
-offset_bottom = 698.0
+offset_left = 755.0
+offset_right = 808.0
 
 [node name="Battle_ally2" parent="Players" instance=ExtResource("4_o04v0")]
 layout_mode = 0
-offset_left = 929.0
-offset_top = 596.0
-offset_right = 982.0
-offset_bottom = 682.0
+offset_left = 851.0
+offset_top = 659.0
+offset_right = 904.0
+offset_bottom = 745.0
 
 [node name="Battle_ally3" parent="Players" instance=ExtResource("4_o04v0")]
 layout_mode = 0
-offset_left = 757.0
-offset_top = 653.0
-offset_right = 810.0
-offset_bottom = 739.0
+offset_left = 950.0
+offset_right = 1003.0
 
 [node name="Enemies" type="Control" parent="."]
 layout_mode = 1
@@ -123,10 +119,10 @@ grow_vertical = 2
 
 [node name="Battle_enemy" parent="Enemies" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 270.0
-offset_top = 637.0
-offset_right = 344.0
-offset_bottom = 701.0
+offset_left = 393.0
+offset_top = 659.0
+offset_right = 467.0
+offset_bottom = 723.0
 
 [node name="Battle_enemy2" parent="Enemies" instance=ExtResource("5_manfw")]
 layout_mode = 0
@@ -137,7 +133,7 @@ offset_bottom = 760.0
 
 [node name="Battle_enemy3" parent="Enemies" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 398.0
-offset_top = 666.0
-offset_right = 472.0
-offset_bottom = 730.0
+offset_left = 267.0
+offset_top = 659.0
+offset_right = 341.0
+offset_bottom = 723.0
