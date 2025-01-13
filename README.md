@@ -11,3 +11,6 @@ Renamed the project to "Heroes of Demontide"
 Created intro map
 Imported assets
 Created player and collision
+
+2025.01.13:
+Godot editor version: 4.3 - Stable
