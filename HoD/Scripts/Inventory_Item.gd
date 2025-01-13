@@ -50,3 +50,10 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
 		body.interact_ui.visible = true
+
+
+func set_item_data(data):
+	item_type = data["type"]
+	item_name = data["name"]
+	item_effect = data["effect"]
+	item_texture = data["texture"]
