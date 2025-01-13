@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cx8o60ecif03p"]
+[gd_scene load_steps=10 format=3 uid="uid://codr4bxbre4uq"]
 
 [ext_resource type="Texture2D" uid="uid://css1bduwlostk" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="1_wf12w"]
 [ext_resource type="Texture2D" uid="uid://bp1chu7wmgf18" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_1.png" id="2_sbbyi"]

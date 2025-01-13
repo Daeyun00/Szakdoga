@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://82n8mxba2qxy"]
 
-[ext_resource type="PackedScene" uid="uid://btoufs273wrah" path="res://Scenes/tile_map.tscn" id="2_bn0ho"]
-[ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/player.tscn" id="2_wnpdi"]
-[ext_resource type="PackedScene" uid="uid://ur804mngsy50" path="res://Scenes/inventory_item.tscn" id="3_1hyxd"]
+[ext_resource type="PackedScene" uid="uid://btoufs273wrah" path="res://Scenes/Other/tile_map.tscn" id="2_bn0ho"]
+[ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="2_wnpdi"]
+[ext_resource type="PackedScene" uid="uid://ur804mngsy50" path="res://Scenes/Other/inventory_item.tscn" id="3_1hyxd"]
 [ext_resource type="Texture2D" uid="uid://bqwljsimhmfwx" path="res://Assets/Wooden UI/Items/Mana Potion.png" id="4_ch7ps"]
-[ext_resource type="PackedScene" uid="uid://4f3rh5jrv7lv" path="res://Scenes/inventory_item_2.tscn" id="4_sl3sw"]
+[ext_resource type="PackedScene" uid="uid://4f3rh5jrv7lv" path="res://Scenes/Other/inventory_item_2.tscn" id="4_sl3sw"]
 [ext_resource type="Texture2D" uid="uid://doxlc3wyhs5bo" path="res://Assets/Wooden UI/Items/Riptide Dagger.png" id="6_nonjn"]
 
 [node name="PTR" type="Node2D"]

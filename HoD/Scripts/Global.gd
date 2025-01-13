@@ -7,7 +7,7 @@ signal inventory_updated
 
 var player_node: Node = null
 
-@onready var inventory_slot_scene = preload("res://Scenes/Inventory_Slot.tscn")
+@onready var inventory_slot_scene = preload("res://Scenes/UI/Inventory_Slot.tscn")
 
 
 
