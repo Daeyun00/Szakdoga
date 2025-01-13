@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var run_speed = 200
 var jump_speed = -400
-const SPEED = 300.0
+var SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 
 @onready var interact_ui = $InteractUI
@@ -42,3 +42,14 @@ func _input(event):
 	if event.is_action_pressed("ui_inventory"):
 		inventory_ui.visible = !interact_ui.visible
 		get_tree().paused = !get_tree().paused
+
+func apply_item_effect(item):
+	match item["effect"]:
+		"Stamina":
+			SPEED += 50.0
+			print("Speed increased to ", SPEED)
+		"Slot Boost":
+			Global.increase_inventory_size(5)
+			print("Slots increased to ", Global.inventory.size())
+		_:
+			print("There is no effect for this item")
