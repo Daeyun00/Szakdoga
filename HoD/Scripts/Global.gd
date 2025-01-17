@@ -5,6 +5,13 @@ var inventory = []
 
 signal inventory_updated
 
+var spawnable_items = [
+	{"type": "Consumable", "name": "Berry", "effect": "Health", "texture": preload("res://Assets/Wooden UI/Items/Health Potion.png")},
+	{"type": "Consumable", "name": "Water", "effect": "Stamina", "texture": preload("res://Assets/Wooden UI/Items/Stamina Potion.png")},
+	{"type": "Consumable", "name": "Mushroom", "effect": "Armor", "texture": preload("res://Assets/Wooden UI/Items/Mana Potion.png")},
+	{"type": "Gift", "name": "Genstone", "effect": "", "texture": preload("res://Assets/Wooden UI/Items/Runic Dagger.png")}
+]
+
 var player_node: Node = null
 
 @onready var inventory_slot_scene = preload("res://Scenes/UI/Inventory_Slot.tscn")
