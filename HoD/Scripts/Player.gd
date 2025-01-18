@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -600.0
 
 @onready var interact_ui = $InteractUI
 @onready var inventory_ui = $InventoryUI
+@onready var inventory_hotbar = $Inventory_Hotbar
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -42,6 +43,7 @@ func _input(event):
 	if event.is_action_pressed("ui_inventory"):
 		inventory_ui.visible = !interact_ui.visible
 		get_tree().paused = !get_tree().paused
+		inventory_hotbar.visible = !inventory_hotbar.visible
 
 func apply_item_effect(item):
 	match item["effect"]:

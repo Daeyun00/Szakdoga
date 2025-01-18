@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dno3ktvfyu4q8"]
+[gd_scene load_steps=24 format=3 uid="uid://dno3ktvfyu4q8"]
 
 [ext_resource type="Texture2D" uid="uid://css1bduwlostk" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="1_5cmkm"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_pmswk"]
@@ -19,7 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://cwmm4okgi76it" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_7.png" id="16_43gj0"]
 [ext_resource type="Texture2D" uid="uid://dtl0555gku8mu" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_8.png" id="17_t2k0v"]
 [ext_resource type="Texture2D" uid="uid://7ct4alnitw6j" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_9.png" id="18_o8m4d"]
-[ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/Inventory_UI.tscn" id="20_35uxx"]
+[ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/UI/Inventory_UI.tscn" id="20_35uxx"]
+[ext_resource type="PackedScene" uid="uid://8w76m3278wqu" path="res://Scenes/UI/Inventory_Hotbar.tscn" id="21_ck1g3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixt2i"]
 size = Vector2(25, 40)
@@ -163,3 +164,7 @@ theme_override_font_sizes/font_size = 60
 text = "Inventory"
 
 [node name="Inventory_UI" parent="InventoryUI/ColorRect" instance=ExtResource("20_35uxx")]
+
+[node name="Inventory_Hotbar" type="CanvasLayer" parent="."]
+
+[node name="Inventory_Hotbar" parent="Inventory_Hotbar" instance=ExtResource("21_ck1g3")]

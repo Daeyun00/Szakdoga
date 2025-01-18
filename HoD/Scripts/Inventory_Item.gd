@@ -36,7 +36,7 @@ func pickup_item():
 		"scene_path": scene_path
 	}
 	if Global.player_node:
-		Global.add_item(item)
+		Global.add_item(item, false)
 		self.queue_free()
 
 
