@@ -104,3 +104,21 @@ func unassign_hotbar_item(item_type, item_effect):
 
 func is_item_assigned_to_hotbar(item_to_check):
 	return item_to_check in hotbar_inventory
+
+func swap_inventory_items(index1, index2):
+	if index1 < 0 or index1 > inventory.size() or index2 < 0 or index2 > inventory.size():
+		return false
+	var temp = inventory[index1]
+	inventory[index1] = inventory[index2]
+	inventory[index2] = temp
+	inventory_updated.emit()
+	return true
+
+func swap_hotbar_items(index1, index2):
+	if index1 < 0 or index1 > hotbar_inventory.size() or index2 < 0 or index2 > hotbar_inventory.size():
+		return false
+	var temp = hotbar_inventory[index1]
+	hotbar_inventory[index1] = hotbar_inventory[index2]
+	hotbar_inventory[index2] = temp
+	inventory_updated.emit()
+	return true
