@@ -17,6 +17,7 @@ func _update_hotbar_ui():
 			slot.set_item(Global.hotbar_inventory[i])
 		else:
 			slot.set_empty()
+		slot.update_assignment_status()
 
 func clear_hotbar_container():
 	while hotbar_container.get_child_count() > 0:

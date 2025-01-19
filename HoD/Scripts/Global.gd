@@ -100,3 +100,7 @@ func unassign_hotbar_item(item_type, item_effect):
 			inventory_updated.emit()
 			return true
 	return false
+
+
+func is_item_assigned_to_hotbar(item_to_check):
+	return item_to_check in hotbar_inventory

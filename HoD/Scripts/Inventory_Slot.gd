@@ -11,6 +11,7 @@ extends Control
 
 var item = null
 var slot_index = -1
+var is_assigned = false
 
 func set_slot_index(new_index):
 	slot_index = new_index
@@ -44,6 +45,7 @@ func set_item(new_item):
 		item_effect.text = str("+ ", item["effect"])
 	else:
 		item_effect.text = ""
+	update_assignment_status()
 
 
 func _on_drop_button_pressed():
@@ -67,6 +69,20 @@ func _on_use_button_pressed():
 		else:
 			print("Player cuold not be found")
 
+func update_assignment_status():
+	is_assigned = Global.is_item_assigned_to_hotbar(item)
+	if is_assigned:
+		assign_button.text = "Unassign"
+	else:
+		assign_button.text = "Assign"
+
 
 func _on_assign_button_pressed():
-	pass
+	if item != null:
+		if is_assigned:
+			Global.unassign_hotbar_item(item["type"], item["effect"])
+			is_assigned = false
+		else:
+			Global.add_item(item, true)
+			is_assigned = true
+		update_assignment_status()
