@@ -1,0 +1,147 @@
+[gd_scene load_steps=11 format=3 uid="uid://bwjadjll5nujd"]
+
+[ext_resource type="Texture2D" uid="uid://c0dapxnsclj88" path="res://Assets/Graphics/Assets/Forest-and-Trees-Free-Pixel-Backgrounds9.png" id="1_s84ff"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_wrdi1"]
+[ext_resource type="FontFile" uid="uid://dci2rru584vmr" path="res://Assets/Graphics/Assets/PixelatedDisplay.ttf" id="2_l7g3q"]
+[ext_resource type="Shader" path="res://Scenes/MainMenu/main_menu.gdshader" id="3_xx7yo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tgaa"]
+texture = ExtResource("1_s84ff")
+modulate_color = Color(0.517184, 0.517184, 0.517184, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhfgo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8one"]
+bg_color = Color(0.686955, 0.686841, 0.644741, 0.670588)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0, 0, 0, 0.513726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7g3w"]
+bg_color = Color(0.86673, 0.866767, 0.844141, 0.670588)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0, 0, 0, 0.513726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0rh2"]
+bg_color = Color(1, 0.898027, 0.848056, 0.203922)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0.273873, 0.273873, 0.273873, 0.513726)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jha7e"]
+shader = ExtResource("3_xx7yo")
+shader_parameter/height = 3.0
+shader_parameter/speed = 3.0
+shader_parameter/frequency = 1.0
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrdi1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5tgaa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -537.0
+offset_top = -104.0
+offset_right = -142.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Button1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_pressed_color = Color(1, 0.634142, 0.442994, 1)
+theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qhfgo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k8one")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g7g3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0rh2")
+text = "Start game
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_pressed_color = Color(1, 0.634142, 0.442994, 1)
+theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qhfgo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k8one")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g7g3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0rh2")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_pressed_color = Color(1, 0.634142, 0.442994, 1)
+theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qhfgo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k8one")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g7g3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0rh2")
+text = "Exit
+"
+
+[node name="Label" type="Label" parent="."]
+material = SubResource("ShaderMaterial_jha7e")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -621.0
+offset_top = -235.0
+offset_right = -79.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.780266, 0.670489, 1)
+theme_override_colors/font_shadow_color = Color(0.418469, 0.31692, 0.238211, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_l7g3q")
+theme_override_font_sizes/font_size = 49
+text = "Heroes of Demontide"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button1" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
