@@ -1,0 +1,141 @@
+[gd_scene load_steps=10 format=3 uid="uid://tha8sk8qhg5h"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_gcvp5"]
+[ext_resource type="Shader" path="res://Scenes/pause_menu.gdshader" id="1_kkkl3"]
+[ext_resource type="Shader" path="res://Scenes/pause_menu_bgblur.gdshader" id="1_or6a1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_enqsk"]
+shader = ExtResource("1_or6a1")
+shader_parameter/lod = 3.623
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oht38"]
+bg_color = Color(1, 0.898027, 0.848056, 0.203922)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0.273873, 0.273873, 0.273873, 0.513726)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b7o7w"]
+shader = ExtResource("1_kkkl3")
+shader_parameter/height = 3.0
+shader_parameter/speed = 1.9
+shader_parameter/frequency = 3.5
+
+[sub_resource type="Animation" id="Animation_4s5x7"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.607, 3.623]
+}
+
+[sub_resource type="Animation" id="Animation_eqgwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.623]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvq4a"]
+_data = {
+"RESET": SubResource("Animation_eqgwo"),
+"blur": SubResource("Animation_4s5x7")
+}
+
+[node name="Pause_Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gcvp5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 0)
+self_modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_enqsk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -167.0
+offset_right = 119.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oht38")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+modulate = Color(1, 1, 1, 0.968627)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 33
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+material = SubResource("ShaderMaterial_b7o7w")
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+theme_override_font_sizes/font_size = 29
+text = "Paused..."
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.635294, 0.443137, 1)
+theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+text = "Resume"
+
+[node name="Settings" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.635294, 0.443137, 1)
+theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+text = "Settings"
+
+[node name="Exit" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.635294, 0.443137, 1)
+theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+text = "Exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mvq4a")
+}
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
