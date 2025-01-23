@@ -19,6 +19,7 @@ config/icon="res://lotus.svg"
 
 Global="*res://Scripts/Global.gd"
 Debug="*res://Scripts/debug.gd"
+Persistence="*res://Scripts/Persistence.gd"
 
 [display]
 
