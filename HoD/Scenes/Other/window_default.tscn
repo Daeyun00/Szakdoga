@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bccp5hclu5gk"]
+[gd_scene load_steps=3 format=3 uid="uid://bccp5hclu5gk"]
 
 [ext_resource type="Texture2D" uid="uid://det8bqkv5ymhk" path="res://Assets/Ninepatch/window.png" id="1_jqfw1"]
+[ext_resource type="Script" path="res://Scripts/window_default.gd" id="2_3pmct"]
 
 [node name="Window_Default" type="NinePatchRect"]
 size_flags_horizontal = 3
@@ -9,3 +10,4 @@ patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
+script = ExtResource("2_3pmct")

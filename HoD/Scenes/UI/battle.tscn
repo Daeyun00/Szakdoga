@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dk2q27uc065mt"]
+[gd_scene load_steps=8 format=3 uid="uid://dk2q27uc065mt"]
 
 [ext_resource type="Texture2D" uid="uid://bs4f5gtntb1a8" path="res://Assets/random fight bg/undefined - Imgur_page_0001.jpg" id="1_8dk2v"]
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
+[ext_resource type="Script" path="res://Scripts/battle.gd" id="1_kdno6"]
 [ext_resource type="FontVariation" uid="uid://bppspbqj0rwmh" path="res://Utility/themes/default_font.tres" id="2_q03yh"]
+[ext_resource type="Script" path="res://Scripts/Attack_Menu.gd" id="4_dtoku"]
 [ext_resource type="PackedScene" uid="uid://codr4bxbre4uq" path="res://Scenes/Entities/battle_ally.tscn" id="4_o04v0"]
 [ext_resource type="PackedScene" uid="uid://c14j6sxrgxwv" path="res://Scenes/Entities/battle_enemy.tscn" id="5_manfw"]
 
@@ -13,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kdno6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
@@ -49,37 +52,38 @@ offset_right = 548.0
 offset_bottom = 179.0
 size_flags_stretch_ratio = 2.29
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+[node name="AttackMenu" type="VBoxContainer" parent="Options"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_dtoku")
 
-[node name="Button" type="Button" parent="Options/VBoxContainer"]
+[node name="Button" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "fight
 "
 
-[node name="Button2" type="Button" parent="Options/VBoxContainer"]
+[node name="Button2" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Skills"
 
-[node name="Button3" type="Button" parent="Options/VBoxContainer"]
+[node name="Button3" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Item
 "
 
-[node name="Button4" type="Button" parent="Options/VBoxContainer"]
+[node name="Button4" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Guard"
 
-[node name="Button5" type="Button" parent="Options/VBoxContainer"]
+[node name="Button5" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Flee"
@@ -141,3 +145,6 @@ offset_left = 267.0
 offset_top = 659.0
 offset_right = 341.0
 offset_bottom = 723.0
+
+[connection signal="button_focused" from="Options/AttackMenu" to="." method="_on_v_box_container_button_focused"]
+[connection signal="button_pressed" from="Options/AttackMenu" to="." method="_on_v_box_container_button_pressed"]
