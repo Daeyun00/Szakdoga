@@ -24,6 +24,21 @@ shader_parameter/height = 3.0
 shader_parameter/speed = 1.9
 shader_parameter/frequency = 3.5
 
+[sub_resource type="Animation" id="Animation_eqgwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.623]
+}
+
 [sub_resource type="Animation" id="Animation_4s5x7"]
 resource_name = "blur"
 length = 0.3
@@ -38,21 +53,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [4.607, 3.623]
-}
-
-[sub_resource type="Animation" id="Animation_eqgwo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [3.623]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mvq4a"]
