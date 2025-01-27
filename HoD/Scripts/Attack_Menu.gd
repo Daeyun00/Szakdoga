@@ -7,7 +7,7 @@ var index: int = 0
 
 func _ready() -> void:
 	for button in get_buttons():
-		button.focused_entered.connect(_on_Button_focused.bind(button))
+		button.focus_entered.connect(_on_Button_focused.bind(button))
 		button.pressed.connect(_on_Button_pressed.bind(button))
 
 func get_buttons() -> Array:
