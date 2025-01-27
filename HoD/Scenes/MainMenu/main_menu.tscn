@@ -1,24 +1,23 @@
 [gd_scene load_steps=19 format=3 uid="uid://bwjadjll5nujd"]
 
-[ext_resource type="Texture2D" uid="uid://c0dapxnsclj88" path="res://Assets/Graphics/Assets/Forest-and-Trees-Free-Pixel-Backgrounds9.png" id="1_s84ff"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_wrdi1"]
 [ext_resource type="FontFile" uid="uid://dci2rru584vmr" path="res://Assets/Graphics/Assets/PixelatedDisplay.ttf" id="2_l7g3q"]
+[ext_resource type="Texture2D" uid="uid://cxlssq44e2hay" path="res://Assets/Bgs/Clouds/Clouds 3/1.png" id="3_qg3aw"]
 [ext_resource type="Shader" path="res://Scenes/MainMenu/main_menu.gdshader" id="3_xx7yo"]
 [ext_resource type="Script" path="res://Scripts/optionsbutton.gd" id="3_y5k07"]
 [ext_resource type="Script" path="res://Scripts/audio.gd" id="5_5yelx"]
 [ext_resource type="Script" path="res://Scripts/video.gd" id="5_68ucu"]
-[ext_resource type="Texture2D" uid="uid://cf6houlvyapvw" path="res://Assets/Graphics/Assets/origbig.png" id="6_cqdfj"]
 [ext_resource type="PackedScene" uid="uid://dcohejogf88sa" path="res://Scenes/action_button.tscn" id="7_ledkc"]
 [ext_resource type="Script" path="res://Scripts/backbutton.gd" id="8_7u5sx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tgaa"]
-texture = ExtResource("1_s84ff")
+texture = ExtResource("3_qg3aw")
 modulate_color = Color(0.517184, 0.517184, 0.517184, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhfgo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8one"]
-bg_color = Color(0.686955, 0.686841, 0.644741, 0.670588)
+bg_color = Color(0.215902, 0.215902, 0.215902, 0.513726)
 corner_radius_top_left = 17
 corner_radius_top_right = 17
 corner_radius_bottom_right = 17
@@ -38,7 +37,7 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0rh2"]
-bg_color = Color(1, 0.898027, 0.848056, 0.203922)
+bg_color = Color(0.12187, 0.129843, 0.205043, 1)
 corner_radius_top_left = 17
 corner_radius_top_right = 17
 corner_radius_bottom_right = 17
@@ -60,8 +59,19 @@ shader_parameter/speed = 3.0
 shader_parameter/frequency = 1.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm02u"]
-texture = ExtResource("6_cqdfj")
-modulate_color = Color(0.517647, 0.517647, 0.517647, 0.709804)
+texture = ExtResource("3_qg3aw")
+modulate_color = Color(1, 1, 1, 0.709804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwdrw"]
+content_margin_left = 10.0
+bg_color = Color(0.473976, 0.473976, 0.473976, 0.513726)
+border_color = Color(0.27451, 0.27451, 0.27451, 0.513726)
+border_blend = true
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_size = 3
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -78,6 +88,7 @@ script = ExtResource("1_wrdi1")
 
 [node name="Panel" type="Panel" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,16 +99,17 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_5tgaa")
 
 [node name="Menu" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -537.0
-offset_top = -104.0
-offset_right = -142.0
-offset_bottom = 188.0
+offset_left = -197.5
+offset_top = -146.0
+offset_right = 197.5
+offset_bottom = 146.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
@@ -105,8 +117,8 @@ theme_override_constants/separation = 25
 [node name="Start" type="Button" parent="Menu"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_pressed_color = Color(1, 0.634142, 0.442994, 1)
-theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.0737517, 0.0795674, 0.134604, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 33
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qhfgo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k8one")
@@ -118,8 +130,8 @@ text = "Start game
 [node name="Options" type="Button" parent="Menu"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_pressed_color = Color(1, 0.634142, 0.442994, 1)
-theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.0737517, 0.0795674, 0.134604, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 33
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qhfgo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k8one")
@@ -131,8 +143,8 @@ script = ExtResource("3_y5k07")
 [node name="Exit" type="Button" parent="Menu"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_pressed_color = Color(1, 0.634142, 0.442994, 1)
-theme_override_colors/font_color = Color(1, 0.780392, 0.670588, 1)
+theme_override_colors/font_pressed_color = Color(0.0737517, 0.0795674, 0.134604, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 33
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qhfgo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_k8one")
@@ -144,6 +156,7 @@ script = SubResource("GDScript_bo2mj")
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 material = SubResource("ShaderMaterial_jha7e")
 layout_mode = 1
 anchors_preset = 8
@@ -151,14 +164,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -621.0
-offset_top = -235.0
-offset_right = -79.0
-offset_bottom = -121.0
+offset_left = -271.0
+offset_top = -260.0
+offset_right = 271.0
+offset_bottom = -146.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.780266, 0.670489, 1)
-theme_override_colors/font_shadow_color = Color(0.418469, 0.31692, 0.238211, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.207843, 0.219608, 0.329412, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 4
 theme_override_fonts/font = ExtResource("2_l7g3q")
@@ -171,8 +184,7 @@ vertical_alignment = 1
 
 [node name="Settings" type="TabContainer" parent="Ui"]
 unique_name_in_owner = true
-visible = false
-modulate = Color(1, 0.780392, 0.670588, 1)
+modulate = Color(0.820319, 0.829654, 0.904541, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -232,16 +244,28 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 7
+theme_override_styles/focus = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 
 [node name="Borderless" type="CheckBox" parent="Ui/Settings/Video/HBoxContainer/Checks"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 7
+theme_override_styles/focus = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 
 [node name="VSync" type="OptionButton" parent="Ui/Settings/Video/HBoxContainer/Checks"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 7
+theme_override_styles/focus = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 selected = 0
 item_count = 4
 popup/item_0/text = "Enabled"
