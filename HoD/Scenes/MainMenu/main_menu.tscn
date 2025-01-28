@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bwjadjll5nujd"]
+[gd_scene load_steps=28 format=3 uid="uid://bwjadjll5nujd"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_wrdi1"]
 [ext_resource type="FontFile" uid="uid://dci2rru584vmr" path="res://Assets/Graphics/Assets/PixelatedDisplay.ttf" id="2_l7g3q"]
@@ -7,12 +7,26 @@
 [ext_resource type="Script" path="res://Scripts/optionsbutton.gd" id="3_y5k07"]
 [ext_resource type="Script" path="res://Scripts/audio.gd" id="5_5yelx"]
 [ext_resource type="Script" path="res://Scripts/video.gd" id="5_68ucu"]
+[ext_resource type="Texture2D" uid="uid://biydidlb05e5h" path="res://Assets/Bgs/Clouds/Clouds 3/2.png" id="5_k1b4a"]
+[ext_resource type="Shader" path="res://Themes & Styleboxes/main_menu.gdshader" id="5_t0po6"]
+[ext_resource type="Texture2D" uid="uid://car0v1qrcuu8o" path="res://Assets/Bgs/Clouds/Clouds 3/3.png" id="6_0t0d5"]
+[ext_resource type="Texture2D" uid="uid://l4iol1xhy52n" path="res://Assets/Bgs/Clouds/Clouds 3/4.png" id="7_kpy4f"]
 [ext_resource type="PackedScene" uid="uid://dcohejogf88sa" path="res://Scenes/action_button.tscn" id="7_ledkc"]
 [ext_resource type="Script" path="res://Scripts/backbutton.gd" id="8_7u5sx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tgaa"]
 texture = ExtResource("3_qg3aw")
 modulate_color = Color(0.517184, 0.517184, 0.517184, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jha7e"]
+shader = ExtResource("3_xx7yo")
+shader_parameter/height = 3.0
+shader_parameter/speed = 3.0
+shader_parameter/frequency = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vmab"]
+shader = ExtResource("5_t0po6")
+shader_parameter/speed = 0.005
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhfgo"]
 
@@ -52,19 +66,67 @@ script/source = "extends Button
 @onready var settings = %Settings
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jha7e"]
-shader = ExtResource("3_xx7yo")
-shader_parameter/height = 3.0
-shader_parameter/speed = 3.0
-shader_parameter/frequency = 1.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01vnr"]
+content_margin_left = 9.0
+content_margin_top = 9.0
+content_margin_right = 9.0
+content_margin_bottom = 9.0
+bg_color = Color(0.199663, 0.25628, 0.360228, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.125199, 0.166049, 0.241107, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwuan"]
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.196078, 0.25098, 0.356863, 0.819608)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0.239216, 0.305882, 0.423529, 0.368627)
+border_blend = true
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+corner_detail = 3
+expand_margin_left = 3.0
+expand_margin_top = 9.0
+expand_margin_right = 3.0
+expand_margin_bottom = 9.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm02u"]
 texture = ExtResource("3_qg3aw")
 modulate_color = Color(1, 1, 1, 0.709804)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_um410"]
+content_margin_left = 9.0
+content_margin_top = 9.0
+content_margin_right = 9.0
+content_margin_bottom = 9.0
+bg_color = Color(0.193612, 0.249, 0.3507, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.125199, 0.166049, 0.241107, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwdrw"]
 content_margin_left = 10.0
-bg_color = Color(0.473976, 0.473976, 0.473976, 0.513726)
+bg_color = Color(0.27451, 0.345098, 0.47451, 1)
 border_color = Color(0.27451, 0.27451, 0.27451, 0.513726)
 border_blend = true
 corner_radius_top_left = 9
@@ -72,6 +134,23 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_267cy"]
+content_margin_left = 9.0
+content_margin_top = 9.0
+content_margin_right = 9.0
+content_margin_bottom = 9.0
+bg_color = Color(0.273376, 0.345093, 0.475657, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+corner_detail = 1
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+shadow_size = 1
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -88,7 +167,6 @@ script = ExtResource("1_wrdi1")
 
 [node name="Panel" type="Panel" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,9 +175,66 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_5tgaa")
 
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+top_level = true
+material = SubResource("ShaderMaterial_jha7e")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -260.0
+offset_right = 271.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.207843, 0.219608, 0.329412, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_l7g3q")
+theme_override_font_sizes/font_size = 49
+text = "Heroes of Demontide"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -16.0
+offset_right = 551.0
+offset_bottom = 308.0
+texture = ExtResource("5_k1b4a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.847474, 0.847474, 0.847474, 1)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3vmab")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0t0d5")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visibility_layer = 524288
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3vmab")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_kpy4f")
+
 [node name="Menu" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -154,37 +289,12 @@ text = "Exit
 "
 script = SubResource("GDScript_bo2mj")
 
-[node name="Label" type="Label" parent="."]
-unique_name_in_owner = true
-visible = false
-material = SubResource("ShaderMaterial_jha7e")
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -260.0
-offset_right = 271.0
-offset_bottom = -146.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.207843, 0.219608, 0.329412, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 4
-theme_override_fonts/font = ExtResource("2_l7g3q")
-theme_override_font_sizes/font_size = 49
-text = "Heroes of Demontide"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Ui" type="CanvasLayer" parent="."]
 
 [node name="Settings" type="TabContainer" parent="Ui"]
 unique_name_in_owner = true
-modulate = Color(0.820319, 0.829654, 0.904541, 1)
+visible = false
+modulate = Color(1, 1, 1, 0.854902)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -193,7 +303,13 @@ grow_vertical = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_font_sizes/font_size = 33
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_01vnr")
+theme_override_styles/tab_disabled = SubResource("StyleBoxFlat_01vnr")
+theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_gwuan")
 theme_override_styles/panel = SubResource("StyleBoxTexture_cm02u")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_01vnr")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_um410")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_01vnr")
 current_tab = 0
 
 [node name="Video" type="TabBar" parent="Ui/Settings"]
@@ -285,6 +401,8 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 43
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 text = "Back
 "
 alignment = 0
@@ -340,6 +458,7 @@ size_flags_stretch_ratio = 0.0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_styles/slider = SubResource("StyleBoxFlat_267cy")
 max_value = 1.0
 step = 0.05
 value = 1.0
@@ -348,6 +467,7 @@ value = 1.0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_styles/slider = SubResource("StyleBoxFlat_267cy")
 max_value = 1.0
 step = 0.05
 
@@ -355,6 +475,7 @@ step = 0.05
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_styles/slider = SubResource("StyleBoxFlat_267cy")
 max_value = 1.0
 step = 0.05
 
@@ -367,6 +488,8 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 43
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 text = "Back
 "
 alignment = 0
@@ -421,20 +544,24 @@ layout_mode = 2
 [node name="ActionButton" parent="Ui/Settings/Controls/HBoxContainer/VBoxContainer2" instance=ExtResource("7_ledkc")]
 layout_mode = 2
 size_flags_vertical = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 
 [node name="ActionButton2" parent="Ui/Settings/Controls/HBoxContainer/VBoxContainer2" instance=ExtResource("7_ledkc")]
 layout_mode = 2
 size_flags_vertical = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 action = "ui_down"
 
 [node name="ActionButton3" parent="Ui/Settings/Controls/HBoxContainer/VBoxContainer2" instance=ExtResource("7_ledkc")]
 layout_mode = 2
 size_flags_vertical = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 action = "ui_right"
 
 [node name="ActionButton4" parent="Ui/Settings/Controls/HBoxContainer/VBoxContainer2" instance=ExtResource("7_ledkc")]
 layout_mode = 2
 size_flags_vertical = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 action = "ui_left"
 
 [node name="Back" type="Button" parent="Ui/Settings/Controls"]
@@ -446,6 +573,8 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 43
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_xwdrw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwdrw")
 text = "Back
 "
 alignment = 0
