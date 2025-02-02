@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://di4qu83s7fapw"]
+
+[ext_resource type="Texture2D" uid="uid://d8rgsdsfj26l" path="res://Assets/Graphics/Assets/GUI.png" id="1_rooo4"]
+[ext_resource type="Script" path="res://Scripts/party_slot.gd" id="2_cm6sc"]
+
+[node name="PartySlot" type="NinePatchRect"]
+custom_minimum_size = Vector2(163, 53)
+offset_right = 163.0
+offset_bottom = 53.0
+mouse_filter = 1
+texture = ExtResource("1_rooo4")
+region_rect = Rect2(78.8927, 95.9213, 33.2739, 32.3747)
+patch_margin_left = 9
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+script = ExtResource("2_cm6sc")
+
+[node name="Name" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 15.0
+offset_right = 50.0
+offset_bottom = 35.0
+
+[node name="Icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 112.0
+offset_top = 5.0
+offset_right = 152.0
+offset_bottom = 45.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

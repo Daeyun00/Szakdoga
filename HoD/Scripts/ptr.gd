@@ -3,6 +3,7 @@ extends Node2D
 @onready var items = $Items
 @onready var items_spawn_area = $ItemSpawnArea
 @onready var collision_shape = $ItemSpawnArea/CollisionShape2D
+@onready var Ui = $Ui
 
 
 func _ready() -> void:

@@ -1,0 +1,351 @@
+[gd_scene load_steps=15 format=3 uid="uid://dpcx4eduhlg7f"]
+
+[ext_resource type="StyleBox" uid="uid://cxnbfwjhb7n2c" path="res://Themes & Styleboxes/hover_button.tres" id="1_idv6e"]
+[ext_resource type="StyleBox" uid="uid://dairl4xxnk5mw" path="res://Themes & Styleboxes/new_style_box_flat.tres" id="2_okg1e"]
+[ext_resource type="Texture2D" uid="uid://d8rgsdsfj26l" path="res://Assets/Graphics/Assets/GUI.png" id="3_sgr3r"]
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="3_uc2rs"]
+[ext_resource type="PackedScene" uid="uid://di4qu83s7fapw" path="res://Scenes/party_slot.tscn" id="4_axt8u"]
+[ext_resource type="Resource" uid="uid://gkx8223wwvx5" path="res://Scenes/UI/fino.tres" id="6_js784"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmkol"]
+
+[sub_resource type="Theme" id="Theme_8kpqv"]
+Button/font_sizes/font_size = 26
+Button/styles/focus = SubResource("StyleBoxEmpty_vmkol")
+Button/styles/hover = ExtResource("1_idv6e")
+Button/styles/normal = ExtResource("2_okg1e")
+
+[sub_resource type="Animation" id="Animation_n3v5g"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Party:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(905, 241)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Party:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(627, 322.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Menu:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_euh2m"]
+resource_name = "hide_menu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(627, 322.5), Vector2(1, 318)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_fhnf8"]
+resource_name = "hide_party"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Party:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(453, 247.5), Vector2(905, 241)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Party:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_nvfkh"]
+resource_name = "show_menu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 318), Vector2(627, 322.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ugnhj"]
+resource_name = "show_party"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Party:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(905, 241), Vector2(453, 247.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Party:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cvoa1"]
+_data = {
+"RESET": SubResource("Animation_n3v5g"),
+"hide_menu": SubResource("Animation_euh2m"),
+"hide_party": SubResource("Animation_fhnf8"),
+"show_menu": SubResource("Animation_nvfkh"),
+"show_party": SubResource("Animation_ugnhj")
+}
+
+[node name="Ui" type="Control" node_paths=PackedStringArray("menu", "party", "animation_player", "description", "party_description")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 1.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8kpqv")
+script = ExtResource("3_uc2rs")
+menu = NodePath("Menu")
+party = NodePath("Party")
+animation_player = NodePath("AnimationPlayer")
+description = NodePath("Party/Description")
+party_description = NodePath("Party/Description")
+
+[node name="Menu" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -61.5
+offset_right = 120.0
+offset_bottom = 127.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sgr3r")
+region_rect = Rect2(0.781509, 32.4421, 45.5126, 46.9208)
+patch_margin_left = 7
+patch_margin_top = 8
+patch_margin_right = 6
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -77.5
+offset_right = 75.0
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Resume"
+
+[node name="Party" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Party"
+
+[node name="Quit" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="Inventory" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Party" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 222.0
+offset_top = -143.0
+offset_right = 772.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sgr3r")
+region_rect = Rect2(-0.538795, 33.2449, 46.7633, 45.5043)
+patch_margin_left = 8
+patch_margin_top = 7
+patch_margin_right = 6
+patch_margin_bottom = 7
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Party"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 56.0
+offset_right = 264.0
+offset_bottom = 225.0
+
+[node name="PartySlot2" parent="Party/VBoxContainer" instance=ExtResource("4_axt8u")]
+custom_minimum_size = Vector2(219, 73)
+layout_mode = 2
+character = ExtResource("6_js784")
+
+[node name="PartySlot3" parent="Party/VBoxContainer" instance=ExtResource("4_axt8u")]
+custom_minimum_size = Vector2(219, 73)
+layout_mode = 2
+
+[node name="PartySlot" parent="Party/VBoxContainer" instance=ExtResource("4_axt8u")]
+custom_minimum_size = Vector2(219, 73)
+layout_mode = 2
+
+[node name="Description" type="NinePatchRect" parent="Party"]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 80.0
+offset_right = 495.0
+offset_bottom = 259.0
+texture = ExtResource("3_sgr3r")
+region_rect = Rect2(79.6317, 96.2479, 32.4425, 31.7739)
+patch_margin_left = 8
+patch_margin_top = 7
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="Party/Description"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = 17.0
+offset_right = 49.5
+offset_bottom = 109.0
+grow_horizontal = 2
+stretch_mode = 4
+
+[node name="Description" type="RichTextLabel" parent="Party/Description"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 93.0
+offset_right = 80.0
+offset_bottom = 169.0
+grow_horizontal = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cvoa1")
+}
+
+[connection signal="pressed" from="Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Party" to="." method="_on_party_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
