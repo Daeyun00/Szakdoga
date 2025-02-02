@@ -6,8 +6,10 @@ extends Control
 func _ready() -> void:
 	_options_menu.button_focus(0)
 
-func _on_attack_menu_container_button_focused(button: BaseButton) -> void:
+func _on_v_box_container_button_focused(button: BaseButton) -> void:
 	pass
 	
-func _on_attack_menu_button_pressed(button: BaseButton) -> void:
+
+
+func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 	print(button)
