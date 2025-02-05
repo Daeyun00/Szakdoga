@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://c14j6sxrgxwv"]
+[gd_scene load_steps=19 format=3 uid="uid://c14j6sxrgxwv"]
 
 [ext_resource type="Texture2D" uid="uid://dung2pen6u2j6" path="res://Assets/Enemies/Slimes/slime_idle2.png" id="1_xubi6"]
+[ext_resource type="Script" path="res://Scripts/Entities/Hostiles/slime.gd" id="1_yrspg"]
 [ext_resource type="Texture2D" uid="uid://3s58ojpcitwx" path="res://Assets/Enemies/Slimes/slime_idle3.png" id="2_flbp0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cj0s"]
@@ -114,12 +115,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Battle_enemy" type="TextureButton"]
-offset_left = 323.0
-offset_top = 598.0
-offset_right = 397.0
-offset_bottom = 662.0
-stretch_mode = 0
+[node name="Slime" type="Button"]
+offset_right = 71.0
+offset_bottom = 62.0
+script = ExtResource("1_yrspg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(52, 18)

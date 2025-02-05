@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://1ympmth3dktk"]
+
+[ext_resource type="Texture2D" uid="uid://css1bduwlostk" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="1_ankev"]
+[ext_resource type="Script" path="res://Scripts/Entities/Allies/thief.gd" id="1_g56dv"]
+[ext_resource type="Texture2D" uid="uid://bp1chu7wmgf18" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_1.png" id="2_awyip"]
+[ext_resource type="Texture2D" uid="uid://h58ta8oshxrq" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_2.png" id="3_qtiq3"]
+[ext_resource type="Texture2D" uid="uid://cc33h0h6qhf62" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_3.png" id="4_lrl2b"]
+[ext_resource type="Texture2D" uid="uid://ckdj5ic2vwsef" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_4.png" id="5_fqqgf"]
+[ext_resource type="Texture2D" uid="uid://b1q3wi7wvlbmr" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_5.png" id="6_fslws"]
+[ext_resource type="Texture2D" uid="uid://cs8ywfelvdi7b" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_6.png" id="7_cvg10"]
+[ext_resource type="Texture2D" uid="uid://04kqvebows6n" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_7.png" id="8_peovh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2klb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ankev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_awyip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qtiq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lrl2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fqqgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fslws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cvg10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_peovh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Thief" type="Button"]
+offset_left = 811.0
+offset_top = 605.0
+offset_right = 864.0
+offset_bottom = 691.0
+script = ExtResource("1_g56dv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(21.9999, 27.9999)
+scale = Vector2(1.995, 2.11818)
+sprite_frames = SubResource("SpriteFrames_2klb5")
+autoplay = "default"
+flip_h = true

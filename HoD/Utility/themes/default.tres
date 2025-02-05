@@ -4,7 +4,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jguw5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gba7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t2bd"]
+bg_color = Color(0.483422, 0.341715, 1, 0.470588)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xtwxs"]
 
@@ -13,7 +14,7 @@
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
-Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_focus_color = Color(0.691039, 0.615586, 1, 1)
 Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(1, 1, 1, 1)
@@ -29,8 +30,9 @@ Button/constants/outline_size = 0
 Button/font_sizes/font_size = 23
 Button/fonts/font = ExtResource("1_x7rh7")
 Button/styles/disabled = SubResource("StyleBoxEmpty_jguw5")
-Button/styles/focus = SubResource("StyleBoxEmpty_0gba7")
+Button/styles/focus = SubResource("StyleBoxFlat_3t2bd")
 Button/styles/hover = null
 Button/styles/normal = SubResource("StyleBoxEmpty_xtwxs")
 Button/styles/pressed = SubResource("StyleBoxEmpty_0jyb8")
+Label/font_sizes/font_size = 25
 VBoxContainer/constants/separation = 1

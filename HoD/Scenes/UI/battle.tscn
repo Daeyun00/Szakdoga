@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk2q27uc065mt"]
+[gd_scene load_steps=10 format=3 uid="uid://dk2q27uc065mt"]
 
 [ext_resource type="Texture2D" uid="uid://bs4f5gtntb1a8" path="res://Assets/random fight bg/undefined - Imgur_page_0001.jpg" id="1_8dk2v"]
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
 [ext_resource type="Script" path="res://Scripts/battle.gd" id="1_kdno6"]
 [ext_resource type="FontVariation" uid="uid://bppspbqj0rwmh" path="res://Utility/themes/default_font.tres" id="2_q03yh"]
 [ext_resource type="Script" path="res://Scripts/Attack_Menu.gd" id="4_dtoku"]
-[ext_resource type="PackedScene" uid="uid://codr4bxbre4uq" path="res://Scenes/Entities/battle_ally.tscn" id="4_o04v0"]
-[ext_resource type="PackedScene" uid="uid://c14j6sxrgxwv" path="res://Scenes/Entities/battle_enemy.tscn" id="5_manfw"]
+[ext_resource type="PackedScene" uid="uid://codr4bxbre4uq" path="res://Scenes/Entities/Hero.tscn" id="4_o04v0"]
+[ext_resource type="PackedScene" uid="uid://c14j6sxrgxwv" path="res://Scenes/Entities/Slime.tscn" id="5_manfw"]
+[ext_resource type="PackedScene" uid="uid://bjvkuq7dm0bfu" path="res://Scenes/Entities/Mage.tscn" id="7_3yu3a"]
+[ext_resource type="PackedScene" uid="uid://1ympmth3dktk" path="res://Scenes/Entities/Thief.tscn" id="8_mbssg"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -39,9 +41,126 @@ alignment = 1
 [node name="Enemies" parent="Top" instance=ExtResource("1_j3yfj")]
 layout_mode = 2
 
+[node name="Enemy1" type="Label" parent="Top/Enemies"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 75.0
+offset_bottom = 40.0
+text = "Slime:
+"
+
+[node name="Enemy1_HP_label2" type="Label" parent="Top/Enemies/Enemy1"]
+layout_mode = 0
+offset_left = 79.0
+offset_right = 156.0
+offset_bottom = 30.0
+text = "0/0 HP"
+
+[node name="Enemy2" type="Label" parent="Top/Enemies"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 40.0
+offset_right = 75.0
+offset_bottom = 70.0
+text = "Slime:"
+
+[node name="Enemy2_HP_label3" type="Label" parent="Top/Enemies/Enemy2"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 1.0
+offset_right = 156.0
+offset_bottom = 31.0
+text = "0/0 HP"
+
+[node name="Enemy3" type="Label" parent="Top/Enemies"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 70.0
+offset_right = 75.0
+offset_bottom = 100.0
+text = "Slime:
+"
+
+[node name="Enemy3_HP_label4" type="Label" parent="Top/Enemies/Enemy3"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 2.0
+offset_right = 156.0
+offset_bottom = 32.0
+text = "0/0 HP"
+
 [node name="Players" parent="Top" instance=ExtResource("1_j3yfj")]
 layout_mode = 2
 size_flags_stretch_ratio = 1.66
+
+[node name="Hero_label" type="Label" parent="Top/Players"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 18.0
+offset_right = 103.0
+offset_bottom = 48.0
+text = "Hero:"
+
+[node name="Hero_HP_label" type="Label" parent="Top/Players/Hero_label"]
+layout_mode = 0
+offset_left = 87.0
+offset_right = 164.0
+offset_bottom = 30.0
+text = "0/0 HP"
+
+[node name="Hero_rage_label" type="Label" parent="Top/Players/Hero_label"]
+layout_mode = 0
+offset_left = 213.0
+offset_right = 319.0
+offset_bottom = 30.0
+text = "0/0 Rage"
+
+[node name="Mage_label" type="Label" parent="Top/Players"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 59.0
+offset_right = 108.0
+offset_bottom = 89.0
+text = "Mage:"
+
+[node name="Mage_HP_label" type="Label" parent="Top/Players/Mage_label"]
+layout_mode = 0
+offset_left = 87.0
+offset_right = 164.0
+offset_bottom = 30.0
+text = "0/0 HP"
+
+[node name="Mage_mana_label" type="Label" parent="Top/Players/Mage_label"]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 1.0
+offset_right = 327.0
+offset_bottom = 31.0
+text = "0/0 Mana"
+
+[node name="Thief_label" type="Label" parent="Top/Players"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 104.0
+offset_right = 107.0
+offset_bottom = 134.0
+text = "Thief:"
+
+[node name="Thief_HP_label" type="Label" parent="Top/Players/Thief_label"]
+layout_mode = 0
+offset_left = 87.0
+offset_right = 136.0
+offset_bottom = 30.0
+text = "0/0 HP"
+
+[node name="Thief_combo_label" type="Label" parent="Top/Players/Thief_label"]
+layout_mode = 0
+offset_left = 213.0
+offset_top = -2.0
+offset_right = 337.0
+offset_bottom = 28.0
+text = "0/0 Combo"
 
 [node name="Options" parent="." instance=ExtResource("1_j3yfj")]
 custom_minimum_size = Vector2(150, 150)
@@ -61,34 +180,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_dtoku")
 
-[node name="Button" type="Button" parent="Options/AttackMenu"]
+[node name="Fight_button" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "fight
 "
 
-[node name="Button2" type="Button" parent="Options/AttackMenu"]
+[node name="Skill_button" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Skills"
 
-[node name="Button3" type="Button" parent="Options/AttackMenu"]
+[node name="Item_button" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Item
 "
 
-[node name="Button4" type="Button" parent="Options/AttackMenu"]
+[node name="Guard_button" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Guard"
 
-[node name="Button5" type="Button" parent="Options/AttackMenu"]
+[node name="Flee_button" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Flee"
 
-[node name="Players" type="Control" parent="."]
+[node name="Allies" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,28 +215,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Battle_ally" parent="Players" instance=ExtResource("4_o04v0")]
+[node name="Hero" parent="Allies" instance=ExtResource("4_o04v0")]
 layout_mode = 0
-offset_left = 738.0
-offset_top = 618.0
-offset_right = 791.0
-offset_bottom = 704.0
+offset_left = 743.0
+offset_top = 653.0
+offset_right = 796.0
+offset_bottom = 739.0
 
-[node name="Battle_ally2" parent="Players" instance=ExtResource("4_o04v0")]
+[node name="Mage" parent="Allies" instance=ExtResource("7_3yu3a")]
 layout_mode = 0
-offset_left = 851.0
-offset_top = 659.0
-offset_right = 904.0
-offset_bottom = 745.0
-
-[node name="Battle_ally3" parent="Players" instance=ExtResource("4_o04v0")]
-layout_mode = 0
-offset_left = 951.0
+offset_left = 832.0
 offset_top = 598.0
-offset_right = 1004.0
+offset_right = 885.0
 offset_bottom = 684.0
 
-[node name="Enemies" type="Control" parent="."]
+[node name="Thief" parent="Allies" instance=ExtResource("8_mbssg")]
+layout_mode = 0
+offset_left = 947.0
+offset_top = 641.0
+offset_right = 1000.0
+offset_bottom = 727.0
+
+[node name="Hostiles" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -125,26 +244,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Battle_enemy" parent="Enemies" instance=ExtResource("5_manfw")]
+[node name="Slime" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 393.0
-offset_top = 659.0
-offset_right = 467.0
-offset_bottom = 723.0
+offset_left = 443.0
+offset_top = 653.0
+offset_right = 514.0
+offset_bottom = 715.0
 
-[node name="Battle_enemy2" parent="Enemies" instance=ExtResource("5_manfw")]
+[node name="Slime2" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 319.0
-offset_top = 696.0
-offset_right = 393.0
-offset_bottom = 760.0
+offset_left = 344.0
+offset_top = 694.0
+offset_right = 415.0
+offset_bottom = 756.0
 
-[node name="Battle_enemy3" parent="Enemies" instance=ExtResource("5_manfw")]
+[node name="Slime3" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 267.0
-offset_top = 659.0
-offset_right = 341.0
-offset_bottom = 723.0
+offset_left = 273.0
+offset_top = 653.0
+offset_right = 344.0
+offset_bottom = 715.0
 
 [connection signal="button_focused" from="Options/AttackMenu" to="." method="_on_v_box_container_button_focused"]
 [connection signal="button_pressed" from="Options/AttackMenu" to="." method="_on_v_box_container_button_pressed"]

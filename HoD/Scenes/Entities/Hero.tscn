@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://codr4bxbre4uq"]
+[gd_scene load_steps=11 format=3 uid="uid://codr4bxbre4uq"]
 
+[ext_resource type="Script" path="res://Scripts/Entities/Allies/hero.gd" id="1_rhcax"]
 [ext_resource type="Texture2D" uid="uid://css1bduwlostk" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="1_wf12w"]
 [ext_resource type="Texture2D" uid="uid://bp1chu7wmgf18" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_1.png" id="2_sbbyi"]
 [ext_resource type="Texture2D" uid="uid://h58ta8oshxrq" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_2.png" id="3_05d1o"]
@@ -41,11 +42,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Battle_ally" type="Button"]
+[node name="Hero" type="Button"]
 offset_left = 811.0
 offset_top = 605.0
 offset_right = 864.0
 offset_bottom = 691.0
+script = ExtResource("1_rhcax")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(21.9999, 27.9999)

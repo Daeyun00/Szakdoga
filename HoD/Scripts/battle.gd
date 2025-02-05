@@ -12,4 +12,16 @@ func _on_v_box_container_button_focused(button: BaseButton) -> void:
 
 
 func _on_v_box_container_button_pressed(button: BaseButton) -> void:
-	print(button)
+	match button.name:
+		"Fight_button":
+			print("Fight")
+		"Skill_button":
+			print("Skill")
+		"Item_button":
+			print("Item")
+		"Guard_button":
+			print("Guard")
+		"Flee_button":
+			print("Flee")
+		_:
+			print("o_o")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjvkuq7dm0bfu"]
+
+[ext_resource type="Texture2D" uid="uid://css1bduwlostk" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="1_7l5cs"]
+[ext_resource type="Script" path="res://Scripts/Entities/Allies/mage.gd" id="1_vbf37"]
+[ext_resource type="Texture2D" uid="uid://bp1chu7wmgf18" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_1.png" id="2_ynigh"]
+[ext_resource type="Texture2D" uid="uid://h58ta8oshxrq" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_2.png" id="3_t2d82"]
+[ext_resource type="Texture2D" uid="uid://cc33h0h6qhf62" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_3.png" id="4_da5xc"]
+[ext_resource type="Texture2D" uid="uid://ckdj5ic2vwsef" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_4.png" id="5_wupbw"]
+[ext_resource type="Texture2D" uid="uid://b1q3wi7wvlbmr" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_5.png" id="6_173t5"]
+[ext_resource type="Texture2D" uid="uid://cs8ywfelvdi7b" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_6.png" id="7_oarix"]
+[ext_resource type="Texture2D" uid="uid://04kqvebows6n" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_7.png" id="8_nl4o5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2klb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7l5cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ynigh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t2d82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_da5xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wupbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_173t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oarix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nl4o5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mage" type="Button"]
+offset_left = 811.0
+offset_top = 605.0
+offset_right = 864.0
+offset_bottom = 691.0
+script = ExtResource("1_vbf37")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(21.9999, 27.9999)
+scale = Vector2(1.995, 2.11818)
+sprite_frames = SubResource("SpriteFrames_2klb5")
+autoplay = "default"
+flip_h = true
