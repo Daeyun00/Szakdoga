@@ -103,18 +103,34 @@ offset_bottom = 48.0
 text = "Hero:"
 
 [node name="Hero_HP_label" type="Label" parent="Top/Players/Hero_label"]
-layout_mode = 0
-offset_left = 87.0
-offset_right = 164.0
-offset_bottom = 30.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.359
+anchor_right = 2.562
+anchor_bottom = 1.0
+offset_left = 0.0239944
+offset_right = 0.0319977
 text = "0/0 HP"
 
 [node name="Hero_rage_label" type="Label" parent="Top/Players/Hero_label"]
-layout_mode = 0
-offset_left = 213.0
-offset_right = 319.0
-offset_bottom = 30.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.328
+anchor_right = 4.984
+anchor_bottom = 1.0
+offset_left = 0.00799561
+offset_right = 0.0239868
 text = "0/0 Rage"
+
+[node name="Hero_status" type="Label" parent="Top/Players/Hero_label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.687
+anchor_right = 8.141
+anchor_bottom = 1.0
+offset_left = 0.0319824
+offset_right = -0.0240479
+text = ":3"
 
 [node name="Mage_label" type="Label" parent="Top/Players"]
 layout_mode = 0
@@ -125,19 +141,38 @@ offset_bottom = 89.0
 text = "Mage:"
 
 [node name="Mage_HP_label" type="Label" parent="Top/Players/Mage_label"]
-layout_mode = 0
-offset_left = 87.0
-offset_right = 164.0
-offset_bottom = 30.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.261
+anchor_right = 2.377
+anchor_bottom = 1.033
+offset_left = -0.00900269
+offset_right = -0.0130005
+offset_bottom = -0.99
 text = "0/0 HP"
 
 [node name="Mage_mana_label" type="Label" parent="Top/Players/Mage_label"]
-layout_mode = 0
-offset_left = 213.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.087
+anchor_right = 4.739
+anchor_bottom = 1.033
+offset_left = -0.00300598
 offset_top = 1.0
-offset_right = 327.0
-offset_bottom = 31.0
+offset_right = 0.00897217
+offset_bottom = 0.0100002
 text = "0/0 Mana"
+
+[node name="Mage_status" type="Label" parent="Top/Players/Mage_label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.203
+anchor_right = 7.551
+anchor_bottom = 1.033
+offset_left = -0.00701904
+offset_right = -0.019043
+offset_bottom = -0.99
+text = ":3"
 
 [node name="Thief_label" type="Label" parent="Top/Players"]
 layout_mode = 0
@@ -148,19 +183,39 @@ offset_bottom = 134.0
 text = "Thief:"
 
 [node name="Thief_HP_label" type="Label" parent="Top/Players/Thief_label"]
-layout_mode = 0
-offset_left = 87.0
-offset_right = 136.0
-offset_bottom = 30.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.279
+anchor_right = 2.412
+anchor_bottom = 0.933
+offset_left = 0.0279999
+offset_right = -28.016
+offset_bottom = 2.01
 text = "0/0 HP"
 
 [node name="Thief_combo_label" type="Label" parent="Top/Players/Thief_label"]
-layout_mode = 0
-offset_left = 213.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.132
+anchor_right = 4.956
+anchor_bottom = 1.0
+offset_left = 0.0239868
 offset_top = -2.0
-offset_right = 337.0
-offset_bottom = 28.0
+offset_right = -0.00802612
+offset_bottom = -2.0
 text = "0/0 Combo"
+
+[node name="Thief_status" type="Label" parent="Top/Players/Thief_label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.294
+anchor_right = 7.662
+anchor_bottom = 0.867
+offset_left = 0.00799561
+offset_top = -4.0
+offset_right = -0.0159912
+offset_bottom = -0.0100021
+text = ":3"
 
 [node name="Options" parent="." instance=ExtResource("1_j3yfj")]
 custom_minimum_size = Vector2(150, 150)
