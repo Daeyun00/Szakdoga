@@ -118,8 +118,8 @@ anchors_preset = -1
 anchor_left = 3.328
 anchor_right = 4.984
 anchor_bottom = 1.0
-offset_left = 0.00799561
-offset_right = 0.0239868
+offset_left = 19.008
+offset_right = 19.024
 text = "0/0 Rage"
 
 [node name="Hero_status" type="Label" parent="Top/Players/Hero_label"]
@@ -128,8 +128,8 @@ anchors_preset = -1
 anchor_left = 6.687
 anchor_right = 8.141
 anchor_bottom = 1.0
-offset_left = 0.0319824
-offset_right = -0.0240479
+offset_left = 29.032
+offset_right = 28.976
 text = ":3"
 
 [node name="Mage_label" type="Label" parent="Top/Players"]
@@ -157,10 +157,9 @@ anchors_preset = -1
 anchor_left = 3.087
 anchor_right = 4.739
 anchor_bottom = 1.033
-offset_left = -0.00300598
-offset_top = 1.0
-offset_right = 0.00897217
-offset_bottom = 0.0100002
+offset_left = 18.997
+offset_right = 19.009
+offset_bottom = -0.99
 text = "0/0 Mana"
 
 [node name="Mage_status" type="Label" parent="Top/Players/Mage_label"]
@@ -169,8 +168,8 @@ anchors_preset = -1
 anchor_left = 6.203
 anchor_right = 7.551
 anchor_bottom = 1.033
-offset_left = -0.00701904
-offset_right = -0.019043
+offset_left = 26.993
+offset_right = 26.981
 offset_bottom = -0.99
 text = ":3"
 
@@ -199,9 +198,9 @@ anchors_preset = -1
 anchor_left = 3.132
 anchor_right = 4.956
 anchor_bottom = 1.0
-offset_left = 0.0239868
+offset_left = 19.024
 offset_top = -2.0
-offset_right = -0.00802612
+offset_right = 18.992
 offset_bottom = -2.0
 text = "0/0 Combo"
 
@@ -211,9 +210,9 @@ anchors_preset = -1
 anchor_left = 6.294
 anchor_right = 7.662
 anchor_bottom = 0.867
-offset_left = 0.00799561
+offset_left = 27.008
 offset_top = -4.0
-offset_right = -0.0159912
+offset_right = 26.984
 offset_bottom = -0.0100021
 text = ":3"
 
@@ -237,8 +236,10 @@ script = ExtResource("4_dtoku")
 
 [node name="Fight_button" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../Hostiles/Slime")
+focus_neighbor_right = NodePath("../../../Allies/Hero")
 theme_override_fonts/font = ExtResource("2_q03yh")
-text = "fight
+text = "Attack
 "
 
 [node name="Skill_button" type="Button" parent="Options/AttackMenu"]
@@ -276,6 +277,7 @@ offset_left = 743.0
 offset_top = 653.0
 offset_right = 796.0
 offset_bottom = 739.0
+disabled = true
 
 [node name="Mage" parent="Allies" instance=ExtResource("7_3yu3a")]
 layout_mode = 0
@@ -283,6 +285,7 @@ offset_left = 832.0
 offset_top = 598.0
 offset_right = 885.0
 offset_bottom = 684.0
+disabled = true
 
 [node name="Thief" parent="Allies" instance=ExtResource("8_mbssg")]
 layout_mode = 0
@@ -290,12 +293,17 @@ offset_left = 947.0
 offset_top = 641.0
 offset_right = 1000.0
 offset_bottom = 727.0
+disabled = true
 
 [node name="Hostiles" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 2.0
+offset_right = 33.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -305,6 +313,7 @@ offset_left = 443.0
 offset_top = 653.0
 offset_right = 514.0
 offset_bottom = 715.0
+disabled = true
 
 [node name="Slime2" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
@@ -312,6 +321,7 @@ offset_left = 344.0
 offset_top = 694.0
 offset_right = 415.0
 offset_bottom = 756.0
+disabled = true
 
 [node name="Slime3" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
@@ -319,6 +329,14 @@ offset_left = 273.0
 offset_top = 653.0
 offset_right = 344.0
 offset_bottom = 715.0
+disabled = true
 
 [connection signal="button_focused" from="Options/AttackMenu" to="." method="_on_v_box_container_button_focused"]
 [connection signal="button_pressed" from="Options/AttackMenu" to="." method="_on_v_box_container_button_pressed"]
+[connection signal="focus_exited" from="Hostiles" to="." method="_on_hostiles_focus_exited"]
+[connection signal="focus_exited" from="Hostiles/Slime" to="." method="_on_slime_focus_exited"]
+[connection signal="pressed" from="Hostiles/Slime" to="." method="_on_slime_pressed"]
+[connection signal="focus_exited" from="Hostiles/Slime2" to="." method="_on_slime_2_focus_exited"]
+[connection signal="pressed" from="Hostiles/Slime2" to="." method="_on_slime_2_pressed"]
+[connection signal="focus_exited" from="Hostiles/Slime3" to="." method="_on_slime_3_focus_exited"]
+[connection signal="pressed" from="Hostiles/Slime3" to="." method="_on_slime_3_pressed"]
