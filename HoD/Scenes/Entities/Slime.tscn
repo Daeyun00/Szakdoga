@@ -127,3 +127,5 @@ sprite_frames = SubResource("SpriteFrames_gucyg")
 animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.953545
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

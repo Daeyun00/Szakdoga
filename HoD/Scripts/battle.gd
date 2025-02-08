@@ -2,12 +2,25 @@ extends Control
 
 @onready var _options: WindowDefault = $Options
 @onready var _options_menu: Menu = $Options/AttackMenu
+@onready var hostile1: Button = $Hostiles/Slime
+@onready var hostile2: Button = $Hostiles/Slime2
+@onready var hostile3: Button = $Hostiles/Slime3
+
+signal interacted(jezus: bool)
 
 var is_fight = false
 var is_skill = false
 var is_item = false
 var is_guard = false
 var is_flee = false
+
+var finished_action = false
+
+var selected_hostile = 0
+var slime1_select = false
+var slime2_select = false
+var slime3_select = false
+
 
 
 func _ready() -> void:
@@ -19,7 +32,10 @@ func _physics_process(delta: float) -> void:
 			$Hostiles/Slime.grab_focus()
 	var HeroHP = str($Allies/Hero.HP) + "/" + str($Allies/Hero.MaxHP) + " HP" 
 	$Top/Players/Hero_label/Hero_HP_label.text = HeroHP
-
+	if(!is_fight && !is_skill && !is_item && !is_guard && !is_flee):
+		if ($Hostiles/Slime.has_focus()):
+			$Options/AttackMenu/Flee_button.grab_focus()
+			
 func _on_v_box_container_button_focused(button: BaseButton) -> void:
 	pass
 
@@ -45,8 +61,17 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 		_:
 			print("o_o")
 
-func _fight_window(button: BaseButton):
+func _fight_window(button: BaseButton) -> void:
 	button.release_focus()
 	$Hostiles/Slime.grab_focus()
 	$Options.visible = false
+	#nem működik :)
 	
+	await interacted
+	print(":3")
+	
+
+
+#ez se működik valamiért :3
+func _on_slime_pressed() -> void:
+	print(":3")
