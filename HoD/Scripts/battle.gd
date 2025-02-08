@@ -75,3 +75,7 @@ func _fight_window(button: BaseButton) -> void:
 #ez se működik valamiért :3
 func _on_slime_pressed() -> void:
 	print(":3")
+
+
+func _on_item_button_pressed():
+	print("item")

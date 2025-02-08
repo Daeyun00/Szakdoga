@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjvkuq7dm0bfu"]
+[gd_scene load_steps=13 format=3 uid="uid://bjvkuq7dm0bfu"]
 
 [ext_resource type="Texture2D" uid="uid://css1bduwlostk" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="1_7l5cs"]
 [ext_resource type="Script" path="res://Scripts/Entities/Allies/mage.gd" id="1_vbf37"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b1q3wi7wvlbmr" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_5.png" id="6_173t5"]
 [ext_resource type="Texture2D" uid="uid://cs8ywfelvdi7b" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_6.png" id="7_oarix"]
 [ext_resource type="Texture2D" uid="uid://04kqvebows6n" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_7.png" id="8_nl4o5"]
+[ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/UI/Inventory_UI.tscn" id="10_vp2q2"]
+[ext_resource type="PackedScene" uid="uid://8w76m3278wqu" path="res://Scenes/UI/Inventory_Hotbar.tscn" id="11_l0qw4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2klb5"]
 animations = [{
@@ -55,3 +57,57 @@ scale = Vector2(1.995, 2.11818)
 sprite_frames = SubResource("SpriteFrames_2klb5")
 autoplay = "default"
 flip_h = true
+
+[node name="InteractUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 260.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "Press \"E\" to pick up"
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.376471, 0.321569, 1)
+
+[node name="Label" type="Label" parent="InventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 50.0
+offset_right = 37.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Inventory"
+
+[node name="Inventory_UI" parent="InventoryUI/ColorRect" instance=ExtResource("10_vp2q2")]
+
+[node name="Inventory_Hotbar" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Inventory_Hotbar" parent="Inventory_Hotbar" instance=ExtResource("11_l0qw4")]

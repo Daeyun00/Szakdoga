@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var HP = 100
 var run_speed = 200
 var jump_speed = -400
 var SPEED = 300.0
@@ -50,6 +51,12 @@ func apply_item_effect(item):
 		"Stamina":
 			SPEED += 50.0
 			print("Speed increased to ", SPEED)
+		"Health":
+			HP += 10
+			print("HP increase to ", HP)
+		"Armor":
+			SPEED -= 30
+			print("Speed: ", SPEED)
 		"Slot Boost":
 			Global.increase_inventory_size(5)
 			print("Slots increased to ", Global.inventory.size())

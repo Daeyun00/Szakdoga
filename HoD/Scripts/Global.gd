@@ -13,6 +13,7 @@ var spawnable_items = [
 	{"type": "Consumable", "name": "Water", "effect": "Stamina", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Mana Potion.png")},
 	{"type": "Consumable", "name": "Mushroom", "effect": "Armor", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Stamina Potion.png")},
 	{"type": "Gift", "name": "Gemstone", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png")},
+	{"type": "Gift", "name": "Sugarpallos", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Runic Dagger.png")}
 ]
 
 # Custom signals
