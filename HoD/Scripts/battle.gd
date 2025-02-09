@@ -126,13 +126,19 @@ func _on_thief_button_pressed() -> void:
 func _on_kilep_hero_pressed() -> void:
 	hero_inventory.visible = false
 	hero_hotbar.visible = true
+	mage_hotbar.visible = false
+	thief_hotbar.visible = false
 
 
 func _on_kilep_mage_pressed() -> void:
 	mage_inventory.visible = false
 	mage_hotbar.visible = true
+	hero_hotbar.visible = false
+	thief_hotbar.visible = false
 
 
 func _on_kilep_thief_pressed() -> void:
 	thief_inventory.visible = false
 	thief_hotbar.visible = true
+	mage_hotbar.visible = false
+	hero_hotbar.visible = false
