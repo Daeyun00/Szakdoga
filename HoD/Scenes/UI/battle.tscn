@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dk2q27uc065mt"]
+[gd_scene load_steps=12 format=3 uid="uid://dk2q27uc065mt"]
 
 [ext_resource type="Texture2D" uid="uid://bs4f5gtntb1a8" path="res://Assets/random fight bg/undefined - Imgur_page_0001.jpg" id="1_8dk2v"]
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c14j6sxrgxwv" path="res://Scenes/Entities/Slime.tscn" id="5_manfw"]
 [ext_resource type="PackedScene" uid="uid://bjvkuq7dm0bfu" path="res://Scenes/Entities/Mage.tscn" id="7_3yu3a"]
 [ext_resource type="PackedScene" uid="uid://1ympmth3dktk" path="res://Scenes/Entities/Thief.tscn" id="8_mbssg"]
+[ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/UI/Inventory_UI.tscn" id="10_hwffx"]
+[ext_resource type="PackedScene" uid="uid://8w76m3278wqu" path="res://Scenes/UI/Inventory_Hotbar.tscn" id="11_6j6ft"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -265,11 +267,12 @@ text = "Flee"
 
 [node name="Allies" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -657.5
+offset_right = 657.5
 grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Hero" parent="Allies" instance=ExtResource("4_o04v0")]
 layout_mode = 0
@@ -297,9 +300,8 @@ disabled = true
 
 [node name="Hostiles" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 1444.0
 
 [node name="Slime" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
@@ -325,8 +327,190 @@ offset_right = 344.0
 offset_bottom = 715.0
 disabled = true
 
+[node name="DetailsPanel" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 250.0
+offset_top = 180.0
+offset_right = 646.0
+offset_bottom = 310.0
+color = Color(0.596078, 0.933333, 0.8, 1)
+
+[node name="Text" type="Label" parent="DetailsPanel"]
+layout_mode = 1
+offset_left = 5.0
+offset_right = 45.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Válaszzon egy karaktert!"
+
+[node name="UsagePanel" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 650.0
+offset_top = 180.0
+offset_right = 890.0
+offset_bottom = 310.0
+color = Color(0.596078, 0.933333, 0.8, 1)
+
+[node name="HeroButton" type="Button" parent="UsagePanel"]
+layout_mode = 1
+offset_right = 240.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Hero"
+
+[node name="HeroInventoryUI" type="CanvasLayer" parent="UsagePanel/HeroButton"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UsagePanel/HeroButton/HeroInventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.376471, 0.321569, 1)
+
+[node name="Label" type="Label" parent="UsagePanel/HeroButton/HeroInventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 50.0
+offset_right = 37.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Hero's Inventory"
+
+[node name="Inventory_UI" parent="UsagePanel/HeroButton/HeroInventoryUI/ColorRect" instance=ExtResource("10_hwffx")]
+
+[node name="KilepHero" type="Button" parent="UsagePanel/HeroButton/HeroInventoryUI/ColorRect"]
+offset_right = 84.0
+offset_bottom = 40.0
+text = "Quit"
+
+[node name="HeroInventory_Hotbar" type="CanvasLayer" parent="UsagePanel/HeroButton"]
+visible = false
+
+[node name="Inventory_Hotbar" parent="UsagePanel/HeroButton/HeroInventory_Hotbar" instance=ExtResource("11_6j6ft")]
+
+[node name="MageButton" type="Button" parent="UsagePanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 239.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Mage"
+
+[node name="MageInventoryUI" type="CanvasLayer" parent="UsagePanel/MageButton"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UsagePanel/MageButton/MageInventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.376471, 0.321569, 1)
+
+[node name="Label" type="Label" parent="UsagePanel/MageButton/MageInventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 50.0
+offset_right = 37.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Mage's Inventory"
+
+[node name="Inventory_UI" parent="UsagePanel/MageButton/MageInventoryUI/ColorRect" instance=ExtResource("10_hwffx")]
+
+[node name="KilepMage" type="Button" parent="UsagePanel/MageButton/MageInventoryUI/ColorRect"]
+offset_right = 84.0
+offset_bottom = 40.0
+text = "Quit"
+
+[node name="MageInventory_Hotbar" type="CanvasLayer" parent="UsagePanel/MageButton"]
+visible = false
+
+[node name="Inventory_Hotbar" parent="UsagePanel/MageButton/MageInventory_Hotbar" instance=ExtResource("11_6j6ft")]
+
+[node name="ThiefButton" type="Button" parent="UsagePanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 238.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Thief"
+
+[node name="ThiefInventoryUI" type="CanvasLayer" parent="UsagePanel/ThiefButton"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="UsagePanel/ThiefButton/ThiefInventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.376471, 0.321569, 1)
+
+[node name="Label" type="Label" parent="UsagePanel/ThiefButton/ThiefInventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 50.0
+offset_right = 37.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Thief's Inventory"
+
+[node name="Inventory_UI" parent="UsagePanel/ThiefButton/ThiefInventoryUI/ColorRect" instance=ExtResource("10_hwffx")]
+
+[node name="KilepThief" type="Button" parent="UsagePanel/ThiefButton/ThiefInventoryUI/ColorRect"]
+layout_mode = 0
+offset_right = 84.0
+offset_bottom = 40.0
+text = "Quit"
+
+[node name="ThiefInventory_Hotbar" type="CanvasLayer" parent="UsagePanel/ThiefButton"]
+visible = false
+
+[node name="Inventory_Hotbar" parent="UsagePanel/ThiefButton/ThiefInventory_Hotbar" instance=ExtResource("11_6j6ft")]
+
 [connection signal="button_focused" from="Options/AttackMenu" to="." method="_on_v_box_container_button_focused"]
 [connection signal="button_pressed" from="Options/AttackMenu" to="." method="_on_v_box_container_button_pressed"]
+[connection signal="gui_input" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_gui_input"]
+[connection signal="mouse_entered" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_exited"]
 [connection signal="pressed" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="Allies/Hero" to="." method="_on_hero_pressed"]
+[connection signal="pressed" from="Allies/Mage" to="." method="_on_mage_pressed"]
+[connection signal="pressed" from="Allies/Thief" to="." method="_on_thief_pressed"]
 [connection signal="focus_exited" from="Hostiles" to="." method="_on_hostiles_focus_exited"]
 [connection signal="pressed" from="Hostiles/Slime" to="." method="_on_slime_pressed"]
+[connection signal="pressed" from="Hostiles/Slime3" to="." method="_on_slime_3_pressed"]
+[connection signal="pressed" from="UsagePanel/HeroButton" to="." method="_on_hero_button_pressed"]
+[connection signal="pressed" from="UsagePanel/HeroButton/HeroInventoryUI/ColorRect/KilepHero" to="." method="_on_kilep_hero_pressed"]
+[connection signal="pressed" from="UsagePanel/MageButton" to="." method="_on_mage_button_pressed"]
+[connection signal="pressed" from="UsagePanel/MageButton/MageInventoryUI/ColorRect/KilepMage" to="." method="_on_kilep_mage_pressed"]
+[connection signal="pressed" from="UsagePanel/ThiefButton" to="." method="_on_thief_button_pressed"]
+[connection signal="pressed" from="UsagePanel/ThiefButton/ThiefInventoryUI/ColorRect/KilepThief" to="." method="_on_kilep_thief_pressed"]
