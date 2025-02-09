@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dpcx4eduhlg7f"]
+[gd_scene load_steps=19 format=3 uid="uid://dpcx4eduhlg7f"]
 
 [ext_resource type="StyleBox" uid="uid://cxnbfwjhb7n2c" path="res://Themes & Styleboxes/hover_button.tres" id="1_idv6e"]
 [ext_resource type="StyleBox" uid="uid://dairl4xxnk5mw" path="res://Themes & Styleboxes/new_style_box_flat.tres" id="2_okg1e"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="3_uc2rs"]
 [ext_resource type="PackedScene" uid="uid://di4qu83s7fapw" path="res://Scenes/party_slot.tscn" id="4_axt8u"]
 [ext_resource type="Resource" uid="uid://gkx8223wwvx5" path="res://Scenes/UI/fino.tres" id="6_js784"]
+[ext_resource type="Texture2D" uid="uid://o7fb8ex38h7t" path="res://Assets/Characters/Bandits/cropped_thief.png" id="7_2kqwx"]
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="8_dis1i"]
+[ext_resource type="Texture2D" uid="uid://dw287o6jcv62g" path="res://Assets/Characters/Bandits/Bandits/Sprites/Light Bandit/Idle/LightBandit_Idle_0.png" id="9_gtcjj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmkol"]
 
@@ -14,6 +17,13 @@ Button/font_sizes/font_size = 26
 Button/styles/focus = SubResource("StyleBoxEmpty_vmkol")
 Button/styles/hover = ExtResource("1_idv6e")
 Button/styles/normal = ExtResource("2_okg1e")
+
+[sub_resource type="Resource" id="Resource_lijr2"]
+script = ExtResource("8_dis1i")
+title = "thief (Bermont?)"
+icon = ExtResource("7_2kqwx")
+texture = ExtResource("9_gtcjj")
+description = "A skilled thief with a very sharp sword. He will steal your money and your heart as well."
 
 [sub_resource type="Animation" id="Animation_n3v5g"]
 length = 0.5
@@ -298,6 +308,7 @@ character = ExtResource("6_js784")
 [node name="PartySlot3" parent="Party/VBoxContainer" instance=ExtResource("4_axt8u")]
 custom_minimum_size = Vector2(219, 73)
 layout_mode = 2
+character = SubResource("Resource_lijr2")
 
 [node name="PartySlot" parent="Party/VBoxContainer" instance=ExtResource("4_axt8u")]
 custom_minimum_size = Vector2(219, 73)
@@ -323,10 +334,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -49.5
-offset_top = 17.0
-offset_right = 49.5
-offset_bottom = 109.0
+offset_left = -45.0
+offset_right = 45.0
+offset_bottom = 74.0
 grow_horizontal = 2
 stretch_mode = 4
 
