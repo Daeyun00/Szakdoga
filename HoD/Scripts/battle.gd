@@ -5,6 +5,14 @@ extends Control
 @onready var hostile1: Button = $Hostiles/Slime
 @onready var hostile2: Button = $Hostiles/Slime2
 @onready var hostile3: Button = $Hostiles/Slime3
+@onready var usage_panel = $UsagePanel
+@onready var details_panel = $DetailsPanel
+@onready var hero_inventory = $UsagePanel/HeroButton/HeroInventoryUI
+@onready var hero_hotbar = $UsagePanel/HeroButton/HeroInventory_Hotbar
+@onready var mage_inventory = $UsagePanel/MageButton/MageInventoryUI
+@onready var mage_hotbar = $UsagePanel/MageButton/MageInventory_Hotbar
+@onready var thief_inventory = $UsagePanel/ThiefButton/ThiefInventoryUI
+@onready var thief_hotbar = $UsagePanel/ThiefButton/ThiefInventory_Hotbar
 
 signal interacted(jezus: bool)
 
@@ -50,7 +58,7 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 			print("Skill")
 			is_skill = !is_skill
 		"Item_button":
-			print("Item")
+			print("Válasszon karaktert! ")
 			is_item = !is_item
 		"Guard_button":
 			print("Guard")
@@ -75,7 +83,56 @@ func _fight_window(button: BaseButton) -> void:
 #ez se működik valamiért :3
 func _on_slime_pressed() -> void:
 	print(":3")
+	
 
 
-func _on_item_button_pressed():
-	print("item")
+func _on_item_button_mouse_entered():
+	usage_panel.visible = false
+	details_panel.visible = true
+
+
+func _on_item_button_mouse_exited() -> void:
+	details_panel.visible = false
+
+
+func _on_item_button_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			usage_panel.visible = !usage_panel.visible
+	
+
+
+func _on_hero_button_pressed() -> void:
+	hero_inventory.visible = true
+	hero_hotbar.visible = false
+	mage_hotbar.visible = false
+	thief_hotbar.visible = false
+
+
+func _on_mage_button_pressed() -> void:
+	mage_inventory.visible = true
+	hero_hotbar.visible = false
+	mage_hotbar.visible = false
+	thief_hotbar.visible = false
+
+
+func _on_thief_button_pressed() -> void:
+	thief_inventory.visible = true
+	hero_hotbar.visible = false
+	mage_hotbar.visible = false
+	thief_hotbar.visible = false
+
+
+func _on_kilep_hero_pressed() -> void:
+	hero_inventory.visible = false
+	hero_hotbar.visible = true
+
+
+func _on_kilep_mage_pressed() -> void:
+	mage_inventory.visible = false
+	mage_hotbar.visible = true
+
+
+func _on_kilep_thief_pressed() -> void:
+	thief_inventory.visible = false
+	thief_hotbar.visible = true
