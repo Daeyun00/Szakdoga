@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dk2q27uc065mt"]
+[gd_scene load_steps=11 format=3 uid="uid://dk2q27uc065mt"]
 
 [ext_resource type="Texture2D" uid="uid://bs4f5gtntb1a8" path="res://Assets/random fight bg/undefined - Imgur_page_0001.jpg" id="1_8dk2v"]
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bjvkuq7dm0bfu" path="res://Scenes/Entities/Mage.tscn" id="7_3yu3a"]
 [ext_resource type="PackedScene" uid="uid://1ympmth3dktk" path="res://Scenes/Entities/Thief.tscn" id="8_mbssg"]
 [ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/UI/Inventory_UI.tscn" id="10_hwffx"]
-[ext_resource type="PackedScene" uid="uid://8w76m3278wqu" path="res://Scenes/UI/Inventory_Hotbar.tscn" id="11_6j6ft"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -389,14 +388,10 @@ text = "Hero's Inventory"
 [node name="Inventory_UI" parent="UsagePanel/HeroButton/HeroInventoryUI/ColorRect" instance=ExtResource("10_hwffx")]
 
 [node name="KilepHero" type="Button" parent="UsagePanel/HeroButton/HeroInventoryUI/ColorRect"]
+layout_mode = 0
 offset_right = 84.0
 offset_bottom = 40.0
 text = "Quit"
-
-[node name="HeroInventory_Hotbar" type="CanvasLayer" parent="UsagePanel/HeroButton"]
-visible = false
-
-[node name="Inventory_Hotbar" parent="UsagePanel/HeroButton/HeroInventory_Hotbar" instance=ExtResource("11_6j6ft")]
 
 [node name="MageButton" type="Button" parent="UsagePanel"]
 layout_mode = 1
@@ -438,14 +433,10 @@ text = "Mage's Inventory"
 [node name="Inventory_UI" parent="UsagePanel/MageButton/MageInventoryUI/ColorRect" instance=ExtResource("10_hwffx")]
 
 [node name="KilepMage" type="Button" parent="UsagePanel/MageButton/MageInventoryUI/ColorRect"]
+layout_mode = 0
 offset_right = 84.0
 offset_bottom = 40.0
 text = "Quit"
-
-[node name="MageInventory_Hotbar" type="CanvasLayer" parent="UsagePanel/MageButton"]
-visible = false
-
-[node name="Inventory_Hotbar" parent="UsagePanel/MageButton/MageInventory_Hotbar" instance=ExtResource("11_6j6ft")]
 
 [node name="ThiefButton" type="Button" parent="UsagePanel"]
 layout_mode = 1
@@ -490,11 +481,6 @@ layout_mode = 0
 offset_right = 84.0
 offset_bottom = 40.0
 text = "Quit"
-
-[node name="ThiefInventory_Hotbar" type="CanvasLayer" parent="UsagePanel/ThiefButton"]
-visible = false
-
-[node name="Inventory_Hotbar" parent="UsagePanel/ThiefButton/ThiefInventory_Hotbar" instance=ExtResource("11_6j6ft")]
 
 [connection signal="button_focused" from="Options/AttackMenu" to="." method="_on_v_box_container_button_focused"]
 [connection signal="button_pressed" from="Options/AttackMenu" to="." method="_on_v_box_container_button_pressed"]

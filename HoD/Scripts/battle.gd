@@ -8,11 +8,8 @@ extends Control
 @onready var usage_panel = $UsagePanel
 @onready var details_panel = $DetailsPanel
 @onready var hero_inventory = $UsagePanel/HeroButton/HeroInventoryUI
-@onready var hero_hotbar = $UsagePanel/HeroButton/HeroInventory_Hotbar
 @onready var mage_inventory = $UsagePanel/MageButton/MageInventoryUI
-@onready var mage_hotbar = $UsagePanel/MageButton/MageInventory_Hotbar
 @onready var thief_inventory = $UsagePanel/ThiefButton/ThiefInventoryUI
-@onready var thief_hotbar = $UsagePanel/ThiefButton/ThiefInventory_Hotbar
 
 signal interacted(jezus: bool)
 
@@ -104,41 +101,26 @@ func _on_item_button_gui_input(event):
 
 func _on_hero_button_pressed() -> void:
 	hero_inventory.visible = true
-	hero_hotbar.visible = false
-	mage_hotbar.visible = false
-	thief_hotbar.visible = false
+	
 
 
 func _on_mage_button_pressed() -> void:
 	mage_inventory.visible = true
-	hero_hotbar.visible = false
-	mage_hotbar.visible = false
-	thief_hotbar.visible = false
 
 
 func _on_thief_button_pressed() -> void:
 	thief_inventory.visible = true
-	hero_hotbar.visible = false
-	mage_hotbar.visible = false
-	thief_hotbar.visible = false
-
+	
 
 func _on_kilep_hero_pressed() -> void:
 	hero_inventory.visible = false
-	hero_hotbar.visible = true
-	mage_hotbar.visible = false
-	thief_hotbar.visible = false
-
+	
 
 func _on_kilep_mage_pressed() -> void:
 	mage_inventory.visible = false
-	mage_hotbar.visible = true
-	hero_hotbar.visible = false
-	thief_hotbar.visible = false
+	
 
 
 func _on_kilep_thief_pressed() -> void:
 	thief_inventory.visible = false
-	thief_hotbar.visible = true
-	mage_hotbar.visible = false
-	hero_hotbar.visible = false
+	
