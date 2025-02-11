@@ -77,7 +77,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_7xgq3")
 sources/1 = SubResource("TileSetAtlasSource_sqy1u")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlgyo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbgmp"]
 texture = ExtResource("3_yxo63")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -123,26 +123,26 @@ texture = ExtResource("3_yxo63")
 5:2/0 = 0
 3:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_om56j"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jw1e"]
 texture = ExtResource("4_m7tde")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aho8i"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tljll"]
 texture = ExtResource("5_j6urc")
 
 [sub_resource type="TileSet" id="TileSet_veste"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_hlgyo")
-sources/2 = SubResource("TileSetAtlasSource_om56j")
-sources/3 = SubResource("TileSetAtlasSource_aho8i")
+sources/1 = SubResource("TileSetAtlasSource_jbgmp")
+sources/2 = SubResource("TileSetAtlasSource_4jw1e")
+sources/3 = SubResource("TileSetAtlasSource_tljll")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2usu4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wmkjy"]
 texture = ExtResource("3_yxo63")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47dmi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0pbmg"]
 texture = ExtResource("4_m7tde")
 18:11/0 = 0
 19:11/0 = 0
@@ -182,8 +182,8 @@ texture = ExtResource("4_m7tde")
 23:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_h1kfl"]
-sources/0 = SubResource("TileSetAtlasSource_2usu4")
-sources/1 = SubResource("TileSetAtlasSource_47dmi")
+sources/0 = SubResource("TileSetAtlasSource_wmkjy")
+sources/1 = SubResource("TileSetAtlasSource_0pbmg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hpe0n"]
 texture = ExtResource("4_m7tde")
