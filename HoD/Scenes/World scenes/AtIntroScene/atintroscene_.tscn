@@ -1,0 +1,525 @@
+[gd_scene load_steps=43 format=4 uid="uid://kyr0ne42cges"]
+
+[ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_pw5ux"]
+[ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_jwers"]
+[ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="3_222k1"]
+[ext_resource type="Texture2D" uid="uid://bwvro2slfmgac" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets v2.png" id="3_yihec"]
+[ext_resource type="Texture2D" uid="uid://dcqyar38g5dvv" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="4_grj44"]
+[ext_resource type="Texture2D" uid="uid://cw2u4ddcsxx3t" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="5_ekobs"]
+[ext_resource type="Texture2D" uid="uid://cq4e0rfvoyy5b" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="6_7way1"]
+[ext_resource type="Texture2D" uid="uid://bkikp01e3d8cw" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="7_gku83"]
+[ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="8_q871j"]
+[ext_resource type="Texture2D" uid="uid://blferagupjxa5" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle1.png" id="10_5w2im"]
+[ext_resource type="Texture2D" uid="uid://ljpf65n4wd58" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle2.png" id="11_7ujic"]
+[ext_resource type="Texture2D" uid="uid://7u6g1w463u44" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle3.png" id="12_lmfvc"]
+[ext_resource type="Texture2D" uid="uid://ce2hr5ejmqxaf" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle4.png" id="13_1vfie"]
+[ext_resource type="Texture2D" uid="uid://ca8in0pqbr60g" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle5.png" id="14_lyjqb"]
+[ext_resource type="Texture2D" uid="uid://b64la0v0cxg6o" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle6.png" id="15_6dlm5"]
+[ext_resource type="Texture2D" uid="uid://dns3v4yo3h8vi" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle7.png" id="16_1plaq"]
+[ext_resource type="Texture2D" uid="uid://ji1ndwkaq7sd" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle8.png" id="17_q53oc"]
+[ext_resource type="Texture2D" uid="uid://biuvetmwu2fyi" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle9.png" id="18_mfyxr"]
+[ext_resource type="Texture2D" uid="uid://jtttg86aquft" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow1.png" id="19_db4ns"]
+[ext_resource type="Texture2D" uid="uid://dt7h5uj1ojco8" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow2.png" id="20_f67yd"]
+[ext_resource type="Texture2D" uid="uid://uf5svrxa0thh" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow3.png" id="21_obqy0"]
+[ext_resource type="Texture2D" uid="uid://d21stk1seog0w" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow4.png" id="22_ntckv"]
+[ext_resource type="Texture2D" uid="uid://xuumsie15rmu" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow5.png" id="23_hxlmt"]
+[ext_resource type="Texture2D" uid="uid://c8f5mqnfq1dy2" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow6.png" id="24_emc42"]
+[ext_resource type="Texture2D" uid="uid://bmmu3kcmqltia" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow7.png" id="25_6wkpf"]
+[ext_resource type="Texture2D" uid="uid://b4qc7bft117ly" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow8.png" id="26_78x42"]
+[ext_resource type="Texture2D" uid="uid://dq1lbhy3kgp1w" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow9.png" id="27_0bl1x"]
+[ext_resource type="Texture2D" uid="uid://cvibt66lbss8q" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniBird.png" id="28_wgwth"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_heuqg"]
+texture = ExtResource("1_pw5ux")
+40:10/0 = 0
+40:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+41:10/0 = 0
+41:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+42:10/0 = 0
+42:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+43:10/0 = 0
+43:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+44:10/0 = 0
+44:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+45:10/0 = 0
+45:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+45:9/0 = 0
+44:9/0 = 0
+43:9/0 = 0
+42:9/0 = 0
+41:9/0 = 0
+40:9/0 = 0
+40:11/0 = 0
+41:11/0 = 0
+42:11/0 = 0
+43:11/0 = 0
+44:11/0 = 0
+45:11/0 = 0
+46:11/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16hj4"]
+texture = ExtResource("2_jwers")
+
+[sub_resource type="TileSet" id="TileSet_q46ok"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_heuqg")
+sources/1 = SubResource("TileSetAtlasSource_16hj4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_du757"]
+texture = ExtResource("1_pw5ux")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wggvo"]
+texture = ExtResource("2_jwers")
+46:17/0 = 0
+47:17/0 = 0
+47:16/0 = 0
+46:16/0 = 0
+30:22/0 = 0
+31:22/0 = 0
+31:23/0 = 0
+30:23/0 = 0
+32:23/0 = 0
+33:23/0 = 0
+33:22/0 = 0
+32:22/0 = 0
+34:23/0 = 0
+35:23/0 = 0
+35:22/0 = 0
+34:22/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+8:20/0 = 0
+8:21/0 = 0
+7:21/0 = 0
+6:21/0 = 0
+5:21/0 = 0
+4:21/0 = 0
+3:21/0 = 0
+2:21/0 = 0
+1:21/0 = 0
+0:21/0 = 0
+1:20/0 = 0
+2:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+9:21/0 = 0
+0:20/0 = 0
+0:19/0 = 0
+9:19/0 = 0
+9:20/0 = 0
+40:12/0 = 0
+41:12/0 = 0
+42:13/0 = 0
+43:13/0 = 0
+44:13/0 = 0
+45:13/0 = 0
+46:13/0 = 0
+42:12/0 = 0
+43:12/0 = 0
+44:12/0 = 0
+40:13/0 = 0
+41:13/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpsri"]
+texture = ExtResource("3_yihec")
+8:12/0 = 0
+9:12/0 = 0
+9:13/0 = 0
+9:14/0 = 0
+9:15/0 = 0
+9:16/0 = 0
+9:17/0 = 0
+9:18/0 = 0
+9:19/0 = 0
+9:20/0 = 0
+9:21/0 = 0
+9:22/0 = 0
+9:23/0 = 0
+8:23/0 = 0
+8:22/0 = 0
+8:21/0 = 0
+8:20/0 = 0
+8:19/0 = 0
+8:18/0 = 0
+8:17/0 = 0
+8:16/0 = 0
+8:15/0 = 0
+8:14/0 = 0
+8:13/0 = 0
+7:16/0 = 0
+7:17/0 = 0
+7:18/0 = 0
+7:19/0 = 0
+7:20/0 = 0
+7:21/0 = 0
+6:21/0 = 0
+6:21/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+6:22/0 = 0
+6:22/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+7:22/0 = 0
+10:22/0 = 0
+11:22/0 = 0
+11:21/0 = 0
+10:21/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+11:19/0 = 0
+10:19/0 = 0
+10:18/0 = 0
+10:17/0 = 0
+2:12/0 = 0
+2:12/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:12/0 = 0
+3:12/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:13/0 = 0
+3:13/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:14/0 = 0
+3:14/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:15/0 = 0
+3:15/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:16/0 = 0
+3:16/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:17/0 = 0
+3:17/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:18/0 = 0
+3:18/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:19/0 = 0
+3:19/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:20/0 = 0
+3:20/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:23/0 = 0
+3:23/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:22/0 = 0
+3:22/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+3:21/0 = 0
+3:21/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:23/0 = 0
+2:23/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:22/0 = 0
+2:22/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:21/0 = 0
+2:21/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:20/0 = 0
+2:20/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:19/0 = 0
+2:19/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:18/0 = 0
+2:18/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:17/0 = 0
+2:17/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:16/0 = 0
+2:16/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:15/0 = 0
+2:15/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:14/0 = 0
+2:14/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+2:13/0 = 0
+2:13/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+1:16/0 = 0
+1:16/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+1:17/0 = 0
+1:17/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+1:18/0 = 0
+1:18/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+1:19/0 = 0
+1:19/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+1:20/0 = 0
+1:20/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+1:21/0 = 0
+1:21/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+1:22/0 = 0
+1:22/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+0:21/0 = 0
+0:21/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+0:22/0 = 0
+0:22/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+0:20/0 = 0
+0:20/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+4:22/0 = 0
+4:22/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+4:21/0 = 0
+4:21/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+4:20/0 = 0
+4:20/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+4:19/0 = 0
+4:19/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+4:18/0 = 0
+4:18/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+4:17/0 = 0
+4:17/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+4:16/0 = 0
+4:16/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+5:22/0 = 0
+5:22/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+5:21/0 = 0
+5:21/0/modulate = Color(0.807115, 0.802666, 0.730717, 1)
+18:23/0 = 0
+18:23/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+19:23/0 = 0
+19:23/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+20:23/0 = 0
+20:23/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+21:23/0 = 0
+21:23/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+22:23/0 = 0
+22:23/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+23:23/0 = 0
+23:23/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+23:22/0 = 0
+23:22/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+22:22/0 = 0
+22:22/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+21:22/0 = 0
+21:22/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+20:22/0 = 0
+20:22/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+19:22/0 = 0
+19:22/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+18:22/0 = 0
+18:22/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+19:21/0 = 0
+19:21/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+20:21/0 = 0
+20:21/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+21:21/0 = 0
+21:21/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+22:21/0 = 0
+22:21/0/modulate = Color(0.617455, 0.617455, 0.617455, 1)
+24:23/0 = 0
+25:23/0 = 0
+25:22/0 = 0
+25:21/0 = 0
+25:20/0 = 0
+24:20/0 = 0
+24:21/0 = 0
+24:22/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+13:12/0 = 0
+12:12/0 = 0
+11:15/0 = 0
+10:15/0 = 0
+10:14/0 = 0
+10:13/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+11:13/0 = 0
+11:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+1:14/0 = 0
+1:13/0 = 0
+0:13/0 = 0
+0:14/0 = 0
+22:9/0 = 0
+23:9/0 = 0
+18:7/0 = 0
+18:7/0/modulate = Color(0.433766, 0.605975, 0.529067, 1)
+19:7/0 = 0
+19:7/0/modulate = Color(0.433766, 0.605975, 0.529067, 1)
+20:9/0 = 0
+21:9/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+22:11/0 = 0
+23:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_l53y4"]
+sources/0 = SubResource("TileSetAtlasSource_du757")
+sources/1 = SubResource("TileSetAtlasSource_wggvo")
+sources/2 = SubResource("TileSetAtlasSource_fpsri")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_02ajk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_5w2im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7ujic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lmfvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1vfie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lyjqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6dlm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1plaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q53oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mfyxr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_siuc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_db4ns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_f67yd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_obqy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ntckv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hxlmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_emc42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6wkpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_78x42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_0bl1x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7j54"]
+atlas = ExtResource("28_wgwth")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pppf0"]
+atlas = ExtResource("28_wgwth")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtnhk"]
+atlas = ExtResource("28_wgwth")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt6u8"]
+atlas = ExtResource("28_wgwth")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx2ui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7j54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pppf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtnhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt6u8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Atintroscene" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="ground" type="TileMapLayer" parent="TileMap"]
+tile_map_data = PackedByteArray("AAAAAC8AAAAoAAoAAAABAC8AAAApAAoAAAACAC8AAAAqAAoAAAADAC8AAAArAAoAAAAEAC8AAAAsAAoAAAAFAC8AAAAtAAoAAAAGAC8AAAAoAAoAAAAHAC8AAAApAAoAAAAIAC8AAAAqAAoAAAAJAC8AAAArAAoAAAAKAC8AAAAsAAoAAAALAC8AAAAtAAoAAAAMAC8AAAAoAAoAAAANAC8AAAApAAoAAAAOAC8AAAAqAAoAAAAPAC8AAAArAAoAAAAQAC8AAAAsAAoAAAARAC8AAAAtAAoAAAASAC8AAAAoAAoAAAATAC8AAAApAAoAAAAUAC8AAAAqAAoAAAAVAC8AAAArAAoAAAAWAC8AAAAsAAoAAAAXAC8AAAAtAAoAAAAYAC8AAAAoAAoAAAAZAC8AAAApAAoAAAAaAC8AAAAqAAoAAAAbAC8AAAArAAoAAAAcAC8AAAAsAAoAAAAdAC8AAAAtAAoAAAAeAC8AAAAoAAoAAAAfAC8AAAApAAoAAAAgAC8AAAAqAAoAAAAhAC8AAAArAAoAAAAiAC8AAAAsAAoAAAAjAC8AAAAtAAoAAAAkAC8AAAAoAAoAAAAlAC8AAAApAAoAAAAmAC8AAAAqAAoAAAAnAC8AAAArAAoAAAAoAC8AAAAsAAoAAAApAC8AAAAtAAoAAAAqAC8AAAAoAAoAAAArAC8AAAApAAoAAAAsAC8AAAAqAAoAAAAtAC8AAAArAAoAAAAuAC8AAAAsAAoAAAAvAC8AAAAtAAoAAAAwAC8AAAAoAAoAAAAxAC8AAAApAAoAAAAyAC8AAAAqAAoAAAAzAC8AAAArAAoAAAA0AC8AAAAsAAoAAAA1AC8AAAAtAAoAAAA2AC8AAAAoAAoAAAA3AC8AAAApAAoAAAA4AC8AAAAqAAoAAAA5AC8AAAArAAoAAAA6AC8AAAAsAAoAAAA7AC8AAAAtAAoAAAA8AC8AAAAoAAoAAAA9AC8AAAApAAoAAAA+AC8AAAAqAAoAAAA/AC8AAAArAAoAAABAAC8AAAAsAAoAAABBAC8AAAAtAAoAAABCAC8AAAAoAAoAAABDAC8AAAApAAoAAABEAC8AAAAqAAoAAABFAC8AAAArAAoAAABGAC8AAAAsAAoAAABHAC8AAAAtAAoAAABIAC8AAAAoAAoAAABJAC8AAAApAAoAAABKAC8AAAAqAAoAAABLAC8AAAArAAoAAABMAC8AAAAsAAoAAABNAC8AAAAtAAoAAABOAC8AAAAoAAoAAABPAC8AAAApAAoAAABQAC8AAAAqAAoAAABRAC8AAAArAAoAAABSAC8AAAAoAAoAAABTAC8AAAApAAoAAABUAC8AAAAqAAoAAABVAC8AAAArAAoAAABWAC8AAAAsAAoAAABXAC8AAAAtAAoAAAA=")
+tile_set = SubResource("TileSet_q46ok")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
+tile_map_data = PackedByteArray("AAAPAC0AAQAuABAAAAAPAC4AAQAuABEAAAAQAC0AAQAvABAAAAAQAC4AAQAvABEAAAAHACoAAgALABMAAAAJACsAAgAAABQAAAAJACwAAgAAABUAAAAJAC0AAgAAABYAAAAKACcAAgABABAAAAAKACgAAgABABEAAAAKACkAAgABABIAAAAKACoAAgABABMAAAAKACsAAgABABQAAAAKACwAAgABABUAAAAKAC0AAgABABYAAAALACMAAgACAAwAAAALACQAAgACAA0AAAALACUAAgACAA4AAAALACYAAgACAA8AAAALACcAAgACABAAAAALACgAAgACABEAAAALACkAAgACABIAAAALACoAAgACABMAAAALACsAAgACABQAAAALACwAAgACABUAAAALAC0AAgACABYAAAALAC4AAgACABcAAAAMACMAAgADAAwAAAAMACQAAgADAA0AAAAMACUAAgADAA4AAAAMACYAAgADAA8AAAAMACcAAgADABAAAAAMACgAAgADABEAAAAMACkAAgADABIAAAAMACoAAgADABMAAAAMACsAAgADABQAAAAMACwAAgADABUAAAAMAC0AAgADABYAAAAMAC4AAgADABcAAAANACcAAgAEABAAAAANACgAAgAEABEAAAANACkAAgAEABIAAAANACoAAgAEABMAAAANACsAAgAEABQAAAANACwAAgAEABUAAAANAC0AAgAEABYAAAAOACwAAgAFABUAAAAOAC0AAgAFABYAAAAAAC0AAgASABYAAAAAAC4AAgASABcAAAABACwAAgATABUAAAABAC0AAgATABYAAAABAC4AAgATABcAAAACACwAAgAUABUAAAACAC0AAgAUABYAAAACAC4AAgAUABcAAAADACwAAgAVABUAAAADAC0AAgAVABYAAAADAC4AAgAVABcAAAAEACwAAgAWABUAAAAEAC0AAgAWABYAAAAEAC4AAgAWABcAAAAFAC0AAgAXABYAAAAFAC4AAgAXABcAAAAXACsAAgAYABQAAAAXACwAAgAYABUAAAAXAC0AAgAYABYAAAAXAC4AAgAYABcAAAAYACsAAgAZABQAAAAYACwAAgAZABUAAAAYAC0AAgAZABYAAAAYAC4AAgAZABcAAAAUACwAAgAAAA0AAAAUAC0AAgAAAA4AAAAUAC4AAgAAAA8AAAAVACwAAgABAA0AAAAVAC0AAgABAA4AAAAVAC4AAgABAA8AAAARAC4AAgAWAAkAAAASAC4AAgAXAAkAAAAGAC4AAgAUAAkAAAAHAC4AAgAVAAkAAAAjAC4AAgAUAAsAAAAkAC4AAgAVAAsAAAAlAC4AAgAWAAsAAAAmAC4AAgAXAAsAAAAnAC0AAgAMAAwAAAAnAC4AAgAMAA0AAAAoAC0AAgANAAwAAAAoAC4AAgANAA0AAAAaACwAAgAGABUAAAAaAC0AAgAGABYAAAAbACcAAgAHABAAAAAbACgAAgAHABEAAAAbACkAAgAHABIAAAAbACoAAgAHABMAAAAbACsAAgAHABQAAAAbACwAAgAHABUAAAAbAC0AAgAHABYAAAAcACMAAgAIAAwAAAAcACQAAgAIAA0AAAAcACUAAgAIAA4AAAAcACYAAgAIAA8AAAAcACcAAgAIABAAAAAcACgAAgAIABEAAAAcACkAAgAIABIAAAAcACoAAgAIABMAAAAcACsAAgAIABQAAAAcACwAAgAIABUAAAAcAC0AAgAIABYAAAAcAC4AAgAIABcAAAAdACMAAgAJAAwAAAAdACQAAgAJAA0AAAAdACUAAgAJAA4AAAAdACYAAgAJAA8AAAAdACcAAgAJABAAAAAdACgAAgAJABEAAAAdACkAAgAJABIAAAAdACoAAgAJABMAAAAdACsAAgAJABQAAAAdACwAAgAJABUAAAAdAC0AAgAJABYAAAAdAC4AAgAJABcAAAAeACgAAgAKABEAAAAeACkAAgAKABIAAAAeACoAAgAKABMAAAAeACsAAgAKABQAAAAeACwAAgAKABUAAAAeAC0AAgAKABYAAAAfACoAAgALABMAAAAfACsAAgALABQAAAAfACwAAgALABUAAAAfAC0AAgALABYAAAAuACwAAQAAABMAAAAuAC0AAQAAABQAAAAuAC4AAQAAABUAAAAvACwAAQABABMAAAAvAC0AAQABABQAAAAvAC4AAQABABUAAAAwACwAAQACABMAAAAwAC0AAQACABQAAAAwAC4AAQACABUAAAAxACwAAQADABMAAAAxAC0AAQADABQAAAAxAC4AAQADABUAAAAyACwAAQAEABMAAAAyAC0AAQAEABQAAAAyAC4AAQAEABUAAAAzACwAAQAFABMAAAAzAC0AAQAFABQAAAAzAC4AAQAFABUAAAA0ACwAAQAGABMAAAA0AC0AAQAGABQAAAA0AC4AAQAGABUAAAA1ACwAAQAHABMAAAA1AC0AAQAHABQAAAA1AC4AAQAHABUAAAA2ACwAAQAIABMAAAA2AC0AAQAIABQAAAA2AC4AAQAIABUAAAA3ACwAAQAJABMAAAA3AC0AAQAJABQAAAA3AC4AAQAJABUAAAA8AC0AAQAeABYAAAA8AC4AAQAeABcAAAA9AC0AAQAfABYAAAA9AC4AAQAfABcAAABCAC0AAQAoAAwAAABCAC4AAQAoAA0AAABDAC0AAQApAAwAAABDAC4AAQApAA0AAABEAC0AAQAqAAwAAABEAC4AAQAqAA0AAABFAC0AAQArAAwAAABFAC4AAQArAA0AAABGAC0AAQAsAAwAAABGAC4AAQAsAA0AAABHAC4AAQAtAA0AAABAAC4AAgAWAAkAAABBAC4AAgAXAAkAAABMACsAAgAAABQAAABMACwAAgAAABUAAABMAC0AAgAAABYAAABNACgAAgABABEAAABNACkAAgABABIAAABNACoAAgABABMAAABNACsAAgABABQAAABNACwAAgABABUAAABNAC0AAgABABYAAABOACMAAgACAAwAAABOACQAAgACAA0AAABOACUAAgACAA4AAABOACYAAgACAA8AAABOACcAAgACABAAAABOACgAAgACABEAAABOACkAAgACABIAAABOACoAAgACABMAAABOACsAAgACABQAAABOACwAAgACABUAAABOAC0AAgACABYAAABOAC4AAgACABcAAABPACMAAgADAAwAAABPACQAAgADAA0AAABPACUAAgADAA4AAABPACYAAgADAA8AAABPACcAAgADABAAAABPACgAAgADABEAAABPACkAAgADABIAAABPACoAAgADABMAAABPACsAAgADABQAAABPACwAAgADABUAAABPAC0AAgADABYAAABPAC4AAgADABcAAABQACcAAgAEABAAAABQACgAAgAEABEAAABQACkAAgAEABIAAABQACoAAgAEABMAAABQACsAAgAEABQAAABQACwAAgAEABUAAABQAC0AAgAEABYAAABRACwAAgAFABUAAABRAC0AAgAFABYAAABMAC4AAgAUAAkAAABNAC4AAgAVAAkAAAA=")
+tile_set = SubResource("TileSet_l53y4")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(24, 32)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(638, 316)
+scale = Vector2(1.40326, 2.54477)
+texture = ExtResource("3_222k1")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(676, 738)
+scale = Vector2(1.40471, 1.7116)
+texture = ExtResource("4_grj44")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(691, 738)
+scale = Vector2(1.40471, 1.7116)
+texture = ExtResource("5_ekobs")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(691, 738)
+scale = Vector2(1.40471, 1.7116)
+texture = ExtResource("6_7way1")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(691, 738)
+scale = Vector2(1.40471, 1.7116)
+texture = ExtResource("7_gku83")
+
+[node name="Player" parent="." instance=ExtResource("8_q871j")]
+position = Vector2(127, 710)
+scale = Vector2(0.692167, 0.730557)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-5, 47)
+offset = Vector2(1, -49)
+zoom = Vector2(5, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(942, 728)
+sprite_frames = SubResource("SpriteFrames_02ajk")
+autoplay = "default"
+frame_progress = 0.556966
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(939, 754)
+sprite_frames = SubResource("SpriteFrames_siuc4")
+frame_progress = 0.714587
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(1210, 745)
+sprite_frames = SubResource("SpriteFrames_nx2ui")
+autoplay = "default"
+frame_progress = 0.291014
