@@ -34,7 +34,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if(is_fight):
 		if($Allies/Hero.has_focus()):
-			$Hostiles/Slime.grab_focus()
+			hostile1.grab_focus()
 	var HeroHP = str($Allies/Hero.HP) + "/" + str($Allies/Hero.MaxHP) + " HP" 
 	$Top/Players/Hero_label/Hero_HP_label.text = HeroHP
 	if(!is_fight && !is_skill && !is_item && !is_guard && !is_flee):
@@ -68,7 +68,7 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 
 func _fight_window(button: BaseButton) -> void:
 	button.release_focus()
-	$Hostiles/Slime.grab_focus()
+	hostile1.grab_focus()
 	$Options.visible = false
 	#nem működik :)
 	
