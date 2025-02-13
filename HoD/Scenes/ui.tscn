@@ -255,6 +255,13 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Resume"
 
+[node name="Save" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Save"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Menu/VBoxContainer/Save"]
+
 [node name="Party" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -356,6 +363,23 @@ libraries = {
 "": SubResource("AnimationLibrary_cvoa1")
 }
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -358.0
+offset_right = -148.0
+offset_bottom = -318.0
+grow_horizontal = 2
+grow_vertical = 0
+
 [connection signal="pressed" from="Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Save" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="request_completed" from="Menu/VBoxContainer/Save/HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Party" to="." method="_on_party_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

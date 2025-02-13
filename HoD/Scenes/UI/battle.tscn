@@ -266,12 +266,11 @@ text = "Flee"
 
 [node name="Allies" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -657.5
-offset_right = 657.5
-grow_horizontal = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1315.0
+grow_horizontal = 0
 
 [node name="Hero" parent="Allies" instance=ExtResource("4_o04v0")]
 layout_mode = 0
@@ -304,26 +303,26 @@ offset_right = 1444.0
 
 [node name="Slime" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 443.0
-offset_top = 653.0
-offset_right = 514.0
-offset_bottom = 715.0
+offset_left = 275.0
+offset_top = 584.0
+offset_right = 337.0
+offset_bottom = 640.0
 disabled = true
 
 [node name="Slime2" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 344.0
-offset_top = 694.0
-offset_right = 415.0
-offset_bottom = 756.0
+offset_left = 368.0
+offset_top = 677.0
+offset_right = 439.0
+offset_bottom = 739.0
 disabled = true
 
 [node name="Slime3" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 273.0
-offset_top = 653.0
-offset_right = 344.0
-offset_bottom = 715.0
+offset_left = 159.0
+offset_top = 670.0
+offset_right = 230.0
+offset_bottom = 732.0
 disabled = true
 
 [node name="DetailsPanel" type="ColorRect" parent="."]

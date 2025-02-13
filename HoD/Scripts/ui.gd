@@ -7,6 +7,8 @@ extends Control
 
 @export var description: NinePatchRect
 @export var party_description : NinePatchRect
+@onready var http_request = $Menu/VBoxContainer/Save/HTTPRequest
+@onready var rich_text_lkabel = $RichTextLabel
 
 
 enum STATE { MENU, RESUME, PARTY}
@@ -48,3 +50,18 @@ func _on_resume_pressed():
 
 func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu/main_menu.tscn")
+
+var url = "https://meowfacts.herokuapp.com/"
+
+
+
+func _on_save_pressed():
+	http_request.request(url)
+
+
+
+func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	var data = JSON.parse_string(body.get_string_from_utf8())
+	print(data.data[0])
+	var cat_fact = data.data[0]
+	rich_text_lkabel.text = cat_fact
