@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=4 uid="uid://b4h0jh2i4badt"]
+[gd_scene load_steps=120 format=4 uid="uid://b4h0jh2i4badt"]
 
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_45jfn"]
 [ext_resource type="Texture2D" uid="uid://dh58h7uk8ciht" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets.png" id="1_qaev2"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="11_dkhmi"]
 [ext_resource type="Texture2D" uid="uid://b2m41v40588t8" path="res://Assets/Asset Packs/Village/Pixel Art Platformer - Village Props v2.2.0/Texture/TX FX Flame.png" id="11_ig1by"]
 [ext_resource type="Texture2D" uid="uid://yhicd5fbeokd" path="res://Assets/Asset Packs/Village/GandalfHardcore Sky Decor/GandalfHardcore Sky Decor/sun.png" id="12_wlq34"]
+[ext_resource type="Texture2D" uid="uid://bii8r2i1f4ivr" path="res://Assets/Asset Packs/Dungeons & fight scenes/free.png" id="14_yn670"]
 [ext_resource type="Texture2D" uid="uid://b2k3u1637n6l8" path="res://Assets/Asset Packs/NPCS and characters/Lively_NPCs_v3.0/Lively_NPCs_v3.0/sprite sheets/medieval/blacksmith.png" id="19_bl5xe"]
 [ext_resource type="Texture2D" uid="uid://co6di6i2w4abo" path="res://Assets/Asset Packs/NPCS and characters/Lively_NPCs_v3.0/Lively_NPCs_v3.0/sprite sheets/medieval/adventurer_01.png" id="20_oqelr"]
 [ext_resource type="Texture2D" uid="uid://c42dknt84xjim" path="res://Assets/Asset Packs/NPCS and characters/Lively_NPCs_v3.0/Lively_NPCs_v3.0/sprite sheets/medieval/guard.png" id="21_bou14"]
@@ -317,6 +318,10 @@ texture = ExtResource("6_lyrl1")
 20:6/0/modulate = Color(0.724643, 0.724643, 0.724643, 1)
 20:7/0 = 0
 20:7/0/modulate = Color(0.724643, 0.724643, 0.724643, 1)
+16:5/0 = 0
+15:5/0 = 0
+20:5/0 = 0
+19:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tn2wf"]
 texture = ExtResource("6_5mytp")
@@ -2063,10 +2068,14 @@ texture = ExtResource("12_wlq34")
 0:1/0/modulate = Color(1, 1, 1, 0.619608)
 0:1/0/z_index = 136
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w76lw"]
+texture = ExtResource("14_yn670")
+
 [sub_resource type="TileSet" id="TileSet_jsbrc"]
 sources/0 = SubResource("TileSetAtlasSource_bwq72")
 sources/1 = SubResource("TileSetAtlasSource_l836g")
 sources/2 = SubResource("TileSetAtlasSource_y4v2q")
+sources/3 = SubResource("TileSetAtlasSource_w76lw")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uk2uv"]
 atlas = ExtResource("19_bl5xe")
@@ -2532,7 +2541,7 @@ tile_set = SubResource("TileSet_ju55f")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
 position = Vector2(-272, 2)
-tile_map_data = PackedByteArray("AABcAB8AAAAeAAQAAABdAB8AAAAfAAQAAABYACoAAAAdAA4AAABYACsAAAAdABAAAABZACYAAAAfAAYAAABZACkAAAAeAAsAAABZACoAAAAeAAsAAABZACsAAAAcABAAAABaACUAAAAfAAYAAABaACYAAAAeAAYAAABaACoAAAAfAAsAAABaACsAAAAdABAAAABbACQAAAAgAAUAAABbACUAAAAgAAYAAABbACYAAAAfAAYAAABbACoAAAAgAAsAAABbACsAAAAcABAAAABcACUAAAAhAAYAAABcACYAAAAhAAcAAABcACkAAAAhAAsAAABcACoAAAAhAAsAAABcACsAAAAdABAAAABdACYAAAAiAAcAAABUACgAAAAZAAkAAABVACcAAAAaAAgAAABVACgAAAAaAAkAAABVACkAAAAaAA0AAABVACoAAAAaAA4AAABVACsAAAAaABAAAABWACYAAAAbAAcAAABWACcAAAAbAAgAAABWACgAAAAbAAkAAABWACkAAAAbAA0AAABWACoAAAAbAA4AAABWACsAAAAbABAAAABXACUAAAAcAAYAAABXACYAAAAcAAcAAABXACoAAAAcAA4AAABXACsAAAAcABAAAABYACQAAAAdAAUAAABYACUAAAAdAAYAAABYACYAAAAeAAYAAABZACQAAAAeAAUAAABZACUAAAAeAAYAAABaACQAAAAfAAUAAABaACkAAAAfAAsAAABbACkAAAAgAAsAAABdACcAAAAiAAgAAABeACcAAAAjAAgAAABeACgAAAAjAAkAAABfACgAAAAkAAkAAABTACsABAAjABEAAABUACsABAAkABEAAAA3ACoAAwAPAAYAAAA3ACsAAwAPAAcAAAA4ACoAAwAQAAYAAAA4ACsAAwAQAAcAAAA5ACoAAwARAAYAAAA5ACsAAwARAAcAAAA6ACoAAwASAAYAAAA6ACsAAwASAAcAAAA7ACoAAwATAAYAAAA7ACsAAwATAAcAAAA8ACoAAwAUAAYAAAA8ACsAAwAUAAcAAAA=")
+tile_map_data = PackedByteArray("AABcAB8AAAAeAAQAAABdAB8AAAAfAAQAAABYACoAAAAdAA4AAABYACsAAAAdABAAAABZACYAAAAfAAYAAABZACkAAAAeAAsAAABZACoAAAAeAAsAAABZACsAAAAcABAAAABaACUAAAAfAAYAAABaACYAAAAeAAYAAABaACoAAAAfAAsAAABaACsAAAAdABAAAABbACQAAAAgAAUAAABbACUAAAAgAAYAAABbACYAAAAfAAYAAABbACoAAAAgAAsAAABbACsAAAAcABAAAABcACUAAAAhAAYAAABcACYAAAAhAAcAAABcACkAAAAhAAsAAABcACoAAAAhAAsAAABcACsAAAAdABAAAABdACYAAAAiAAcAAABUACgAAAAZAAkAAABVACcAAAAaAAgAAABVACgAAAAaAAkAAABVACkAAAAaAA0AAABVACoAAAAaAA4AAABVACsAAAAaABAAAABWACYAAAAbAAcAAABWACcAAAAbAAgAAABWACgAAAAbAAkAAABWACkAAAAbAA0AAABWACoAAAAbAA4AAABWACsAAAAbABAAAABXACUAAAAcAAYAAABXACYAAAAcAAcAAABXACoAAAAcAA4AAABXACsAAAAcABAAAABYACQAAAAdAAUAAABYACUAAAAdAAYAAABYACYAAAAeAAYAAABZACQAAAAeAAUAAABZACUAAAAeAAYAAABaACQAAAAfAAUAAABaACkAAAAfAAsAAABbACkAAAAgAAsAAABdACcAAAAiAAgAAABeACcAAAAjAAgAAABeACgAAAAjAAkAAABfACgAAAAkAAkAAABTACsABAAjABEAAABUACsABAAkABEAAAA3ACoAAwAPAAYAAAA3ACsAAwAPAAcAAAA4ACoAAwAQAAYAAAA4ACsAAwAQAAcAAAA5ACoAAwARAAYAAAA5ACsAAwARAAcAAAA6ACoAAwASAAYAAAA6ACsAAwASAAcAAAA7ACoAAwATAAYAAAA7ACsAAwATAAcAAAA8ACoAAwAUAAYAAAA8ACsAAwAUAAcAAABFACoAAwAPAAYAAABFACsAAwAPAAcAAABGACoAAwAQAAYAAABGACsAAwAQAAcAAABHACoAAwARAAYAAABHACsAAwARAAcAAABIACoAAwASAAYAAABIACsAAwASAAcAAABJACoAAwATAAYAAABJACsAAwATAAcAAABKACoAAwAUAAYAAABKACsAAwAUAAcAAAA=")
 tile_set = SubResource("TileSet_0chd3")
 collision_enabled = false
 

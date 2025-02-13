@@ -1,91 +1,98 @@
-[gd_scene load_steps=24 format=3 uid="uid://dno3ktvfyu4q8"]
+[gd_scene load_steps=19 format=3 uid="uid://dno3ktvfyu4q8"]
 
-[ext_resource type="Texture2D" uid="uid://css1bduwlostk" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="1_5cmkm"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_pmswk"]
-[ext_resource type="Texture2D" uid="uid://bp1chu7wmgf18" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_1.png" id="2_dea1q"]
-[ext_resource type="Texture2D" uid="uid://h58ta8oshxrq" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_2.png" id="3_50vdo"]
-[ext_resource type="Texture2D" uid="uid://cc33h0h6qhf62" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_3.png" id="4_ay2eo"]
-[ext_resource type="Texture2D" uid="uid://ckdj5ic2vwsef" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_4.png" id="5_a7x4p"]
-[ext_resource type="Texture2D" uid="uid://b1q3wi7wvlbmr" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_5.png" id="6_mbuub"]
-[ext_resource type="Texture2D" uid="uid://cs8ywfelvdi7b" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_6.png" id="7_wjt7k"]
-[ext_resource type="Texture2D" uid="uid://04kqvebows6n" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_7.png" id="8_0qy48"]
-[ext_resource type="Texture2D" uid="uid://ba1ncf6jpmp2j" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_0.png" id="9_530qx"]
-[ext_resource type="Texture2D" uid="uid://deo7bkkyh2t3u" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_1.png" id="10_6bmjf"]
-[ext_resource type="Texture2D" uid="uid://cvebl3cvdlls1" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_2.png" id="11_j542m"]
-[ext_resource type="Texture2D" uid="uid://ci63qr865d0hy" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_3.png" id="12_gbkfh"]
-[ext_resource type="Texture2D" uid="uid://dqsv20j167k3b" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_4.png" id="13_06glm"]
-[ext_resource type="Texture2D" uid="uid://dst4gn3kkbst4" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_5.png" id="14_eljxm"]
-[ext_resource type="Texture2D" uid="uid://dlclqwvi0ripv" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_6.png" id="15_fb0xa"]
-[ext_resource type="Texture2D" uid="uid://cwmm4okgi76it" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_7.png" id="16_43gj0"]
-[ext_resource type="Texture2D" uid="uid://dtl0555gku8mu" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_8.png" id="17_t2k0v"]
-[ext_resource type="Texture2D" uid="uid://7ct4alnitw6j" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Run/HeroKnight_Run_9.png" id="18_o8m4d"]
+[ext_resource type="Texture2D" uid="uid://dirpmfxijcrnw" path="res://Assets/Asset Packs/NPCS and characters/knight-character-sprites-pixel-art/Spritesheet 128/Knight_1/Idle.png" id="2_c56fo"]
+[ext_resource type="Texture2D" uid="uid://b3b32m875l7i1" path="res://Assets/Asset Packs/NPCS and characters/knight-character-sprites-pixel-art/Spritesheet 128/Knight_1/Run.png" id="3_w7bad"]
 [ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/UI/Inventory_UI.tscn" id="20_35uxx"]
 [ext_resource type="PackedScene" uid="uid://8w76m3278wqu" path="res://Scenes/UI/Inventory_Hotbar.tscn" id="21_ck1g3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixt2i"]
-size = Vector2(25, 40)
+size = Vector2(42, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe22q"]
+atlas = ExtResource("2_c56fo")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6lmn"]
+atlas = ExtResource("2_c56fo")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi6wb"]
+atlas = ExtResource("2_c56fo")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfhd2"]
+atlas = ExtResource("2_c56fo")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwhwq"]
+atlas = ExtResource("3_w7bad")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkf0s"]
+atlas = ExtResource("3_w7bad")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj1mv"]
+atlas = ExtResource("3_w7bad")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy31f"]
+atlas = ExtResource("3_w7bad")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex1hp"]
+atlas = ExtResource("3_w7bad")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxuhx"]
+atlas = ExtResource("3_w7bad")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu4eo"]
+atlas = ExtResource("3_w7bad")
+region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bffow"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_5cmkm")
+"texture": SubResource("AtlasTexture_fe22q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_dea1q")
+"texture": SubResource("AtlasTexture_m6lmn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_50vdo")
+"texture": SubResource("AtlasTexture_wi6wb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ay2eo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_a7x4p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_mbuub")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_wjt7k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_0qy48")
+"texture": SubResource("AtlasTexture_xfhd2")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_530qx")
+"texture": SubResource("AtlasTexture_jwhwq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_6bmjf")
+"texture": SubResource("AtlasTexture_pkf0s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_j542m")
+"texture": SubResource("AtlasTexture_vj1mv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_gbkfh")
+"texture": SubResource("AtlasTexture_fy31f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_06glm")
+"texture": SubResource("AtlasTexture_ex1hp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_eljxm")
+"texture": SubResource("AtlasTexture_hxuhx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_fb0xa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_43gj0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_t2k0v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_o8m4d")
+"texture": SubResource("AtlasTexture_nu4eo")
 }],
 "loop": true,
 "name": &"Run",
@@ -99,21 +106,20 @@ script = ExtResource("1_pmswk")
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="InteractCollision" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(-1.5, -21)
+position = Vector2(9, 1)
 shape = SubResource("RectangleShape2D_ixt2i")
 debug_color = Color(0.964706, 0, 0.490196, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -27)
+position = Vector2(-39, -2)
 scale = Vector2(1, 0.990909)
 sprite_frames = SubResource("SpriteFrames_bffow")
 animation = &"Run"
-autoplay = "Idle"
-frame_progress = 0.00462209
+frame_progress = 0.325021
 
 [node name="CharacterCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -21)
+position = Vector2(-40, 1)
 shape = SubResource("RectangleShape2D_ixt2i")
 
 [node name="InteractUI" type="CanvasLayer" parent="."]

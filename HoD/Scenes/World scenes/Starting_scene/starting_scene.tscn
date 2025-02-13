@@ -540,9 +540,10 @@ sources/0 = SubResource("TileSetAtlasSource_daxex")
 [node name="Str_village" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("6_cv230")]
-position = Vector2(195, 735)
+position = Vector2(251, 662)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-5, 47)
 offset = Vector2(1, -49)
 zoom = Vector2(5, 5)
 
