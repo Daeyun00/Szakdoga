@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dk2q27uc065mt"]
+[gd_scene load_steps=12 format=3 uid="uid://dk2q27uc065mt"]
 
 [ext_resource type="Texture2D" uid="uid://bs4f5gtntb1a8" path="res://Assets/random fight bg/undefined - Imgur_page_0001.jpg" id="1_8dk2v"]
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c14j6sxrgxwv" path="res://Scenes/Entities/Slime.tscn" id="5_manfw"]
 [ext_resource type="PackedScene" uid="uid://bjvkuq7dm0bfu" path="res://Scenes/Entities/Mage.tscn" id="7_3yu3a"]
 [ext_resource type="PackedScene" uid="uid://1ympmth3dktk" path="res://Scenes/Entities/Thief.tscn" id="8_mbssg"]
+[ext_resource type="Script" path="res://Scenes/UI/hostiles.gd" id="9_5a74e"]
 [ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/UI/Inventory_UI.tscn" id="10_hwffx"]
 
 [node name="Battle" type="Control"]
@@ -300,6 +301,7 @@ disabled = true
 layout_mode = 1
 anchors_preset = 0
 offset_right = 1444.0
+script = ExtResource("9_5a74e")
 
 [node name="Slime" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
@@ -492,6 +494,7 @@ text = "Quit"
 [connection signal="pressed" from="Allies/Thief" to="." method="_on_thief_pressed"]
 [connection signal="focus_exited" from="Hostiles" to="." method="_on_hostiles_focus_exited"]
 [connection signal="pressed" from="Hostiles/Slime" to="." method="_on_slime_pressed"]
+[connection signal="pressed" from="Hostiles/Slime" to="Hostiles" method="_on_slime_pressed"]
 [connection signal="pressed" from="Hostiles/Slime3" to="." method="_on_slime_3_pressed"]
 [connection signal="pressed" from="UsagePanel/HeroButton" to="." method="_on_hero_button_pressed"]
 [connection signal="pressed" from="UsagePanel/HeroButton/HeroInventoryUI/ColorRect/KilepHero" to="." method="_on_kilep_hero_pressed"]

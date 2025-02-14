@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	if(!is_fight && !is_skill && !is_item && !is_guard && !is_flee):
 		if ($Hostiles/Slime.has_focus()):
 			$Options/AttackMenu/Flee_button.grab_focus()
+	
 			
 func _on_v_box_container_button_focused(button: BaseButton) -> void:
 	pass
@@ -72,14 +73,12 @@ func _fight_window(button: BaseButton) -> void:
 	$Options.visible = false
 	#nem működik :)
 	
-	await interacted
-	print(":3")
 	
+	print(":3")
 
 
 #ez se működik valamiért :3
-func _on_slime_pressed() -> void:
-	print(":3")
+
 	
 
 
@@ -124,3 +123,7 @@ func _on_kilep_mage_pressed() -> void:
 func _on_kilep_thief_pressed() -> void:
 	thief_inventory.visible = false
 	
+
+
+func _on_slime_pressed() -> void:
+	print("asd")
