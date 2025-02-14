@@ -49,14 +49,26 @@ func _input(event):
 func apply_item_effect(item):
 	match item["effect"]:
 		"Stamina":
-			SPEED += 50.0
-			print("Speed increased to ", SPEED)
+			if SPEED < 300:
+				SPEED += 10.0
+				print("Speed increased to ", SPEED)
+			if SPEED >= 300:
+				SPEED = 300
+				print(SPEED)
 		"Health":
-			HP += 10
-			print("HP increase to ", HP)
+			if HP < 100:
+				HP += 10
+				print("HP increase to ", HP)
+			if HP >= 100:
+				HP = 100
+				print(HP)
 		"Armor":
-			SPEED -= 30
-			print("Speed: ", SPEED)
+			if SPEED > 0 and  SPEED < 300:
+				SPEED -= 30
+				print("Speed: ", SPEED)
+			if SPEED <= 0:
+				SPEED = 0
+				print(SPEED)
 		"Slot Boost":
 			Global.increase_inventory_size(5)
 			print("Slots increased to ", Global.inventory.size())
