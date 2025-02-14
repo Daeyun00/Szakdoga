@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cvibt66lbss8q" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniBird.png" id="28_wgwth"]
 [ext_resource type="Texture2D" uid="uid://dy8prl1fbrp54" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/Campfire with food sheet.png" id="29_bbewp"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b84jh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_475tx"]
 texture = ExtResource("1_pw5ux")
 40:10/0 = 0
 40:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -63,10 +63,10 @@ texture = ExtResource("1_pw5ux")
 45:11/0 = 0
 46:11/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fcb1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8vuju"]
 texture = ExtResource("2_jwers")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfral"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jgkk6"]
 texture = ExtResource("3_yihec")
 13:10/0 = 0
 13:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -82,9 +82,9 @@ texture = ExtResource("3_yihec")
 
 [sub_resource type="TileSet" id="TileSet_q46ok"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_b84jh")
-sources/1 = SubResource("TileSetAtlasSource_1fcb1")
-sources/2 = SubResource("TileSetAtlasSource_yfral")
+sources/0 = SubResource("TileSetAtlasSource_475tx")
+sources/1 = SubResource("TileSetAtlasSource_8vuju")
+sources/2 = SubResource("TileSetAtlasSource_jgkk6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_du757"]
 texture = ExtResource("1_pw5ux")
