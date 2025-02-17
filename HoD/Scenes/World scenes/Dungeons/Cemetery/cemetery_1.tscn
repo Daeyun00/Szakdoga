@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://d0gnkpcfjfksy"]
+[gd_scene load_steps=19 format=4 uid="uid://d0gnkpcfjfksy"]
 
 [ext_resource type="Texture2D" uid="uid://duys7wrp6r26n" path="res://Assets/Asset Packs/Dungeons & fight scenes/Final/Final/Tiles.png" id="1_al7hs"]
 [ext_resource type="Texture2D" uid="uid://oi1n4tw23ja6" path="res://Assets/Asset Packs/Dungeons & fight scenes/Final/Final/brush.png" id="2_13sjv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://unj507spxl2k" path="res://Assets/Asset Packs/Dungeons & fight scenes/Final/Final/Grass_background_2.png" id="5_qkl23"]
 [ext_resource type="Texture2D" uid="uid://coku06w3cdgmm" path="res://Assets/Asset Packs/Dungeons & fight scenes/Final/Final/Salt.png" id="6_p8lxx"]
 [ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="8_puism"]
+[ext_resource type="Texture2D" uid="uid://dx2cfv4r6dbty" path="res://Assets/Enemies/Slimes/slime_idle1.png" id="9_p7g6s"]
 
 [sub_resource type="TileSet" id="TileSet_p1evs"]
 
@@ -998,6 +999,28 @@ texture = ExtResource("2_13sjv")
 sources/0 = SubResource("TileSetAtlasSource_jyjn4")
 sources/1 = SubResource("TileSetAtlasSource_lrdnr")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkxwg"]
+atlas = ExtResource("9_p7g6s")
+region = Rect2(80, 0, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la0ot"]
+atlas = ExtResource("9_p7g6s")
+region = Rect2(0, 0, 80, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvkgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkxwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la0ot")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Cemetery1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1062,3 +1085,24 @@ scale = Vector2(0.692167, 0.730557)
 position = Vector2(-5, 47)
 offset = Vector2(1, -49)
 zoom = Vector2(6, 6)
+
+[node name="Slime1" type="AnimatedSprite2D" parent="."]
+position = Vector2(845, 721)
+sprite_frames = SubResource("SpriteFrames_pvkgx")
+autoplay = "default"
+frame_progress = 0.421684
+flip_h = true
+
+[node name="Slime2" type="AnimatedSprite2D" parent="."]
+position = Vector2(807, 726)
+sprite_frames = SubResource("SpriteFrames_pvkgx")
+autoplay = "default"
+frame_progress = 0.932052
+flip_h = true
+
+[node name="Slime3" type="AnimatedSprite2D" parent="."]
+position = Vector2(885, 729)
+sprite_frames = SubResource("SpriteFrames_pvkgx")
+autoplay = "default"
+frame_progress = 0.725215
+flip_h = true
