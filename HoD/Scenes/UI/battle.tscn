@@ -279,7 +279,6 @@ offset_left = 743.0
 offset_top = 653.0
 offset_right = 796.0
 offset_bottom = 739.0
-disabled = true
 
 [node name="Mage" parent="Allies" instance=ExtResource("7_3yu3a")]
 layout_mode = 0
@@ -287,7 +286,6 @@ offset_left = 832.0
 offset_top = 598.0
 offset_right = 885.0
 offset_bottom = 684.0
-disabled = true
 
 [node name="Thief" parent="Allies" instance=ExtResource("8_mbssg")]
 layout_mode = 0
@@ -295,7 +293,6 @@ offset_left = 947.0
 offset_top = 641.0
 offset_right = 1000.0
 offset_bottom = 727.0
-disabled = true
 
 [node name="Hostiles" type="Control" parent="."]
 layout_mode = 1
@@ -309,7 +306,6 @@ offset_left = 275.0
 offset_top = 584.0
 offset_right = 337.0
 offset_bottom = 640.0
-disabled = true
 
 [node name="Slime2" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
@@ -317,7 +313,6 @@ offset_left = 368.0
 offset_top = 677.0
 offset_right = 439.0
 offset_bottom = 739.0
-disabled = true
 
 [node name="Slime3" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
@@ -325,7 +320,6 @@ offset_left = 159.0
 offset_top = 670.0
 offset_right = 230.0
 offset_bottom = 732.0
-disabled = true
 
 [node name="DetailsPanel" type="ColorRect" parent="."]
 visible = false
@@ -494,8 +488,6 @@ text = "Quit"
 [connection signal="pressed" from="Allies/Thief" to="." method="_on_thief_pressed"]
 [connection signal="focus_exited" from="Hostiles" to="." method="_on_hostiles_focus_exited"]
 [connection signal="pressed" from="Hostiles/Slime" to="." method="_on_slime_pressed"]
-[connection signal="pressed" from="Hostiles/Slime" to="Hostiles" method="_on_slime_pressed"]
-[connection signal="pressed" from="Hostiles/Slime3" to="." method="_on_slime_3_pressed"]
 [connection signal="pressed" from="UsagePanel/HeroButton" to="." method="_on_hero_button_pressed"]
 [connection signal="pressed" from="UsagePanel/HeroButton/HeroInventoryUI/ColorRect/KilepHero" to="." method="_on_kilep_hero_pressed"]
 [connection signal="pressed" from="UsagePanel/MageButton" to="." method="_on_mage_button_pressed"]
