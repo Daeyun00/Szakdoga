@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=4 uid="uid://kyr0ne42cges"]
+[gd_scene load_steps=83 format=4 uid="uid://kyr0ne42cges"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_pw5ux"]
 [ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_jwers"]
@@ -13,24 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bkikp01e3d8cw" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="7_gku83"]
 [ext_resource type="Texture2D" uid="uid://cwaue6sly73wb" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/3.png" id="7_y405i"]
 [ext_resource type="Texture2D" uid="uid://dwiafpo3rhmeq" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/9.png" id="8_uthig"]
-[ext_resource type="Texture2D" uid="uid://blferagupjxa5" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle1.png" id="10_5w2im"]
-[ext_resource type="Texture2D" uid="uid://ljpf65n4wd58" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle2.png" id="11_7ujic"]
-[ext_resource type="Texture2D" uid="uid://7u6g1w463u44" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle3.png" id="12_lmfvc"]
-[ext_resource type="Texture2D" uid="uid://ce2hr5ejmqxaf" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle4.png" id="13_1vfie"]
-[ext_resource type="Texture2D" uid="uid://ca8in0pqbr60g" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle5.png" id="14_lyjqb"]
-[ext_resource type="Texture2D" uid="uid://b64la0v0cxg6o" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle6.png" id="15_6dlm5"]
-[ext_resource type="Texture2D" uid="uid://dns3v4yo3h8vi" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle7.png" id="16_1plaq"]
-[ext_resource type="Texture2D" uid="uid://ji1ndwkaq7sd" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle8.png" id="17_q53oc"]
-[ext_resource type="Texture2D" uid="uid://biuvetmwu2fyi" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle9.png" id="18_mfyxr"]
-[ext_resource type="Texture2D" uid="uid://jtttg86aquft" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow1.png" id="19_db4ns"]
-[ext_resource type="Texture2D" uid="uid://dt7h5uj1ojco8" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow2.png" id="20_f67yd"]
-[ext_resource type="Texture2D" uid="uid://uf5svrxa0thh" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow3.png" id="21_obqy0"]
-[ext_resource type="Texture2D" uid="uid://d21stk1seog0w" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow4.png" id="22_ntckv"]
-[ext_resource type="Texture2D" uid="uid://xuumsie15rmu" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow5.png" id="23_hxlmt"]
-[ext_resource type="Texture2D" uid="uid://c8f5mqnfq1dy2" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow6.png" id="24_emc42"]
-[ext_resource type="Texture2D" uid="uid://bmmu3kcmqltia" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow7.png" id="25_6wkpf"]
-[ext_resource type="Texture2D" uid="uid://b4qc7bft117ly" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow8.png" id="26_78x42"]
-[ext_resource type="Texture2D" uid="uid://dq1lbhy3kgp1w" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Shadow/Shadow9.png" id="27_0bl1x"]
+[ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="9_j3fmm"]
+[ext_resource type="PackedScene" uid="uid://bpyc3mkssgylv" path="res://Scenes/Entities/Crystal_NPC.tscn" id="17_fstdi"]
 [ext_resource type="Texture2D" uid="uid://cvibt66lbss8q" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniBird.png" id="28_wgwth"]
 [ext_resource type="Texture2D" uid="uid://dy8prl1fbrp54" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/Campfire with food sheet.png" id="29_bbewp"]
 
@@ -2596,76 +2580,6 @@ texture = ExtResource("3_yihec")
 [sub_resource type="TileSet" id="TileSet_l7hf8"]
 sources/0 = SubResource("TileSetAtlasSource_qdi7y")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_02ajk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_5w2im")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_7ujic")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_lmfvc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_1vfie")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_lyjqb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_6dlm5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_1plaq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_q53oc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_mfyxr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 7.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_siuc4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("19_db4ns")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_f67yd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_obqy0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_ntckv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_hxlmt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_emc42")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_6wkpf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_78x42")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_0bl1x")
-}],
-"loop": true,
-"name": &"default",
-"speed": 7.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7j54"]
 atlas = ExtResource("28_wgwth")
 region = Rect2(0, 0, 16, 16)
@@ -3021,6 +2935,12 @@ tile_set = SubResource("TileSet_x6s2f")
 tile_map_data = PackedByteArray("AAAGAC4AAAASAAcAAAAHAC4AAAATAAcAAAABAC4AAAAjAAMAAAACAC4AAAAVAAcAAAAAAC4AAAAiAAMAAAAAAC0AAAAiAAIAAAABAC0AAAAjAAIAAAANAC4AAAASAAkAAAAOAC4AAAAUAAcAAAAKAC4AAAASAAkAAAALAC4AAAATAAkAAAAQAC4AAAAUAAcAAAARAC4AAAAVAAcAAAAVAC4AAAASAAcAAAAWAC4AAAATAAcAAAAaAC4AAAASAAcAAAAbAC4AAAATAAcAAAAmAC4AAAASAAcAAAAnAC4AAAATAAcAAAAgAC4AAAASAAcAAAAhAC4AAAATAAcAAAAqAC4AAAASAAcAAAArAC4AAAATAAcAAAAxAC4AAAASAAcAAAAyAC4AAAATAAcAAAA4AC4AAAASAAcAAAA5AC4AAAATAAcAAABBAC4AAAASAAcAAABCAC4AAAATAAcAAABHAC4AAAASAAcAAABIAC4AAAATAAcAAABOAC4AAAASAAcAAABPAC4AAAATAAcAAABTAC4AAAAUAAcAAABUAC4AAAAVAAcAAAA+AC4AAAAUAAcAAAA/AC4AAAAVAAcAAAAuAC4AAAAUAAcAAAAvAC4AAAAVAAcAAAAkAC4AAAAUAAcAAAAlAC4AAAAVAAcAAAAcAC4AAAAUAAcAAAAdAC4AAAAVAAcAAAAYAC4AAAAUAAcAAAAZAC4AAAAVAAcAAAAPAC4AAAAVAAcAAAAIAC4AAAAUAAcAAAAJAC4AAAAVAAcAAAAEAC4AAAAXAAcAAAAFAC4AAAAXAAcAAAADAC4AAAAWAAcAAAA=")
 tile_set = SubResource("TileSet_l7hf8")
 
+[node name="Player" parent="TileMap" instance=ExtResource("9_j3fmm")]
+position = Vector2(239, 688)
+
+[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+zoom = Vector2(3, 3)
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -3061,18 +2981,6 @@ position = Vector2(691, 738)
 scale = Vector2(1.40471, 1.7116)
 texture = ExtResource("7_gku83")
 
-[node name="Crystal" type="AnimatedSprite2D" parent="."]
-position = Vector2(942, 728)
-sprite_frames = SubResource("SpriteFrames_02ajk")
-autoplay = "default"
-frame_progress = 0.000618982
-flip_h = true
-
-[node name="Crystal_shadow" type="AnimatedSprite2D" parent="."]
-position = Vector2(939, 754)
-sprite_frames = SubResource("SpriteFrames_siuc4")
-frame_progress = 0.158241
-
 [node name="Birdie" type="AnimatedSprite2D" parent="."]
 position = Vector2(1210, 745)
 sprite_frames = SubResource("SpriteFrames_nx2ui")
@@ -3085,3 +2993,6 @@ scale = Vector2(0.75, 0.65625)
 sprite_frames = SubResource("SpriteFrames_pqkhq")
 autoplay = "default"
 frame_progress = 0.426717
+
+[node name="CrystalNpc" parent="." instance=ExtResource("17_fstdi")]
+position = Vector2(639, 735)
