@@ -15,6 +15,7 @@ extends Control
 @onready var Thief: Button = $Allies/Thief
 
 #idk
+@onready var tim = $Timer
 @onready var usage_panel = $UsagePanel
 @onready var details_panel = $DetailsPanel
 @onready var hero_inventory = $UsagePanel/HeroButton/HeroInventoryUI
@@ -39,6 +40,7 @@ var slime3_select = false
 var turn = 0
 
 
+
 func _ready() -> void:
 	_options_menu.button_focus(0)
 
@@ -58,14 +60,61 @@ func _physics_process(delta: float) -> void:
 	#Option focus fix
 	if(!is_fight && !is_skill && !is_item && !is_guard && !is_flee):
 		if (!$Options/AttackMenu/Fight_button.has_focus() and !$Options/AttackMenu/Flee_button.has_focus() and !$Options/AttackMenu/Guard_button.has_focus() and !$Options/AttackMenu/Item_button.has_focus() and !$Options/AttackMenu/Skill_button.has_focus()):
-			$Options/AttackMenu/Flee_button.grab_focus()
+			$Options/AttackMenu/Fight_button.grab_focus()
 	
 	#Enemy attack
-	if(turn > 4):
+	if(turn >= 3):
+		tim.set_wait_time(1.5)
+		$Options.visible = false
+		for i in 3:
+			var rnd = randi_range(0, 2)
+			match rnd:
+				0:
+					match turn:
+						3:
+							Hero.HP -= hostile1.ATK - Hero.DEF
+							print("s1 hit h")
+						4:
+							Hero.HP -= hostile2.ATK - Hero.DEF
+							print("s2 hit h")
+						5:
+							Hero.HP -= hostile3.ATK - Hero.DEF
+							print("s3 hit h")
+				1:
+					match turn:
+						3:
+							Mage.HP -= hostile1.ATK - Mage.DEF
+							print("s1 hit m")
+						4:
+							Mage.HP -= hostile2.ATK - Mage.DEF
+							print("s2 hit m")
+						5:
+							Mage.HP -= hostile3.ATK - Mage.DEF
+							print("s3 hit m")
+				2:
+					match turn:
+						3:
+							Thief.HP -= hostile1.ATK - Thief.DEF
+							print("s1 hit t")
+						4:
+							Thief.HP -= hostile2.ATK - Thief.DEF
+							print("s2 hit t")
+						5:
+							Thief.HP -= hostile3.ATK - Thief.DEF
+							print("s3 hit t")
+				_:
+					print("D:")
+			turn += 1
+			wait(1.5)
 		turn = 0
+		$Options.visible = true
+
 func _on_v_box_container_button_focused(button: BaseButton) -> void:
 	pass
 
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+	
 func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 	match button.name:
 		"Fight_button":
@@ -152,14 +201,18 @@ func _on_slime_pressed() -> void:
 					if (Hero.Rage < 100):
 						Hero.Rage += 5
 					turn += 1
+					print(turn)
 				1:
 					hostile1.HP -= Mage.ATK/2 - hostile1.DEF
 					turn += 1
+					print(turn)
 				2:
 					hostile1.HP -= Thief.ATK - hostile1.DEF
 					turn += 1
+					print(turn)
 				_:
 					print("o_o")
+					print(turn)
 		hostile1.release_focus()
 		$Options.visible = true
 		$Options/AttackMenu/Fight_button.grab_focus()

@@ -477,6 +477,8 @@ offset_right = 84.0
 offset_bottom = 40.0
 text = "Quit"
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="button_focused" from="Options/AttackMenu" to="." method="_on_v_box_container_button_focused"]
 [connection signal="button_pressed" from="Options/AttackMenu" to="." method="_on_v_box_container_button_pressed"]
 [connection signal="gui_input" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_gui_input"]
