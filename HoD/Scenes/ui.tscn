@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dpcx4eduhlg7f"]
+[gd_scene load_steps=20 format=3 uid="uid://dpcx4eduhlg7f"]
 
 [ext_resource type="StyleBox" uid="uid://cxnbfwjhb7n2c" path="res://Themes & Styleboxes/hover_button.tres" id="1_idv6e"]
 [ext_resource type="StyleBox" uid="uid://dairl4xxnk5mw" path="res://Themes & Styleboxes/new_style_box_flat.tres" id="2_okg1e"]
@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="3_uc2rs"]
 [ext_resource type="PackedScene" uid="uid://di4qu83s7fapw" path="res://Scenes/party_slot.tscn" id="4_axt8u"]
 [ext_resource type="Resource" uid="uid://gkx8223wwvx5" path="res://Scenes/UI/fino.tres" id="6_js784"]
-[ext_resource type="Texture2D" uid="uid://o7fb8ex38h7t" path="res://Assets/Characters/Bandits/cropped_thief.png" id="7_2kqwx"]
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="8_dis1i"]
-[ext_resource type="Texture2D" uid="uid://dw287o6jcv62g" path="res://Assets/Characters/Bandits/Bandits/Sprites/Light Bandit/Idle/LightBandit_Idle_0.png" id="9_gtcjj"]
+[ext_resource type="Texture2D" uid="uid://b1drbuyor1jvw" path="res://Assets/Asset Packs/NPCS and characters/Cropped/mage.png" id="10_n61ga"]
+[ext_resource type="Texture2D" uid="uid://ba0812e11nees" path="res://Assets/Asset Packs/NPCS and characters/Cropped/Light_charge-fotor-20250218205126.png" id="11_6eg1b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmkol"]
 
@@ -20,10 +20,15 @@ Button/styles/normal = ExtResource("2_okg1e")
 
 [sub_resource type="Resource" id="Resource_lijr2"]
 script = ExtResource("8_dis1i")
-title = "thief (Bermont?)"
-icon = ExtResource("7_2kqwx")
-texture = ExtResource("9_gtcjj")
+title = "Thief"
 description = "A skilled thief with a very sharp sword. He will steal your money and your heart as well."
+
+[sub_resource type="Resource" id="Resource_7n5bo"]
+script = ExtResource("8_dis1i")
+title = "Mage"
+icon = ExtResource("10_n61ga")
+texture = ExtResource("11_6eg1b")
+description = "A mysterious lady with sparkling magical power. "
 
 [sub_resource type="Animation" id="Animation_n3v5g"]
 length = 0.5
@@ -320,6 +325,7 @@ character = SubResource("Resource_lijr2")
 [node name="PartySlot" parent="Party/VBoxContainer" instance=ExtResource("4_axt8u")]
 custom_minimum_size = Vector2(219, 73)
 layout_mode = 2
+character = SubResource("Resource_7n5bo")
 
 [node name="Description" type="NinePatchRect" parent="Party"]
 layout_mode = 0

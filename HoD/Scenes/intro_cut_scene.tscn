@@ -504,7 +504,7 @@ visible = false
 position = Vector2(-29, 211)
 sprite_frames = SubResource("SpriteFrames_26f1w")
 animation = &"Running"
-frame = 7
+frame = 8
 
 [node name="Ui" type="CanvasLayer" parent="."]
 

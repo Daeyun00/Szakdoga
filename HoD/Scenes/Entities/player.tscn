@@ -115,8 +115,8 @@ texture_filter = 1
 position = Vector2(-39, -2)
 scale = Vector2(1, 0.990909)
 sprite_frames = SubResource("SpriteFrames_bffow")
-animation = &"Run"
-frame_progress = 0.325021
+animation = &"Idle"
+frame_progress = 0.0173008
 
 [node name="CharacterCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-40, 1)

@@ -1,11 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://tha8sk8qhg5h"]
+[gd_scene load_steps=10 format=3 uid="uid://bb2k6h66slckj"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_gcvp5"]
-[ext_resource type="Shader" path="res://Scenes/pause_menu.gdshader" id="1_kkkl3"]
-[ext_resource type="Shader" path="res://Scenes/pause_menu_bgblur.gdshader" id="1_or6a1"]
+
+[sub_resource type="Shader" id="Shader_tv5tj"]
+code = "shader_type canvas_item;
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+
+uniform float lod: hint_range(0.0, 5) = 0.0;
+
+void fragment() {
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV, lod);
+		COLOR = color;
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_enqsk"]
-shader = ExtResource("1_or6a1")
+shader = SubResource("Shader_tv5tj")
 shader_parameter/lod = 3.623
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oht38"]
@@ -18,8 +34,28 @@ shadow_color = Color(0.273873, 0.273873, 0.273873, 0.513726)
 shadow_size = 3
 shadow_offset = Vector2(0, 3)
 
+[sub_resource type="Shader" id="Shader_paq4b"]
+code = "shader_type canvas_item;
+
+uniform float height = 3;
+uniform float speed = 1.9;
+uniform float frequency = 3.5;
+
+void vertex() {
+	VERTEX.y += height * sin((frequency * UV.x) + (speed * TIME));
+}
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7o7w"]
-shader = ExtResource("1_kkkl3")
+shader = SubResource("Shader_paq4b")
 shader_parameter/height = 3.0
 shader_parameter/speed = 1.9
 shader_parameter/frequency = 3.5
