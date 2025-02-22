@@ -52,7 +52,7 @@ offset_bottom = 40.0
 text = "Slime:
 "
 
-[node name="Enemy1_HP_label2" type="Label" parent="Top/Enemies/Enemy1"]
+[node name="Enemy1_HP_label" type="Label" parent="Top/Enemies/Enemy1"]
 layout_mode = 0
 offset_left = 79.0
 offset_right = 156.0
@@ -67,7 +67,7 @@ offset_right = 75.0
 offset_bottom = 70.0
 text = "Slime:"
 
-[node name="Enemy2_HP_label3" type="Label" parent="Top/Enemies/Enemy2"]
+[node name="Enemy2_HP_label" type="Label" parent="Top/Enemies/Enemy2"]
 layout_mode = 0
 offset_left = 79.0
 offset_top = 1.0
@@ -84,7 +84,7 @@ offset_bottom = 100.0
 text = "Slime:
 "
 
-[node name="Enemy3_HP_label4" type="Label" parent="Top/Enemies/Enemy3"]
+[node name="Enemy3_HP_label" type="Label" parent="Top/Enemies/Enemy3"]
 layout_mode = 0
 offset_left = 79.0
 offset_top = 2.0
@@ -130,9 +130,9 @@ anchors_preset = -1
 anchor_left = 6.687
 anchor_right = 8.141
 anchor_bottom = 1.0
-offset_left = 29.032
-offset_right = 28.976
-text = ":3"
+offset_left = 23.032
+offset_right = 22.976
+text = "Ready"
 
 [node name="Mage_label" type="Label" parent="Top/Players"]
 layout_mode = 0
@@ -170,10 +170,10 @@ anchors_preset = -1
 anchor_left = 6.203
 anchor_right = 7.551
 anchor_bottom = 1.033
-offset_left = 26.993
-offset_right = 26.981
+offset_left = 22.993
+offset_right = 22.981
 offset_bottom = -0.99
-text = ":3"
+text = "Ready"
 
 [node name="Thief_label" type="Label" parent="Top/Players"]
 layout_mode = 0
@@ -212,11 +212,11 @@ anchors_preset = -1
 anchor_left = 6.294
 anchor_right = 7.662
 anchor_bottom = 0.867
-offset_left = 27.008
+offset_left = 23.008
 offset_top = -4.0
-offset_right = 26.984
-offset_bottom = -0.0100021
-text = ":3"
+offset_right = 22.984
+offset_bottom = -0.0100002
+text = "Ready"
 
 [node name="Options" parent="." instance=ExtResource("1_j3yfj")]
 custom_minimum_size = Vector2(150, 150)

@@ -50,13 +50,30 @@ func _physics_process(delta: float) -> void:
 		if($Allies/Hero.has_focus()):
 			hostile1.grab_focus()
 	
-	#Resource labels
+	#HP labels
 	var HeroHP = str($Allies/Hero.HP) + "/" + str($Allies/Hero.MaxHP) + " HP"
-	var SlimeHP = str($Hostiles/Slime.HP) + "/" + str($Hostiles/Slime.MaxHP) + "HP" 
+	var MageHP = str($Allies/Mage.HP) + "/" + str($Allies/Mage.MaxHP) + " HP"
+	var ThiefHP = str($Allies/Thief.HP) + "/" + str($Allies/Thief.MaxHP) + " HP"
 	
-	$Top/Enemies/Enemy1/Enemy1_HP_label2.text = SlimeHP
+	var SlimeHP = str($Hostiles/Slime.HP) + "/" + str($Hostiles/Slime.MaxHP) + " HP" 
+	var Slime2HP = str($Hostiles/Slime2.HP) + "/" + str($Hostiles/Slime2.MaxHP) + " HP" 
+	var Slime3HP = str($Hostiles/Slime3.HP) + "/" + str($Hostiles/Slime3.MaxHP) + " HP" 
+	$Top/Enemies/Enemy1/Enemy1_HP_label.text = SlimeHP
+	$Top/Enemies/Enemy2/Enemy2_HP_label.text = Slime2HP
+	$Top/Enemies/Enemy3/Enemy3_HP_label.text = Slime3HP
 	$Top/Players/Hero_label/Hero_HP_label.text = HeroHP
+	$Top/Players/Mage_label/Mage_HP_label.text = MageHP
+	$Top/Players/Thief_label/Thief_HP_label.text = ThiefHP
 	
+	#Resource labels
+	var Rage = str(Hero.Rage) + "/" + str(Hero.MaxRage) + " Rage"
+	var Mana = str(Mage.Mana) + "/" + str(Mage.MaxMana) + " Mana"
+	var Combo = str(Thief.Combo) + "/" + str(Thief.MaxCombo) + " Combo"
+	
+	$Top/Players/Hero_label/Hero_rage_label.text = Rage
+	$Top/Players/Mage_label/Mage_mana_label.text = Mana
+	$Top/Players/Thief_label/Thief_combo_label.text = Combo
+
 	#Option focus fix
 	if(!is_fight && !is_skill && !is_item && !is_guard && !is_flee):
 		if (!$Options/AttackMenu/Fight_button.has_focus() and !$Options/AttackMenu/Flee_button.has_focus() and !$Options/AttackMenu/Guard_button.has_focus() and !$Options/AttackMenu/Item_button.has_focus() and !$Options/AttackMenu/Skill_button.has_focus()):

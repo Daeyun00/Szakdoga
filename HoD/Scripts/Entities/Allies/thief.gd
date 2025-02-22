@@ -1,10 +1,13 @@
 extends Button
 
+var MaxHP = 100
 var HP = 100
-var Combo = 100
+var MaxCombo = 10
+var Combo = 0
+var MaxATK = 0
 var ATK = 2
+var MaxDEF = 0
 var DEF = 0
-
 
 
 
@@ -15,7 +18,7 @@ func apply_item_effect(item):
 			print("HP increased to ", HP)
 		"Stanima":
 			Combo += 10
-			print("Rage incrase to ", Combo)
+			print("Combo incrase to ", Combo)
 		"Armor":
 			DEF += 10
 			print("DEF incrase to ", DEF)
