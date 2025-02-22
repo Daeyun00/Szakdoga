@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://dk2q27uc065mt"]
 
-[ext_resource type="Texture2D" uid="uid://bs4f5gtntb1a8" path="res://Assets/random fight bg/undefined - Imgur_page_0001.jpg" id="1_8dk2v"]
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
 [ext_resource type="Script" path="res://Scripts/battle.gd" id="1_kdno6"]
+[ext_resource type="Texture2D" uid="uid://durkxrbpaaoeu" path="res://Assets/Backgrounds_Fight/Fantasy Forests/Trees 6.png" id="2_afwwg"]
 [ext_resource type="FontVariation" uid="uid://bppspbqj0rwmh" path="res://Utility/themes/default_font.tres" id="2_q03yh"]
 [ext_resource type="Script" path="res://Scripts/Attack_Menu.gd" id="4_dtoku"]
 [ext_resource type="PackedScene" uid="uid://codr4bxbre4uq" path="res://Scenes/Entities/Hero.tscn" id="4_o04v0"]
@@ -23,9 +23,9 @@ script = ExtResource("1_kdno6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(686, 384.5)
-scale = Vector2(1.7, 2.27679)
-texture = ExtResource("1_8dk2v")
+position = Vector2(683, 386)
+scale = Vector2(0.762277, 0.744141)
+texture = ExtResource("2_afwwg")
 
 [node name="Top" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(1000, 150)
@@ -275,23 +275,23 @@ grow_horizontal = 0
 
 [node name="Hero" parent="Allies" instance=ExtResource("4_o04v0")]
 layout_mode = 0
-offset_left = 743.0
-offset_top = 653.0
-offset_right = 796.0
-offset_bottom = 739.0
+offset_left = 751.0
+offset_top = 641.0
+offset_right = 804.0
+offset_bottom = 727.0
 
 [node name="Mage" parent="Allies" instance=ExtResource("7_3yu3a")]
 layout_mode = 0
-offset_left = 832.0
-offset_top = 598.0
-offset_right = 885.0
-offset_bottom = 684.0
+offset_left = 839.0
+offset_top = 611.0
+offset_right = 892.0
+offset_bottom = 697.0
 
 [node name="Thief" parent="Allies" instance=ExtResource("8_mbssg")]
 layout_mode = 0
-offset_left = 947.0
+offset_left = 954.0
 offset_top = 641.0
-offset_right = 1000.0
+offset_right = 1007.0
 offset_bottom = 727.0
 
 [node name="Hostiles" type="Control" parent="."]
@@ -302,23 +302,23 @@ script = ExtResource("9_5a74e")
 
 [node name="Slime" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 275.0
-offset_top = 584.0
-offset_right = 337.0
-offset_bottom = 640.0
+offset_left = 404.0
+offset_top = 670.0
+offset_right = 466.0
+offset_bottom = 726.0
 
 [node name="Slime2" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 368.0
-offset_top = 677.0
-offset_right = 439.0
-offset_bottom = 739.0
+offset_left = 308.0
+offset_top = 653.0
+offset_right = 379.0
+offset_bottom = 715.0
 
 [node name="Slime3" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 159.0
+offset_left = 183.0
 offset_top = 670.0
-offset_right = 230.0
+offset_right = 254.0
 offset_bottom = 732.0
 
 [node name="DetailsPanel" type="ColorRect" parent="."]
