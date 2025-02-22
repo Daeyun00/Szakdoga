@@ -1,0 +1,116 @@
+[gd_scene load_steps=17 format=3 uid="uid://dldwi8jevyv8d"]
+
+[ext_resource type="Texture2D" uid="uid://dh4psn7x76cf2" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Blacksmith.png" id="1_gecig"]
+[ext_resource type="Script" path="res://Scripts/Entities/Allies/blacksmith.gd" id="2_62a6r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glkya"]
+atlas = ExtResource("1_gecig")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dysk2"]
+atlas = ExtResource("1_gecig")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ud8k"]
+atlas = ExtResource("1_gecig")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0q6c"]
+atlas = ExtResource("1_gecig")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju4ip"]
+atlas = ExtResource("1_gecig")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu3rr"]
+atlas = ExtResource("1_gecig")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8b15"]
+atlas = ExtResource("1_gecig")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsjv3"]
+atlas = ExtResource("1_gecig")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwwal"]
+atlas = ExtResource("1_gecig")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fuka"]
+atlas = ExtResource("1_gecig")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx4nl"]
+atlas = ExtResource("1_gecig")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qdpm"]
+atlas = ExtResource("1_gecig")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikgfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glkya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dysk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ud8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0q6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju4ip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu3rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8b15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsjv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwwal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fuka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx4nl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qdpm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bq1nd"]
+
+[node name="BlacksmithNpc" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ikgfp")
+autoplay = "default"
+frame_progress = 0.760228
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_62a6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 7)
+scale = Vector2(2.99688, 3.04869)
+shape = SubResource("CircleShape2D_bq1nd")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

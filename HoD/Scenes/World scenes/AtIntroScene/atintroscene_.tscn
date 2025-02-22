@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cwaue6sly73wb" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/3.png" id="7_y405i"]
 [ext_resource type="Texture2D" uid="uid://dwiafpo3rhmeq" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/9.png" id="8_uthig"]
 [ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="9_j3fmm"]
-[ext_resource type="PackedScene" uid="uid://bpyc3mkssgylv" path="res://Scenes/Entities/Crystal_NPC.tscn" id="17_fstdi"]
+[ext_resource type="PackedScene" uid="uid://bh7n85ywi1qfs" path="res://Scenes/World scenes/AtIntroScene/crystal_npc.tscn" id="17_2y6as"]
 [ext_resource type="Texture2D" uid="uid://cvibt66lbss8q" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniBird.png" id="28_wgwth"]
 [ext_resource type="Texture2D" uid="uid://dy8prl1fbrp54" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/Campfire with food sheet.png" id="29_bbewp"]
 
@@ -2994,5 +2994,5 @@ sprite_frames = SubResource("SpriteFrames_pqkhq")
 autoplay = "default"
 frame_progress = 0.426717
 
-[node name="CrystalNpc" parent="." instance=ExtResource("17_fstdi")]
-position = Vector2(639, 735)
+[node name="CrystalNpc" parent="." instance=ExtResource("17_2y6as")]
+position = Vector2(685, 727)

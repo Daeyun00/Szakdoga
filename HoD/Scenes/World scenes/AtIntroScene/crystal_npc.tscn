@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=3 uid="uid://bh7n85ywi1qfs"]
+
+[ext_resource type="Texture2D" uid="uid://blferagupjxa5" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle1.png" id="1_jakml"]
+[ext_resource type="Texture2D" uid="uid://ljpf65n4wd58" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle2.png" id="2_dn2mb"]
+[ext_resource type="Texture2D" uid="uid://7u6g1w463u44" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle3.png" id="3_tjonu"]
+[ext_resource type="Texture2D" uid="uid://ce2hr5ejmqxaf" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle4.png" id="4_6fykb"]
+[ext_resource type="Texture2D" uid="uid://ca8in0pqbr60g" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle5.png" id="5_bb8my"]
+[ext_resource type="Texture2D" uid="uid://b64la0v0cxg6o" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle6.png" id="6_s483w"]
+[ext_resource type="Texture2D" uid="uid://dns3v4yo3h8vi" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle7.png" id="7_yw0n8"]
+[ext_resource type="Texture2D" uid="uid://ji1ndwkaq7sd" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle8.png" id="8_rj3sv"]
+[ext_resource type="Texture2D" uid="uid://biuvetmwu2fyi" path="res://Assets/Asset Packs/NPCS and characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle9.png" id="9_ff63r"]
+[ext_resource type="Script" path="res://Scenes/World scenes/AtIntroScene/intarea.gd" id="10_dk6b2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hifts"]
+atlas = ExtResource("1_jakml")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ae22u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hifts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dn2mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tjonu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6fykb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bb8my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s483w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yw0n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rj3sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ff63r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_li40j"]
+
+[node name="CrystalNpc" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ae22u")
+autoplay = "default"
+frame_progress = 0.0863323
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("10_dk6b2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2.99688, 3.04869)
+shape = SubResource("CircleShape2D_li40j")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="Area2D" method="_on_body_shape_exited"]

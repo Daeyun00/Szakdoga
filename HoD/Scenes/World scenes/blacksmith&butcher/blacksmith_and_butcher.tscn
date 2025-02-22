@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://dpga0yjvkx0u6"]
+[gd_scene load_steps=54 format=4 uid="uid://dpga0yjvkx0u6"]
 
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_5qapa"]
 [ext_resource type="Texture2D" uid="uid://dcqyar38g5dvv" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="2_hvhe1"]
@@ -13,12 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://dm0leof0fqhmf" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/8.png" id="8_xeq4t"]
 [ext_resource type="Texture2D" uid="uid://cao6e4jtha5ld" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/10.png" id="9_263wm"]
 [ext_resource type="Texture2D" uid="uid://coqlyewnececd" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/7.png" id="10_5bl7i"]
-[ext_resource type="Texture2D" uid="uid://dh4psn7x76cf2" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Blacksmith.png" id="10_lo8i0"]
-[ext_resource type="Texture2D" uid="uid://cfb1mal1usuxs" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Meat_Vendor.png" id="11_52dtr"]
 [ext_resource type="Texture2D" uid="uid://3g5jmj5rxk5p" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/1.png" id="11_tamxf"]
 [ext_resource type="Texture2D" uid="uid://d3ua2u1h5m28f" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/5.png" id="12_740ue"]
 [ext_resource type="Texture2D" uid="uid://70ncpntc83d0" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniFox.png" id="12_p4qx6"]
 [ext_resource type="Texture2D" uid="uid://dh58h7uk8ciht" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets.png" id="15_75h20"]
+[ext_resource type="PackedScene" uid="uid://dldwi8jevyv8d" path="res://Scenes/Entities/NPCS/blacksmith_NPC.tscn" id="19_01chg"]
+[ext_resource type="PackedScene" uid="uid://p4uw4mc50we6" path="res://Scenes/Entities/NPCS/butcher_NPC.tscn" id="19_gsv5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fg5qn"]
 texture = ExtResource("7_rb4bm")
@@ -4934,211 +4934,6 @@ texture = ExtResource("8_n3dow")
 [sub_resource type="TileSet" id="TileSet_w230l"]
 sources/0 = SubResource("TileSetAtlasSource_1vsf8")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_idgsx"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j6ar8"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6q0pv"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6kjps"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8hwvb"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvs2k"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_83f53"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_keok3"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(192, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rtrs4"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(0, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4qc03"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(64, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jbq3i"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(128, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_evxw5"]
-atlas = ExtResource("10_lo8i0")
-region = Rect2(192, 128, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_735ig"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_idgsx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j6ar8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6q0pv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6kjps")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8hwvb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qvs2k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_83f53")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_keok3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rtrs4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4qc03")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jbq3i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_evxw5")
-}],
-"loop": true,
-"name": &"default",
-"speed": 9.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a0qwu"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hu710"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dqr11"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jcp52"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rm0i8"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybtyo"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q5fpq"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cqyi0"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(192, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pqkrt"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(0, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ryg0l"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(64, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ute2h"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(128, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mli7l"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(192, 128, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vaul3"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(0, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bv12f"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(64, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6rw7r"]
-atlas = ExtResource("11_52dtr")
-region = Rect2(128, 192, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_lniom"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a0qwu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hu710")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dqr11")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jcp52")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rm0i8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ybtyo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q5fpq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cqyi0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pqkrt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ryg0l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ute2h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mli7l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vaul3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bv12f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6rw7r")
-}],
-"loop": true,
-"name": &"default",
-"speed": 9.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_puhnj"]
 atlas = ExtResource("12_p4qx6")
 region = Rect2(0, 0, 32, 48)
@@ -5278,18 +5073,6 @@ position = Vector2(-5, 47)
 offset = Vector2(1, -49)
 zoom = Vector2(6, 6)
 
-[node name="Blacksmith" type="AnimatedSprite2D" parent="."]
-position = Vector2(227, 719)
-sprite_frames = SubResource("SpriteFrames_735ig")
-autoplay = "default"
-frame_progress = 0.0492462
-
-[node name="Butcher" type="AnimatedSprite2D" parent="."]
-position = Vector2(1076, 720)
-sprite_frames = SubResource("SpriteFrames_lniom")
-autoplay = "default"
-frame_progress = 0.918036
-
 [node name="Foxie" type="AnimatedSprite2D" parent="."]
 position = Vector2(686, 745)
 sprite_frames = SubResource("SpriteFrames_hhikg")
@@ -5298,3 +5081,9 @@ frame_progress = 0.847577
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5w661")
+
+[node name="BlacksmithNpc" parent="." instance=ExtResource("19_01chg")]
+position = Vector2(231, 720)
+
+[node name="ButcherNpc" parent="." instance=ExtResource("19_gsv5j")]
+position = Vector2(1078, 720)
