@@ -1,0 +1,10 @@
+bartender: What can I give you?
+- I want a glass of orange juice please.
+- I want a glass of water please.
+- I want a mug of beer please.
+- I want a cup of coffee please.
+- Nothing.
+	[end_timeline]
+bartender: Here you go.
+bartender: Enjoy.
+[end_timeline]

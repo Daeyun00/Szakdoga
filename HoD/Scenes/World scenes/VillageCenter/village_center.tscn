@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://co37dgctyyci6"]
+[gd_scene load_steps=66 format=4 uid="uid://co37dgctyyci6"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_hr4oh"]
 [ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_s1ham"]
@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cq425gskyws1a" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Vendor.png" id="9_1wwri"]
 [ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="9_fy8gm"]
 [ext_resource type="Texture2D" uid="uid://c6jw5jh4xq1yi" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniBunny.png" id="10_ra5jp"]
-[ext_resource type="Texture2D" uid="uid://b27c0cjshdqyb" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Magic_Vendor.png" id="13_3l8wk"]
+[ext_resource type="Script" path="res://Scripts/bunny_area.gd" id="11_15255"]
+[ext_resource type="Script" path="res://Scripts/mage_2.gd" id="13_7ngam"]
+[ext_resource type="Texture2D" uid="uid://cvix2oyqv3f4t" path="res://Assets/Asset Packs/NPCS and characters/free-wizard-sprite-sheets-pixel-art/Lightning Mage/Idle.png" id="14_3ayjx"]
+[ext_resource type="Script" path="res://Scripts/merchantwoman_2.gd" id="14_l8lwf"]
 
 [sub_resource type="TileSet" id="TileSet_yyjto"]
 
@@ -5706,6 +5709,104 @@ texture = ExtResource("4_gory0")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_fjp66")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lafd5"]
+atlas = ExtResource("10_ra5jp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d07r"]
+atlas = ExtResource("10_ra5jp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgowc"]
+atlas = ExtResource("10_ra5jp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct8cr"]
+atlas = ExtResource("10_ra5jp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i5tyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lafd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d07r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgowc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct8cr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2okqf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjtpe"]
+atlas = ExtResource("14_3ayjx")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riok3"]
+atlas = ExtResource("14_3ayjx")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj4ja"]
+atlas = ExtResource("14_3ayjx")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qne1n"]
+atlas = ExtResource("14_3ayjx")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkdpy"]
+atlas = ExtResource("14_3ayjx")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgrog"]
+atlas = ExtResource("14_3ayjx")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36bgb"]
+atlas = ExtResource("14_3ayjx")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_noshx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjtpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_riok3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj4ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qne1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkdpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgrog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36bgb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vng5r"]
+radius = 105.423
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vwrhk"]
 atlas = ExtResource("9_1wwri")
 region = Rect2(0, 0, 32, 64)
@@ -5756,91 +5857,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lafd5"]
-atlas = ExtResource("10_ra5jp")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5d07r"]
-atlas = ExtResource("10_ra5jp")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sgowc"]
-atlas = ExtResource("10_ra5jp")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ct8cr"]
-atlas = ExtResource("10_ra5jp")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_i5tyv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lafd5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5d07r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sgowc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ct8cr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p3csp"]
-atlas = ExtResource("13_3l8wk")
-region = Rect2(0, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_82qx0"]
-atlas = ExtResource("13_3l8wk")
-region = Rect2(32, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dlwvs"]
-atlas = ExtResource("13_3l8wk")
-region = Rect2(64, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s5ch7"]
-atlas = ExtResource("13_3l8wk")
-region = Rect2(96, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wryih"]
-atlas = ExtResource("13_3l8wk")
-region = Rect2(0, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_le8o8"]
-atlas = ExtResource("13_3l8wk")
-region = Rect2(32, 64, 32, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_noshx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p3csp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_82qx0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dlwvs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s5ch7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wryih")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_le8o8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="CircleShape2D" id="CircleShape2D_86m2t"]
+radius = 17.4642
 
 [node name="VillageCenter" type="Node2D"]
 
@@ -5932,17 +5950,19 @@ position = Vector2(691, 738)
 scale = Vector2(1.40471, 1.7116)
 texture = ExtResource("8_o56x1")
 
-[node name="merchantwoman" type="AnimatedSprite2D" parent="."]
-position = Vector2(288, 721)
-sprite_frames = SubResource("SpriteFrames_43ooe")
-autoplay = "default"
-frame_progress = 0.54203
-
-[node name="bunny" type="AnimatedSprite2D" parent="."]
+[node name="BunnyArea" type="Area2D" parent="."]
 position = Vector2(453, 737)
+script = ExtResource("11_15255")
+
+[node name="bunny" type="AnimatedSprite2D" parent="BunnyArea"]
 sprite_frames = SubResource("SpriteFrames_i5tyv")
 autoplay = "default"
 frame_progress = 0.726536
+
+[node name="bunny_" type="CollisionShape2D" parent="BunnyArea"]
+position = Vector2(0, 10)
+scale = Vector2(2.89706, 2.82818)
+shape = SubResource("CircleShape2D_2okqf")
 
 [node name="Player" parent="." instance=ExtResource("9_fy8gm")]
 visible = false
@@ -5954,8 +5974,39 @@ position = Vector2(-5, 47)
 offset = Vector2(1, -49)
 zoom = Vector2(6, 6)
 
-[node name="woman" type="AnimatedSprite2D" parent="."]
-position = Vector2(1022, 720)
+[node name="mage2" type="Area2D" parent="."]
+script = ExtResource("13_7ngam")
+
+[node name="mage" type="AnimatedSprite2D" parent="mage2"]
+position = Vector2(1029, 706)
+scale = Vector2(0.796852, 0.733662)
 sprite_frames = SubResource("SpriteFrames_noshx")
 autoplay = "default"
-frame_progress = 0.583618
+frame_progress = 0.59101
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mage2"]
+position = Vector2(1037, 728)
+scale = Vector2(0.227508, 0.346255)
+shape = SubResource("CircleShape2D_vng5r")
+
+[node name="merchantwoman2" type="Area2D" parent="."]
+script = ExtResource("14_l8lwf")
+
+[node name="merchantwoman" type="AnimatedSprite2D" parent="merchantwoman2"]
+position = Vector2(288, 721)
+sprite_frames = SubResource("SpriteFrames_43ooe")
+autoplay = "default"
+frame_progress = 0.54203
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="merchantwoman2"]
+position = Vector2(287, 733)
+scale = Vector2(1.7938, 1.73054)
+shape = SubResource("CircleShape2D_86m2t")
+
+[connection signal="body_entered" from="BunnyArea" to="BunnyArea" method="_on_body_entered"]
+[connection signal="body_exited" from="BunnyArea" to="BunnyArea" method="_on_body_exited"]
+[connection signal="body_entered" from="mage2" to="mage2" method="_on_body_entered"]
+[connection signal="body_exited" from="mage2" to="mage2" method="_on_body_exited"]
+[connection signal="body_entered" from="merchantwoman2" to="merchantwoman2" method="_on_body_entered"]
+[connection signal="body_exited" from="merchantwoman2" to="merchantwoman2" method="_on_body_exited"]

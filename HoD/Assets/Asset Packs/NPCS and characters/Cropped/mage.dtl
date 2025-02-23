@@ -1,0 +1,20 @@
+mage: Greetings soldier.
+mage: I've heard about you before. You're the knight who was sended here to save this village.
+mage: I'm a traveler myself.
+mage: Would you mind if I join you?
+- Join me please.
+- I don't need you.
+	(She acts like she didn't hear your refusal)
+	(Seems like you don't have any choices in this matter)
+- Why?
+	mage: I have my own reasons. 
+	mage: I want to save this village.
+	mage: That's more than enough to know.
+	- I don't trust you.
+		mage: You don't have to.
+		mage: But I swear I won't turn my magic spells against you.
+		mage: I have your back and you have mine.
+	- Alright then, join me.
+mage: You won't regret your choice.
+(Mage has joined your team)
+[end_timeline]

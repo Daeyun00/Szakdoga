@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://dibbb1ojb3q60"]
+[gd_scene load_steps=80 format=4 uid="uid://dibbb1ojb3q60"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_qgqhq"]
 [ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_xqa4y"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="9_i42hw"]
 [ext_resource type="Texture2D" uid="uid://cgiye61hul65h" path="res://Assets/Asset Packs/Village/GandalfHardcore Water Tiles/GandalfHardcore Water Tiles/Calm Water.png" id="10_sexl1"]
 [ext_resource type="Texture2D" uid="uid://d3a22kf788wd" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Gravedigger.png" id="11_w15nm"]
+[ext_resource type="Script" path="res://Scripts/gravedigger.gd" id="12_en8ie"]
 
 [sub_resource type="TileSet" id="TileSet_231b6"]
 
@@ -2618,6 +2619,8 @@ animations = [{
 "speed": 9.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qac0n"]
+
 [node name="WeirdGuy" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2724,8 +2727,19 @@ sprite_frames = SubResource("SpriteFrames_i0scc")
 autoplay = "default"
 frame_progress = 0.44274
 
-[node name="guy" type="AnimatedSprite2D" parent="."]
+[node name="gravedigger" type="Area2D" parent="."]
+script = ExtResource("12_en8ie")
+
+[node name="guy" type="AnimatedSprite2D" parent="gravedigger"]
 position = Vector2(177, 713)
 sprite_frames = SubResource("SpriteFrames_wt3ny")
 autoplay = "default"
 frame_progress = 0.0379148
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gravedigger"]
+position = Vector2(178, 729)
+scale = Vector2(3.04053, 2.69535)
+shape = SubResource("CircleShape2D_qac0n")
+
+[connection signal="body_entered" from="gravedigger" to="gravedigger" method="_on_body_entered"]
+[connection signal="body_exited" from="gravedigger" to="gravedigger" method="_on_body_exited"]

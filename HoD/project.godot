@@ -25,17 +25,32 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"bard": "res://timelines/bard.dch",
+"bartender": "res://timelines/bartender.dch",
 "blacksmith": "res://timelines/blacksmith.dch",
 "butcher": "res://timelines/butcher.dch",
 "crystal": "res://timelines/crystal.dch",
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
+"drunkards": "res://timelines/drunkards.dch",
+"gravedigger_guy": "res://timelines/gravedigger_guy.dch",
+"mage": "res://timelines/mage.dch",
+"unit_test_character": "res://Tests/Resources/unit_test_character.dch",
+"vendor": "res://timelines/vendor.dch",
+"woman": "res://timelines/woman.dch"
 }
 directories/dtl_directory={
+"bartedner": "res://Assets/Asset Packs/NPCS and characters/Cropped/bartedner.dtl",
 "blacksmith": "res://timelines/blacksmith.dtl",
+"bunny": "res://timelines/bunny.dtl",
 "crystal": "res://timelines/crystal.dtl",
+"drunkards": "res://timelines/drunkards.dtl",
+"gravedigging_guy": "res://Assets/Asset Packs/NPCS and characters/Cropped/gravedigging_guy.dtl",
+"mage": "res://Assets/Asset Packs/NPCS and characters/Cropped/mage.dtl",
 "meatvendor": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor.dtl",
 "meatvendor2": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor2.dtl",
-"meatvendor3": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor3.dtl"
+"meatvendor3": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor3.dtl",
+"musician": "res://Assets/Asset Packs/NPCS and characters/Cropped/musician.dtl",
+"vendor": "res://Assets/Asset Packs/NPCS and characters/Cropped/vendor.dtl",
+"woman": "res://Assets/Asset Packs/NPCS and characters/Cropped/woman.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://timelines/New_File.tres"]

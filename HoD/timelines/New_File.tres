@@ -31,8 +31,7 @@ script = ExtResource("1_luhcw")
 scene = ExtResource("4_c3j2a")
 overrides = {
 "name_label_custom_color": "Color(0.10025, 0, 0.175781, 1)",
-"name_label_custom_size": "33.0",
-"name_label_hide_when_no_character": "true"
+"name_label_custom_size": "33.0"
 }
 
 [sub_resource type="Resource" id="Resource_fgmqe"]
