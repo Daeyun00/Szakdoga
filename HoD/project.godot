@@ -20,19 +20,19 @@ config/icon="res://lotus.svg"
 Global="*res://Scripts/Global.gd"
 Debug="*res://Scripts/debug.gd"
 Persistence="*res://Scripts/Persistence.gd"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "blacksmith": "res://timelines/blacksmith.dch",
-"default": "res://timelines/default.dch",
-"meatvendor": "res://timelines/meatvendor.dch",
+"butcher": "res://timelines/butcher.dch",
+"crystal": "res://timelines/crystal.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"1": "res://timelines/1.dtl",
 "blacksmith": "res://timelines/blacksmith.dtl",
+"crystal": "res://timelines/crystal.dtl",
 "meatvendor": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor.dtl",
 "meatvendor2": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor2.dtl",
 "meatvendor3": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor3.dtl"
@@ -62,6 +62,10 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 
+[dialogue_manager]
+
+editor/advanced/custom_test_scene_path="res://godot_dialogue_manager-ef2457281daa1eab07bba85cb92956aecb5cd24f/addons/dialogue_manager/test_scene.tscn"
+
 [display]
 
 window/size/viewport_width=1366
@@ -70,7 +74,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [gui]
 
