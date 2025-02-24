@@ -1,0 +1,104 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxsolkbecskj8"]
+
+[ext_resource type="Script" path="res://Scripts/SQLController.gd" id="1_1bq04"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1bq04")
+
+[node name="Insertdata" type="Button" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 190.0
+offset_right = 264.0
+offset_bottom = 250.0
+text = "Insert data"
+
+[node name="Selectdata" type="Button" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 269.0
+offset_right = 263.0
+offset_bottom = 329.0
+text = "Select data"
+
+[node name="Updatedata" type="Button" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 358.0
+offset_right = 257.0
+offset_bottom = 418.0
+text = "Update data"
+
+[node name="Deletedata" type="Button" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 442.0
+offset_right = 258.0
+offset_bottom = 502.0
+text = "Delete data"
+
+[node name="CustomSelect" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 542.0
+offset_right = 254.0
+offset_bottom = 602.0
+text = "Custom Select"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 66.0
+offset_right = 424.0
+offset_bottom = 99.0
+text = "Name"
+
+[node name="Name" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 64.0
+offset_right = 718.0
+offset_bottom = 101.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 137.0
+offset_right = 422.0
+offset_bottom = 170.0
+text = "Score"
+
+[node name="Score" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 138.0
+offset_right = 715.0
+offset_bottom = 175.0
+
+[node name="CreateTable" type="Button" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 92.0
+offset_right = 253.0
+offset_bottom = 152.0
+text = "Create Table"
+
+[node name="StorePlayerImage" type="Button" parent="."]
+offset_left = 62.0
+offset_top = 623.0
+offset_right = 252.0
+offset_bottom = 683.0
+text = "Store Player Image"
+
+[connection signal="button_down" from="Insertdata" to="." method="_on_insertdata_button_down"]
+[connection signal="button_down" from="Selectdata" to="." method="_on_selectdata_button_down"]
+[connection signal="button_down" from="Updatedata" to="." method="_on_updatedata_button_down"]
+[connection signal="button_down" from="Deletedata" to="." method="_on_deletedata_button_down"]
+[connection signal="button_down" from="CustomSelect" to="." method="_on_custom_select_button_down"]
+[connection signal="button_down" from="CreateTable" to="." method="_on_create_table_button_down"]
+[connection signal="button_down" from="StorePlayerImage" to="." method="_on_create_table_button_down"]
+[connection signal="button_down" from="StorePlayerImage" to="." method="_on_store_player_image_button_down"]
