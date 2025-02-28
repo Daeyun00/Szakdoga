@@ -88,6 +88,7 @@ offset_bottom = 152.0
 text = "Create Table"
 
 [node name="StorePlayerImage" type="Button" parent="."]
+layout_mode = 0
 offset_left = 62.0
 offset_top = 623.0
 offset_right = 252.0

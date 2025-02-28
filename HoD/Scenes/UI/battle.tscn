@@ -359,6 +359,7 @@ text = "Hero"
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="UsagePanel/HeroButton/HeroInventoryUI"]
+modulate = Color(0.354332, 9.38309e-05, 0.358866, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -409,7 +410,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.192157, 0.376471, 0.321569, 1)
+color = Color(0.352941, 0, 0.360784, 1)
 
 [node name="Label" type="Label" parent="UsagePanel/MageButton/MageInventoryUI/ColorRect"]
 layout_mode = 1
@@ -453,7 +454,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.192157, 0.376471, 0.321569, 1)
+color = Color(0.352941, 0, 0.360784, 1)
 
 [node name="Label" type="Label" parent="UsagePanel/ThiefButton/ThiefInventoryUI/ColorRect"]
 layout_mode = 1
