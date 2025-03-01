@@ -37,6 +37,8 @@ var slime1_select = false
 var slime2_select = false
 var slime3_select = false
 
+var _charge_select = false
+
 var turn = 0
 
 
@@ -66,6 +68,14 @@ func _physics_process(delta: float) -> void:
 	$Top/Players/Thief_label/Thief_HP_label.text = ThiefHP
 	
 	#Resource labels
+	
+	if(Hero.Rage > Hero.MaxRage):
+		Hero.Rage = Hero.MaxRage
+	if(Mage.Mana > Mage.MaxMana):
+		Mage.Mana = Mage.MaxMana
+	if(Thief.Combo > Thief.MaxCombo):
+		Thief.Combo = Thief.MaxCombo
+	
 	var Rage = str(Hero.Rage) + "/" + str(Hero.MaxRage) + " Rage"
 	var Mana = str(Mage.Mana) + "/" + str(Mage.MaxMana) + " Mana"
 	var Combo = str(Thief.Combo) + "/" + str(Thief.MaxCombo) + " Combo"
@@ -124,6 +134,9 @@ func _physics_process(delta: float) -> void:
 			turn += 1
 			wait(1.5)
 		turn = 0
+		$Top/Players/Hero_label/Hero_status.text = ""
+		$Top/Players/Mage_label/Mage_status.text = ""
+		$Top/Players/Thief_label/Thief_status.text = ""
 		$Options.visible = true
 
 #misc
@@ -140,19 +153,12 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 		"Fight_button":
 			print("Fight")
 			is_fight = !is_fight
-			match turn:
-				0:
-					$Top/Players/Hero_label/Hero_status.text = "Attack"
-				1:
-					$Top/Players/Mage_label/Mage_status.text = "Attack"
-				2:
-					$Top/Players/Thief_label/Thief_status.text = "Attack"
-				_:
-					print(":3")
 			_fight_window(button)
 		"Skill_button":
 			print("Skill")
 			is_skill = !is_skill
+			_skill_window(button)
+			
 		"Item_button":
 			print("Válasszon karaktert! ")
 			is_item = !is_item
@@ -165,11 +171,59 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 		_:
 			print("o_o")
 
+#Attack
 func _fight_window(button: BaseButton) -> void:
 	button.release_focus()
 	hostile1.grab_focus()
 	$Options.visible = false
-	
+	match turn:
+				0:
+					$Top/Players/Hero_label/Hero_status.text = "Attack"
+				1:
+					$Top/Players/Mage_label/Mage_status.text = "Attack"
+				2:
+					$Top/Players/Thief_label/Thief_status.text = "Attack"
+				_:
+					print(":3")
+
+#skills
+func _skill_window(button: BaseButton) -> void:
+	button.release_focus()
+	$Options.visible = false
+	match turn:
+		0:
+			$Top/Players/Hero_label/Hero_status.text = "Skill"
+			$Martials.visible = true
+			$Martials/MatialMenu/Charge.grab_focus()
+		1:
+			$Top/Players/Mage_label/Mage_status.text = "Skill"
+			$Spells.visible = true
+			$Spells/SpellMenu/Fireball.grab_focus()
+		2:
+			$Top/Players/Thief_label/Thief_status.text = "Skill"
+			$Combo.visible = true
+			$Combos/ComboMenu/Envenom.grab_focus()
+
+
+func _on_matial_menu_button_pressed(button: BaseButton) -> void:
+	match button.name:
+		"Charge":
+			print("owo")
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+
+func _on_spell_menu_button_pressed(button: BaseButton) -> void:
+	pass # Replace with function body.
+
+
+func _on_combo_menu_button_pressed(button: BaseButton) -> void:
+	pass # Replace with function body.
+
+
+#enemy functions
 func _on_slime_pressed() -> void:
 	if(is_fight):
 		match turn:
@@ -191,6 +245,57 @@ func _on_slime_pressed() -> void:
 					print("o_o")
 					print(turn)
 		hostile1.release_focus()
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_fight = !is_fight
+
+func _on_slime_2_pressed() -> void:
+	if(is_fight):
+		match turn:
+				0:
+					hostile2.HP -= Hero.ATK - hostile2.DEF
+					if (Hero.Rage < 100):
+						Hero.Rage += 5
+					turn += 1
+					print(turn)
+				1:
+					hostile2.HP -= Mage.ATK/2 - hostile2.DEF
+					turn += 1
+					print(turn)
+				2:
+					hostile2.HP -= Thief.ATK - hostile2.DEF
+					turn += 1
+					print(turn)
+				_:
+					print("o_o")
+					print(turn)
+		hostile2.release_focus()
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_fight = !is_fight
+
+
+func _on_slime_3_pressed() -> void:
+	if(is_fight):
+		match turn:
+				0:
+					hostile3.HP -= Hero.ATK - hostile3.DEF
+					if (Hero.Rage < 100):
+						Hero.Rage += 5
+					turn += 1
+					print(turn)
+				1:
+					hostile3.HP -= Mage.ATK/2 - hostile3.DEF
+					turn += 1
+					print(turn)
+				2:
+					hostile3.HP -= Thief.ATK - hostile3.DEF
+					turn += 1
+					print(turn)
+				_:
+					print("o_o")
+					print(turn)
+		hostile3.release_focus()
 		$Options.visible = true
 		$Options/AttackMenu/Fight_button.grab_focus()
 		is_fight = !is_fight

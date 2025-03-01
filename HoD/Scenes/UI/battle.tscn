@@ -266,6 +266,7 @@ text = "Flee"
 [node name="Spells" parent="." instance=ExtResource("1_j3yfj")]
 visible = false
 custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
 offset_left = 381.0
 offset_top = 29.0
 offset_right = 531.0
@@ -308,6 +309,7 @@ text = "Thunder
 [node name="Combos" parent="." instance=ExtResource("1_j3yfj")]
 visible = false
 custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
 offset_left = 381.0
 offset_top = 29.0
 offset_right = 531.0
@@ -352,6 +354,7 @@ text = "Shadowstrike"
 [node name="Martials" parent="." instance=ExtResource("1_j3yfj")]
 visible = false
 custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
 offset_left = 381.0
 offset_top = 29.0
 offset_right = 531.0
@@ -618,17 +621,16 @@ bus = &"Music"
 [connection signal="mouse_entered" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_entered"]
 [connection signal="mouse_exited" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_exited"]
 [connection signal="pressed" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_pressed"]
-[connection signal="button_focused" from="Spells/SpellMenu" to="." method="_on_v_box_container_button_focused"]
-[connection signal="button_pressed" from="Spells/SpellMenu" to="." method="_on_v_box_container_button_pressed"]
-[connection signal="button_focused" from="Combos/ComboMenu" to="." method="_on_v_box_container_button_focused"]
-[connection signal="button_pressed" from="Combos/ComboMenu" to="." method="_on_v_box_container_button_pressed"]
-[connection signal="button_focused" from="Martials/MatialMenu" to="." method="_on_v_box_container_button_focused"]
-[connection signal="button_pressed" from="Martials/MatialMenu" to="." method="_on_v_box_container_button_pressed"]
+[connection signal="button_pressed" from="Spells/SpellMenu" to="." method="_on_spell_menu_button_pressed"]
+[connection signal="button_pressed" from="Combos/ComboMenu" to="." method="_on_combo_menu_button_pressed"]
+[connection signal="button_pressed" from="Martials/MatialMenu" to="." method="_on_matial_menu_button_pressed"]
 [connection signal="pressed" from="Allies/Hero" to="." method="_on_hero_pressed"]
 [connection signal="pressed" from="Allies/Mage" to="." method="_on_mage_pressed"]
 [connection signal="pressed" from="Allies/Thief" to="." method="_on_thief_pressed"]
 [connection signal="focus_exited" from="Hostiles" to="." method="_on_hostiles_focus_exited"]
 [connection signal="pressed" from="Hostiles/Slime" to="." method="_on_slime_pressed"]
+[connection signal="pressed" from="Hostiles/Slime2" to="." method="_on_slime_2_pressed"]
+[connection signal="pressed" from="Hostiles/Slime3" to="." method="_on_slime_3_pressed"]
 [connection signal="pressed" from="UsagePanel/HeroButton" to="." method="_on_hero_button_pressed"]
 [connection signal="pressed" from="UsagePanel/HeroButton/HeroInventoryUI/ColorRect/KilepHero" to="." method="_on_kilep_hero_pressed"]
 [connection signal="pressed" from="UsagePanel/MageButton" to="." method="_on_mage_button_pressed"]
