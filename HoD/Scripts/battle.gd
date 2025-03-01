@@ -126,12 +126,15 @@ func _physics_process(delta: float) -> void:
 		turn = 0
 		$Options.visible = true
 
+#misc
 func _on_v_box_container_button_focused(button: BaseButton) -> void:
 	pass
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
-	
+
+
+#main sequence
 func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 	match button.name:
 		"Fight_button":
@@ -166,7 +169,35 @@ func _fight_window(button: BaseButton) -> void:
 	button.release_focus()
 	hostile1.grab_focus()
 	$Options.visible = false
+	
+func _on_slime_pressed() -> void:
+	if(is_fight):
+		match turn:
+				0:
+					hostile1.HP -= Hero.ATK - hostile1.DEF
+					if (Hero.Rage < 100):
+						Hero.Rage += 5
+					turn += 1
+					print(turn)
+				1:
+					hostile1.HP -= Mage.ATK/2 - hostile1.DEF
+					turn += 1
+					print(turn)
+				2:
+					hostile1.HP -= Thief.ATK - hostile1.DEF
+					turn += 1
+					print(turn)
+				_:
+					print("o_o")
+					print(turn)
+		hostile1.release_focus()
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_fight = !is_fight
 
+
+
+#Inventory things
 func _on_item_button_mouse_entered():
 	usage_panel.visible = false
 	details_panel.visible = true
@@ -208,29 +239,3 @@ func _on_kilep_mage_pressed() -> void:
 func _on_kilep_thief_pressed() -> void:
 	thief_inventory.visible = false
 	
-
-
-func _on_slime_pressed() -> void:
-	if(is_fight):
-		match turn:
-				0:
-					hostile1.HP -= Hero.ATK - hostile1.DEF
-					if (Hero.Rage < 100):
-						Hero.Rage += 5
-					turn += 1
-					print(turn)
-				1:
-					hostile1.HP -= Mage.ATK/2 - hostile1.DEF
-					turn += 1
-					print(turn)
-				2:
-					hostile1.HP -= Thief.ATK - hostile1.DEF
-					turn += 1
-					print(turn)
-				_:
-					print("o_o")
-					print(turn)
-		hostile1.release_focus()
-		$Options.visible = true
-		$Options/AttackMenu/Fight_button.grab_focus()
-		is_fight = !is_fight

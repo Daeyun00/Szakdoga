@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dk2q27uc065mt"]
+[gd_scene load_steps=13 format=3 uid="uid://dk2q27uc065mt"]
 
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
 [ext_resource type="Script" path="res://Scripts/battle.gd" id="1_kdno6"]
+[ext_resource type="Texture2D" uid="uid://cwl6mqxkhvino" path="res://Assets/Used backgrounds/Trees 6.png" id="2_dki72"]
 [ext_resource type="FontVariation" uid="uid://bppspbqj0rwmh" path="res://Utility/themes/default_font.tres" id="2_q03yh"]
 [ext_resource type="Script" path="res://Scripts/Attack_Menu.gd" id="4_dtoku"]
 [ext_resource type="PackedScene" uid="uid://codr4bxbre4uq" path="res://Scenes/Entities/Hero.tscn" id="4_o04v0"]
@@ -25,6 +26,7 @@ script = ExtResource("1_kdno6")
 texture_filter = 3
 position = Vector2(683, 384)
 scale = Vector2(0.762277, 0.75)
+texture = ExtResource("2_dki72")
 
 [node name="Top" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(1000, 150)
@@ -131,7 +133,6 @@ anchor_right = 8.141
 anchor_bottom = 1.0
 offset_left = 29.032
 offset_right = 28.976
-text = ":3"
 
 [node name="Mage_label" type="Label" parent="Top/Players"]
 layout_mode = 0
@@ -172,7 +173,6 @@ anchor_bottom = 1.033
 offset_left = 26.993
 offset_right = 26.981
 offset_bottom = -0.99
-text = ":3"
 
 [node name="Thief_label" type="Label" parent="Top/Players"]
 layout_mode = 0
@@ -215,7 +215,6 @@ offset_left = 27.008
 offset_top = -4.0
 offset_right = 26.984
 offset_bottom = -0.0100021
-text = ":3"
 
 [node name="Options" parent="." instance=ExtResource("1_j3yfj")]
 custom_minimum_size = Vector2(150, 150)
@@ -263,6 +262,134 @@ text = "Guard"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Flee"
+
+[node name="Spells" parent="." instance=ExtResource("1_j3yfj")]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+offset_left = 381.0
+offset_top = 29.0
+offset_right = 531.0
+offset_bottom = 179.0
+size_flags_stretch_ratio = 2.29
+
+[node name="SpellMenu" type="VBoxContainer" parent="Spells"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_dtoku")
+
+[node name="Fireball" type="Button" parent="Spells/SpellMenu"]
+layout_mode = 2
+text = "Fireball
+"
+
+[node name="Heal I" type="Button" parent="Spells/SpellMenu"]
+layout_mode = 2
+text = "Heal I
+"
+
+[node name="Empower" type="Button" parent="Spells/SpellMenu"]
+layout_mode = 2
+text = "Empower
+"
+
+[node name="Resistance" type="Button" parent="Spells/SpellMenu"]
+layout_mode = 2
+text = "Resistance"
+
+[node name="Thunder" type="Button" parent="Spells/SpellMenu"]
+layout_mode = 2
+text = "Thunder
+"
+
+[node name="Combos" parent="." instance=ExtResource("1_j3yfj")]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+offset_left = 381.0
+offset_top = 29.0
+offset_right = 531.0
+offset_bottom = 179.0
+size_flags_stretch_ratio = 2.29
+
+[node name="ComboMenu" type="VBoxContainer" parent="Combos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.920002, 1)
+script = ExtResource("4_dtoku")
+
+[node name="Envenom" type="Button" parent="Combos/ComboMenu"]
+layout_mode = 2
+text = "Envenom
+"
+
+[node name="Eviscerate" type="Button" parent="Combos/ComboMenu"]
+layout_mode = 2
+text = "Eviscerate
+"
+
+[node name="Rupture" type="Button" parent="Combos/ComboMenu"]
+layout_mode = 2
+text = "Rupture"
+
+[node name="Night blade" type="Button" parent="Combos/ComboMenu"]
+layout_mode = 2
+text = "Night Blade
+"
+
+[node name="Shadowstrike" type="Button" parent="Combos/ComboMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 0
+text = "Shadowstrike"
+
+[node name="Martials" parent="." instance=ExtResource("1_j3yfj")]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+offset_left = 381.0
+offset_top = 29.0
+offset_right = 531.0
+offset_bottom = 179.0
+size_flags_stretch_ratio = 2.29
+
+[node name="MatialMenu" type="VBoxContainer" parent="Martials"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.05176e-05
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_dtoku")
+
+[node name="Charge" type="Button" parent="Martials/MatialMenu"]
+layout_mode = 2
+text = "Charge
+"
+
+[node name="Taunt" type="Button" parent="Martials/MatialMenu"]
+layout_mode = 2
+text = "Taunt"
+
+[node name="DefAttack" type="Button" parent="Martials/MatialMenu"]
+layout_mode = 2
+text = "Def. Attack
+"
+
+[node name="Bloodlust" type="Button" parent="Martials/MatialMenu"]
+layout_mode = 2
+text = "Bloodlust"
+
+[node name="Decimate" type="Button" parent="Martials/MatialMenu"]
+layout_mode = 2
+text = "Decimate"
 
 [node name="Allies" type="Control" parent="."]
 layout_mode = 1
@@ -491,6 +618,12 @@ bus = &"Music"
 [connection signal="mouse_entered" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_entered"]
 [connection signal="mouse_exited" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_exited"]
 [connection signal="pressed" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_pressed"]
+[connection signal="button_focused" from="Spells/SpellMenu" to="." method="_on_v_box_container_button_focused"]
+[connection signal="button_pressed" from="Spells/SpellMenu" to="." method="_on_v_box_container_button_pressed"]
+[connection signal="button_focused" from="Combos/ComboMenu" to="." method="_on_v_box_container_button_focused"]
+[connection signal="button_pressed" from="Combos/ComboMenu" to="." method="_on_v_box_container_button_pressed"]
+[connection signal="button_focused" from="Martials/MatialMenu" to="." method="_on_v_box_container_button_focused"]
+[connection signal="button_pressed" from="Martials/MatialMenu" to="." method="_on_v_box_container_button_pressed"]
 [connection signal="pressed" from="Allies/Hero" to="." method="_on_hero_pressed"]
 [connection signal="pressed" from="Allies/Mage" to="." method="_on_mage_pressed"]
 [connection signal="pressed" from="Allies/Thief" to="." method="_on_thief_pressed"]
