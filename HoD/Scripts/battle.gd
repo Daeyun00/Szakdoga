@@ -188,9 +188,7 @@ func _fight_window(button: BaseButton) -> void:
 				_:
 					print(":3")
 
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
+
 #skills
 func _skill_window(button: BaseButton) -> void:
 	button.release_focus()
@@ -345,9 +343,7 @@ func _on_item_button_mouse_entered():
 func _on_item_button_mouse_exited() -> void:
 	details_panel.visible = false
 
->>>>>>> 70f90b1bdc10a29cfc01a15755dea9a4e6aacaf4
-=======
->>>>>>> Stashed changes
+
 
 func _on_item_button_gui_input(event):
 	if event is InputEventMouseButton:
@@ -381,10 +377,10 @@ func _on_kilep_mage_pressed() -> void:
 func _on_kilep_thief_pressed() -> void:
 	thief_inventory.visible = false
 	
-<<<<<<< HEAD
 
 
-func _on_slime_pressed() -> void:
+
+func on_slime_pressed() -> void:
 	if(is_fight):
 		match turn:
 				0:
@@ -424,8 +420,3 @@ func _on_open_mage_inventory_pressed() -> void:
 
 func _on_open_thief_inventory_pressed() -> void:
 	thief_inventory.visible = true
-<<<<<<< Updated upstream
-=======
->>>>>>> 70f90b1bdc10a29cfc01a15755dea9a4e6aacaf4
-=======
->>>>>>> Stashed changes
