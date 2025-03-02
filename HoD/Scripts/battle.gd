@@ -22,6 +22,8 @@ extends Control
 @onready var mage_inventory = $UsagePanel/MageButton/MageInventoryUI
 @onready var thief_inventory = $UsagePanel/ThiefButton/ThiefInventoryUI
 
+@onready var item_option = $Options/AttackMenu/Item_button/itemOptions
+
 signal interacted(jezus: bool)
 
 var is_fight = false
@@ -167,19 +169,11 @@ func _fight_window(button: BaseButton) -> void:
 	hostile1.grab_focus()
 	$Options.visible = false
 
-func _on_item_button_mouse_entered():
-	usage_panel.visible = false
-	details_panel.visible = true
-
-
-func _on_item_button_mouse_exited() -> void:
-	details_panel.visible = false
-
 
 func _on_item_button_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-			usage_panel.visible = !usage_panel.visible
+			item_option.visible = !item_option.visible
 	
 
 
@@ -234,3 +228,19 @@ func _on_slime_pressed() -> void:
 		$Options.visible = true
 		$Options/AttackMenu/Fight_button.grab_focus()
 		is_fight = !is_fight
+
+
+func _on_open_hero_inventory_pressed() -> void:
+	hero_inventory.visible = true
+
+
+
+
+func _on_open_mage_inventory_pressed() -> void:
+	mage_inventory.visible = true
+
+
+
+
+func _on_open_thief_inventory_pressed() -> void:
+	thief_inventory.visible = true
