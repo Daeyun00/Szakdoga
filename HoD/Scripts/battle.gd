@@ -201,26 +201,45 @@ func _skill_window(button: BaseButton) -> void:
 			$Spells/SpellMenu/Fireball.grab_focus()
 		2:
 			$Top/Players/Thief_label/Thief_status.text = "Skill"
-			$Combo.visible = true
+			$Combos.visible = true
 			$Combos/ComboMenu/Envenom.grab_focus()
 
 
 func _on_matial_menu_button_pressed(button: BaseButton) -> void:
 	match button.name:
 		"Charge":
-			print("owo")
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
+			if(Hero.Rage >= 5):
+				hostile1.grab_focus()
+				_charge_select = true
+			else:
+				$Top/Players/Hero_label/Hero_status.text = "Not enough Rage"
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
 
 func _on_spell_menu_button_pressed(button: BaseButton) -> void:
-	pass # Replace with function body.
+		match button.name:
+			"Fireball":
+				print("owo")
+				turn += 1
+				print(turn)
+				$Spells.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
 
 
 func _on_combo_menu_button_pressed(button: BaseButton) -> void:
-	pass # Replace with function body.
+		match button.name:
+			"Envenom":
+				print("owo")
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
 
 
 #enemy functions
@@ -248,6 +267,16 @@ func _on_slime_pressed() -> void:
 		$Options.visible = true
 		$Options/AttackMenu/Fight_button.grab_focus()
 		is_fight = !is_fight
+	if(is_skill):
+		if(_charge_select):
+			hostile1.HP -= Hero.ATK*3 - hostile1.DEF
+			Hero.Rage -= 5
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
 
 func _on_slime_2_pressed() -> void:
 	if(is_fight):
