@@ -188,6 +188,7 @@ func _fight_window(button: BaseButton) -> void:
 				_:
 					print(":3")
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 #skills
@@ -345,6 +346,8 @@ func _on_item_button_mouse_exited() -> void:
 	details_panel.visible = false
 
 >>>>>>> 70f90b1bdc10a29cfc01a15755dea9a4e6aacaf4
+=======
+>>>>>>> Stashed changes
 
 func _on_item_button_gui_input(event):
 	if event is InputEventMouseButton:
@@ -421,5 +424,8 @@ func _on_open_mage_inventory_pressed() -> void:
 
 func _on_open_thief_inventory_pressed() -> void:
 	thief_inventory.visible = true
+<<<<<<< Updated upstream
 =======
 >>>>>>> 70f90b1bdc10a29cfc01a15755dea9a4e6aacaf4
+=======
+>>>>>>> Stashed changes

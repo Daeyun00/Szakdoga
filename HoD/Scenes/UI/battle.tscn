@@ -1,8 +1,12 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 [gd_scene load_steps=14 format=3 uid="uid://dk2q27uc065mt"]
 =======
 [gd_scene load_steps=13 format=3 uid="uid://dk2q27uc065mt"]
 >>>>>>> 70f90b1bdc10a29cfc01a15755dea9a4e6aacaf4
+=======
+[gd_scene load_steps=14 format=3 uid="uid://dk2q27uc065mt"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
 [ext_resource type="Script" path="res://Scripts/battle.gd" id="1_kdno6"]
@@ -264,12 +268,22 @@ text = "Item
 "
 
 [node name="itemOptions" parent="Options/AttackMenu/Item_button" instance=ExtResource("1_j3yfj")]
+<<<<<<< Updated upstream
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
 offset_left = 166.0
 offset_top = -56.0
 offset_right = 781.0
 offset_bottom = 94.0
+=======
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = 401.0
+offset_top = 94.0
+offset_right = 551.0
+offset_bottom = 244.0
+>>>>>>> Stashed changes
 size_flags_stretch_ratio = 2.29
 script = ExtResource("5_0sr7d")
 
@@ -669,6 +683,7 @@ bus = &"Music"
 [connection signal="mouse_entered" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_entered"]
 [connection signal="mouse_exited" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_exited"]
 [connection signal="pressed" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_pressed"]
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 [connection signal="pressed" from="Options/AttackMenu/Item_button/itemOptions/itemMenu/OpenHeroInventory" to="." method="_on_open_hero_inventory_pressed"]
 [connection signal="pressed" from="Options/AttackMenu/Item_button/itemOptions/itemMenu/OpenMageInventory" to="." method="_on_open_mage_inventory_pressed"]
@@ -678,6 +693,11 @@ bus = &"Music"
 [connection signal="button_pressed" from="Combos/ComboMenu" to="." method="_on_combo_menu_button_pressed"]
 [connection signal="button_pressed" from="Martials/MatialMenu" to="." method="_on_matial_menu_button_pressed"]
 >>>>>>> 70f90b1bdc10a29cfc01a15755dea9a4e6aacaf4
+=======
+[connection signal="pressed" from="Options/AttackMenu/Item_button/itemOptions/itemMenu/OpenHeroInventory" to="." method="_on_open_hero_inventory_pressed"]
+[connection signal="pressed" from="Options/AttackMenu/Item_button/itemOptions/itemMenu/OpenMageInventory" to="." method="_on_open_mage_inventory_pressed"]
+[connection signal="pressed" from="Options/AttackMenu/Item_button/itemOptions/itemMenu/OpenThiefInventory" to="." method="_on_open_thief_inventory_pressed"]
+>>>>>>> Stashed changes
 [connection signal="pressed" from="Allies/Hero" to="." method="_on_hero_pressed"]
 [connection signal="pressed" from="Allies/Mage" to="." method="_on_mage_pressed"]
 [connection signal="pressed" from="Allies/Thief" to="." method="_on_thief_pressed"]
