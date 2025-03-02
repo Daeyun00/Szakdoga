@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://dpga0yjvkx0u6"]
+[gd_scene load_steps=55 format=4 uid="uid://dpga0yjvkx0u6"]
 
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_5qapa"]
 [ext_resource type="Texture2D" uid="uid://dcqyar38g5dvv" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="2_hvhe1"]
@@ -19,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://dh58h7uk8ciht" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets.png" id="15_75h20"]
 [ext_resource type="PackedScene" uid="uid://dldwi8jevyv8d" path="res://Scenes/Entities/NPCS/blacksmith_NPC.tscn" id="19_01chg"]
 [ext_resource type="PackedScene" uid="uid://p4uw4mc50we6" path="res://Scenes/Entities/NPCS/butcher_NPC.tscn" id="19_gsv5j"]
+
+[sub_resource type="GDScript" id="GDScript_6oiv8"]
+script/source = "extends Node
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fg5qn"]
 texture = ExtResource("7_rb4bm")
@@ -4973,6 +4977,7 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_5w661"]
 
 [node name="BlacksmithAndButcher" type="Node2D"]
+script = SubResource("GDScript_6oiv8")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

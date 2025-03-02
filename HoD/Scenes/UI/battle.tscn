@@ -256,6 +256,7 @@ text = "Item
 [node name="itemOption" parent="Options/AttackMenu/Item_button" instance=ExtResource("1_j3yfj")]
 visible = false
 custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
 offset_left = 167.0
 offset_top = -56.0
 offset_right = 823.0
