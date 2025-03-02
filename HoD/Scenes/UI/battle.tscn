@@ -253,6 +253,39 @@ theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Item
 "
 
+[node name="itemOption" parent="Options/AttackMenu/Item_button" instance=ExtResource("1_j3yfj")]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+offset_left = 167.0
+offset_top = -56.0
+offset_right = 823.0
+offset_bottom = 94.0
+size_flags_stretch_ratio = 2.29
+
+[node name="AttackMenu" type="VBoxContainer" parent="Options/AttackMenu/Item_button/itemOption"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeroInventory" type="Button" parent="Options/AttackMenu/Item_button/itemOption/AttackMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_q03yh")
+text = "Hero
+"
+
+[node name="MageInventory" type="Button" parent="Options/AttackMenu/Item_button/itemOption/AttackMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_q03yh")
+text = "Mage"
+
+[node name="ThiefInventory" type="Button" parent="Options/AttackMenu/Item_button/itemOption/AttackMenu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_q03yh")
+text = "Thief"
+
 [node name="Guard_button" type="Button" parent="Options/AttackMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
@@ -621,6 +654,13 @@ bus = &"Music"
 [connection signal="mouse_entered" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_entered"]
 [connection signal="mouse_exited" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_mouse_exited"]
 [connection signal="pressed" from="Options/AttackMenu/Item_button" to="." method="_on_item_button_pressed"]
+[connection signal="gui_input" from="Options/AttackMenu/Item_button/itemOption/AttackMenu/HeroInventory" to="." method="_on_item_button_gui_input"]
+[connection signal="mouse_entered" from="Options/AttackMenu/Item_button/itemOption/AttackMenu/HeroInventory" to="." method="_on_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="Options/AttackMenu/Item_button/itemOption/AttackMenu/HeroInventory" to="." method="_on_item_button_mouse_exited"]
+[connection signal="pressed" from="Options/AttackMenu/Item_button/itemOption/AttackMenu/HeroInventory" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="Options/AttackMenu/Item_button/itemOption/AttackMenu/HeroInventory" to="." method="_on_hero_inventory_pressed"]
+[connection signal="pressed" from="Options/AttackMenu/Item_button/itemOption/AttackMenu/MageInventory" to="." method="_on_mage_inventory_pressed"]
+[connection signal="pressed" from="Options/AttackMenu/Item_button/itemOption/AttackMenu/ThiefInventory" to="." method="_on_thief_inventory_pressed"]
 [connection signal="button_pressed" from="Spells/SpellMenu" to="." method="_on_spell_menu_button_pressed"]
 [connection signal="button_pressed" from="Combos/ComboMenu" to="." method="_on_combo_menu_button_pressed"]
 [connection signal="button_pressed" from="Martials/MatialMenu" to="." method="_on_matial_menu_button_pressed"]

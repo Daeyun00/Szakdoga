@@ -22,7 +22,7 @@ extends Control
 @onready var mage_inventory = $UsagePanel/MageButton/MageInventoryUI
 @onready var thief_inventory = $UsagePanel/ThiefButton/ThiefInventoryUI
 
-@onready var item_option = $Options/AttackMenu/Item_button/itemOptions
+@onready var item_option = $Options/AttackMenu/Item_button/itemOption
 
 signal interacted(jezus: bool)
 
@@ -68,6 +68,7 @@ func _physics_process(delta: float) -> void:
 	$Top/Players/Hero_label/Hero_HP_label.text = HeroHP
 	$Top/Players/Mage_label/Mage_HP_label.text = MageHP
 	$Top/Players/Thief_label/Thief_HP_label.text = ThiefHP
+	
 	
 	#Resource labels
 	
@@ -334,15 +335,6 @@ func _on_slime_3_pressed() -> void:
 
 
 
-#Inventory things
-func _on_item_button_mouse_entered():
-	usage_panel.visible = false
-	details_panel.visible = true
-
-
-func _on_item_button_mouse_exited() -> void:
-	details_panel.visible = false
-
 
 
 func _on_item_button_gui_input(event):
@@ -406,17 +398,13 @@ func on_slime_pressed() -> void:
 		is_fight = !is_fight
 
 
-func _on_open_hero_inventory_pressed() -> void:
+func _on_hero_inventory_pressed() -> void:
 	hero_inventory.visible = true
 
 
-
-
-func _on_open_mage_inventory_pressed() -> void:
+func _on_mage_inventory_pressed() -> void:
 	mage_inventory.visible = true
 
 
-
-
-func _on_open_thief_inventory_pressed() -> void:
+func _on_thief_inventory_pressed() -> void:
 	thief_inventory.visible = true
