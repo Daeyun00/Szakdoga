@@ -21,6 +21,7 @@ Global="*res://Scripts/Global.gd"
 Debug="*res://Scripts/debug.gd"
 Persistence="*res://Scripts/Persistence.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Ui="*res://Scenes/ui.tscn"
 
 [dialogic]
 
@@ -89,7 +90,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/godot-sqlite/plugin.cfg")
 
 [gui]
 

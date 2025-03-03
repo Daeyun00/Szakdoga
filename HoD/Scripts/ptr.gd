@@ -5,9 +5,16 @@ extends Node2D
 @onready var collision_shape = $ItemSpawnArea/CollisionShape2D
 @onready var Ui = $Ui
 
+func _input(event):
+	if  event.is_action_pressed("pause_menu"):
+		Ui.show()
+	
+
 
 func _ready() -> void:
 	spawn_random_items(10)
+	Ui.hide()
+	
 
 func get_random_position():
 	var area_rect = collision_shape.shape.get_rect()

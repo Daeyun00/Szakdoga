@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://82n8mxba2qxy"]
+[gd_scene load_steps=9 format=4 uid="uid://82n8mxba2qxy"]
 
 [ext_resource type="Script" path="res://Scripts/ptr.gd" id="1_tuikr"]
 [ext_resource type="PackedScene" uid="uid://btoufs273wrah" path="res://Scenes/Other/tile_map.tscn" id="2_bn0ho"]
 [ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="2_wnpdi"]
 [ext_resource type="Texture2D" uid="uid://dehas250m08q4" path="res://Assets/Graphics/Assets/Assets.png" id="4_k6uty"]
+[ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="5_w8ghy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dulu4"]
 texture = ExtResource("4_k6uty")
@@ -176,10 +177,24 @@ size = Vector2(371, 189.5)
 script = ExtResource("1_tuikr")
 
 [node name="Player" parent="." instance=ExtResource("2_wnpdi")]
-position = Vector2(-112, 59)
+position = Vector2(-101, 41)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-11, -88)
 zoom = Vector2(3, 3)
+
+[node name="Ui" parent="Player" node_paths=PackedStringArray("player") instance=ExtResource("5_w8ghy")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = -41.0
+offset_right = 101.0
+offset_bottom = -41.0
+scale = Vector2(0.348192, 0.395453)
+player = NodePath("..")
 
 [node name="TileMap" parent="." instance=ExtResource("2_bn0ho")]
 

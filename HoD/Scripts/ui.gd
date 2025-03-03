@@ -8,12 +8,16 @@ extends Control
 @export var description: NinePatchRect
 @export var party_description : NinePatchRect
 
+@export var player : Node2D
+
 
 enum STATE { MENU, RESUME, PARTY}
 var ui_state = STATE.MENU
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel") and not animation_player.is_playing():
+	if Input.is_action_pressed("pause_menu") and not animation_player.is_playing():
+	
+		
 		match ui_state:
 			STATE.PARTY:
 				ui_state = STATE.MENU
@@ -23,7 +27,7 @@ func _input(event):
 					animation_player.play("hide_menu")
 				else:
 					animation_player.play("show_menu")
-		
+	
 
 func set_party_description(character: Character):
 	party_description.find_child("Icon").texture = character.texture
@@ -44,7 +48,28 @@ func _on_party_pressed():
 func _on_resume_pressed():
 	ui_state = STATE.RESUME
 	hide_and_show("menu", "resume")
+	get_tree().paused = false
+	
+func pause():
+	get_tree().paused = true
 
 
 func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu/main_menu.tscn")
+
+
+func _on_save_pressed() -> void:
+	var data = SceneData.new()
+	data.player_position = player.global_position
+
+	
+	ResourceSaver.save(data, "user://scene_data.tres")
+	print("saved.")
+
+
+func _on_load_pressed() -> void:
+	var data = ResourceLoader.load("user://scene_data.tres") as SceneData
+	player.global_position = data.player_position
+	menu.hide()
+	
+	print("loaded.")
