@@ -2996,3 +2996,12 @@ frame_progress = 0.426717
 
 [node name="CrystalNpc" parent="." instance=ExtResource("17_2y6as")]
 position = Vector2(685, 727)
+
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
+position = Vector2(320, 566)
+polygon = PackedVector2Array(-317, 238, -354, 237, -351, -125, 1112, -126, 1102, 233, 1055, 234, 1048, -10, -325, -10)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(2, 752, 1405, 755, 1412, 1034, -22, 1032, -24, 746, 8, 751)

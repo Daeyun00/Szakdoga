@@ -6004,6 +6004,14 @@ position = Vector2(287, 733)
 scale = Vector2(1.7938, 1.73054)
 shape = SubResource("CircleShape2D_86m2t")
 
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(5, 757, 1417, 757, 1410, 1036, -45, 1031, -49, 759)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(26, 753, 25, 532, 1337, 521, 1335, 752, 1428, 756, 1428, 468, -48, 461, -47, 763)
+
 [connection signal="body_entered" from="BunnyArea" to="BunnyArea" method="_on_body_entered"]
 [connection signal="body_exited" from="BunnyArea" to="BunnyArea" method="_on_body_exited"]
 [connection signal="body_entered" from="mage2" to="mage2" method="_on_body_entered"]

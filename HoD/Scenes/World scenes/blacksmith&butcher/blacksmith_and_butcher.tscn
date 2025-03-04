@@ -5092,3 +5092,11 @@ position = Vector2(231, 720)
 
 [node name="ButcherNpc" parent="." instance=ExtResource("19_gsv5j")]
 position = Vector2(1078, 720)
+
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(0, 767, -1, 547, 1385, 541, 1390, 755, 1362, 755, 1362, 557, 7, 559, 11, 767)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(2, 758, 1404, 755, 1410, 1035, 1, 1033)

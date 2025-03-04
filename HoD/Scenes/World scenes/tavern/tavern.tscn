@@ -11908,8 +11908,7 @@ autoplay = "default"
 frame_progress = 0.414062
 
 [node name="Player" parent="." instance=ExtResource("11_sp1y6")]
-visible = false
-position = Vector2(127, 710)
+position = Vector2(1137, 710)
 scale = Vector2(0.692167, 0.730557)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -11979,6 +11978,14 @@ frame_progress = 0.919087
 position = Vector2(1262, 725)
 scale = Vector2(3.69069, 3.86497)
 shape = SubResource("CircleShape2D_xhlnx")
+
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(-13, 755, 1402, 756, 1404, 902, -11, 900)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(22, 753, 19, 562, 1309, 571, 1314, 756, 1392, 756, 1399, 324, -44, 310, -46, 761)
 
 [connection signal="body_entered" from="drunkards" to="drunkards" method="_on_body_entered"]
 [connection signal="body_exited" from="drunkards" to="drunkards" method="_on_body_exited"]

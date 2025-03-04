@@ -2683,8 +2683,7 @@ scale = Vector2(1.40471, 1.7116)
 texture = ExtResource("8_yav6q")
 
 [node name="Player" parent="." instance=ExtResource("9_i42hw")]
-visible = false
-position = Vector2(127, 710)
+position = Vector2(94, 697)
 scale = Vector2(0.692167, 0.730557)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -2740,6 +2739,17 @@ frame_progress = 0.0379148
 position = Vector2(178, 729)
 scale = Vector2(3.04053, 2.69535)
 shape = SubResource("CircleShape2D_qac0n")
+
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(1, 746, 210, 747, 210, 788, 2, 789)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(210, 747, 210, 567, 430, 565, 433, 789, 209, 790)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(-5, 749, -25, 562, 430, 565, 431, 422, -125, 417, -122, 796, 29, 788)
 
 [connection signal="body_entered" from="gravedigger" to="gravedigger" method="_on_body_entered"]
 [connection signal="body_exited" from="gravedigger" to="gravedigger" method="_on_body_exited"]
