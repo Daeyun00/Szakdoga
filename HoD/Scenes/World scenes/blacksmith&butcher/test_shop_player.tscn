@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cokodr0alg3r1"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/test_shop_player.gd" id="1_xf838"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h1elu"]
+size = Vector2(20, 20)
+
+[node name="TestShopPlayer" type="CharacterBody2D"]
+script = ExtResource("1_xf838")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_h1elu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

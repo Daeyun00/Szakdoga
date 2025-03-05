@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=3 uid="uid://csqv4tsx2kole"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/shop_ui.gd" id="1_utrac"]
+[ext_resource type="Script" path="res://Scripts/ShopSystem/manager.gd" id="2_tktag"]
+[ext_resource type="Script" path="res://Scripts/ShopSystem/inventory.gd" id="3_dgmp8"]
+[ext_resource type="PackedScene" uid="uid://q1rkisqn1d" path="res://Scenes/World scenes/blacksmith&butcher/slot.tscn" id="4_dsqb2"]
+[ext_resource type="Script" path="res://Scripts/ShopSystem/shop.gd" id="5_hmo6k"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_utrac")
+
+[node name="Manager" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_tktag")
+
+[node name="Inventory" type="GridContainer" parent="Manager"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 117.0
+offset_top = 56.0
+offset_right = 233.0
+offset_bottom = 148.0
+columns = 5
+script = ExtResource("3_dgmp8")
+
+[node name="slot" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot2" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot3" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot4" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot5" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot6" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot7" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot8" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot9" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot10" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot11" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot12" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot13" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot14" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot15" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot16" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot17" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot18" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot19" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot20" parent="Manager/Inventory" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="Shop" type="GridContainer" parent="Manager"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 430.0
+offset_top = 73.0
+offset_right = 498.0
+offset_bottom = 141.0
+columns = 3
+script = ExtResource("5_hmo6k")
+
+[node name="slot" parent="Manager/Shop" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot2" parent="Manager/Shop" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot3" parent="Manager/Shop" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot4" parent="Manager/Shop" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot5" parent="Manager/Shop" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot6" parent="Manager/Shop" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot7" parent="Manager/Shop" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot8" parent="Manager/Shop" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="slot9" parent="Manager/Shop" instance=ExtResource("4_dsqb2")]
+layout_mode = 2
+
+[node name="Currency" type="HBoxContainer" parent="Manager"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 197.0
+offset_right = 93.0
+offset_bottom = 237.0
+
+[node name="Label" type="Label" parent="Manager/Currency"]
+layout_mode = 2
+text = "Gold: "
+
+[node name="Balance" type="Label" parent="Manager/Currency"]
+unique_name_in_owner = true
+layout_mode = 2
