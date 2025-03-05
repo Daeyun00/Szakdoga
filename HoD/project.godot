@@ -46,6 +46,7 @@ directories/dtl_directory={
 "crystal": "res://timelines/crystal.dtl",
 "drunkards": "res://timelines/drunkards.dtl",
 "gravedigging_guy": "res://Assets/Asset Packs/NPCS and characters/Cropped/gravedigging_guy.dtl",
+"intro": "res://timelines/intro.dtl",
 "mage": "res://Assets/Asset Packs/NPCS and characters/Cropped/mage.dtl",
 "meatvendor": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor.dtl",
 "meatvendor2": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor2.dtl",
