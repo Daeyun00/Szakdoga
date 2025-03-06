@@ -715,55 +715,55 @@ text = "Create Table"
 [node name="StoreAlliesImage" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 62.0
-offset_top = 623.0
-offset_right = 252.0
-offset_bottom = 683.0
+offset_left = 284.0
+offset_top = 590.0
+offset_right = 499.0
+offset_bottom = 650.0
 text = "Store Player Image"
 
 [node name="StoreHostilesImage" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 62.0
-offset_top = 623.0
-offset_right = 252.0
-offset_bottom = 683.0
+offset_left = 284.0
+offset_top = 590.0
+offset_right = 499.0
+offset_bottom = 650.0
 text = "Store Player Image"
 
 [node name="StoreItemImage" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 62.0
-offset_top = 623.0
-offset_right = 252.0
-offset_bottom = 683.0
+offset_left = 284.0
+offset_top = 590.0
+offset_right = 499.0
+offset_bottom = 650.0
 text = "Store Player Image"
 
 [node name="StoreShopInventoryImage" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 62.0
-offset_top = 623.0
-offset_right = 252.0
-offset_bottom = 683.0
+offset_left = 284.0
+offset_top = 590.0
+offset_right = 499.0
+offset_bottom = 650.0
 text = "Store Player Image"
 
 [node name="StoreInventoryImage" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 62.0
-offset_top = 623.0
-offset_right = 252.0
-offset_bottom = 683.0
+offset_left = 284.0
+offset_top = 590.0
+offset_right = 499.0
+offset_bottom = 650.0
 text = "Store Player Image"
 
 [node name="StoreMapBattleImage" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 62.0
-offset_top = 623.0
-offset_right = 252.0
-offset_bottom = 683.0
+offset_left = 284.0
+offset_top = 590.0
+offset_right = 499.0
+offset_bottom = 650.0
 text = "Store Player Image"
 
 [node name="alliesButton" type="Button" parent="."]
@@ -814,30 +814,39 @@ offset_right = 660.0
 offset_bottom = 202.0
 text = "Map Battle"
 
+[connection signal="button_down" from="InsertdataAllies" to="." method="_on_insertdata_allies_button_down"]
 [connection signal="button_down" from="InsertdataAllies" to="." method="_on_insertdata_button_down"]
+[connection signal="button_down" from="InsertdataHostiles" to="." method="_on_insertdata_hostiles_button_down"]
 [connection signal="button_down" from="InsertdataHostiles" to="." method="_on_insertdata_button_down"]
+[connection signal="button_down" from="InsertdataItem" to="." method="_on_insertdata_item_button_down"]
 [connection signal="button_down" from="InsertdataItem" to="." method="_on_insertdata_button_down"]
 [connection signal="button_down" from="InsertdataShopInventory" to="." method="_on_insertdata_button_down"]
+[connection signal="button_down" from="InsertdataShopInventory" to="." method="_on_insertdata_shop_inventory_button_down"]
 [connection signal="button_down" from="InsertdataInventory" to="." method="_on_insertdata_button_down"]
+[connection signal="button_down" from="InsertdataMapBattle" to="." method="_on_insertdata_map_battle_button_down"]
 [connection signal="button_down" from="InsertdataMapBattle" to="." method="_on_insertdata_button_down"]
+[connection signal="button_down" from="SelectdataAllies" to="." method="_on_selectdata_allies_button_down"]
 [connection signal="button_down" from="SelectdataAllies" to="." method="_on_selectdata_button_down"]
 [connection signal="button_down" from="SelectdataHostiles" to="." method="_on_selectdata_button_down"]
 [connection signal="button_down" from="SelectdataItem" to="." method="_on_selectdata_button_down"]
 [connection signal="button_down" from="SelectdataShopInventory" to="." method="_on_selectdata_button_down"]
 [connection signal="button_down" from="SelectdataInventory" to="." method="_on_selectdata_button_down"]
 [connection signal="button_down" from="SelectdataMapBattle" to="." method="_on_selectdata_button_down"]
+[connection signal="button_down" from="UpdatedataAllies" to="." method="_on_updatedata_allies_button_down"]
 [connection signal="button_down" from="UpdatedataAllies" to="." method="_on_updatedata_button_down"]
 [connection signal="button_down" from="UpdatedataHostiles" to="." method="_on_updatedata_button_down"]
 [connection signal="button_down" from="UpdatedataItem" to="." method="_on_updatedata_button_down"]
 [connection signal="button_down" from="UpdatedataShopInventory" to="." method="_on_updatedata_button_down"]
 [connection signal="button_down" from="UpdatedataInventory" to="." method="_on_updatedata_button_down"]
 [connection signal="button_down" from="UpdatedataMapBattle" to="." method="_on_updatedata_button_down"]
+[connection signal="button_down" from="DeletedataAllies" to="." method="_on_deletedata_allies_button_down"]
 [connection signal="button_down" from="DeletedataAllies" to="." method="_on_deletedata_button_down"]
 [connection signal="button_down" from="DeletedataHostiles" to="." method="_on_deletedata_button_down"]
 [connection signal="button_down" from="DeletedataItem" to="." method="_on_deletedata_button_down"]
 [connection signal="button_down" from="DeletedataShopInventory" to="." method="_on_deletedata_button_down"]
 [connection signal="button_down" from="DeletedataInventory" to="." method="_on_deletedata_button_down"]
 [connection signal="button_down" from="DeletedataMapBattle" to="." method="_on_deletedata_button_down"]
+[connection signal="button_down" from="CustomSelectAllies" to="." method="_on_custom_select_allies_button_down"]
 [connection signal="button_down" from="CustomSelectAllies" to="." method="_on_custom_select_button_down"]
 [connection signal="button_down" from="CustomSelectHostiles" to="." method="_on_custom_select_button_down"]
 [connection signal="button_down" from="CustomSelectItem" to="." method="_on_custom_select_button_down"]
@@ -858,3 +867,8 @@ text = "Map Battle"
 [connection signal="button_down" from="StoreMapBattleImage" to="." method="_on_store_player_image_button_down"]
 [connection signal="button_down" from="StoreMapBattleImage" to="." method="_on_create_table_button_down"]
 [connection signal="pressed" from="alliesButton" to="." method="_on_allies_button_pressed"]
+[connection signal="pressed" from="hostilesButton" to="." method="_on_hostiles_button_pressed"]
+[connection signal="pressed" from="itemButton" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="shopInventoryButton" to="." method="_on_shop_inventory_button_pressed"]
+[connection signal="pressed" from="inventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="mapBattleButton" to="." method="_on_map_battle_button_pressed"]

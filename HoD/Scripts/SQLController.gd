@@ -269,4 +269,114 @@ func _on_inventory_button_pressed() -> void:
 
 
 func _on_map_battle_button_pressed() -> void:
+	insertDataMapBattle.visible = !insertDataMapBattle.visible
+	selectDataMapBattle.visible = !selectDataMapBattle.visible
+	customSelectMapBattle.visible = !customSelectMapBattle.visible
+	updateDataMapBattle.visible = !updateDataMapBattle.visible
+	deleteDataMapBattle.visible = !deleteDataMapBattle.visible
+	storMapBattleImage.visible = !storMapBattleImage.visible
+	mapBattleQuantityLabel.visible = !mapBattleQuantityLabel.visible
+	mapBattleQuantity.visible = !mapBattleQuantity.visible
+
+
+func _on_insertdata_allies_button_down() -> void:
+	var data = {
+		"name": alliesName.text,
+		"lvl": int(alliesLvl.text),
+		"exp": int(alliasExp.text),
+		"gold": int(alliasGold.text),
+		"atk": int(alliasAtk.text),
+		"max_att": int(alliasMaxAtt.text),
+		"def": int(alliasDef.text),
+		"max_def": int(alliasMaxDef.text),
+		"hp": int(alliasHp.text),
+		"max_hp": int(alliasMaxHp.text),
+		"resource": int(alliasResource.text),
+		"max_resource": int(alliasMaxResource.text),
+		"resource_name": int(alliasResourceName.text)
+	}
+	database.insert_row("allies", data)
+
+
+func _on_selectdata_allies_button_down() -> void:
+	print(database.select_rows("allies", "lvl > 10", ["*"]))
+
+
+func _on_updatedata_allies_button_down() -> void:
+	database.update_rows("allies", "name = '" + alliesName.text + "'", {"lvl": int(alliesLvl.text), "exp": int(alliasExp.text), "gold": int(alliasGold.text), "atk": int(alliasAtk.text), "def": int(alliasDef.text), "hp": int(alliasHp.text), "resource": int(alliasResource.text), "resource_name": int(alliasResourceName.text)})
+
+
+func _on_deletedata_allies_button_down() -> void:
+	database.delete_rows("allies", "name = '" + alliesName.text + "'")
+
+
+func _on_insertdata_hostiles_button_down() -> void:
+	var data = {
+		"name": hostilesName.text,
+		"atk":int(hostilesAtk.text),
+		"max_att": int(hostilesMaxAtt.text),
+		"def": int(hostilesDef.text),
+		"max_def": int(hostilesMaxDef.text),
+		"hp": int(hostilesHp.text),
+		"max_hp": int(hostilesMaxHp.text),
+		"loot_gold": int(hostileslootGold.text),
+		"loot_exp": int(hostilesLootExp.text)
+	}
+	database.insert_row("hostiles", data)
+
+
+
+func _on_insertdata_item_button_down() -> void:
+	var data = {
+		"name": itemName.text
+	}
+	database.insert_row("items", data)
+
+
+func _on_insertdata_shop_inventory_button_down() -> void:
+	var data = {
+		"cost": int(shopInventoryCost.text)
+	}
+	database.insert_row("shopInventory", data)
+
+
+func _on_insertdata_map_battle_button_down() -> void:
+	var data = {
+		"quantity": int(mapBattleQuantity.text)
+	}
+	database.insert_row("map_battle", data)
+
+
+func _on_selectdata_hostiles_button_down() -> void:
+	print(database.select_rows("hostiles", "loot_gold > 0", ["*"]))
+
+
+
+
+func _on_selectdata_shop_inventory_button_down() -> void:
+	print(database.select_rows("shopInventory", "cost > 1", ["*"]))
+
+
+
+func _on_selectdata_map_battle_button_down() -> void:
+	print(database.select_rows("map_battle", "quantity > 0", ["*"]))
+
+
+func _on_updatedata_hostiles_button_down() -> void:
+	database.update_rows("hostiles", "name = '" + hostilesName.text + "'", {"atk": int(hostilesAtk.text), "def": int(hostilesDef.text), "hp": int(hostilesHp.text), "loot_gold": int(hostileslootGold.text), "loot_exp": int(hostilesLootExp.text)})
+
+
+func _on_deletedata_hostiles_button_down() -> void:
+	database.delete_rows("hostiles", "name = '" + hostilesName.text + "'")
+
+
+
+
+func _on_deletedata_item_button_down() -> void:
+	database.delete_rows("items", "name = '" + itemName.text + "'")
+
+
+
+
+func _on_deletedata_shop_inventory_button_down() -> void:
 	pass # Replace with function body.
