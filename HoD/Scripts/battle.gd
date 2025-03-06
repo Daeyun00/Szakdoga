@@ -14,6 +14,8 @@ extends Control
 @onready var Mage: Button = $Allies/Mage
 @onready var Thief: Button = $Allies/Thief
 
+@onready var attackMenu = $Options
+
 #idk
 @onready var tim = $Timer
 @onready var usage_panel = $UsagePanel
@@ -22,7 +24,7 @@ extends Control
 @onready var mage_inventory = $UsagePanel/MageButton/MageInventoryUI
 @onready var thief_inventory = $UsagePanel/ThiefButton/ThiefInventoryUI
 
-@onready var item_option = $Options/AttackMenu/Item_button/itemOption
+@onready var item_option = $itemOption
 
 signal interacted(jezus: bool)
 
@@ -31,6 +33,10 @@ var is_skill = false
 var is_item = false
 var is_guard = false
 var is_flee = false
+
+var hero = false
+var mage = false
+var thief = false
 
 var finished_action = false
 
@@ -165,6 +171,8 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 		"Item_button":
 			print("Válasszon karaktert! ")
 			is_item = !is_item
+			attackMenu.visible = !attackMenu.visible
+			item_option.visible = !item_option.visible
 		"Guard_button":
 			print("Guard")
 			is_guard = !is_guard
@@ -341,6 +349,8 @@ func _on_item_button_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			item_option.visible = !item_option.visible
+			attackMenu.visible = !attackMenu.visible
+			
 	
 
 
@@ -359,15 +369,21 @@ func _on_thief_button_pressed() -> void:
 
 func _on_kilep_hero_pressed() -> void:
 	hero_inventory.visible = false
+	attackMenu.visible = true
+	item_option.visible = false
 	
 
 func _on_kilep_mage_pressed() -> void:
 	mage_inventory.visible = false
+	attackMenu.visible = true
+	item_option.visible = false
 	
 
 
 func _on_kilep_thief_pressed() -> void:
 	thief_inventory.visible = false
+	attackMenu.visible = true
+	item_option.visible = false
 	
 
 
@@ -408,3 +424,20 @@ func _on_mage_inventory_pressed() -> void:
 
 func _on_thief_inventory_pressed() -> void:
 	thief_inventory.visible = true
+
+
+func _on_attack_menu_button_pressed(button: BaseButton) -> void:
+	button.release_focus()
+	match button.name:
+		"HeroInventory":
+			print("Hero")
+			hero = !hero
+			hero_inventory.visible = true
+		"MageInventory":
+			print("Mage")
+			mage = !mage
+			mage_inventory.visible = true
+		"ThiefInventory":
+			print("Thief")
+			thief = !thief
+			thief_inventory.visible = true

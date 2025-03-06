@@ -374,9 +374,3 @@ func _on_deletedata_hostiles_button_down() -> void:
 
 func _on_deletedata_item_button_down() -> void:
 	database.delete_rows("items", "name = '" + itemName.text + "'")
-
-
-
-
-func _on_deletedata_shop_inventory_button_down() -> void:
-	pass # Replace with function body.
