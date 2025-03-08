@@ -1,6 +1,5 @@
-[gd_scene load_steps=91 format=4 uid="uid://kyr0ne42cges"]
+[gd_scene load_steps=83 format=4 uid="uid://kyr0ne42cges"]
 
-[ext_resource type="Script" path="res://Scripts/atintroscene_.gd" id="1_ep8c8"]
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_pw5ux"]
 [ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_jwers"]
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="3_222k1"]
@@ -16,9 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://dwiafpo3rhmeq" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/9.png" id="8_uthig"]
 [ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="9_j3fmm"]
 [ext_resource type="PackedScene" uid="uid://bh7n85ywi1qfs" path="res://Scenes/World scenes/AtIntroScene/crystal_npc.tscn" id="17_2y6as"]
-[ext_resource type="PackedScene" uid="uid://cuqfe04m57ghk" path="res://Scenes/World scenes/AtIntroScene/intro_screen.tscn" id="18_2cedv"]
-[ext_resource type="Shader" path="res://Scenes/MainMenu/main_menu.gdshader" id="18_876m5"]
-[ext_resource type="FontFile" uid="uid://dci2rru584vmr" path="res://Assets/Graphics/Assets/PixelatedDisplay.ttf" id="19_enhyj"]
 [ext_resource type="Texture2D" uid="uid://cvibt66lbss8q" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniBird.png" id="28_wgwth"]
 [ext_resource type="Texture2D" uid="uid://dy8prl1fbrp54" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/Campfire with food sheet.png" id="29_bbewp"]
 
@@ -2908,74 +2904,7 @@ animations = [{
 "speed": 11.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6whb"]
-shader = ExtResource("18_876m5")
-shader_parameter/height = 3.0
-shader_parameter/speed = 3.0
-shader_parameter/frequency = 1.0
-
-[sub_resource type="Animation" id="Animation_gq1tn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CrystalNpc:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CrystalNpc:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_5bmnm"]
-resource_name = "crystal"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CrystalNpc:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CrystalNpc:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ce4il"]
-_data = {
-"RESET": SubResource("Animation_gq1tn"),
-"crystal": SubResource("Animation_5bmnm")
-}
-
 [node name="Atintroscene" type="Node2D"]
-script = ExtResource("1_ep8c8")
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
@@ -3076,61 +3005,3 @@ polygon = PackedVector2Array(-317, 238, -354, 237, -351, -125, 1112, -126, 1102,
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(2, 752, 1405, 755, 1412, 1034, -22, 1032, -24, 746, 8, 751)
-
-[node name="Label" type="Label" parent="."]
-unique_name_in_owner = true
-top_level = true
-material = SubResource("ShaderMaterial_n6whb")
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -651.0
-offset_top = 205.0
-offset_right = -109.0
-offset_bottom = 303.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.517647)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 4
-theme_override_fonts/font = ExtResource("19_enhyj")
-theme_override_font_sizes/font_size = 9
-text = "You can move with the left and right arrows( ←  → )"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="."]
-top_level = true
-material = SubResource("ShaderMaterial_n6whb")
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -264.0
-offset_top = 235.0
-offset_right = 278.0
-offset_bottom = 333.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.517647)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 4
-theme_override_fonts/font = ExtResource("19_enhyj")
-theme_override_font_sizes/font_size = 9
-text = "Press F to interact with NPCS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ce4il")
-}
-
-[node name="IntroScreen" parent="." instance=ExtResource("18_2cedv")]
-
-[connection signal="ready" from="." to="." method="_on_ready"]

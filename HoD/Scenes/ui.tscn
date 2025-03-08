@@ -202,7 +202,6 @@ _data = {
 }
 
 [node name="Ui" type="Control" node_paths=PackedStringArray("menu", "party", "animation_player", "description", "party_description")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -401,8 +400,8 @@ grow_vertical = 0
 [connection signal="pressed" from="Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Export" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Export" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Export" to="." method="_on_resume_pressed"]
 [connection signal="request_completed" from="Menu/VBoxContainer/Export/HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Party" to="." method="_on_party_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

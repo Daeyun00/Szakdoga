@@ -6,30 +6,22 @@ var jump_speed = -400
 var SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 
-
 @onready var interact_ui = $InteractUI
 @onready var inventory_ui = $InventoryUI
 @onready var inventory_hotbar = $Inventory_Hotbar
+@onready var shopInterac_ui = $InteractUI2
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	Global.set_player_reference(self)
-	Dialogic.timeline_started.connect(set_physics_process.bind(false)) 
-	Dialogic.timeline_started.connect(set_process_input.bind(false)) 
-	
-	Dialogic.timeline_ended.connect(set_physics_process.bind(true))
-	Dialogic.timeline_ended.connect(set_process_input.bind(true))
-	
 
 
 func _physics_process(delta):
 	velocity.y += delta * gravity
 	
 	var direction = Input.get_axis("ui_left", "ui_right")
-	
-	
 	
 	if Input.is_action_pressed("ui_left"):
 		$AnimatedSprite2D.flip_h = true
@@ -54,9 +46,6 @@ func _input(event):
 		inventory_ui.visible = !inventory_ui.visible
 		get_tree().paused = !get_tree().paused
 		inventory_hotbar.visible = !inventory_hotbar.visible
-
-		
-	
 
 func apply_item_effect(item):
 	match item["effect"]:
@@ -104,10 +93,3 @@ func _unhandled_input(event):
 			if Input.is_action_just_pressed("hotbar_" + str(i + 1)):
 				use_hotbar_item(i)
 				break
-	if event.is_action_pressed("interact"):
-		$AnimatedSprite2D.stop()
-		
-	
-		Dialogic.timeline_started.connect(set_physics_process.bind(true)) 
-		Dialogic.timeline_started.connect(set_process_input.bind(true))
-		

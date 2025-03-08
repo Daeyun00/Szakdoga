@@ -4,15 +4,22 @@ extends Node
 
 # Scene and node references
 @onready var inventory_slot_scene = preload("res://Scenes/UI/Inventory_Slot.tscn")
+@onready var kovacs_slot_scene = preload("res://Scenes/UI/BlackSmith_Slot.tscn")
 var player_node: Node = null
 
 # Inventory items
 var inventory = []
-var kovacsInventory = []
+var kovacsInventory = [
+]
 var spawnable_items = [
 	{"type": "Consumable", "name": "Berry", "effect": "Health", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Health Potion.png")},
 	{"type": "Consumable", "name": "Water", "effect": "Stamina", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Mana Potion.png")},
 	{"type": "Consumable", "name": "Mushroom", "effect": "Armor", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Stamina Potion.png")},
+	{"type": "Gift", "name": "Gemstone", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png")},
+	{"type": "Gift", "name": "Sugarpallos", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Runic Dagger.png")}
+]
+
+var kovacsBuyItems = [
 	{"type": "Gift", "name": "Gemstone", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png")},
 	{"type": "Gift", "name": "Sugarpallos", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Runic Dagger.png")}
 ]
@@ -22,11 +29,14 @@ signal inventory_updated
 
 # Hotbar items
 var hotbar_size = 5 
-var hotbar_inventory = []
+var hotbar_inventory = [
+	
+]
 
 func _ready(): 
 	# Initializes the inventory with 30 slots (spread over 9 blocks per row)
 	inventory.resize(30) 
+	kovacsInventory.resize(6)
 	# Hotbar size
 	hotbar_inventory.resize(hotbar_size) 
 	
@@ -54,6 +64,7 @@ func add_item(item, to_hotbar = false):
 				print("Item added", inventory)
 				return true
 		return false
+		
 
 # Removes an item from the inventory based on type and effect
 func remove_item(item_type, item_effect):
