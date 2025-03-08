@@ -37,7 +37,6 @@ func set_empty():
 func set_item(new_item):
 	item = new_item
 	icon.texture = new_item["texture"]
-	quantity_label.text = str(item["quantity"])
 	item_name.text = str(item["name"])
 	item_type.text = str(item["type"])
 	if item["effect"] != "":

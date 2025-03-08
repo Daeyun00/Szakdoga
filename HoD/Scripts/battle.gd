@@ -427,7 +427,6 @@ func _on_thief_inventory_pressed() -> void:
 
 
 func _on_attack_menu_button_pressed(button: BaseButton) -> void:
-	button.release_focus()
 	match button.name:
 		"HeroInventory":
 			print("Hero")

@@ -12,4 +12,8 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and is_player_within_area:
+	
+	
 		Dialogic.start("crystal")
+		
+		

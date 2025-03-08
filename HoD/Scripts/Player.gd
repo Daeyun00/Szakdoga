@@ -9,6 +9,7 @@ const JUMP_VELOCITY = -600.0
 @onready var interact_ui = $InteractUI
 @onready var inventory_ui = $InventoryUI
 @onready var inventory_hotbar = $Inventory_Hotbar
+@onready var shopInterac_ui = $InteractUI2
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://p4uw4mc50we6"]
+[gd_scene load_steps=21 format=3 uid="uid://p4uw4mc50we6"]
 
 [ext_resource type="Texture2D" uid="uid://cfb1mal1usuxs" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Meat_Vendor.png" id="1_vi45f"]
 [ext_resource type="Script" path="res://Scripts/butcher_NPCC.gd" id="2_mv6n7"]
+[ext_resource type="PackedScene" uid="uid://bogfwlkgqsu4s" path="res://Scenes/World scenes/blacksmith&butcher/bucher_inventory_ui.tscn" id="3_jh3ks"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ig78h"]
 atlas = ExtResource("1_vi45f")
@@ -133,5 +134,64 @@ position = Vector2(-2, 9)
 scale = Vector2(3.93181, 3.99708)
 shape = SubResource("CircleShape2D_tv8xd")
 
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.376471, 0.321569, 1)
+
+[node name="Label" type="Label" parent="InventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 50.0
+offset_right = 37.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Inventory"
+
+[node name="quit" type="Button" parent="InventoryUI/ColorRect"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 22.0
+offset_right = 85.0
+offset_bottom = 62.0
+text = "Quit"
+
+[node name="BucherInventoryUI" parent="InventoryUI/ColorRect" instance=ExtResource("3_jh3ks")]
+
+[node name="InteractUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1306.0
+offset_top = -723.0
+offset_right = -1006.0
+offset_bottom = -673.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.00429066, 0, 0.431821, 1)
+
+[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "Press 'B' to buy"
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="pressed" from="InventoryUI/ColorRect/quit" to="Area2D" method="_on_quit_pressed"]

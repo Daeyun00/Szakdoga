@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp6l7dmc3c3yq"]
+
+[ext_resource type="Script" path="res://Scripts/kovacs_inventory_ui.gd" id="1_5b86y"]
+
+[node name="KovacsInventoryUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5b86y")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 219.0
+offset_right = 590.0
+offset_bottom = 607.0
+columns = 3

@@ -618,6 +618,7 @@ bus = &"Music"
 [node name="itemOption" parent="." instance=ExtResource("1_j3yfj")]
 visible = false
 custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
 offset_left = 364.0
 offset_top = 29.0
 offset_right = 529.0

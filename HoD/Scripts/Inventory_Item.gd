@@ -1,5 +1,6 @@
 @tool
 extends Node2D
+class_name Item_Inventory
 
 
 @export var item_type = ""
@@ -59,11 +60,9 @@ func set_item_data(data):
 	item_name = data["name"]
 	item_effect = data["effect"]
 	item_texture = data["texture"]
-	item_cost = data["cost"]
 
-func initiate_items(type, name, effect, texture, cost):
+func initiate_items(type, name, effect, texture):
 	item_type = type
 	item_name = name
 	item_effect = effect
 	item_texture = texture
-	item_cost = cost
