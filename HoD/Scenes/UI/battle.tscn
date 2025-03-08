@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dk2q27uc065mt"]
+[gd_scene load_steps=14 format=3 uid="uid://dk2q27uc065mt"]
 
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
 [ext_resource type="Script" path="res://Scripts/battle.gd" id="1_kdno6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Attack_Menu.gd" id="4_dtoku"]
 [ext_resource type="PackedScene" uid="uid://codr4bxbre4uq" path="res://Scenes/Entities/Hero.tscn" id="4_o04v0"]
 [ext_resource type="PackedScene" uid="uid://c14j6sxrgxwv" path="res://Scenes/Entities/Slime.tscn" id="5_manfw"]
+[ext_resource type="Texture2D" uid="uid://det8bqkv5ymhk" path="res://Assets/Ninepatch/window.png" id="6_s5klw"]
 [ext_resource type="PackedScene" uid="uid://bjvkuq7dm0bfu" path="res://Scenes/Entities/Mage.tscn" id="7_3yu3a"]
 [ext_resource type="PackedScene" uid="uid://1ympmth3dktk" path="res://Scenes/Entities/Thief.tscn" id="8_mbssg"]
 [ext_resource type="Script" path="res://Scenes/UI/hostiles.gd" id="9_5a74e"]
@@ -34,7 +35,7 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -643.0
+offset_left = -622.0
 offset_top = 29.0
 offset_right = 657.0
 offset_bottom = 179.0
@@ -43,6 +44,7 @@ alignment = 1
 
 [node name="Enemies" parent="Top" instance=ExtResource("1_j3yfj")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.85
 
 [node name="Enemy1" type="Label" parent="Top/Enemies"]
 layout_mode = 0
@@ -99,9 +101,9 @@ size_flags_stretch_ratio = 1.66
 
 [node name="Hero_label" type="Label" parent="Top/Players"]
 layout_mode = 0
-offset_left = 39.0
+offset_left = 19.0
 offset_top = 18.0
-offset_right = 103.0
+offset_right = 83.0
 offset_bottom = 48.0
 text = "Hero:"
 
@@ -111,8 +113,8 @@ anchors_preset = -1
 anchor_left = 1.359
 anchor_right = 2.562
 anchor_bottom = 1.0
-offset_left = 0.0239944
-offset_right = 0.0319977
+offset_left = -10.976
+offset_right = -10.968
 text = "0/0 HP"
 
 [node name="Hero_rage_label" type="Label" parent="Top/Players/Hero_label"]
@@ -121,9 +123,25 @@ anchors_preset = -1
 anchor_left = 3.328
 anchor_right = 4.984
 anchor_bottom = 1.0
-offset_left = 19.008
-offset_right = 19.024
+offset_left = 13.008
+offset_right = 13.024
 text = "0/0 Rage"
+
+[node name="Hero_ATK_label" type="Label" parent="Top/Players/Hero_label"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 3.0
+offset_right = 486.0
+offset_bottom = 33.0
+text = "ATK: 10"
+
+[node name="Hero_DEF_label" type="Label" parent="Top/Players/Hero_label"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 3.0
+offset_right = 573.0
+offset_bottom = 33.0
+text = "DEF: 0"
 
 [node name="Hero_status" type="Label" parent="Top/Players/Hero_label"]
 layout_mode = 1
@@ -131,14 +149,17 @@ anchors_preset = -1
 anchor_left = 6.687
 anchor_right = 8.141
 anchor_bottom = 1.0
-offset_left = -32.968
-offset_right = -33.024
+offset_left = 178.032
+offset_top = 3.0
+offset_right = 292.976
+offset_bottom = 3.0
+text = "Ready"
 
 [node name="Mage_label" type="Label" parent="Top/Players"]
 layout_mode = 0
-offset_left = 39.0
+offset_left = 19.0
 offset_top = 59.0
-offset_right = 108.0
+offset_right = 88.0
 offset_bottom = 89.0
 text = "Mage:"
 
@@ -148,8 +169,8 @@ anchors_preset = -1
 anchor_left = 1.261
 anchor_right = 2.377
 anchor_bottom = 1.033
-offset_left = -0.00900269
-offset_right = -0.0130005
+offset_left = -11.009
+offset_right = -11.013
 offset_bottom = -0.99
 text = "0/0 HP"
 
@@ -159,10 +180,24 @@ anchors_preset = -1
 anchor_left = 3.087
 anchor_right = 4.739
 anchor_bottom = 1.033
-offset_left = 18.997
-offset_right = 19.009
+offset_left = 12.997
+offset_right = 13.009
 offset_bottom = -0.99
 text = "0/0 Mana"
+
+[node name="Hero_ATK_label" type="Label" parent="Top/Players/Mage_label"]
+offset_left = 409.0
+offset_top = 1.0
+offset_right = 486.0
+offset_bottom = 31.0
+text = "ATK: 10"
+
+[node name="Hero_DEF_label" type="Label" parent="Top/Players/Mage_label"]
+offset_left = 504.0
+offset_top = 1.0
+offset_right = 573.0
+offset_bottom = 31.0
+text = "DEF: 0"
 
 [node name="Mage_status" type="Label" parent="Top/Players/Mage_label"]
 layout_mode = 1
@@ -170,16 +205,17 @@ anchors_preset = -1
 anchor_left = 6.203
 anchor_right = 7.551
 anchor_bottom = 1.033
-offset_left = -19.007
+offset_left = 177.993
 offset_top = 1.0
-offset_right = -19.019
+offset_right = 292.981
 offset_bottom = 0.0100002
+text = "Ready"
 
 [node name="Thief_label" type="Label" parent="Top/Players"]
 layout_mode = 0
-offset_left = 39.0
+offset_left = 19.0
 offset_top = 104.0
-offset_right = 107.0
+offset_right = 87.0
 offset_bottom = 134.0
 text = "Thief:"
 
@@ -189,8 +225,8 @@ anchors_preset = -1
 anchor_left = 1.279
 anchor_right = 2.412
 anchor_bottom = 0.933
-offset_left = 0.0279999
-offset_right = -28.016
+offset_left = -10.972
+offset_right = -11.016
 offset_bottom = 2.01
 text = "0/0 HP"
 
@@ -200,11 +236,25 @@ anchors_preset = -1
 anchor_left = 3.132
 anchor_right = 4.956
 anchor_bottom = 1.0
-offset_left = 19.024
+offset_left = 13.024
 offset_top = -2.0
-offset_right = 18.992
+offset_right = 12.992
 offset_bottom = -2.0
 text = "0/0 Combo"
+
+[node name="Hero_ATK_label" type="Label" parent="Top/Players/Thief_label"]
+offset_left = 409.0
+offset_top = -2.0
+offset_right = 486.0
+offset_bottom = 28.0
+text = "ATK: 10"
+
+[node name="Hero_DEF_label" type="Label" parent="Top/Players/Thief_label"]
+offset_left = 504.0
+offset_top = -2.0
+offset_right = 573.0
+offset_bottom = 28.0
+text = "DEF: 0"
 
 [node name="Thief_status" type="Label" parent="Top/Players/Thief_label"]
 layout_mode = 1
@@ -212,16 +262,17 @@ anchors_preset = -1
 anchor_left = 6.294
 anchor_right = 7.662
 anchor_bottom = 0.867
-offset_left = -18.992
-offset_right = -19.016
+offset_left = 178.008
+offset_right = 292.984
 offset_bottom = 3.99
+text = "Ready"
 
 [node name="Options" parent="." instance=ExtResource("1_j3yfj")]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-offset_left = 365.0
+offset_left = 326.0
 offset_top = 29.0
-offset_right = 515.0
+offset_right = 476.0
 offset_bottom = 179.0
 size_flags_stretch_ratio = 2.29
 
@@ -263,13 +314,40 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_q03yh")
 text = "Flee"
 
+[node name="ActionTurn" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -184.0
+offset_right = 104.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s5klw")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Turns" type="Label" parent="ActionTurn"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 151.0
+offset_bottom = 41.0
+text = "Hero's Turn"
+
 [node name="Spells" parent="." instance=ExtResource("1_j3yfj")]
 visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_left = 365.0
+offset_left = 326.0
 offset_top = 29.0
-offset_right = 515.0
+offset_right = 476.0
 offset_bottom = 179.0
 size_flags_stretch_ratio = 2.29
 
@@ -310,9 +388,9 @@ text = "Thunder
 visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_left = 365.0
+offset_left = 327.0
 offset_top = 29.0
-offset_right = 515.0
+offset_right = 477.0
 offset_bottom = 179.0
 size_flags_stretch_ratio = 2.29
 
@@ -355,9 +433,9 @@ text = "Shadowstrike"
 visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_left = 364.0
+offset_left = 326.0
 offset_top = 29.0
-offset_right = 514.0
+offset_right = 476.0
 offset_bottom = 179.0
 size_flags_stretch_ratio = 2.29
 
