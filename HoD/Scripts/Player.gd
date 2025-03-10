@@ -16,6 +16,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	Global.set_player_reference(self)
+	Dialogic.timeline_started.connect(set_physics_process.bind(false)) 
+	Dialogic.timeline_started.connect(set_process_input.bind(false)) 
+	
+	Dialogic.timeline_ended.connect(set_physics_process.bind(true))
+	Dialogic.timeline_ended.connect(set_process_input.bind(true))
+	
 
 
 func _physics_process(delta):

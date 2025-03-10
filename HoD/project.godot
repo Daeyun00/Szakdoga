@@ -41,10 +41,16 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "bartedner": "res://Assets/Asset Packs/NPCS and characters/Cropped/bartedner.dtl",
+"bartender1": "res://timelines/bartender1.dtl",
 "blacksmith": "res://timelines/blacksmith.dtl",
+"blacksmith1": "res://timelines/blacksmith1.dtl",
 "bunny": "res://timelines/bunny.dtl",
+"butch1": "res://timelines/butch1.dtl",
+"butch2": "res://timelines/butch2.dtl",
 "crystal": "res://timelines/crystal.dtl",
 "drunkards": "res://timelines/drunkards.dtl",
+"drunkards1": "res://timelines/drunkards1.dtl",
+"gravedigging2": "res://timelines/gravedigging2.dtl",
 "gravedigging_guy": "res://Assets/Asset Packs/NPCS and characters/Cropped/gravedigging_guy.dtl",
 "intro": "res://timelines/intro.dtl",
 "mage": "res://Assets/Asset Packs/NPCS and characters/Cropped/mage.dtl",
@@ -53,7 +59,9 @@ directories/dtl_directory={
 "meatvendor3": "res://Assets/Asset Packs/NPCS and characters/Cropped/meatvendor3.dtl",
 "musician": "res://Assets/Asset Packs/NPCS and characters/Cropped/musician.dtl",
 "vendor": "res://Assets/Asset Packs/NPCS and characters/Cropped/vendor.dtl",
-"woman": "res://Assets/Asset Packs/NPCS and characters/Cropped/woman.dtl"
+"vendor1": "res://timelines/vendor1.dtl",
+"woman": "res://Assets/Asset Packs/NPCS and characters/Cropped/woman.dtl",
+"woman1": "res://timelines/woman1.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://timelines/New_File.tres"]
