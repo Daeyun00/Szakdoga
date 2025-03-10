@@ -64,6 +64,26 @@ var _bloodlust_token = 0
 var _decimate_select = false
 var _decimate_token = 0
 
+#Mage spell switches
+var _fireball_select = false
+var _fireball_token1 = 0
+var _fireball_token2 = 0
+var _fireball_token3 = 0
+var _heal_I_select = false
+var _empower_select = false
+var _empower_token1 = 0
+var _empower_token2 = 0
+var _empower_token3 = 0
+var _resistance_select = false
+var _resistance_token = 0
+var _resistance_token1 = 0
+var _resistance_token2 = 0
+var _resistance_token3 = 0
+var _thunder_select = false
+var _thunder_token1 = 0
+var _thunder_token2 = 0
+var _thunder_token3 = 0
+
 var turn = 0
 
 
@@ -109,7 +129,15 @@ func _physics_process(delta: float) -> void:
 	$Top/Players/Hero_label/Hero_rage_label.text = Rage
 	$Top/Players/Mage_label/Mage_mana_label.text = Mana
 	$Top/Players/Thief_label/Thief_combo_label.text = Combo
-
+	match turn:
+		0:
+			$ActionTurn/Turns.text = "Hero's Turn"
+		1:
+			$ActionTurn/Turns.text = "Mage's Turn"
+		2:
+			$ActionTurn/Turns.text = "Thief's Turn"
+		_:
+			$ActionTurn/Turns.text = "Enemy's Turn"
 	#Option focus fix
 	if(!is_fight && !is_skill && !is_item && !is_guard && !is_flee):
 		if (!$Options/AttackMenu/Fight_button.has_focus() and !$Options/AttackMenu/Flee_button.has_focus() and !$Options/AttackMenu/Guard_button.has_focus() and !$Options/AttackMenu/Item_button.has_focus() and !$Options/AttackMenu/Skill_button.has_focus()):
@@ -206,9 +234,86 @@ func _physics_process(delta: float) -> void:
 				Hero.DEF += 20
 			else:
 				_decimate_token += 1
-		$Top/Players/Hero_label/Hero_status.text = ""
-		$Top/Players/Mage_label/Mage_status.text = ""
-		$Top/Players/Thief_label/Thief_status.text = ""
+		#mage token
+		if(_fireball_token1 > 0):
+			if(_fireball_token1 > 2):
+				_fireball_token1 = 0
+			else:
+				_fireball_token1 += 1
+				hostile1.HP -= Mage.ATK*0.5
+				print("m hit s1 (DoT)")
+		if(_fireball_token2 > 0):
+			if(_fireball_token2 > 2):
+				_fireball_token2 = 0
+			else:
+				_fireball_token2 += 1
+				hostile2.HP -= Mage.ATK*0.5
+				print("m hit s2 (DoT)")
+		if(_fireball_token3 > 0):
+			if(_fireball_token3 > 2):
+				_fireball_token3 = 0
+			else:
+				_fireball_token3 += 1
+				hostile3.HP -= Mage.ATK*0.5
+				print("m hit s3 (DoT)")
+		if(_empower_token1 > 0):
+			if (_empower_token1 > 2):
+				_empower_token1 = 0
+				Hero.ATK -= 10
+			else:
+				_empower_token1 += 1
+		if(_empower_token2 > 0):
+			if (_empower_token2 > 2):
+				_empower_token2 = 0
+				Mage.ATK -= 10
+			else:
+				_empower_token1 += 1
+		if(_empower_token3 > 0):
+			if (_empower_token3 > 2):
+				_empower_token3 = 0
+				Thief.ATK -= 10
+			else:
+				_empower_token3 += 1
+		if(_resistance_token1 > 0):
+			if (_resistance_token1 > 2):
+				_resistance_token1 = 0
+				Hero.DEF -= 10
+			else:
+				_resistance_token1 += 1
+		if(_resistance_token2 > 0):
+			if (_resistance_token2 > 2):
+				_resistance_token2 = 0
+				Mage.DEF -= 10
+			else:
+				_resistance_token1 += 1
+		if(_resistance_token3 > 0):
+			if (_resistance_token3 > 2):
+				_resistance_token3 = 0
+				Thief.DEF -= 10
+			else:
+				_resistance_token3 += 1
+		if(_thunder_token1 > 0):
+			if(_thunder_token1 > 2):
+				_thunder_token1 = 0
+				hostile1.DEF += 10
+			else:
+				_thunder_token1 += 1
+		if(_thunder_token2 > 0):
+			if(_thunder_token2 > 2):
+				_thunder_token2 = 0
+				hostile2.DEF += 10
+			else:
+				_thunder_token2 += 1
+		if(_thunder_token3 > 0):
+			if(_thunder_token3 > 2):
+				_thunder_token3 = 0
+				hostile3.DEF += 10
+			else:
+				_thunder_token3 += 1
+		
+		$Top/Players/Hero_label/Hero_status.text = "Ready"
+		$Top/Players/Mage_label/Mage_status.text = "Ready"
+		$Top/Players/Thief_label/Thief_status.text = "Ready"
 		$Options.visible = true
 
 #misc
@@ -220,8 +325,8 @@ func wait(seconds: float) -> void:
 
 
 #main sequence
-func _on_v_box_container_button_pressed(button: BaseButton) -> void:
-	print("Hero Defense: " + str(Hero.DEF) + "| Turn: " + str(turn))
+func _on_v_box_container_button_pressed(button: BaseButton) -> void: 
+	print("Hero Defense: " + str(Hero.DEF) + " | Hero Attack: " + str(Hero.ATK) + " | Turn: " + str(turn))
 	match button.name:
 		"Fight_button":
 			print("Fight")
@@ -233,10 +338,11 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 			_skill_window(button)
 			
 		"Item_button":
-			print("Válasszon karaktert! ")
+			print("Choose a character")
 			is_item = !is_item
-			attackMenu.visible = !attackMenu.visible
 			item_option.visible = !item_option.visible
+			$Options.visible = false
+			$itemOption/AttackMenu/HeroInventory.grab_focus()
 		"Guard_button":
 			print("Guard")
 			is_guard = !is_guard
@@ -343,14 +449,48 @@ func _on_matial_menu_button_pressed(button: BaseButton) -> void:
 func _on_spell_menu_button_pressed(button: BaseButton) -> void:
 		match button.name:
 			"Fireball":
-				print("owo")
-				turn += 1
-				print(turn)
-				$Spells.visible = false
-				$Options.visible = true
-				$Options/AttackMenu/Fight_button.grab_focus()
-				is_skill = !is_skill
-
+				#Launches an attack with *2 multiplier and puts a burn DoT(ATK*0.5) on the enemy.
+				if(Mage.Mana >= 10):
+					hostile1.grab_focus()
+					_fireball_select = true
+				else:
+					$Top/Players/Mage_label/Mage_status.text = "Not enough Mana"
+					$Spells.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Heal I":
+				#Heals a selected ally by their MaxHP's 10%
+				if(Mage.Mana >= 5):
+					Hero.grab_focus()
+					_heal_I_select = true
+				else:
+					$Top/Players/Mage_label/Mage_status.text = "Not enough Mana"
+					$Spells.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Empower":
+				if(Mage.Mana >= 5):
+					Hero.grab_focus()
+					_empower_select = true
+				else:
+					$Top/Players/Mage_label/Mage_status.text = "Not enough Mana"
+					$Spells.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Thunder":
+				#Attacks with 10* multiplier and Breaks enemy defense
+				if(Mage.Mana >= 40):
+					hostile1.grab_focus()
+					_thunder_select = true
+				else:
+					$Top/Players/Mage_label/Mage_status.text = "Not enough Mana"
+					$Spells.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
 
 func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 		match button.name:
@@ -390,6 +530,7 @@ func _on_slime_pressed() -> void:
 		$Options/AttackMenu/Fight_button.grab_focus()
 		is_fight = !is_fight
 	if(is_skill):
+		#Hero skills
 		if(_charge_select):
 			hostile1.HP -= Hero.ATK*3 - hostile1.DEF
 			Hero.Rage -= 5
@@ -400,7 +541,7 @@ func _on_slime_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			_charge_select = false
 			is_skill = !is_skill
-		elif(_taunt_select):
+		if(_taunt_select):
 			slime1_taunt = true
 			Hero.Rage -= 10
 			turn += 1
@@ -436,7 +577,7 @@ func _on_slime_pressed() -> void:
 			is_skill = !is_skill
 			_bloodlust_select = false
 		if(_decimate_select):
-			hostile1.HP -= Hero.atk*15
+			hostile1.HP -= Hero.ATK*15
 			Hero.DEF -= 20
 			if(_defense_token > 0):
 				Hero.DEF -= 10
@@ -448,6 +589,34 @@ func _on_slime_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_decimate_select = false
+		#Mage spells
+		if(_fireball_select):
+			hostile1.HP -= Mage.ATK*2 - hostile1.DEF
+			if(_fireball_token1 == 0):
+				_fireball_token1 = 1
+			Mage.Mana -= 10
+			turn += 1
+			print(turn)
+			$Spells.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_fireball_select = false
+		if(_thunder_select):
+			if(_thunder_token1 == 0):
+				hostile1.DEF -= 10
+			hostile1.HP -= Mage.ATK*10 - hostile1.DEF
+			_thunder_token1 = 1
+			Mage.Mana -= 40
+			turn += 1
+			print(turn)
+			$Spells.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_thunder_select = false
+			
+			
 func _on_slime_2_pressed() -> void:
 	if(is_fight):
 		match turn:
@@ -519,7 +688,7 @@ func _on_slime_2_pressed() -> void:
 			is_skill = !is_skill
 			_bloodlust_select = false
 		if(_decimate_select):
-			hostile2.HP -= Hero.atk*15
+			hostile2.HP -= Hero.ATK*15
 			Hero.DEF -= 20
 			if(_defense_token > 0):
 				Hero.DEF -= 10
@@ -531,6 +700,31 @@ func _on_slime_2_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_decimate_select = false
+		if(_fireball_select):
+			hostile2.HP -= Mage.ATK*2 - hostile2.DEF
+			if(_fireball_token2 == 0):
+				_fireball_token2 = 1
+			Mage.Mana -= 10
+			turn += 1
+			print(turn)
+			$Spells.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_fireball_select = false
+		if(_thunder_select):
+			if(_thunder_token2 == 0):
+				hostile1.DEF -= 10
+			hostile2.HP -= Mage.ATK*10 - hostile2.DEF
+			_thunder_token2 = 1
+			Mage.Mana -= 40
+			turn += 1
+			print(turn)
+			$Spells.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_thunder_select = false
 
 func _on_slime_3_pressed() -> void:
 	if(is_fight):
@@ -603,7 +797,7 @@ func _on_slime_3_pressed() -> void:
 			is_skill = !is_skill
 			_bloodlust_select = false
 		if(_decimate_select):
-			hostile3.HP -= Hero.atk*15
+			hostile3.HP -= Hero.ATK*15
 			Hero.DEF -= 20
 			if(_defense_token > 0):
 				Hero.DEF -= 10
@@ -615,21 +809,151 @@ func _on_slime_3_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_decimate_select = false
+		if(_fireball_select):
+			hostile3.HP -= Mage.ATK*2 - hostile3.DEF
+			if(_fireball_token3 == 0):
+				_fireball_token3 = 1
+			Mage.Mana -= 10
+			turn += 1
+			print(turn)
+			$Spells.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_fireball_select = false
+		if(_thunder_select):
+			if(_thunder_token3 == 0):
+				hostile1.DEF -= 10
+			hostile3.HP -= Mage.ATK*10 - hostile3.DEF
+			_thunder_token3 = 1
+			Mage.Mana -= 40
+			turn += 1
+			print(turn)
+			$Spells.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_thunder_select = false
 
+func _on_hero_pressed() -> void:
+	if(_heal_I_select):
+		Hero.HP += Hero.MaxHP*0.1
+		print("HEAL: " + str(Mage.MaxHP*0.1))
+		Mage.Mana -= 5
+		turn += 1
+		print(turn)
+		$Spells.visible = false
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_skill = !is_skill
+		_heal_I_select = false
+	if(_empower_select):
+		if(_empower_token3 == 0):
+			Hero.ATK += 10
+			Hero.Rage += 5
+		_empower_token1 = 1
+		Mage.Mana -= 35
+		turn += 1
+		print(turn)
+		$Spells.visible = false
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_skill = !is_skill
+		_empower_select = false
+	if(_resistance_select):
+		if(_resistance_token1 == 0):
+			Hero.DEF += 10
+		_resistance_token1 = 1
+		Mage.Mana -= 20
+		turn += 1
+		print(turn)
+		$Spells.visible = false
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_skill = !is_skill
+		_resistance_select = false
 
+func _on_mage_pressed() -> void:
+	if(_heal_I_select):
+		Mage.HP += Mage.MaxHP*0.1
+		print("HEAL: " + str(Mage.MaxHP*0.1))
+		Mage.Mana -= 5
+		turn += 1
+		print(turn)
+		$Spells.visible = false
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_skill = !is_skill
+		_heal_I_select = false
+	if(_empower_select):
+		if(_empower_token2 == 0):
+			Mage.ATK += 10
+		_empower_token2 = 1
+		Mage.Mana -= 30
+		turn += 1
+		print(turn)
+		$Spells.visible = false
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_skill = !is_skill
+		_empower_select = false
+	if(_resistance_select):
+		if(_resistance_token2 == 0):
+			Mage.DEF += 10
+		_resistance_token2 = 1
+		Mage.Mana -= 20
+		turn += 1
+		print(turn)
+		$Spells.visible = false
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_skill = !is_skill
+		_resistance_select = false
+
+func _on_thief_pressed() -> void:
+	if(_heal_I_select):
+		Thief.HP += Thief.MaxHP*0.1
+		print("HEAL: " + str(Mage.MaxHP*0.1))
+		Mage.Mana -= 5
+		turn += 1
+		print(turn)
+		$Spells.visible = false
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_skill = !is_skill
+		_heal_I_select = false
+	if(_empower_select):
+		if(_empower_token3 == 0):
+			Thief.ATK += 10
+			Thief.Combo += 1
+		_empower_token3 = 1
+		Mage.Mana -= 35
+		turn += 1
+		print(turn)
+		$Spells.visible = false
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_skill = !is_skill
+		_empower_select = false
+	if(_resistance_select):
+		if(_resistance_token3 == 0):
+			Thief.DEF += 10
+		_resistance_token3 = 1
+		Mage.Mana -= 20
+		turn += 1
+		print(turn)
+		$Spells.visible = false
+		$Options.visible = true
+		$Options/AttackMenu/Fight_button.grab_focus()
+		is_skill = !is_skill
+		_resistance_select = false
 
 func _on_item_button_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			item_option.visible = !item_option.visible
+			attackMenu.visible = !attackMenu.visible
 			
-# 🐹
-func _on_hero_button_pressed() -> void:
-	hero_inventory.visible = true
-func _on_mage_button_pressed() -> void:
-	mage_inventory.visible = true
-func _on_thief_button_pressed() -> void:
-	thief_inventory.visible = true
 	
 func _on_kilep_hero_pressed() -> void:
 	hero_inventory.visible = false
