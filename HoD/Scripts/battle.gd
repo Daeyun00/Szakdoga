@@ -40,12 +40,29 @@ var thief = false
 
 var finished_action = false
 
+#hostile switches
 var selected_hostile = 0
 var slime1_select = false
 var slime2_select = false
 var slime3_select = false
 
+#hostile effects
+var slime1_taunt = false
+var slime1_taunt_turn = 0
+var slime2_taunt = false
+var slime2_taunt_turn = 0
+var slime3_taunt = false
+var slime3_taunt_turn = 0
+
+#Hero skill switches
 var _charge_select = false
+var _taunt_select = false
+var _Defensive_attack_select = false
+var _defense_token = 0
+var _bloodlust_select = false
+var _bloodlust_token = 0
+var _decimate_select = false
+var _decimate_token = 0
 
 var turn = 0
 
@@ -100,49 +117,95 @@ func _physics_process(delta: float) -> void:
 	
 	#Enemy attack
 	if(turn >= 3):
-		tim.set_wait_time(1.5)
 		$Options.visible = false
 		for i in 3:
 			var rnd = randi_range(0, 2)
+			if(slime1_taunt or slime2_taunt or slime3_taunt):
+				if(slime1_taunt and turn == 3):
+					Hero.HP -= hostile1.ATK - Hero.DEF
+					print("s1 hit h (taunt)")
+					slime1_taunt_turn += 1
+					print(turn)
+					if(slime1_taunt_turn == 2):
+						slime1_taunt = false
+				elif(slime2_taunt and turn == 4):
+					Hero.HP -= hostile2.ATK - Hero.DEF
+					print("s2 hit h (taunt)")
+					if(slime2_taunt_turn == 2):
+						slime2_taunt = false
+				elif(slime3_taunt and turn == 5):
+					Hero.HP -= hostile3.ATK - Hero.DEF
+					print("s3 hit h (taunt)")
+					if(slime3_taunt_turn == 2):
+						slime3_taunt = false
 			match rnd:
 				0:
 					match turn:
 						3:
 							Hero.HP -= hostile1.ATK - Hero.DEF
 							print("s1 hit h")
+							print(turn)
 						4:
 							Hero.HP -= hostile2.ATK - Hero.DEF
 							print("s2 hit h")
+							print(turn)
 						5:
 							Hero.HP -= hostile3.ATK - Hero.DEF
 							print("s3 hit h")
+							print(turn)
 				1:
 					match turn:
 						3:
 							Mage.HP -= hostile1.ATK - Mage.DEF
 							print("s1 hit m")
+							print(turn)
 						4:
 							Mage.HP -= hostile2.ATK - Mage.DEF
 							print("s2 hit m")
+							print(turn)
 						5:
 							Mage.HP -= hostile3.ATK - Mage.DEF
 							print("s3 hit m")
+							print(turn)
 				2:
 					match turn:
 						3:
 							Thief.HP -= hostile1.ATK - Thief.DEF
 							print("s1 hit t")
+							print(turn)
 						4:
 							Thief.HP -= hostile2.ATK - Thief.DEF
 							print("s2 hit t")
+							print(turn)
 						5:
 							Thief.HP -= hostile3.ATK - Thief.DEF
 							print("s3 hit t")
+							print(turn)
 				_:
 					print("D:")
 			turn += 1
-			wait(1.5)
 		turn = 0
+		print(turn)
+		#hero token
+		if(_defense_token>0):
+			if(_defense_token > 2):
+				_defense_token = 0
+				if(!_decimate_token):
+					Hero.DEF -= 10
+			else:
+				_defense_token += 1
+		if(_bloodlust_token>0):
+			if(_bloodlust_token > 2):
+				_bloodlust_token = 0
+				Hero.ATK -= 10
+			else:
+				_bloodlust_token += 1
+		if(_decimate_token>0):
+			if(_decimate_token > 2):
+				_decimate_token = 0
+				Hero.DEF += 20
+			else:
+				_decimate_token += 1
 		$Top/Players/Hero_label/Hero_status.text = ""
 		$Top/Players/Mage_label/Mage_status.text = ""
 		$Top/Players/Thief_label/Thief_status.text = ""
@@ -158,6 +221,7 @@ func wait(seconds: float) -> void:
 
 #main sequence
 func _on_v_box_container_button_pressed(button: BaseButton) -> void:
+	print("Hero Defense: " + str(Hero.DEF) + "| Turn: " + str(turn))
 	match button.name:
 		"Fight_button":
 			print("Fight")
@@ -220,6 +284,7 @@ func _skill_window(button: BaseButton) -> void:
 func _on_matial_menu_button_pressed(button: BaseButton) -> void:
 	match button.name:
 		"Charge":
+			#A stronger normal attack
 			if(Hero.Rage >= 5):
 				hostile1.grab_focus()
 				_charge_select = true
@@ -229,6 +294,51 @@ func _on_matial_menu_button_pressed(button: BaseButton) -> void:
 				$Options.visible = true
 				$Options/AttackMenu/Fight_button.grab_focus()
 				is_skill = !is_skill
+		"Taunt":
+			#makes the enemy attack the hero for 2 turns
+			if(Hero.Rage>=10):
+				hostile1.grab_focus()
+				_taunt_select = true
+			else:
+				$Top/Players/Hero_label/Hero_status.text = "Not enough Rage"
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+		"DefAttack":
+			#attacks with *2 multiplier and increases DEF by 10 for two turn
+			if(Hero.Rage>=5):
+				hostile1.grab_focus()
+				_Defensive_attack_select = true
+			else:
+				$Top/Players/Hero_label/Hero_status.text = "Not enough Rage"
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+		"Bloodlust":
+			#attacks with 5* multiplier and increases ATK by 10 for two turn
+			if(Hero.Rage>=40):
+				hostile1.grab_focus()
+				_bloodlust_select = true
+			else:
+				$Top/Players/Hero_label/Hero_status.text = "Not enough Rage"
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+		"Decimate":
+			#Attacks with *15 multiplier but decreases DEF by 20 for three turns disables defensive stance if active
+			if(Hero.Rage >= 60):
+				hostile1.grab_focus()
+				_decimate_select = true
+			else:
+				$Top/Players/Hero_label/Hero_status.text = "Not enough Rage"
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+
 
 func _on_spell_menu_button_pressed(button: BaseButton) -> void:
 		match button.name:
@@ -288,8 +398,56 @@ func _on_slime_pressed() -> void:
 			$Martials.visible = false
 			$Options.visible = true
 			$Options/AttackMenu/Fight_button.grab_focus()
+			_charge_select = false
 			is_skill = !is_skill
-
+		elif(_taunt_select):
+			slime1_taunt = true
+			Hero.Rage -= 10
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			_taunt_select = false
+			is_skill = !is_skill
+		if(_Defensive_attack_select):
+			hostile1.HP -= Hero.ATK*2 - hostile1.DEF
+			Hero.Rage -= 5
+			Hero.DEF += 10
+			_defense_token = 1
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_Defensive_attack_select = false
+		if(_bloodlust_select):
+			if(_bloodlust_token == 0):
+				Hero.ATK += 10
+			hostile1.HP -= Hero.ATK*4 - hostile1.DEF
+			Hero.Rage -= 40
+			_bloodlust_token = 1
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_bloodlust_select = false
+		if(_decimate_select):
+			hostile1.HP -= Hero.atk*15
+			Hero.DEF -= 20
+			if(_defense_token > 0):
+				Hero.DEF -= 10
+			_decimate_token = 1
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_decimate_select = false
 func _on_slime_2_pressed() -> void:
 	if(is_fight):
 		match turn:
@@ -314,7 +472,65 @@ func _on_slime_2_pressed() -> void:
 		$Options.visible = true
 		$Options/AttackMenu/Fight_button.grab_focus()
 		is_fight = !is_fight
-
+	if(is_skill):
+		if(_charge_select):
+			hostile2.HP -= Hero.ATK*3 - hostile2.DEF
+			Hero.Rage -= 5
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			_charge_select = false
+			is_skill = !is_skill
+		elif(_taunt_select):
+			slime2_taunt = true
+			Hero.Rage -= 10
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			_taunt_select = false
+			is_skill = !is_skill
+		if(_Defensive_attack_select):
+			hostile2.HP -= Hero.ATK*2 - hostile2.DEF
+			Hero.Rage -= 5
+			Hero.DEF += 10
+			_defense_token = 1
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_Defensive_attack_select = false
+		if(_bloodlust_select):
+			if(_bloodlust_token == 0):
+				Hero.ATK += 10
+			hostile2.HP -= Hero.ATK*4 - hostile2.DEF
+			Hero.Rage -= 40
+			_bloodlust_token = 1
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_bloodlust_select = false
+		if(_decimate_select):
+			hostile2.HP -= Hero.atk*15
+			Hero.DEF -= 20
+			if(_defense_token > 0):
+				Hero.DEF -= 10
+			_decimate_token = 1
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_decimate_select = false
 
 func _on_slime_3_pressed() -> void:
 	if(is_fight):
@@ -340,8 +556,65 @@ func _on_slime_3_pressed() -> void:
 		$Options.visible = true
 		$Options/AttackMenu/Fight_button.grab_focus()
 		is_fight = !is_fight
-
-
+	if(is_skill):
+		if(_charge_select):
+			hostile3.HP -= Hero.ATK*3 - hostile3.DEF
+			Hero.Rage -= 5
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			_charge_select = false
+			is_skill = !is_skill
+		elif(_taunt_select):
+			slime3_taunt = true
+			Hero.Rage -= 10
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			_taunt_select = false
+			is_skill = !is_skill
+		if(_Defensive_attack_select):
+			hostile3.HP -= Hero.ATK*2 - hostile3.DEF
+			Hero.Rage -= 5
+			Hero.DEF += 10
+			_defense_token = 1
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_Defensive_attack_select = false
+		if(_bloodlust_select):
+			if(_bloodlust_token == 0):
+				Hero.ATK += 10
+			hostile3.HP -= Hero.ATK*4 - hostile3.DEF
+			Hero.Rage -= 40
+			_bloodlust_token = 1
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_bloodlust_select = false
+		if(_decimate_select):
+			hostile3.HP -= Hero.atk*15
+			Hero.DEF -= 20
+			if(_defense_token > 0):
+				Hero.DEF -= 10
+			_decimate_token = 1
+			turn += 1
+			print(turn)
+			$Martials.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_decimate_select = false
 
 
 
@@ -349,79 +622,34 @@ func _on_item_button_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			item_option.visible = !item_option.visible
-			attackMenu.visible = !attackMenu.visible
 			
-	
-
-
+# 🐹
 func _on_hero_button_pressed() -> void:
 	hero_inventory.visible = true
-	
-
-
 func _on_mage_button_pressed() -> void:
 	mage_inventory.visible = true
-
-
 func _on_thief_button_pressed() -> void:
 	thief_inventory.visible = true
 	
-
 func _on_kilep_hero_pressed() -> void:
 	hero_inventory.visible = false
 	attackMenu.visible = true
 	item_option.visible = false
 	
-
 func _on_kilep_mage_pressed() -> void:
 	mage_inventory.visible = false
 	attackMenu.visible = true
 	item_option.visible = false
 	
-
-
 func _on_kilep_thief_pressed() -> void:
 	thief_inventory.visible = false
 	attackMenu.visible = true
 	item_option.visible = false
 	
-
-
-
-func on_slime_pressed() -> void:
-	if(is_fight):
-		match turn:
-				0:
-					hostile1.HP -= Hero.ATK - hostile1.DEF
-					if (Hero.Rage < 100):
-						Hero.Rage += 5
-					turn += 1
-					print(turn)
-				1:
-					hostile1.HP -= Mage.ATK/2 - hostile1.DEF
-					turn += 1
-					print(turn)
-				2:
-					hostile1.HP -= Thief.ATK - hostile1.DEF
-					turn += 1
-					print(turn)
-				_:
-					print("o_o")
-					print(turn)
-		hostile1.release_focus()
-		$Options.visible = true
-		$Options/AttackMenu/Fight_button.grab_focus()
-		is_fight = !is_fight
-
-
 func _on_hero_inventory_pressed() -> void:
 	hero_inventory.visible = true
-
-
 func _on_mage_inventory_pressed() -> void:
 	mage_inventory.visible = true
-
-
 func _on_thief_inventory_pressed() -> void:
 	thief_inventory.visible = true
 
