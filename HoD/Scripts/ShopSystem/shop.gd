@@ -1,10 +1,11 @@
 extends Inventory
 
+#region Test
 @export var items : Array[Item]
 
 func _ready():
 	load_items(items)
-
+#endregion
 
 func load_items(items):
 	reset()

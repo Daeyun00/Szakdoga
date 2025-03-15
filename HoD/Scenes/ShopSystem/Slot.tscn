@@ -1,22 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkjlr2pbdg8nf"]
+[gd_scene load_steps=3 format=3 uid="uid://du7d0okap3pu0"]
 
-[ext_resource type="Script" path="res://Scripts/ShopSystem/slot.gd" id="1_jpufp"]
+[ext_resource type="Script" path="res://Scripts/ShopSystem/slot.gd" id="1_ws76k"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8mi2"]
-bg_color = Color(0.72549, 0.572549, 0.352941, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3se12"]
+bg_color = Color(0.717647, 0.572549, 0.364706, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.129412, 0.129412, 0.129412, 1)
-border_blend = true
 
 [node name="Slot" type="PanelContainer"]
 custom_minimum_size = Vector2(20, 20)
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_m8mi2")
-script = ExtResource("1_jpufp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_3se12")
+script = ExtResource("1_ws76k")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2

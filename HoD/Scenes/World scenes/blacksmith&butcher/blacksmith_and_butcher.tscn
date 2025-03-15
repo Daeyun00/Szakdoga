@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dldwi8jevyv8d" path="res://Scenes/Entities/NPCS/blacksmith_NPC.tscn" id="19_01chg"]
 [ext_resource type="Script" path="res://Scripts/blacksmith_npc.gd" id="19_ecgqp"]
 [ext_resource type="PackedScene" uid="uid://p4uw4mc50we6" path="res://Scenes/Entities/NPCS/butcher_NPC.tscn" id="19_gsv5j"]
-[ext_resource type="PackedScene" uid="uid://c44ikh70p0r3s" path="res://Scenes/ShopSystem/ui.tscn" id="20_wy18o"]
+[ext_resource type="PackedScene" uid="uid://ce27lxypv16lu" path="res://Scenes/ShopSystem/ui.tscn" id="20_wy18o"]
 
 [sub_resource type="GDScript" id="GDScript_6oiv8"]
 script/source = "extends Node
@@ -5093,7 +5093,7 @@ sprite_frames = SubResource("SpriteFrames_5w661")
 position = Vector2(231, 720)
 script = ExtResource("19_ecgqp")
 
-[node name="UI2" parent="BlacksmithNpc" instance=ExtResource("20_wy18o")]
+[node name="UI" parent="BlacksmithNpc" instance=ExtResource("20_wy18o")]
 visible = false
 
 [node name="ButcherNpc" parent="." instance=ExtResource("19_gsv5j")]

@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
-@export var items : Array[Item]
+
+@onready var ui = $UI
 
 var player_in_range = false
+
 
 func interact():
 	pass
@@ -21,4 +23,4 @@ func _on_area_2d_2_body_exited(body: Node2D) -> void:
 
 func _unhandled_input(event):
 	if event.is_action_pressed("Buy"):
-		$UI2.visible = true
+		ui.visible = !ui.visible
