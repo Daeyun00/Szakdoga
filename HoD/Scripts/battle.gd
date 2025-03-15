@@ -84,6 +84,21 @@ var _thunder_token1 = 0
 var _thunder_token2 = 0
 var _thunder_token3 = 0
 
+#Thief Combo switches
+var _envenom_select = false
+var _envenom_used_combo = 0
+var _envenom_token1 = 5
+var _envenom_token2 = 5
+var _envenom_token3 = 5
+var _eviscerate_select = false
+var _eviscerate_used_combo = 0
+var _rupture_select = false
+var _rupture_used_combo = 0
+var _night_blade_select = false
+var _night_blade_used_combo = 0
+var _shadowstrike_select = false
+var _shadowstrike_used_combo = 0
+
 var turn = 0
 
 
@@ -495,14 +510,17 @@ func _on_spell_menu_button_pressed(button: BaseButton) -> void:
 func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 		match button.name:
 			"Envenom":
-				print("owo")
-				turn += 1
-				print(turn)
-				$Combos.visible = false
-				$Options.visible = true
-				$Options/AttackMenu/Fight_button.grab_focus()
-				is_skill = !is_skill
-
+				#Attacks with a Combo*2 and poisons them DoT for Combo turns
+				
+				if(Thief.Combo > 1):
+					hostile1.grab_focus()
+					_envenom_select = true
+				else:
+					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Combos.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
 
 #enemy functions
 func _on_slime_pressed() -> void:
@@ -589,6 +607,7 @@ func _on_slime_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_decimate_select = false
+			
 		#Mage spells
 		if(_fireball_select):
 			hostile1.HP -= Mage.ATK*2 - hostile1.DEF
@@ -616,7 +635,20 @@ func _on_slime_pressed() -> void:
 			is_skill = !is_skill
 			_thunder_select = false
 			
-			
+			#thief combos
+			if(_envenom_select):
+				hostile1.HP -= Thief.ATK*(Thief.Combo*2) - hostile1.DEF
+				if(_envenom_token1 == 0):
+					_envenom_token1 = 1
+				Mage.Mana -= 10
+				turn += 1
+				print(turn)
+				$Spells.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_fireball_select = false
+
 func _on_slime_2_pressed() -> void:
 	if(is_fight):
 		match turn:
