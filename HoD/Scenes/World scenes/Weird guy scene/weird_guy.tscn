@@ -1,6 +1,7 @@
-[gd_scene load_steps=80 format=4 uid="uid://dibbb1ojb3q60"]
+[gd_scene load_steps=81 format=4 uid="uid://dibbb1ojb3q60"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_qgqhq"]
+[ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="2_lca45"]
 [ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_xqa4y"]
 [ext_resource type="Texture2D" uid="uid://bwvro2slfmgac" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets v2.png" id="3_xq8vt"]
 [ext_resource type="Texture2D" uid="uid://dh58h7uk8ciht" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets.png" id="4_fphaq"]
@@ -2623,6 +2624,27 @@ animations = [{
 
 [node name="WeirdGuy" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Player" parent="CanvasLayer" instance=ExtResource("9_i42hw")]
+position = Vector2(195, 694)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/Player"]
+position = Vector2(-71, 8)
+zoom = Vector2(5, 5)
+limit_left = 13
+limit_top = 450
+limit_right = 300
+limit_bottom = 783
+
+[node name="Ui" parent="CanvasLayer/Player" instance=ExtResource("2_lca45")]
+offset_left = -599.0
+offset_top = -297.0
+offset_right = -599.0
+offset_bottom = -297.0
+scale = Vector2(0.783708, 0.7125)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_231b6")
 format = 2
@@ -2681,15 +2703,6 @@ texture = ExtResource("7_n6vnu")
 position = Vector2(691, 738)
 scale = Vector2(1.40471, 1.7116)
 texture = ExtResource("8_yav6q")
-
-[node name="Player" parent="." instance=ExtResource("9_i42hw")]
-position = Vector2(94, 697)
-scale = Vector2(0.692167, 0.730557)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-5, 47)
-offset = Vector2(1, -49)
-zoom = Vector2(6, 6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true

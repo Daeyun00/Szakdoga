@@ -11,22 +11,26 @@ extends Control
 @export var player : Node2D
 
 
-enum STATE { MENU, RESUME, PARTY}
+enum STATE { MENU, PARTY}
 var ui_state = STATE.MENU
 
 func _input(event):
 	if Input.is_action_pressed("pause_menu") and not animation_player.is_playing():
-	
+		
 		
 		match ui_state:
 			STATE.PARTY:
 				ui_state = STATE.MENU
 				hide_and_show("party", "menu")
-			STATE.RESUME:
+			STATE.MENU:
 				if menu.visible == true:
 					animation_player.play("hide_menu")
+					
 				else:
 					animation_player.play("show_menu")
+					
+				
+	
 	
 
 func set_party_description(character: Character):
@@ -45,13 +49,9 @@ func _on_party_pressed():
 	hide_and_show("menu", "party")
 
 
-func _on_resume_pressed():
-	ui_state = STATE.RESUME
-	hide_and_show("menu", "resume")
-	get_tree().paused = false
+
 	
-func pause():
-	get_tree().paused = true
+
 
 
 func _on_quit_pressed():
@@ -73,3 +73,6 @@ func _on_load_pressed() -> void:
 	menu.hide()
 	
 	print("loaded.")
+
+func _ready() -> void:
+	menu.hide()

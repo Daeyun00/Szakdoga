@@ -7,7 +7,7 @@ var first_interaction : bool
 @onready var inventoryUI = $"../InventoryUI" 
 @onready var quitButton = $"../InventoryUI/ColorRect/Quit"
 @onready var buyInteract = $"../InteractUI"
-@onready var sellInventory = $"../InventoryUI2"
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
@@ -28,4 +28,3 @@ func _unhandled_input(event: InputEvent) -> void:
 		first_interaction = true
 	if event.is_action_pressed("interact") and is_player_within_area and first_interaction == true:
 		Dialogic.start("blacksmith1")
-	
