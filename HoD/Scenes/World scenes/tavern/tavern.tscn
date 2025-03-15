@@ -1,7 +1,8 @@
-[gd_scene load_steps=83 format=4 uid="uid://blrwtmbxlr247"]
+[gd_scene load_steps=84 format=4 uid="uid://blrwtmbxlr247"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_fcpxe"]
 [ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_i0mgx"]
+[ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="2_tjdlt"]
 [ext_resource type="Texture2D" uid="uid://bwvro2slfmgac" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets v2.png" id="3_dspsh"]
 [ext_resource type="Texture2D" uid="uid://c3rfwh3vjypdv" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Tavern_Bartender.png" id="4_tgjhm"]
 [ext_resource type="Texture2D" uid="uid://dh58h7uk8ciht" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets.png" id="4_xjjjt"]
@@ -11822,6 +11823,27 @@ animations = [{
 
 [node name="Tavern" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Player" parent="CanvasLayer" instance=ExtResource("11_sp1y6")]
+position = Vector2(241, 692)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/Player"]
+position = Vector2(-71, 8)
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 503
+limit_right = 1300
+limit_bottom = 800
+
+[node name="Ui" parent="CanvasLayer/Player" instance=ExtResource("2_tjdlt")]
+offset_left = -599.0
+offset_top = -297.0
+offset_right = -599.0
+offset_bottom = -297.0
+scale = Vector2(0.783708, 0.7125)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wi826")
 format = 2
@@ -11906,15 +11928,6 @@ position = Vector2(1280, 608)
 sprite_frames = SubResource("SpriteFrames_qc45v")
 autoplay = "default"
 frame_progress = 0.414062
-
-[node name="Player" parent="." instance=ExtResource("11_sp1y6")]
-position = Vector2(1137, 710)
-scale = Vector2(0.692167, 0.730557)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-5, 47)
-offset = Vector2(1, -49)
-zoom = Vector2(6, 6)
 
 [node name="drunkards" type="Area2D" parent="."]
 script = ExtResource("10_fyjap")

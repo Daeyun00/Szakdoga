@@ -21,7 +21,6 @@ Global="*res://Scripts/Global.gd"
 Debug="*res://Scripts/debug.gd"
 Persistence="*res://Scripts/Persistence.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-Ui="*res://Scenes/ui.tscn"
 ShopUi="*res://Scripts/ShopSystem/shop_ui.gd"
 
 [dialogic]

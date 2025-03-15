@@ -101,25 +101,27 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 process_mode = 3
+position = Vector2(73, -22)
 script = ExtResource("1_pmswk")
 
 [node name="InteractArea" type="Area2D" parent="."]
+position = Vector2(0, -1)
 
 [node name="InteractCollision" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(-70, 21)
+position = Vector2(-71, 13)
 shape = SubResource("RectangleShape2D_ixt2i")
 debug_color = Color(0.964706, 0, 0.490196, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-39, -2)
-scale = Vector2(1, 0.990909)
+position = Vector2(-47, 0)
+scale = Vector2(0.783201, 0.817799)
 sprite_frames = SubResource("SpriteFrames_bffow")
 animation = &"Idle"
 frame_progress = 0.0173008
 
 [node name="CharacterCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-70, 20)
+position = Vector2(-71, 10)
 shape = SubResource("RectangleShape2D_ixt2i")
 
 [node name="InteractUI" type="CanvasLayer" parent="."]
