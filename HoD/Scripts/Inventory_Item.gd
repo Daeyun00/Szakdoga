@@ -61,8 +61,9 @@ func set_item_data(data):
 	item_effect = data["effect"]
 	item_texture = data["texture"]
 
-func initiate_items(type, name, effect, texture):
+func initiate_items(type, name, effect, texture, cost):
 	item_type = type
 	item_name = name
 	item_effect = effect
 	item_texture = texture
+	item_cost = cost

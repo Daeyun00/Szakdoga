@@ -12,6 +12,7 @@ extends Control
 
 signal drag_start(slot)
 signal drag_end()
+signal inventory_updated
 
 var item = null
 var slot_index = -1
@@ -98,3 +99,27 @@ func _on_item_button_gui_input(event):
 			else:
 				outer_border.modulate = Color(1, 1, 1)
 				drag_end.emit()
+
+
+func _on_sell_button_gui_input(event):
+	var currency = 100
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			icon.texture = null
+			item_name.text = "Name"
+			item_type.text = "Type"
+			item_effect.text = "Text"
+		for i in range(Global.kovacsInventory.size()):
+					# Check if the item exists in the inventory and matches both type and effect
+			if Global.kovacsInventory[i] != null and Global.kovacsInventory[i]["type"] == item["type"] and Global.kovacsInventory[i]["effect"] == item["effect"]:
+				Global.kovacs_updated.emit()
+				currency += item["cost"] 
+				print("Item added", Global.kovacsInventory)
+				return true
+			elif Global.kovacsInventory[i] == null:
+				Global.kovacsInventory[i] = item
+				Global.kovacs_updated.emit()
+				currency += item["cost"]
+				print("Item added", Global.kovacsInventory)
+				return true
+		return false

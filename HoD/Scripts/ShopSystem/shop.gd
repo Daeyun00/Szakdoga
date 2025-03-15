@@ -1,9 +1,10 @@
 extends Inventory
 
-#@export var items : Array[Item]
+@export var items : Array[Item]
 
-#func _ready():
-	#load_items(items)
+func _ready():
+	load_items(items)
+
 
 func load_items(items):
 	reset()

@@ -49,12 +49,13 @@ func _on_item_button_gui_input(event):
 
 
 func _on_use_button_gui_input(event):
+	var currency = 100
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			icon.texture = null
-			item_name.text = ""
-			item_type.text = ""
-			item_effect.text = ""
+			item_name.text = "Name"
+			item_type.text = "Type"
+			item_effect.text = "Effect"
 		for i in range(Global.inventory.size()):
 					# Check if the item exists in the inventory and matches both type and effect
 			if Global.inventory[i] != null and Global.inventory[i]["type"] == item["type"] and Global.inventory[i]["effect"] == item["effect"]:

@@ -3,7 +3,7 @@ class_name Slot
 
 @onready var manager = get_parent().get_parent()
 @onready var texture_rect = $TextureRect
-@export var item : Item = null:
+@export var item: Item = null:
 	set(value):
 		item = value
 		
@@ -37,11 +37,11 @@ func _can_drop_data(_pos, data):
 			return true
 	return false
 
-func _get_drag_data(_at_position):
+func _get_drag_data(at_position):
 	set_drag_preview(get_preview())
 	return self
 
-func _drop_data(_at_position, data):
+func _drop_data(at_position, data):
 	var source = data.get_parent().name
 	var destination = get_parent().name
 	

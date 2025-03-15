@@ -8,8 +8,6 @@ func _ready():
 
 func _on_inventory_updated():
 	var slot = null
-	var item1 = null
-	var item2 = null
 	for item in Global.kovacsInventory.size():
 		slot = Global.kovacs_slot_scene.instantiate()
 		gridContainer.add_child(slot)

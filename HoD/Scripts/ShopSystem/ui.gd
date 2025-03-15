@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-enum MODE {
+
+enum MODE{
 	INVENTORY,
 	SHOP
 }

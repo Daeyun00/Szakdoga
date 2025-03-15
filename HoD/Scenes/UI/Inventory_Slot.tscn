@@ -119,9 +119,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -115.0
-offset_top = 10.0
+offset_top = 9.0
 offset_right = 115.0
-offset_bottom = 53.0
+offset_bottom = 58.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "Use"
@@ -133,10 +133,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -112.0
-offset_top = -56.0
-offset_right = 118.0
-offset_bottom = -7.0
+offset_left = -116.0
+offset_top = -133.0
+offset_right = 114.0
+offset_bottom = -84.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 40
@@ -147,13 +147,21 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 5.0
-offset_top = -24.5
-offset_right = 235.0
-offset_bottom = 24.5
+offset_left = 3.0
+offset_top = -66.5
+offset_right = 233.0
+offset_bottom = -17.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Assign"
+
+[node name="SellButton" type="Button" parent="UsagePanel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 190.0
+offset_right = 222.0
+offset_bottom = 230.0
+text = "Sell"
 
 [connection signal="gui_input" from="ItemButton" to="." method="_on_item_button_gui_input"]
 [connection signal="mouse_entered" from="ItemButton" to="." method="_on_item_button_mouse_entered"]
@@ -161,3 +169,4 @@ text = "Assign"
 [connection signal="pressed" from="UsagePanel/UseButton" to="." method="_on_use_button_pressed"]
 [connection signal="pressed" from="UsagePanel/DropButton" to="." method="_on_drop_button_pressed"]
 [connection signal="pressed" from="UsagePanel/AssignButton" to="." method="_on_assign_button_pressed"]
+[connection signal="gui_input" from="UsagePanel/SellButton" to="." method="_on_sell_button_gui_input"]

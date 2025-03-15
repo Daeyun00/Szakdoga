@@ -186,6 +186,7 @@ offset_bottom = -0.99
 text = "0/0 Mana"
 
 [node name="Hero_ATK_label" type="Label" parent="Top/Players/Mage_label"]
+layout_mode = 0
 offset_left = 409.0
 offset_top = 1.0
 offset_right = 486.0
@@ -193,6 +194,7 @@ offset_bottom = 31.0
 text = "ATK: 10"
 
 [node name="Hero_DEF_label" type="Label" parent="Top/Players/Mage_label"]
+layout_mode = 0
 offset_left = 504.0
 offset_top = 1.0
 offset_right = 573.0
@@ -243,6 +245,7 @@ offset_bottom = -2.0
 text = "0/0 Combo"
 
 [node name="Hero_ATK_label" type="Label" parent="Top/Players/Thief_label"]
+layout_mode = 0
 offset_left = 409.0
 offset_top = -2.0
 offset_right = 486.0
@@ -250,6 +253,7 @@ offset_bottom = 28.0
 text = "ATK: 10"
 
 [node name="Hero_DEF_label" type="Label" parent="Top/Players/Thief_label"]
+layout_mode = 0
 offset_left = 504.0
 offset_top = -2.0
 offset_right = 573.0

@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cokodr0alg3r1"]
+[gd_scene load_steps=3 format=3 uid="uid://c0xh4olamo203"]
 
-[ext_resource type="Script" path="res://Scripts/ShopSystem/test_shop_player.gd" id="1_xf838"]
+[sub_resource type="GDScript" id="GDScript_fwkw0"]
+script/source = "extends CharacterBody2D
+
+func _physics_process(_delta):
+	velocity = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\") * 150
+	move_and_slide()
+"
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h1elu"]
 size = Vector2(20, 20)
 
 [node name="TestShopPlayer" type="CharacterBody2D"]
-script = ExtResource("1_xf838")
+script = SubResource("GDScript_fwkw0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_h1elu")

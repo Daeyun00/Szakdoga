@@ -20,12 +20,13 @@ var spawnable_items = [
 ]
 
 var kovacsBuyItems = [
-	{"type": "Gift", "name": "Gemstone", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png")},
-	{"type": "Gift", "name": "Sugarpallos", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Runic Dagger.png")}
+	{"type": "Gift", "name": "Gemstone", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png"), "Cost": 12},
+	{"type": "Gift", "name": "Sugarpallos", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Runic Dagger.png"), "Cost": 12}
 ]
 
 # Custom signals
 signal inventory_updated
+signal kovacs_updated
 
 # Hotbar items
 var hotbar_size = 5 
