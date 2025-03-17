@@ -1,13 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://covvr85m4j8k6"]
+[gd_scene load_steps=2 format=3 uid="uid://cw4811b3lfasq"]
 
-[ext_resource type="PackedScene" uid="uid://c44ikh70p0r3s" path="res://Scenes/ShopSystem/ui.tscn" id="1_rouis"]
-[ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="7_d40bh"]
-[ext_resource type="PackedScene" uid="uid://dldwi8jevyv8d" path="res://Scenes/Entities/NPCS/blacksmith_NPC.tscn" id="8_5xp4l"]
+[ext_resource type="PackedScene" uid="uid://ce27lxypv16lu" path="res://Scenes/ShopSystem/ui.tscn" id="1_rouis"]
 
 [node name="TestScene" type="Node2D"]
 
 [node name="UI" parent="." instance=ExtResource("1_rouis")]
-
-[node name="Player" parent="." instance=ExtResource("7_d40bh")]
-
-[node name="BlacksmithNpc" parent="." instance=ExtResource("8_5xp4l")]

@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://c44ikh70p0r3s"]
+[gd_scene load_steps=8 format=3 uid="uid://ce27lxypv16lu"]
 
 [ext_resource type="Script" path="res://Scripts/ShopSystem/ui.gd" id="1_f27v7"]
 [ext_resource type="Script" path="res://Scripts/ShopSystem/manager.gd" id="2_duqwx"]
 [ext_resource type="Script" path="res://Scripts/ShopSystem/inventory.gd" id="3_ie486"]
-[ext_resource type="PackedScene" uid="uid://dkjlr2pbdg8nf" path="res://Scenes/ShopSystem/Slot.tscn" id="4_40foh"]
+[ext_resource type="PackedScene" uid="uid://du7d0okap3pu0" path="res://Scenes/ShopSystem/slot.tscn" id="4_bgqs6"]
 [ext_resource type="Script" path="res://Scripts/ShopSystem/shop.gd" id="5_cfuxh"]
-[ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="6_g2m1u"]
-[ext_resource type="Resource" uid="uid://1wfcobh71n5p" path="res://Scenes/ShopSystem/test_item.tres" id="7_1oqnm"]
-[ext_resource type="Resource" uid="uid://dt6ne3arvh63" path="res://Scenes/ShopSystem/dagger.tres" id="7_voenk"]
+[ext_resource type="Script" path="res://Scripts/ShopSystem/item.gd" id="6_8qvpq"]
+[ext_resource type="Resource" uid="uid://dopahe2y5ecvo" path="res://Scenes/ShopSystem/dagger.tres" id="7_voenk"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_f27v7")
@@ -17,8 +16,8 @@ unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -721.0
-offset_bottom = -386.0
+offset_right = -610.0
+offset_bottom = -419.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_duqwx")
@@ -26,117 +25,117 @@ script = ExtResource("2_duqwx")
 [node name="Inventory" type="GridContainer" parent="Manager"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 64.0
-offset_top = 111.0
-offset_right = 180.0
-offset_bottom = 203.0
+offset_left = 52.0
+offset_top = 49.0
+offset_right = 168.0
+offset_bottom = 141.0
 columns = 5
 script = ExtResource("3_ie486")
 
-[node name="Slot" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot2" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot2" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot3" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot3" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot4" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot4" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot5" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot5" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot6" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot6" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot7" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot7" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot8" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot8" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot9" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot9" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot10" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot10" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot11" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot11" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot12" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot12" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot13" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot13" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot14" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot14" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot15" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot15" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot16" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot16" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot17" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot17" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot18" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot18" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot19" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot19" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot20" parent="Manager/Inventory" instance=ExtResource("4_40foh")]
+[node name="Slot20" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
 [node name="Shop" type="GridContainer" parent="Manager"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 302.0
-offset_top = 127.0
-offset_right = 370.0
-offset_bottom = 195.0
+offset_left = 292.0
+offset_top = 65.0
+offset_right = 360.0
+offset_bottom = 133.0
 columns = 3
 script = ExtResource("5_cfuxh")
-items = Array[ExtResource("6_g2m1u")]([ExtResource("7_voenk"), ExtResource("7_1oqnm"), ExtResource("7_voenk")])
+items = Array[ExtResource("6_8qvpq")]([ExtResource("7_voenk"), ExtResource("7_voenk"), ExtResource("7_voenk")])
 
-[node name="Slot" parent="Manager/Shop" instance=ExtResource("4_40foh")]
+[node name="Slot" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot2" parent="Manager/Shop" instance=ExtResource("4_40foh")]
+[node name="Slot2" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot3" parent="Manager/Shop" instance=ExtResource("4_40foh")]
+[node name="Slot3" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot4" parent="Manager/Shop" instance=ExtResource("4_40foh")]
+[node name="Slot4" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot5" parent="Manager/Shop" instance=ExtResource("4_40foh")]
+[node name="Slot5" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot6" parent="Manager/Shop" instance=ExtResource("4_40foh")]
+[node name="Slot6" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot7" parent="Manager/Shop" instance=ExtResource("4_40foh")]
+[node name="Slot7" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot8" parent="Manager/Shop" instance=ExtResource("4_40foh")]
+[node name="Slot8" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
-[node name="Slot9" parent="Manager/Shop" instance=ExtResource("4_40foh")]
+[node name="Slot9" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
 [node name="Currency" type="HBoxContainer" parent="Manager"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 294.0
-offset_right = 116.0
-offset_bottom = 334.0
+offset_left = 31.0
+offset_top = 207.0
+offset_right = 105.0
+offset_bottom = 247.0
 
 [node name="Label" type="Label" parent="Manager/Currency"]
 layout_mode = 2

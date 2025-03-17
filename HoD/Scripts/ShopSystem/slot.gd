@@ -3,7 +3,8 @@ class_name Slot
 
 @onready var manager = get_parent().get_parent()
 @onready var texture_rect = $TextureRect
-@export var item: Item = null:
+
+@export var item : Item = null:
 	set(value):
 		item = value
 		
@@ -27,7 +28,6 @@ func get_preview():
 func _can_drop_data(_pos, data):
 	var source = data.get_parent().name
 	var destination = get_parent().name
-	
 	if data is Slot:
 		if destination == "Shop" and source == "Inventory" and not item:
 			return true
@@ -47,20 +47,16 @@ func _drop_data(at_position, data):
 	
 	if destination == "Shop" and source == "Inventory":
 		selling(data)
-		return
 	elif destination == "Inventory" and source == "Shop":
 		buying(data)
-		return
 	var temp = item
 	item = data.item
 	data.item = temp
 
 func selling(data):
-	print("Sold " + data.item.name)
+	print("Sold" + data.item.name)
 	manager.currency += data.item.cost
-	data.item = null
 
 func buying(data):
-	print("Bought " + data.item.name)
+	print("Bought" + data.item.name)
 	manager.currency -= data.item.cost
-	item = data.item

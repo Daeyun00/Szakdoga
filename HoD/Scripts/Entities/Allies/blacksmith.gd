@@ -28,10 +28,3 @@ func _unhandled_input(event: InputEvent) -> void:
 		first_interaction = true
 	if event.is_action_pressed("interact") and is_player_within_area and first_interaction == true:
 		Dialogic.start("blacksmith1")
-	if event.is_action("Buy") and is_player_within_area:
-		inventoryUI.visible = true
-		buyInteract.visible = false
-
-
-func _on_quit_pressed() -> void:
-	inventoryUI.visible = false

@@ -1,7 +1,7 @@
 extends Panel
 
 
-enum MODE {
+enum MODE{
 	INVENTORY,
 	SHOP
 }
