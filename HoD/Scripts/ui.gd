@@ -16,6 +16,9 @@ var ui_state = STATE.MENU
 
 func _input(event):
 	if Input.is_action_pressed("pause_menu") and not animation_player.is_playing():
+		get_tree().paused = true
+		
+		
 		
 		
 		match ui_state:
@@ -25,9 +28,14 @@ func _input(event):
 			STATE.MENU:
 				if menu.visible == true:
 					animation_player.play("hide_menu")
+					get_tree().paused = false
+					
+					
+					
 					
 				else:
 					animation_player.play("show_menu")
+					
 					
 				
 	

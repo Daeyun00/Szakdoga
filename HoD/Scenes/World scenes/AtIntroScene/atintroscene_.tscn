@@ -1,5 +1,6 @@
-[gd_scene load_steps=84 format=4 uid="uid://kyr0ne42cges"]
+[gd_scene load_steps=85 format=4 uid="uid://kyr0ne42cges"]
 
+[ext_resource type="Script" path="res://Scenes/World scenes/AtIntroScene/atintroscene_.gd" id="1_e3gy1"]
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_pw5ux"]
 [ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_jwers"]
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="3_222k1"]
@@ -2906,6 +2907,7 @@ animations = [{
 }]
 
 [node name="Atintroscene" type="Node2D"]
+script = ExtResource("1_e3gy1")
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
@@ -2990,7 +2992,7 @@ autoplay = "default"
 frame_progress = 0.426717
 
 [node name="CrystalNpc" parent="." instance=ExtResource("17_2y6as")]
-position = Vector2(685, 727)
+position = Vector2(819, 725)
 
 [node name="collisions" type="StaticBody2D" parent="."]
 
@@ -3005,7 +3007,7 @@ polygon = PackedVector2Array(2, 752, 1405, 755, 1412, 1034, -22, 1032, -24, 746,
 follow_viewport_enabled = true
 
 [node name="Player" parent="CanvasLayer" instance=ExtResource("9_j3fmm")]
-position = Vector2(241, 692)
+position = Vector2(804, 699)
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer/Player"]
 position = Vector2(-71, 8)
@@ -3015,7 +3017,7 @@ limit_top = 450
 limit_right = 1100
 limit_bottom = 800
 
-[node name="Ui" parent="CanvasLayer/Player" instance=ExtResource("18_hpt3c")]
+[node name="Ui2" parent="CanvasLayer/Player" instance=ExtResource("18_hpt3c")]
 offset_left = -599.0
 offset_top = -297.0
 offset_right = -599.0

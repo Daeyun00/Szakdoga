@@ -5,11 +5,14 @@ var run_speed = 200
 var jump_speed = -400
 var SPEED = 300.0
 const JUMP_VELOCITY = -600.0
+var is_paused : bool
+
 
 @onready var interact_ui = $InteractUI
 @onready var inventory_ui = $InventoryUI
 @onready var inventory_hotbar = $Inventory_Hotbar
 @onready var shopInterac_ui = $InteractUI2
+
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -21,6 +24,8 @@ func _ready():
 	
 	Dialogic.timeline_ended.connect(set_physics_process.bind(true))
 	Dialogic.timeline_ended.connect(set_process_input.bind(true))
+	
+	
 	
 
 
@@ -52,7 +57,17 @@ func _input(event):
 		inventory_ui.visible = !inventory_ui.visible
 		get_tree().paused = !get_tree().paused
 		inventory_hotbar.visible = !inventory_hotbar.visible
-
+		
+	if  event.is_action_pressed("pause_menu"):
+		velocity.x = 0
+		$AnimatedSprite2D.play("Idle")
+		
+	if event.is_action_pressed("interact"):
+		velocity.x = 0
+		$AnimatedSprite2D.play("Idle")
+		
+		
+		
 func apply_item_effect(item):
 	match item["effect"]:
 		"Stamina":
@@ -99,3 +114,5 @@ func _unhandled_input(event):
 			if Input.is_action_just_pressed("hotbar_" + str(i + 1)):
 				use_hotbar_item(i)
 				break
+				
+	
