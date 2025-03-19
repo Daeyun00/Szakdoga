@@ -100,7 +100,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-process_mode = 3
+process_mode = 1
 position = Vector2(73, -22)
 script = ExtResource("1_pmswk")
 

@@ -5085,7 +5085,7 @@ sprite_frames = SubResource("SpriteFrames_5w661")
 follow_viewport_enabled = true
 
 [node name="Player" parent="CanvasLayer" instance=ExtResource("8_6yt28")]
-position = Vector2(241, 692)
+position = Vector2(233, 700)
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer/Player"]
 position = Vector2(-71, 8)

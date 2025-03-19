@@ -19,3 +19,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and is_player_within_area and first_interaction == true:
 		Dialogic.start("gravedigging2")
 		
+		
+		

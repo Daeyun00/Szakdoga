@@ -1,7 +1,9 @@
 vendor: Greetings young man!
-vendor: I can smell the magic on  you.
 vendor: You must be the knight who was sent here.
 vendor: A strong knight like you needs some helping potions.
 vendor: You're a lucky boy! There are only excellent quality potions in my humble shop.
-vendor: Wanna take a look? 
+vendor: Wanna take a look?
+vendor: Oh wait...
+vendor: No... I shouldn't sell you these...
+(She turns away and refuses to talk to you.)
 [end_timeline]

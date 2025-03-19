@@ -47,6 +47,7 @@ directories/dtl_directory={
 "butch1": "res://timelines/butch1.dtl",
 "butch2": "res://timelines/butch2.dtl",
 "crystal": "res://timelines/crystal.dtl",
+"crystal2": "res://timelines/crystal2.dtl",
 "drunkards": "res://timelines/drunkards.dtl",
 "drunkards1": "res://timelines/drunkards1.dtl",
 "gravedigging2": "res://timelines/gravedigging2.dtl",
