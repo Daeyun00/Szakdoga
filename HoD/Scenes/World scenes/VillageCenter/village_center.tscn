@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://co37dgctyyci6"]
+[gd_scene load_steps=78 format=4 uid="uid://co37dgctyyci6"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_hr4oh"]
 [ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="2_e4k7h"]
@@ -17,6 +17,9 @@
 [ext_resource type="Script" path="res://Scripts/mage_2.gd" id="13_7ngam"]
 [ext_resource type="Texture2D" uid="uid://cvix2oyqv3f4t" path="res://Assets/Asset Packs/NPCS and characters/free-wizard-sprite-sheets-pixel-art/Lightning Mage/Idle.png" id="14_3ayjx"]
 [ext_resource type="Script" path="res://Scripts/merchantwoman_2.gd" id="14_l8lwf"]
+[ext_resource type="Script" path="res://Scripts/saver_loader_.gd" id="18_ulqor"]
+[ext_resource type="Script" path="res://Scripts/saver_object.gd" id="19_f2ndb"]
+[ext_resource type="Texture2D" uid="uid://cexn2uy5ho3th" path="res://Assets/Graphics/Assets/GUI-fotor-20250126105351.png" id="20_ej6bp"]
 
 [sub_resource type="TileSet" id="TileSet_yyjto"]
 
@@ -5861,6 +5864,70 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_86m2t"]
 radius = 17.4642
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qb0ns"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3rmf"]
+bg_color = Color(0.215902, 0.215902, 0.215902, 0.513726)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0, 0, 0, 0.513726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6obll"]
+bg_color = Color(0.86673, 0.866767, 0.844141, 0.670588)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0, 0, 0, 0.513726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld2uh"]
+bg_color = Color(0.12187, 0.129843, 0.205043, 1)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0.273873, 0.273873, 0.273873, 0.513726)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kvue"]
+bg_color = Color(0.12187, 0.129843, 0.205043, 1)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0.273873, 0.273873, 0.273873, 0.513726)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqq3i"]
+bg_color = Color(0.12187, 0.129843, 0.205043, 1)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0.273873, 0.273873, 0.273873, 0.513726)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83503"]
+bg_color = Color(0.12187, 0.129843, 0.205043, 1)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_color = Color(0.273873, 0.273873, 0.273873, 0.513726)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2sic"]
+
 [node name="VillageCenter" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -6024,9 +6091,81 @@ polygon = PackedVector2Array(5, 757, 1417, 757, 1410, 1036, -45, 1031, -49, 759)
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(26, 753, 25, 532, 1337, 521, 1335, 752, 1428, 756, 1428, 468, -48, 461, -47, 763)
 
+[node name="Utility" type="Node" parent="."]
+
+[node name="SaverLoader" type="Node" parent="Utility"]
+script = ExtResource("18_ulqor")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+modulate = Color(0.853289, 0.861572, 0.871066, 1)
+z_index = 9
+offset_left = 708.0
+offset_top = 625.0
+offset_right = 830.0
+offset_bottom = 681.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("20_ej6bp")
+patch_margin_left = 8
+patch_margin_top = 10
+patch_margin_right = 9
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+z_index = 11
+offset_left = 772.0
+offset_top = 660.0
+offset_right = 882.0
+offset_bottom = 690.0
+scale = Vector2(0.410407, 0.441366)
+
+[node name="Save" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qb0ns")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o3rmf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6obll")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_ld2uh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kvue")
+text = "Save
+"
+
+[node name="Load" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qb0ns")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o3rmf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6obll")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_tqq3i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_83503")
+text = "Load"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 9
+offset_left = 716.0
+offset_top = 639.0
+offset_right = 822.0
+offset_bottom = 661.0
+theme_override_font_sizes/normal_font_size = 8
+text = "You can save and load your game here."
+tab_size = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(747, 736)
+script = ExtResource("19_f2ndb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(13, -8)
+scale = Vector2(-4.83435, 6.79385)
+shape = SubResource("CircleShape2D_o2sic")
+
 [connection signal="body_entered" from="BunnyArea" to="BunnyArea" method="_on_body_entered"]
 [connection signal="body_exited" from="BunnyArea" to="BunnyArea" method="_on_body_exited"]
 [connection signal="body_entered" from="mage2" to="mage2" method="_on_body_entered"]
 [connection signal="body_exited" from="mage2" to="mage2" method="_on_body_exited"]
 [connection signal="body_entered" from="merchantwoman2" to="merchantwoman2" method="_on_body_entered"]
 [connection signal="body_exited" from="merchantwoman2" to="merchantwoman2" method="_on_body_exited"]
+[connection signal="pressed" from="HBoxContainer/Save" to="Utility/SaverLoader" method="_on_save_pressed"]
+[connection signal="pressed" from="HBoxContainer/Load" to="Utility/SaverLoader" method="_on_load_pressed"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

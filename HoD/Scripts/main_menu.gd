@@ -20,7 +20,7 @@ func toggle():
 	get_tree().paused = visible
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Maps/PTR.tscn")
+	get_tree().change_scene_to_file("res://Scenes/World scenes/VillageCenter/village_center.tscn")
 
 
 

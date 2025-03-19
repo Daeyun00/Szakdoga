@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var player_in_range = false
+
 
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:

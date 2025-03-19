@@ -66,21 +66,10 @@ func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu/main_menu.tscn")
 
 
-func _on_save_pressed() -> void:
-	var data = SceneData.new()
-	data.player_position = player.global_position
-
-	
-	ResourceSaver.save(data, "user://scene_data.tres")
-	print("saved.")
 
 
-func _on_load_pressed() -> void:
-	var data = ResourceLoader.load("user://scene_data.tres") as SceneData
-	player.global_position = data.player_position
-	menu.hide()
-	
-	print("loaded.")
+
+
 
 func _ready() -> void:
 	menu.hide()
