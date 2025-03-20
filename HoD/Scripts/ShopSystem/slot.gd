@@ -9,7 +9,7 @@ class_name Slot
 		item = value
 		
 		if value != null:
-			texture_rect.texture = value.icon
+			texture_rect.texture = value.texture
 		else :
 			texture_rect.texture = null
 

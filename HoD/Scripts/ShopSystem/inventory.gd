@@ -5,7 +5,7 @@ class_name Inventory
 @onready var slots = get_children()
 
 func _ready():
-	add_item(load("res://Scenes/ShopSystem/dagger.tres"))
+	add_item(load("res://Scenes/ShopSystem/test.tres"))
 
 func add_item(item : Item):
 	for slot in slots:
