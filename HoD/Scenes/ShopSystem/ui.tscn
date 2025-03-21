@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://du7d0okap3pu0" path="res://Scenes/ShopSystem/Slot.tscn" id="4_bgqs6"]
 [ext_resource type="Script" path="res://Scripts/ShopSystem/shop.gd" id="5_cfuxh"]
 [ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="6_6nki1"]
-[ext_resource type="Resource" uid="uid://c7f0xxjb3ub75" path="res://Scenes/ShopSystem/test.tres" id="7_s8w0v"]
+[ext_resource type="Resource" uid="uid://5ihk1shjpq1y" path="res://Scenes/ShopSystem/pallos.tres" id="7_vjtat"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_f27v7")
@@ -101,7 +101,7 @@ offset_right = 360.0
 offset_bottom = 133.0
 columns = 3
 script = ExtResource("5_cfuxh")
-items = Array[ExtResource("6_6nki1")]([ExtResource("7_s8w0v"), ExtResource("7_s8w0v")])
+items = Array[ExtResource("6_6nki1")]([ExtResource("7_vjtat"), ExtResource("7_vjtat"), ExtResource("7_vjtat")])
 
 [node name="Slot" parent="Manager/Shop" instance=ExtResource("4_bgqs6")]
 layout_mode = 2

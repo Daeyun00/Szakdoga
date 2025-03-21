@@ -56,7 +56,9 @@ func _drop_data(at_position, data):
 func selling(data):
 	print("Sold" + data.item.name)
 	manager.currency += data.item.cost
+	Global.remove_item(data.item.type, data.item.effect)
 
 func buying(data):
 	print("Bought" + data.item.name)
 	manager.currency -= data.item.cost
+	Global.add_item(data.item, false)
