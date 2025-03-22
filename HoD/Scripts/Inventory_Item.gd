@@ -7,7 +7,6 @@ class_name Item_Inventory
 @export var item_name = ""
 @export var item_texture: Texture
 @export var item_effect = ""
-@export var item_cost = null
 var scene_path: String = "res://Scenes/Other/inventory_item.tscn"
 @onready var icon_sprite = $Sprite2D 
 
@@ -35,8 +34,7 @@ func pickup_item():
 		"name": item_name,
 		"effect": item_effect,
 		"texture": item_texture,
-		"scene_path": scene_path,
-		"cost": item_cost
+		"scene_path": scene_path
 	}
 	if Global.player_node:
 		Global.add_item(item, false)
@@ -61,9 +59,8 @@ func set_item_data(data):
 	item_effect = data["effect"]
 	item_texture = data["texture"]
 
-func initiate_items(type, name, effect, texture, cost):
+func initiate_items(type, name, effect, texture):
 	item_type = type
 	item_name = name
 	item_effect = effect
 	item_texture = texture
-	item_cost = cost

@@ -12,7 +12,7 @@ var spawnable_items = [
 	{"type": "Consumable", "name": "Berry", "effect": "Health", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Health Potion.png")},
 	{"type": "Consumable", "name": "Water", "effect": "Stamina", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Mana Potion.png")},
 	{"type": "Consumable", "name": "Mushroom", "effect": "Armor", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Stamina Potion.png")},
-	{"type": "Gift", "name": "Gemstone", "effect": "", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png")},
+	{"type": "Gift", "name": "Gemstone", "effect": "asd", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png")},
 ]
 
 var is_open_at_blacksmith = false

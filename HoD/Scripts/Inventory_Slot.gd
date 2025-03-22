@@ -1,52 +1,60 @@
+### Inventory_Slot.gd
+
 extends Control
 
+# Scene-Tree Node references
 @onready var icon = $InnerBorder/ItemIcon
 @onready var quantity_label = $InnerBorder/ItemQuantity
 @onready var details_panel = $DetailsPanel
 @onready var item_name = $DetailsPanel/ItemName
 @onready var item_type = $DetailsPanel/ItemType
-@onready var item_effect = $DetailsPanel/ItemEffecct
+@onready var item_effect = $DetailsPanel/ItemEffect
 @onready var usage_panel = $UsagePanel
 @onready var assign_button = $UsagePanel/AssignButton
 @onready var outer_border = $OuterBorder
 
+# Signals
 signal drag_start(slot)
 signal drag_end()
-signal inventory_updated
 
+# Slot item
 var item = null
 var slot_index = -1
 var is_assigned = false
 
+# Set index
 func set_slot_index(new_index):
 	slot_index = new_index
-	
 
-func _on_item_button_mouse_exited():
-	details_panel.visible = false
-
-
+# Show item details on hover enter
 func _on_item_button_mouse_entered():
 	if item != null:
 		usage_panel.visible = false
 		details_panel.visible = true
 
+# Hide item details on hover exit
+func _on_item_button_mouse_exited():
+	details_panel.visible = false
+
+# Default empty slot
 func set_empty():
 	icon.texture = null
 	quantity_label.text = ""
 
+# Set slot item with its values from the dictionary
 func set_item(new_item):
 	item = new_item
-	icon.texture = new_item["texture"]
+	icon.texture = item["texture"] 
+	quantity_label.text = str(item["quantity"])
 	item_name.text = str(item["name"])
 	item_type.text = str(item["type"])
 	if item["effect"] != "":
 		item_effect.text = str("+ ", item["effect"])
-	else:
+	else: 
 		item_effect.text = ""
 	update_assignment_status()
 
-
+# Remove item from inventory and drop it back into the world        		
 func _on_drop_button_pressed():
 	if item != null:
 		var drop_position = Global.player_node.global_position
@@ -57,25 +65,26 @@ func _on_drop_button_pressed():
 		Global.remove_hotbar_item(item["type"], item["effect"])
 		usage_panel.visible = false
 
-
+# Remove item from inventory, use it, and apply its effect (if possible)		
 func _on_use_button_pressed():
 	usage_panel.visible = false
-	
 	if item != null and item["effect"] != "":
 		if Global.player_node:
 			Global.player_node.apply_item_effect(item)
 			Global.remove_item(item["type"], item["effect"])
+			Global.remove_hotbar_item(item["type"], item["effect"])
 		else:
-			print("Player cuold not be found")
+			print("Player could not be found")
 
+# Updates hotbar assignment status
 func update_assignment_status():
 	is_assigned = Global.is_item_assigned_to_hotbar(item)
 	if is_assigned:
 		assign_button.text = "Unassign"
 	else:
 		assign_button.text = "Assign"
-
-
+		
+# Assigns/Unassigns hotbar item
 func _on_assign_button_pressed():
 	if item != null:
 		if is_assigned:
@@ -85,13 +94,15 @@ func _on_assign_button_pressed():
 			Global.add_item(item, true)
 			is_assigned = true
 		update_assignment_status()
-
-
+		
+# ItemButtons pressed events
 func _on_item_button_gui_input(event):
 	if event is InputEventMouseButton:
+		# Usage panel
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			if item != null:
 				usage_panel.visible = !usage_panel.visible
+		# Dragging item
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			if event.is_pressed():
 				outer_border.modulate = Color(1, 1, 0)
@@ -99,27 +110,3 @@ func _on_item_button_gui_input(event):
 			else:
 				outer_border.modulate = Color(1, 1, 1)
 				drag_end.emit()
-
-
-func _on_sell_button_gui_input(event):
-	var currency = 100
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-			icon.texture = null
-			item_name.text = "Name"
-			item_type.text = "Type"
-			item_effect.text = "Text"
-		for i in range(Global.kovacsInventory.size()):
-					# Check if the item exists in the inventory and matches both type and effect
-			if Global.kovacsInventory[i] != null and Global.kovacsInventory[i]["type"] == item["type"] and Global.kovacsInventory[i]["effect"] == item["effect"]:
-				Global.kovacs_updated.emit()
-				currency += item["cost"] 
-				print("Item added", Global.kovacsInventory)
-				return true
-			elif Global.kovacsInventory[i] == null:
-				Global.kovacsInventory[i] = item
-				Global.kovacs_updated.emit()
-				currency += item["cost"]
-				print("Item added", Global.kovacsInventory)
-				return true
-		return false

@@ -92,6 +92,36 @@ layout_mode = 2
 [node name="Slot20" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
 layout_mode = 2
 
+[node name="Slot21" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
+[node name="Slot22" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
+[node name="Slot23" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
+[node name="Slot24" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
+[node name="Slot25" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
+[node name="Slot26" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
+[node name="Slot27" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
+[node name="Slot28" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
+[node name="Slot29" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
+[node name="Slot30" parent="Manager/Inventory" instance=ExtResource("4_bgqs6")]
+layout_mode = 2
+
 [node name="Shop" type="GridContainer" parent="Manager"]
 unique_name_in_owner = true
 layout_mode = 0
