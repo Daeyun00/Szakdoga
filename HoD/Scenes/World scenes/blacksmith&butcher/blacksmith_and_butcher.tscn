@@ -5121,10 +5121,10 @@ text = "Inventory"
 [node name="Balance" type="Label" parent="CanvasLayer/Player/InventoryUI2/ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 186.0
-offset_top = 87.0
-offset_right = 244.0
-offset_bottom = 117.0
+offset_left = 166.0
+offset_top = 75.0
+offset_right = 224.0
+offset_bottom = 105.0
 text = "0"
 
 [node name="Quit" type="Button" parent="CanvasLayer/Player/InventoryUI2"]
