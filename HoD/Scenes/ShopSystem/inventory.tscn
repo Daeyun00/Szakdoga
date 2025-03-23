@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpu18s21ipapx"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/inventory.gd" id="1_g2yj8"]
+[ext_resource type="PackedScene" uid="uid://du7d0okap3pu0" path="res://Scenes/ShopSystem/Slot.tscn" id="2_v3js8"]
+
+[node name="Inventory" type="GridContainer"]
+offset_left = 52.0
+offset_top = 49.0
+offset_right = 168.0
+offset_bottom = 141.0
+columns = 5
+script = ExtResource("1_g2yj8")
+
+[node name="Slot" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot2" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot3" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot4" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot5" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot6" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot7" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot8" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot9" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot10" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot11" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot12" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot13" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot14" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot15" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot16" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot17" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot18" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot19" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot20" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot21" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot22" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot23" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot24" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot25" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot26" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot27" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot28" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot29" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2
+
+[node name="Slot30" parent="." instance=ExtResource("2_v3js8")]
+layout_mode = 2

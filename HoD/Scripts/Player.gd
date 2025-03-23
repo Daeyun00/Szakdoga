@@ -12,7 +12,12 @@ var is_paused : bool
 @onready var inventory_ui = $InventoryUI
 @onready var inventory_hotbar = $Inventory_Hotbar
 @onready var shopInterac_ui = $InteractUI2
-
+@onready var money = $InventoryUI/ColorRect/Cost
+var a = 100
+@export var cost : int = a:
+	set(value):
+		value = cost
+		money.text = str(cost)
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -28,6 +33,8 @@ func _ready():
 	
 	
 
+func asd():
+	money.text = str(cost)
 
 func _physics_process(delta):
 	velocity.y += delta * gravity
@@ -53,10 +60,6 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _input(event):
-	if event.is_action_pressed("ui_inventory"):
-		inventory_ui.visible = !inventory_ui.visible
-		get_tree().paused = !get_tree().paused
-		inventory_hotbar.visible = !inventory_hotbar.visible
 		
 	if  event.is_action_pressed("pause_menu"):
 		velocity.x = 0
@@ -114,5 +117,3 @@ func _unhandled_input(event):
 			if Input.is_action_just_pressed("hotbar_" + str(i + 1)):
 				use_hotbar_item(i)
 				break
-				
-	

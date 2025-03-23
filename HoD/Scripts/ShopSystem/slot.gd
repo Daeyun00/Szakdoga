@@ -2,7 +2,9 @@ extends PanelContainer
 class_name Slot
 
 @onready var manager = get_parent().get_parent()
+@onready var player = Player.cost
 @onready var texture_rect = $TextureRect
+
 
 @export var item : Item = null:
 	set(value):
@@ -12,6 +14,8 @@ class_name Slot
 			texture_rect.texture = value.texture
 		else :
 			texture_rect.texture = null
+
+@export var a : int = 100
 
 func get_preview():
 	var preview_texture = TextureRect.new()
@@ -57,8 +61,18 @@ func selling(data):
 	print("Sold" + data.item.name)
 	manager.currency += data.item.cost
 	Global.remove_item(data.item.type, data.item.effect)
+	a = manager.currency
+	print(a)
+	BAndB.gold = a
+	print(BAndB.gold)
 
 func buying(data):
 	print("Bought" + data.item.name)
 	manager.currency -= data.item.cost
 	Global.add_item(data.item, false)
+	a = manager.currency
+	print(a)
+	BAndB.gold = a
+	print(BAndB.gold)
+	
+	

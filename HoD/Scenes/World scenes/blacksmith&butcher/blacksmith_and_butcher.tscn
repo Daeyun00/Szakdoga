@@ -1,6 +1,7 @@
-[gd_scene load_steps=57 format=4 uid="uid://dpga0yjvkx0u6"]
+[gd_scene load_steps=57 format=4 uid="uid://blif4ac8bfd5v"]
 
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_5qapa"]
+[ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/b_and_b.gd" id="1_ytaf2"]
 [ext_resource type="Texture2D" uid="uid://dcqyar38g5dvv" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="2_hvhe1"]
 [ext_resource type="Texture2D" uid="uid://cw2u4ddcsxx3t" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="3_12nfp"]
 [ext_resource type="Texture2D" uid="uid://cq4e0rfvoyy5b" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="4_jcf6b"]
@@ -17,14 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://d3ua2u1h5m28f" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/5.png" id="12_740ue"]
 [ext_resource type="Texture2D" uid="uid://70ncpntc83d0" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniFox.png" id="12_p4qx6"]
 [ext_resource type="Texture2D" uid="uid://dh58h7uk8ciht" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets.png" id="15_75h20"]
+[ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/UI/Inventory_UI.tscn" id="18_v2vqc"]
 [ext_resource type="PackedScene" uid="uid://dldwi8jevyv8d" path="res://Scenes/Entities/NPCS/blacksmith_NPC.tscn" id="19_01chg"]
 [ext_resource type="Script" path="res://Scripts/blacksmith_npc.gd" id="19_ecgqp"]
 [ext_resource type="PackedScene" uid="uid://p4uw4mc50we6" path="res://Scenes/Entities/NPCS/butcher_NPC.tscn" id="19_gsv5j"]
-[ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="22_txg5w"]
-
-[sub_resource type="GDScript" id="GDScript_6oiv8"]
-script/source = "extends Node
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fg5qn"]
 texture = ExtResource("7_rb4bm")
@@ -4980,7 +4977,7 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_5w661"]
 
 [node name="BlacksmithAndButcher" type="Node2D"]
-script = SubResource("GDScript_6oiv8")
+script = ExtResource("1_ytaf2")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -5096,12 +5093,46 @@ limit_top = 450
 limit_right = 1329
 limit_bottom = 800
 
-[node name="Ui" parent="CanvasLayer/Player" instance=ExtResource("22_txg5w")]
-offset_left = -599.0
-offset_top = -297.0
-offset_right = -599.0
-offset_bottom = -297.0
-scale = Vector2(0.783708, 0.7125)
+[node name="InventoryUI2" type="CanvasLayer" parent="CanvasLayer/Player"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Player/InventoryUI2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.376471, 0.321569, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Player/InventoryUI2/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 50.0
+offset_right = 37.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Inventory"
+
+[node name="Inventory_UI" parent="CanvasLayer/Player/InventoryUI2/ColorRect" instance=ExtResource("18_v2vqc")]
+
+[node name="Balance" type="Label" parent="CanvasLayer/Player/InventoryUI2/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 186.0
+offset_top = 87.0
+offset_right = 244.0
+offset_bottom = 117.0
+text = "0"
+
+[node name="Quit" type="Button" parent="CanvasLayer/Player/InventoryUI2"]
+offset_left = 66.0
+offset_top = 66.0
+offset_right = 138.0
+offset_bottom = 112.0
+text = "quit"
 
 [node name="BlacksmithNpc" parent="." instance=ExtResource("19_01chg")]
 position = Vector2(231, 720)

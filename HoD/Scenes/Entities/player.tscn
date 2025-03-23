@@ -181,7 +181,17 @@ offset_right = 340.0
 offset_bottom = 101.0
 text = "100"
 
+[node name="Quit" type="Button" parent="InventoryUI"]
+offset_left = 66.0
+offset_top = 66.0
+offset_right = 138.0
+offset_bottom = 112.0
+text = "quit"
+
 [node name="Inventory_Hotbar" type="CanvasLayer" parent="."]
 visible = false
 
 [node name="Inventory_Hotbar" parent="Inventory_Hotbar" instance=ExtResource("21_ck1g3")]
+
+[connection signal="button_down" from="InventoryUI/Quit" to="." method="_on_quit_button_down"]
+[connection signal="pressed" from="InventoryUI/Quit" to="." method="_on_quit_pressed"]
