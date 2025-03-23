@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ddyefllriddxp"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="1_as8ua"]
+[ext_resource type="Texture2D" uid="uid://o84hwacm3emq" path="res://Assets/Wooden UI/Wooden UI/Items/Mana Potion.png" id="2_1717a"]
+
+[resource]
+script = ExtResource("1_as8ua")
+texture = ExtResource("2_1717a")
+name = "Mana potion"
+type = "potion"
+effect = "fp proving"
+cost = 50.0
+quantity = 1

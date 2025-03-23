@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c7f0xxjb3ub75"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="1_7v0k1"]
+[ext_resource type="Texture2D" uid="uid://c50k38somqfgk" path="res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png" id="2_qvxov"]
+
+[resource]
+script = ExtResource("1_7v0k1")
+texture = ExtResource("2_qvxov")
+name = "asd"
+type = "asdtype"
+cost = 56.0
+quantity = 1

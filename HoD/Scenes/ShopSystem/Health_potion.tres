@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c2s7ash6dw7f3"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="1_ktaqt"]
+[ext_resource type="Texture2D" uid="uid://ceytlejiyd3rn" path="res://Assets/Wooden UI/Wooden UI/Items/Health Potion.png" id="2_il456"]
+
+[resource]
+script = ExtResource("1_ktaqt")
+texture = ExtResource("2_il456")
+name = "Health_potion"
+type = "potion"
+effect = "healing"
+cost = 40.0
+quantity = 1

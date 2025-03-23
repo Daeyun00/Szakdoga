@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dqbmnlmw24mut"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="1_seiro"]
+[ext_resource type="Texture2D" uid="uid://tkqjl01na452" path="res://Assets/Wooden UI/Wooden UI/Items/Stamina Potion.png" id="2_mbtsx"]
+
+[resource]
+script = ExtResource("1_seiro")
+texture = ExtResource("2_mbtsx")
+name = "Stamina potion"
+type = "potion"
+effect = "stamina improve"
+cost = 50.0
+quantity = 1

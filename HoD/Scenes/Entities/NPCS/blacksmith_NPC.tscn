@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dldwi8jevyv8d"]
+[gd_scene load_steps=18 format=3 uid="uid://dldwi8jevyv8d"]
 
 [ext_resource type="Texture2D" uid="uid://dh4psn7x76cf2" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Blacksmith.png" id="1_gecig"]
 [ext_resource type="Script" path="res://Scripts/Entities/Allies/blacksmith.gd" id="2_62a6r"]
+[ext_resource type="PackedScene" uid="uid://ce27lxypv16lu" path="res://Scenes/ShopSystem/ui.tscn" id="3_j6lcf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_glkya"]
 atlas = ExtResource("1_gecig")
@@ -112,10 +113,13 @@ position = Vector2(-3, 7)
 scale = Vector2(2.99688, 3.04869)
 shape = SubResource("CircleShape2D_bq1nd")
 
-[node name="InteractUI" type="CanvasLayer" parent="."]
+[node name="UI2" parent="Area2D" instance=ExtResource("3_j6lcf")]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+[node name="InteractUI2" type="CanvasLayer" parent="Area2D"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Area2D/InteractUI2"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -129,7 +133,7 @@ grow_horizontal = 0
 grow_vertical = 0
 color = Color(1, 0, 1, 1)
 
-[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+[node name="Label" type="Label" parent="Area2D/InteractUI2/ColorRect"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0

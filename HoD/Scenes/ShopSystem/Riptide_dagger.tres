@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://gfg6ir81jpu4"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="1_83s3g"]
+[ext_resource type="Texture2D" uid="uid://c50k38somqfgk" path="res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png" id="2_xfs3y"]
+
+[resource]
+script = ExtResource("1_83s3g")
+texture = ExtResource("2_xfs3y")
+name = "Riptide_dagger"
+type = "blacksmith_item"
+effect = "dagger"
+cost = 35.0
+quantity = 1

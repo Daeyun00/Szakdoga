@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://hme8jq0gaarq"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="1_a744k"]
+[ext_resource type="Texture2D" uid="uid://dxsyl6tafm0f7" path="res://Assets/Wooden UI/Wooden UI/Items/Runic Dagger.png" id="2_jdje5"]
+
+[resource]
+script = ExtResource("1_a744k")
+texture = ExtResource("2_jdje5")
+name = "Runic_dagger"
+type = "blacksmith_Item"
+effect = "dagger"
+cost = 40.0
+quantity = 1

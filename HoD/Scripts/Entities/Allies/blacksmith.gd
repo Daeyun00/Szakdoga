@@ -4,9 +4,11 @@ extends Area2D
 var is_player_within_area: bool
 var first_interaction : bool
 
-@onready var inventoryUI = $"../InventoryUI" 
+@onready var inventoryUI = $UI2 
 @onready var quitButton = $"../InventoryUI/ColorRect/Quit"
-@onready var buyInteract = $"../InteractUI"
+@onready var buyInteract = $InteractUI2
+
+
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -28,10 +30,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		first_interaction = true
 	if event.is_action_pressed("interact") and is_player_within_area and first_interaction == true:
 		Dialogic.start("blacksmith1")
-	if event.is_action("Buy") and is_player_within_area:
-		inventoryUI.visible = true
-		buyInteract.visible = false
-
+	if event.is_action_pressed("Buy") and is_player_within_area:
+		if(!Global.is_open_at_blacksmith):
+			inventoryUI.visible = !inventoryUI.visible
+			buyInteract.visible = true
+			Global.is_open_at_blacksmith = true
+			if inventoryUI.visible == true:
+				buyInteract.visible = false
+		else:
+			if(inventoryUI.visible == true):
+				inventoryUI.visible = false
+				Global.is_open_at_blacksmith = false
+			else:
+				print("szex baszás")
+				print(Global.is_open_at_blacksmith)
+		
 
 func _on_quit_pressed() -> void:
 	inventoryUI.visible = false

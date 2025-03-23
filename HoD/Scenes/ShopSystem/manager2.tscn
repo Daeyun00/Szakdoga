@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsqbgu3ov4gik"]
+
+[ext_resource type="Script" path="res://Scripts/ShopSystem/manager.gd" id="1_wakja"]
+[ext_resource type="PackedScene" uid="uid://cpu18s21ipapx" path="res://Scenes/ShopSystem/inventory.tscn" id="2_mwnaf"]
+[ext_resource type="Script" path="res://Scripts/ShopSystem/shop.gd" id="3_2yvtb"]
+[ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="4_20n0t"]
+[ext_resource type="Resource" uid="uid://c2s7ash6dw7f3" path="res://Scenes/ShopSystem/Health_potion.tres" id="5_k2ukr"]
+[ext_resource type="Resource" uid="uid://ddyefllriddxp" path="res://Scenes/ShopSystem/Mana_potion.tres" id="6_kcerl"]
+[ext_resource type="PackedScene" uid="uid://du7d0okap3pu0" path="res://Scenes/ShopSystem/Slot.tscn" id="7_8y6wk"]
+[ext_resource type="Resource" uid="uid://dqbmnlmw24mut" path="res://Scenes/ShopSystem/Stamina_potion.tres" id="7_nhmn8"]
+
+[node name="Manager" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -610.0
+offset_bottom = -419.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wakja")
+
+[node name="Inventory" parent="." instance=ExtResource("2_mwnaf")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 116.0
+offset_bottom = 92.0
+
+[node name="Shop" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 292.0
+offset_top = 65.0
+offset_right = 360.0
+offset_bottom = 133.0
+columns = 3
+script = ExtResource("3_2yvtb")
+items = Array[ExtResource("4_20n0t")]([ExtResource("5_k2ukr"), ExtResource("6_kcerl"), ExtResource("7_nhmn8")])
+
+[node name="Slot" parent="Shop" instance=ExtResource("7_8y6wk")]
+layout_mode = 2
+
+[node name="Slot2" parent="Shop" instance=ExtResource("7_8y6wk")]
+layout_mode = 2
+
+[node name="Slot3" parent="Shop" instance=ExtResource("7_8y6wk")]
+layout_mode = 2
+
+[node name="Slot4" parent="Shop" instance=ExtResource("7_8y6wk")]
+layout_mode = 2
+
+[node name="Slot5" parent="Shop" instance=ExtResource("7_8y6wk")]
+layout_mode = 2
+
+[node name="Slot6" parent="Shop" instance=ExtResource("7_8y6wk")]
+layout_mode = 2
+
+[node name="Slot7" parent="Shop" instance=ExtResource("7_8y6wk")]
+layout_mode = 2
+
+[node name="Slot8" parent="Shop" instance=ExtResource("7_8y6wk")]
+layout_mode = 2
+
+[node name="Slot9" parent="Shop" instance=ExtResource("7_8y6wk")]
+layout_mode = 2
+
+[node name="Currency" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 207.0
+offset_right = 105.0
+offset_bottom = 247.0
+
+[node name="Label" type="Label" parent="Currency"]
+layout_mode = 2
+text = "Gold:"
+
+[node name="Balance" type="Label" parent="Currency"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
