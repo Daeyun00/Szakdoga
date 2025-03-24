@@ -2,7 +2,7 @@ extends PanelContainer
 class_name Slot
 
 @onready var manager = get_parent().get_parent()
-@onready var texture_rect = $TextureRect0
+@onready var texture_rect = $TextureRect
 @onready var info = $Manager/ColorRect
 
 
