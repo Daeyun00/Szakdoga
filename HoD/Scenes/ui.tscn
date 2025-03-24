@@ -386,8 +386,8 @@ script = ExtResource("11_c3ig5")
 
 [connection signal="pressed" from="Menu/VBoxContainer/Save" to="Utility/SaverLoader" method="_on_save_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Load" to="Utility/SaverLoader" method="_on_load_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Export" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Export" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Export" to="." method="_on_resume_pressed"]
 [connection signal="request_completed" from="Menu/VBoxContainer/Export/HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Party" to="." method="_on_party_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
