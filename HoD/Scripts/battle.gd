@@ -144,6 +144,14 @@ func _physics_process(delta: float) -> void:
 	$Top/Players/Hero_label/Hero_rage_label.text = Rage
 	$Top/Players/Mage_label/Mage_mana_label.text = Mana
 	$Top/Players/Thief_label/Thief_combo_label.text = Combo
+	
+	$Top/Players/Hero_label/Hero_ATK_label.text = str(Hero.ATK) + " ATK"
+	$Top/Players/Mage_label/Mage_ATK_label.text = str(Mage.ATK) + " ATK"
+	$Top/Players/Thief_label/Thief_ATK_label.text = str(Thief.ATK) + " ATK"
+	
+	$Top/Players/Hero_label/Hero_DEF_label.text = str(Hero.DEF) + " DEF"
+	$Top/Players/Mage_label/Mage_DEF_label.text = str(Mage.DEF) + " DEF"
+	$Top/Players/Thief_label/Thief_DEF_label.text = str(Thief.DEF) + " DEF"
 	match turn:
 		0:
 			$ActionTurn/Turns.text = "Hero's Turn"
@@ -153,6 +161,7 @@ func _physics_process(delta: float) -> void:
 			$ActionTurn/Turns.text = "Thief's Turn"
 		_:
 			$ActionTurn/Turns.text = "Enemy's Turn"
+	
 	#Option focus fix
 	if(!is_fight && !is_skill && !is_item && !is_guard && !is_flee):
 		if (!$Options/AttackMenu/Fight_button.has_focus() and !$Options/AttackMenu/Flee_button.has_focus() and !$Options/AttackMenu/Guard_button.has_focus() and !$Options/AttackMenu/Item_button.has_focus() and !$Options/AttackMenu/Skill_button.has_focus()):
@@ -325,6 +334,28 @@ func _physics_process(delta: float) -> void:
 				hostile3.DEF += 10
 			else:
 				_thunder_token3 += 1
+		#thief tokens
+		if(_envenom_token1 > 0):
+			if(_envenom_token1 > 2):
+				_envenom_token1 = 0
+			else:
+				_envenom_token1 += 1
+				hostile1.HP -= Thief.ATK*0.5*_envenom_used_combo
+				print("t hit s1 (DoT)")
+		if(_envenom_token2 > 0):
+			if(_envenom_token2 > 2):
+				_envenom_token2 = 0
+			else:
+				_envenom_token2 += 1
+				hostile2.HP -= Thief.ATK*0.5*_envenom_used_combo
+				print("t hit s2 (DoT)")
+		if(_envenom_token3 > 0):
+			if(_envenom_token3 > 2):
+				_envenom_token3 = 0
+			else:
+				_envenom_token3 += 1
+				hostile3.HP -= Thief.ATK*0.5*_envenom_used_combo
+				print("t hit s3 (DoT)")
 		
 		$Top/Players/Hero_label/Hero_status.text = "Ready"
 		$Top/Players/Mage_label/Mage_status.text = "Ready"
@@ -538,6 +569,8 @@ func _on_slime_pressed() -> void:
 					print(turn)
 				2:
 					hostile1.HP -= Thief.ATK - hostile1.DEF
+					if (Thief.Combo < 10):
+						Thief.Combo += 1
 					turn += 1
 					print(turn)
 				_:
@@ -635,19 +668,20 @@ func _on_slime_pressed() -> void:
 			is_skill = !is_skill
 			_thunder_select = false
 			
-			#thief combos
-			if(_envenom_select):
-				hostile1.HP -= Thief.ATK*(Thief.Combo*2) - hostile1.DEF
-				if(_envenom_token1 == 0):
-					_envenom_token1 = 1
-				Mage.Mana -= 10
-				turn += 1
-				print(turn)
-				$Spells.visible = false
-				$Options.visible = true
-				$Options/AttackMenu/Fight_button.grab_focus()
-				is_skill = !is_skill
-				_fireball_select = false
+		#thief combos
+		if(_envenom_select):
+			hostile1.HP -= Thief.ATK*(Thief.Combo*2) - hostile1.DEF
+			if(_envenom_token1 == 0):
+				_envenom_token1 = 1
+				_envenom_used_combo = Thief.Combo
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Spells.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_fireball_select = false
 
 func _on_slime_2_pressed() -> void:
 	if(is_fight):
