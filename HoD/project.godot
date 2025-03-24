@@ -22,8 +22,6 @@ Debug="*res://Scripts/debug.gd"
 Persistence="*res://Scripts/Persistence.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ShopUi="*res://Scripts/ShopSystem/shop_ui.gd"
-Player="*res://Scenes/Entities/player.tscn"
-BAndB="*res://Scenes/World scenes/blacksmith&butcher/b_and_b.gd"
 
 [dialogic]
 
