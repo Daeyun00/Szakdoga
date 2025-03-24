@@ -86,7 +86,9 @@ var _thunder_token3 = 0
 
 #Thief Combo switches
 var _envenom_select = false
-var _envenom_used_combo = 0
+var _envenom_used_combo1 = 0
+var _envenom_used_combo2 = 0
+var _envenom_used_combo3 = 0
 var _envenom_token1 = 5
 var _envenom_token2 = 5
 var _envenom_token3 = 5
@@ -340,21 +342,21 @@ func _physics_process(delta: float) -> void:
 				_envenom_token1 = 0
 			else:
 				_envenom_token1 += 1
-				hostile1.HP -= Thief.ATK*0.5*_envenom_used_combo
+				hostile1.HP -= Thief.ATK*0.5*_envenom_used_combo1
 				print("t hit s1 (DoT)")
 		if(_envenom_token2 > 0):
 			if(_envenom_token2 > 2):
 				_envenom_token2 = 0
 			else:
 				_envenom_token2 += 1
-				hostile2.HP -= Thief.ATK*0.5*_envenom_used_combo
+				hostile2.HP -= Thief.ATK*0.5*_envenom_used_combo2
 				print("t hit s2 (DoT)")
 		if(_envenom_token3 > 0):
 			if(_envenom_token3 > 2):
 				_envenom_token3 = 0
 			else:
 				_envenom_token3 += 1
-				hostile3.HP -= Thief.ATK*0.5*_envenom_used_combo
+				hostile3.HP -= Thief.ATK*0.5*_envenom_used_combo3
 				print("t hit s3 (DoT)")
 		
 		$Top/Players/Hero_label/Hero_status.text = "Ready"
@@ -412,7 +414,6 @@ func _fight_window(button: BaseButton) -> void:
 					$Top/Players/Thief_label/Thief_status.text = "Attack"
 				_:
 					print(":3")
-
 
 #skills
 func _skill_window(button: BaseButton) -> void:
@@ -673,15 +674,15 @@ func _on_slime_pressed() -> void:
 			hostile1.HP -= Thief.ATK*(Thief.Combo*2) - hostile1.DEF
 			if(_envenom_token1 == 0):
 				_envenom_token1 = 1
-				_envenom_used_combo = Thief.Combo
+				_envenom_used_combo1 = Thief.Combo
 			Thief.Combo = 0
 			turn += 1
 			print(turn)
-			$Spells.visible = false
+			$Combos.visible = false
 			$Options.visible = true
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
-			_fireball_select = false
+			_envenom_select = false
 
 func _on_slime_2_pressed() -> void:
 	if(is_fight):
@@ -791,6 +792,20 @@ func _on_slime_2_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_thunder_select = false
+		#thief combos
+		if(_envenom_select):
+			hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
+			if(_envenom_token2 == 0):
+				_envenom_token2 = 1
+				_envenom_used_combo2 = Thief.Combo
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_envenom_select = false
 
 func _on_slime_3_pressed() -> void:
 	if(is_fight):
@@ -900,6 +915,20 @@ func _on_slime_3_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_thunder_select = false
+		#thief combos
+		if(_envenom_select):
+			hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
+			if(_envenom_token2 == 0):
+				_envenom_token2 = 1
+				_envenom_used_combo2 = Thief.Combo
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_envenom_select = false
 
 func _on_hero_pressed() -> void:
 	if(_heal_I_select):
