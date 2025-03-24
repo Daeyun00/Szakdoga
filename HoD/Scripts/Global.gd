@@ -6,6 +6,9 @@ extends Node
 @onready var inventory_slot_scene = preload("res://Scenes/UI/Inventory_Slot.tscn")
 var player_node: Node = null
 
+#gold init
+@onready var currency : int = 100
+
 # Inventory items
 var inventory = []
 var spawnable_items = [

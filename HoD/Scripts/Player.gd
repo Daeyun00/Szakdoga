@@ -68,6 +68,9 @@ func _input(event):
 	if event.is_action_pressed("interact"):
 		velocity.x = 0
 		$AnimatedSprite2D.play("Idle")
+	
+	if event.is_action_pressed("ui_inventory"):
+		inventory_ui.visible = !inventory_ui.visible
 		
 		
 		

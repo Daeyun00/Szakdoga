@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://hme8jq0gaarq"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ci4qietr5nky2"]
 
 [ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="1_a744k"]
 [ext_resource type="Texture2D" uid="uid://dxsyl6tafm0f7" path="res://Assets/Wooden UI/Wooden UI/Items/Runic Dagger.png" id="2_jdje5"]
@@ -11,3 +11,4 @@ type = "blacksmith_Item"
 effect = "dagger"
 cost = 40.0
 quantity = 1
+scene_path = "res://Scenes/ShopSystem/Runic_dagger.tres"

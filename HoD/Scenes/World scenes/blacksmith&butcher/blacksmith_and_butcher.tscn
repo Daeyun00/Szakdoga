@@ -5094,6 +5094,7 @@ limit_right = 1329
 limit_bottom = 800
 
 [node name="InventoryUI2" type="CanvasLayer" parent="CanvasLayer/Player"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Player/InventoryUI2"]
 anchors_preset = 15
