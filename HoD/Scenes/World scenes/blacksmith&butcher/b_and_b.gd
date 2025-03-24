@@ -28,3 +28,8 @@ func spawn_item(data, position):
 	item_instance.initiate_items(data["type"], data["name"], data["effect"], data["texture"])
 	item_instance.global_position = position
 	items.add_child(item_instance)
+
+func _input(event):
+	if event.is_action_pressed("ui_inventory"):
+		inventory.visible = !inventory.visible
+		
