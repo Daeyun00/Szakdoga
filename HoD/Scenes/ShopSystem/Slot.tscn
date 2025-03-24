@@ -21,3 +21,5 @@ script = ExtResource("1_ws76k")
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

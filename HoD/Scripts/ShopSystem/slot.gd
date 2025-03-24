@@ -2,9 +2,8 @@ extends PanelContainer
 class_name Slot
 
 @onready var manager = get_parent().get_parent()
-@onready var player = Player.cost
 @onready var texture_rect = $TextureRect
-@onready var cost = %Balance
+@onready var info = $Manager/ColorRect
 
 
 @export var item : Item = null:

@@ -125,7 +125,6 @@ position = Vector2(-71, 10)
 shape = SubResource("RectangleShape2D_ixt2i")
 
 [node name="InteractUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="InteractUI"]
 anchors_preset = 3

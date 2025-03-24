@@ -8,3 +8,42 @@ script = ExtResource("1_f27v7")
 
 [node name="Manager" parent="." instance=ExtResource("2_u7f6m")]
 unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="Manager"]
+visible = false
+layout_mode = 0
+offset_left = 197.0
+offset_top = 203.0
+offset_right = 395.0
+offset_bottom = 344.0
+color = Color(0.162066, 0.162066, 0.162066, 1)
+
+[node name="Name" type="Label" parent="Manager/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 30.0
+text = "Name"
+
+[node name="Type" type="Label" parent="Manager/ColorRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 29.0
+offset_right = 62.0
+offset_bottom = 59.0
+text = "Type"
+
+[node name="Effect" type="Label" parent="Manager/ColorRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 67.0
+offset_right = 85.0
+offset_bottom = 97.0
+text = "Effect"
+
+[node name="Cost" type="Label" parent="Manager/ColorRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 101.0
+offset_right = 88.0
+offset_bottom = 131.0
+text = "Cost"
