@@ -11,9 +11,7 @@ config_version=5
 [application]
 
 config/name="HoD"
-
 run/main_scene="res://Scenes/MainMenu/main_menu.tscn"
-
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://lotus.svg"
 
@@ -24,8 +22,6 @@ Debug="*res://Scripts/debug.gd"
 Persistence="*res://Scripts/Persistence.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ShopUi="*res://Scripts/ShopSystem/shop_ui.gd"
-Player="*res://Scenes/Entities/player.tscn"
-BAndB="*res://Scenes/World scenes/blacksmith&butcher/b_and_b.gd"
 
 [dialogic]
 
