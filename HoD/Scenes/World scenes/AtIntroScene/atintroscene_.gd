@@ -1,6 +1,9 @@
 extends Node2D
 var teleport_ready = false
+@onready var crystal = $CrystalNpc
 
+
+	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	teleport_ready = true
 

@@ -1,3 +1,4 @@
+[signal arg="dialog_started"]
 crystal: An unfamiliar face.. a strong knight..
 - Who are you?
 	crystal: That's no concern of yours.
@@ -26,4 +27,5 @@ crystal: There are still so many who haven't lost their fighting spirits.
 crystal: Look around. Talk. Listen. You can find allies in the village.
 crystal: Good luck strong one!
 (What a weird girl... Seems like I've got no choice. I should look around)
+[signal arg="crystal_ended"]
 [end_timeline]

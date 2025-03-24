@@ -1,3 +1,4 @@
+[signal arg="dialog_started"]
 mage: Greetings soldier.
 mage: I've heard about you before. You're the knight who was sended here to save this village.
 mage: I'm a traveler myself.
@@ -7,7 +8,7 @@ mage: Would you mind if I join you?
 	(She acts like she didn't hear your refusal)
 	(Seems like you don't have any choices in this matter)
 - Why?
-	mage: I have my own reasons. 
+	mage: I have my own reasons.
 	mage: I want to save this village.
 	mage: That's more than enough to know.
 	- I don't trust you.

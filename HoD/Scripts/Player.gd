@@ -24,6 +24,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	Global.set_player_reference(self)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_started.connect(set_physics_process.bind(false)) 
 	Dialogic.timeline_started.connect(set_process_input.bind(false)) 
 	
@@ -31,7 +32,11 @@ func _ready():
 	Dialogic.timeline_ended.connect(set_process_input.bind(true))
 	
 	
-	
+func _on_dialogic_signal(argument:String):
+	if argument == "dialog_started":
+		velocity.x = 0
+		$AnimatedSprite2D.play("Idle")
+		
 
 func asd():
 	money.text = str(cost)
