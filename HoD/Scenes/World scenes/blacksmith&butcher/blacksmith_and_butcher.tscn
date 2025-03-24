@@ -4979,47 +4979,6 @@ animations = [{
 [node name="BlacksmithAndButcher" type="Node2D"]
 script = ExtResource("1_ytaf2")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
-position = Vector2(24, 32)
-motion_scale = Vector2(0.5, 0.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
-position = Vector2(638, 316)
-scale = Vector2(1.40326, 2.54477)
-texture = ExtResource("1_5qapa")
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(676, 738)
-scale = Vector2(1.40471, 1.7116)
-texture = ExtResource("2_hvhe1")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(691, 738)
-scale = Vector2(1.40471, 1.7116)
-texture = ExtResource("3_12nfp")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(1, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(691, 738)
-scale = Vector2(1.40471, 1.7116)
-texture = ExtResource("4_jcf6b")
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(691, 738)
-scale = Vector2(1.40471, 1.7116)
-texture = ExtResource("5_63qak")
-
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
 
@@ -5094,6 +5053,7 @@ limit_right = 1329
 limit_bottom = 800
 
 [node name="InventoryUI2" type="CanvasLayer" parent="CanvasLayer/Player"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Player/InventoryUI2"]
 anchors_preset = 15
@@ -5148,3 +5108,43 @@ polygon = PackedVector2Array(0, 767, -1, 547, 1385, 541, 1390, 755, 1362, 755, 1
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(2, 758, 1404, 755, 1410, 1035, 1, 1033)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(24, 32)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
+position = Vector2(638, 316)
+scale = Vector2(1.40326, 2.54477)
+texture = ExtResource("1_5qapa")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(676, 738)
+scale = Vector2(1.40471, 1.7116)
+texture = ExtResource("2_hvhe1")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(691, 738)
+scale = Vector2(1.40471, 1.7116)
+texture = ExtResource("3_12nfp")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(691, 738)
+scale = Vector2(1.40471, 1.7116)
+texture = ExtResource("4_jcf6b")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(691, 738)
+scale = Vector2(1.40471, 1.7116)
+texture = ExtResource("5_63qak")

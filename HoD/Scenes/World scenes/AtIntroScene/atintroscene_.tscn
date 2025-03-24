@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=4 uid="uid://kyr0ne42cges"]
+[gd_scene load_steps=87 format=4 uid="uid://kyr0ne42cges"]
 
 [ext_resource type="Script" path="res://Scenes/World scenes/AtIntroScene/atintroscene_.gd" id="1_e3gy1"]
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_pw5ux"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dno3ktvfyu4q8" path="res://Scenes/Entities/player.tscn" id="9_j3fmm"]
 [ext_resource type="PackedScene" uid="uid://bh7n85ywi1qfs" path="res://Scenes/World scenes/AtIntroScene/crystal_npc.tscn" id="17_2y6as"]
 [ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="18_hpt3c"]
+[ext_resource type="Script" path="res://Scenes/World scenes/AtIntroScene/teleport-to-bb.gd" id="20_ijwjl"]
 [ext_resource type="Texture2D" uid="uid://cvibt66lbss8q" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniBird.png" id="28_wgwth"]
 [ext_resource type="Texture2D" uid="uid://dy8prl1fbrp54" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/Campfire with food sheet.png" id="29_bbewp"]
 
@@ -2906,6 +2907,9 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_530km"]
+size = Vector2(70, 70)
+
 [node name="Atintroscene" type="Node2D"]
 script = ExtResource("1_e3gy1")
 
@@ -2998,7 +3002,7 @@ position = Vector2(819, 725)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
 position = Vector2(320, 566)
-polygon = PackedVector2Array(-317, 238, -354, 237, -351, -125, 1112, -126, 1102, 233, 1055, 234, 1048, -10, -325, -10)
+polygon = PackedVector2Array(-317, 238, -354, 237, -351, -125, 1112, -126, 1102, 233, 744, 233, 747, -9, 1048, -10, -325, -10)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(2, 752, 1405, 755, 1412, 1034, -22, 1032, -24, 746, 8, 751)
@@ -3023,3 +3027,14 @@ offset_top = -297.0
 offset_right = -599.0
 offset_bottom = -297.0
 scale = Vector2(0.783708, 0.7125)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1032, 726)
+script = ExtResource("20_ijwjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -7)
+shape = SubResource("RectangleShape2D_530km")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
