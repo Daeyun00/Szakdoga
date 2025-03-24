@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://blif4ac8bfd5v"]
+[gd_scene load_steps=62 format=4 uid="uid://blif4ac8bfd5v"]
 
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_5qapa"]
 [ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/b_and_b.gd" id="1_ytaf2"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://Scripts/blacksmith_npc.gd" id="19_ecgqp"]
 [ext_resource type="PackedScene" uid="uid://p4uw4mc50we6" path="res://Scenes/Entities/NPCS/butcher_NPC.tscn" id="19_gsv5j"]
 [ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/teleport_back_intro.gd" id="23_4eihi"]
+[ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/teleport_to_towncenter.gd" id="25_n8dfc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fg5qn"]
 texture = ExtResource("7_rb4bm")
@@ -4981,6 +4982,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rlme"]
 size = Vector2(29.5, 71)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7w0c"]
+size = Vector2(37.5, 61.5)
+
 [node name="BlacksmithAndButcher" type="Node2D"]
 script = ExtResource("1_ytaf2")
 
@@ -5098,11 +5102,11 @@ position = Vector2(691, 738)
 scale = Vector2(1.40471, 1.7116)
 texture = ExtResource("5_63qak")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Teleport_back" type="Area2D" parent="."]
 position = Vector2(24, 742)
 script = ExtResource("23_4eihi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_back"]
 position = Vector2(55.25, -25.5)
 shape = SubResource("RectangleShape2D_1rlme")
 
@@ -5170,5 +5174,15 @@ offset_right = 138.0
 offset_bottom = 112.0
 text = "quit"
 
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
-[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
+[node name="Teleport_next" type="Area2D" parent="."]
+position = Vector2(1351, 742)
+script = ExtResource("25_n8dfc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_next"]
+position = Vector2(-50.25, -21.25)
+shape = SubResource("RectangleShape2D_b7w0c")
+
+[connection signal="area_entered" from="Teleport_back" to="Teleport_back" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_back" to="Teleport_back" method="_on_area_exited"]
+[connection signal="area_entered" from="Teleport_next" to="Teleport_next" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_next" to="Teleport_next" method="_on_area_exited"]

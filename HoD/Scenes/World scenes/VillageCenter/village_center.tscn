@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://co37dgctyyci6"]
+[gd_scene load_steps=82 format=4 uid="uid://co37dgctyyci6"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_hr4oh"]
 [ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="2_e4k7h"]
@@ -20,6 +20,9 @@
 [ext_resource type="Script" path="res://Scripts/saver_loader_.gd" id="18_ulqor"]
 [ext_resource type="Script" path="res://Scripts/saver_object.gd" id="19_f2ndb"]
 [ext_resource type="Texture2D" uid="uid://cexn2uy5ho3th" path="res://Assets/Graphics/Assets/GUI-fotor-20250126105351.png" id="20_ej6bp"]
+[ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/teleport_tavern.gd" id="21_qll0e"]
+[ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/teleport_back.gd" id="22_2ee22"]
+[ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/teleport_next.gd" id="23_ytwah"]
 
 [sub_resource type="TileSet" id="TileSet_yyjto"]
 
@@ -5928,6 +5931,9 @@ shadow_offset = Vector2(0, 3)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2sic"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vybaj"]
+size = Vector2(37, 76)
+
 [node name="VillageCenter" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -6159,6 +6165,30 @@ position = Vector2(13, -8)
 scale = Vector2(-4.83435, 6.79385)
 shape = SubResource("CircleShape2D_o2sic")
 
+[node name="Teleport_tavern" type="Area2D" parent="."]
+position = Vector2(1111, 690)
+script = ExtResource("21_qll0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_tavern"]
+position = Vector2(8.5, 28)
+shape = SubResource("RectangleShape2D_vybaj")
+
+[node name="Teleport_back" type="Area2D" parent="."]
+position = Vector2(103, 689)
+script = ExtResource("22_2ee22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_back"]
+position = Vector2(8.5, 28)
+shape = SubResource("RectangleShape2D_vybaj")
+
+[node name="Teleport_next" type="Area2D" parent="."]
+position = Vector2(1266, 691)
+script = ExtResource("23_ytwah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_next"]
+position = Vector2(8.5, 28)
+shape = SubResource("RectangleShape2D_vybaj")
+
 [connection signal="body_entered" from="BunnyArea" to="BunnyArea" method="_on_body_entered"]
 [connection signal="body_exited" from="BunnyArea" to="BunnyArea" method="_on_body_exited"]
 [connection signal="body_entered" from="mage2" to="mage2" method="_on_body_entered"]
@@ -6169,3 +6199,9 @@ shape = SubResource("CircleShape2D_o2sic")
 [connection signal="pressed" from="HBoxContainer/Load" to="Utility/SaverLoader" method="_on_load_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="area_entered" from="Teleport_tavern" to="Teleport_tavern" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_tavern" to="Teleport_tavern" method="_on_area_exited"]
+[connection signal="area_entered" from="Teleport_back" to="Teleport_back" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_back" to="Teleport_back" method="_on_area_exited"]
+[connection signal="area_entered" from="Teleport_next" to="Teleport_next" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_next" to="Teleport_next" method="_on_area_exited"]
