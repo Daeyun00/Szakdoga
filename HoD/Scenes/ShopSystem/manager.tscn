@@ -1,12 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://c46nq6abfhkon"]
+[gd_scene load_steps=10 format=3 uid="uid://c46nq6abfhkon"]
 
 [ext_resource type="Script" path="res://Scripts/ShopSystem/manager.gd" id="1_2ujjj"]
 [ext_resource type="PackedScene" uid="uid://cpu18s21ipapx" path="res://Scenes/ShopSystem/inventory.tscn" id="2_0i346"]
 [ext_resource type="Script" path="res://Scripts/ShopSystem/shop.gd" id="3_12lbe"]
 [ext_resource type="Script" path="res://Scripts/ShopSystem/Item.gd" id="4_xfq3q"]
-[ext_resource type="Resource" uid="uid://gfg6ir81jpu4" path="res://Scenes/ShopSystem/Riptide_dagger.tres" id="5_bq8jp"]
-[ext_resource type="Resource" uid="uid://hme8jq0gaarq" path="res://Scenes/ShopSystem/Runic_dagger.tres" id="6_ipnj6"]
+[ext_resource type="Texture2D" uid="uid://c50k38somqfgk" path="res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png" id="5_yurw2"]
+[ext_resource type="Texture2D" uid="uid://dxsyl6tafm0f7" path="res://Assets/Wooden UI/Wooden UI/Items/Runic Dagger.png" id="6_ym52b"]
 [ext_resource type="PackedScene" uid="uid://du7d0okap3pu0" path="res://Scenes/ShopSystem/Slot.tscn" id="7_ch67p"]
+
+[sub_resource type="Resource" id="Resource_hxeq6"]
+script = ExtResource("4_xfq3q")
+texture = ExtResource("5_yurw2")
+name = "Riptide_dagger"
+type = "blacksmith_item"
+effect = "dagger"
+cost = 35.0
+quantity = 1
+scene_path = "res://Scenes/Other/inventory_item.tscn"
+
+[sub_resource type="Resource" id="Resource_hweb4"]
+script = ExtResource("4_xfq3q")
+texture = ExtResource("6_ym52b")
+name = "Runic_dagger"
+type = "blacksmith_Item"
+effect = "dagger"
+cost = 40.0
+quantity = 1
+scene_path = "res://Scenes/Other/inventory_item.tscn"
 
 [node name="Manager" type="Panel"]
 anchors_preset = 15
@@ -35,7 +55,7 @@ offset_right = 360.0
 offset_bottom = 133.0
 columns = 3
 script = ExtResource("3_12lbe")
-items = Array[ExtResource("4_xfq3q")]([ExtResource("5_bq8jp"), ExtResource("6_ipnj6")])
+items = Array[ExtResource("4_xfq3q")]([SubResource("Resource_hxeq6"), SubResource("Resource_hweb4")])
 
 [node name="Slot" parent="Shop" instance=ExtResource("7_ch67p")]
 layout_mode = 2

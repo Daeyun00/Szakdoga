@@ -156,7 +156,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 30
-text = "Press 'W' to buy"
+text = "Press 'B' to buy"
 
 [node name="UI" parent="Area2D" instance=ExtResource("3_syost")]
 visible = false
