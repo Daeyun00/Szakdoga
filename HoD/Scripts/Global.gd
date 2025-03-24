@@ -6,13 +6,16 @@ extends Node
 @onready var inventory_slot_scene = preload("res://Scenes/UI/Inventory_Slot.tscn")
 var player_node: Node = null
 
+#gold init
+@onready var currency : int = 100
+
 # Inventory items
 var inventory = []
 var spawnable_items = [
 	{"type": "Consumable", "name": "Berry", "effect": "Health", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Health Potion.png")},
-	{"type": "Consumable", "name": "Water", "effect": "Stamina", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Mana Potion.png")},
-	{"type": "Consumable", "name": "Mushroom", "effect": "Armor", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Stamina Potion.png")},
-	{"type": "Gift", "name": "Gemstone", "effect": "asd", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png")},
+	{"type": "Consumable", "name": "Water", "effect": "Stamina", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Stamina Potion.png")},
+	{"type": "Consumable", "name": "Mushroom", "effect": "Armor", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Riptide Dagger.png")},
+	{"type": "Gift", "name": "Gemstone", "effect": "asd", "texture": preload("res://Assets/Wooden UI/Wooden UI/Items/Runic Dagger.png")},
 ]
 
 var is_open_at_blacksmith = false

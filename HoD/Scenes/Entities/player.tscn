@@ -189,7 +189,6 @@ offset_bottom = 112.0
 text = "quit"
 
 [node name="Inventory_Hotbar" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Inventory_Hotbar" parent="Inventory_Hotbar" instance=ExtResource("21_ck1g3")]
 

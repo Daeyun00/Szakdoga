@@ -1,4 +1,5 @@
-[gd_scene load_steps=59 format=4 uid="uid://blif4ac8bfd5v"]
+[gd_scene load_steps=58 format=4 uid="uid://blif4ac8bfd5v"]
+
 
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_5qapa"]
 [ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/b_and_b.gd" id="1_ytaf2"]
@@ -4977,8 +4978,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5w661"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rlme"]
 size = Vector2(29.5, 71)
+
 
 [node name="BlacksmithAndButcher" type="Node2D"]
 script = ExtResource("1_ytaf2")
@@ -5113,6 +5116,8 @@ polygon = PackedVector2Array(0, 767, -1, 547, 1385, 541, 1390, 755, 1362, 755, 1
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(2, 758, 1404, 755, 1410, 1035, 1, 1033)
 
+
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -5159,8 +5164,10 @@ position = Vector2(24, 742)
 script = ExtResource("23_4eihi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
 position = Vector2(55.25, -25.5)
 shape = SubResource("RectangleShape2D_1rlme")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
+
