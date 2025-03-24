@@ -15,3 +15,4 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_inventory"):
 		inventory.visible = !inventory.visible
+		

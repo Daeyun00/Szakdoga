@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://blif4ac8bfd5v"]
+[gd_scene load_steps=59 format=4 uid="uid://blif4ac8bfd5v"]
 
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_5qapa"]
 [ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/b_and_b.gd" id="1_ytaf2"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dldwi8jevyv8d" path="res://Scenes/Entities/NPCS/blacksmith_NPC.tscn" id="19_01chg"]
 [ext_resource type="Script" path="res://Scripts/blacksmith_npc.gd" id="19_ecgqp"]
 [ext_resource type="PackedScene" uid="uid://p4uw4mc50we6" path="res://Scenes/Entities/NPCS/butcher_NPC.tscn" id="19_gsv5j"]
+[ext_resource type="Script" path="res://Scenes/World scenes/AtIntroScene/teleport-to-bb.gd" id="23_d82cv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fg5qn"]
 texture = ExtResource("7_rb4bm")
@@ -4976,6 +4977,9 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5w661"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s24ra"]
+size = Vector2(70, 70)
+
 [node name="BlacksmithAndButcher" type="Node2D"]
 script = ExtResource("1_ytaf2")
 
@@ -5148,3 +5152,11 @@ texture = ExtResource("4_jcf6b")
 position = Vector2(691, 738)
 scale = Vector2(1.40471, 1.7116)
 texture = ExtResource("5_63qak")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1032, 726)
+script = ExtResource("23_d82cv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-986, -6)
+shape = SubResource("RectangleShape2D_s24ra")
