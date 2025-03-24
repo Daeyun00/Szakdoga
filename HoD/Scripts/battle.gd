@@ -527,6 +527,16 @@ func _on_spell_menu_button_pressed(button: BaseButton) -> void:
 					$Options.visible = true
 					$Options/AttackMenu/Fight_button.grab_focus()
 					is_skill = !is_skill
+			"Resistance":
+				if(Mage.Mana >= 20):
+					Hero.grab_focus()
+					_resistance_select = true
+				else:
+					$Top/Players/Mage_label/Mage_status.text = "Not enough Mana"
+					$Spells.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
 			"Thunder":
 				#Attacks with 10* multiplier and Breaks enemy defense
 				if(Mage.Mana >= 40):
@@ -543,10 +553,53 @@ func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 		match button.name:
 			"Envenom":
 				#Attacks with a Combo*2 and poisons them DoT for Combo turns
-				
 				if(Thief.Combo > 1):
 					hostile1.grab_focus()
 					_envenom_select = true
+				else:
+					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Combos.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Eviscerate":
+				#valami :3
+				if(Thief.Combo > 1):
+					hostile1.grab_focus()
+					_eviscerate_select = true
+				else:
+					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Combos.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Rupture":
+				#valami :3
+				if(Thief.Combo > 1):
+					hostile1.grab_focus()
+					_rupture_select = true
+				else:
+					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Combos.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Night blade":
+				#valami :3
+				if(Thief.Combo > 1):
+					hostile1.grab_focus()
+					_night_blade_select = true
+				else:
+					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Combos.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Shadowstrike":
+				#valami :3
+				if(Thief.Combo > 1):
+					hostile1.grab_focus()
+					_shadowstrike_select = true
 				else:
 					$Top/Players/Thief_label/Thief_status.text = "No Combo"
 					$Combos.visible = false
