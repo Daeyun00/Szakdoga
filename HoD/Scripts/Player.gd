@@ -13,11 +13,7 @@ var is_paused : bool
 @onready var inventory_hotbar = $Inventory_Hotbar
 @onready var shopInterac_ui = $InteractUI2
 @onready var money = $InventoryUI/ColorRect/Cost
-var a = 100
-@export var cost : int = a:
-	set(value):
-		value = cost
-		money.text = str(cost)
+
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -38,8 +34,7 @@ func _on_dialogic_signal(argument:String):
 		$AnimatedSprite2D.play("Idle")
 		
 
-func asd():
-	money.text = str(cost)
+
 
 func _physics_process(delta):
 	velocity.y += delta * gravity

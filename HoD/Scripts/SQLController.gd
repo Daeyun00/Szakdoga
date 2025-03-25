@@ -99,11 +99,14 @@ var database : SQLite
 @onready var mapBattleQuantityLabel = $LabelQuantity
 @onready var mapBattleQuantity = $quantity
 
+@onready var effect = $effect
+@onready var effectLabel = $effectLabel
+
 
 
 func _ready():
 	database = SQLite.new()
-	database.path = "res://database.db"
+	database.path = "res://databaseUltimate.db"
 	database.open_db()
 
 
@@ -144,7 +147,8 @@ func _on_create_table_button_down() -> void:
 	}
 	var itemTable = {
 		"id": {"data_type":"int", "primary_key": true, "not_null": true, "auto_increment": true},
-		"name":{"data_type":"text"}
+		"name":{"data_type":"text"},
+		"effect":{"data_type": "text"}
 	}
 	var shopInventoryTable = {
 		"Item_id":{"data_type": "int"},
@@ -237,11 +241,14 @@ func _on_item_button_pressed() -> void:
 	insertDataItem.visible = !insertDataItem.visible
 	selectDataItem.visible = !selectDataItem.visible
 	customSelectItem.visible = !customSelectItem.visible
-	updateDataItem.visible = !customSelectItem.visible
+	updateDataItem.visible = !updateDataItem.visible
 	deleteDataItem.visible = !deleteDataItem.visible
 	itemNameLabel.visible = !itemNameLabel.visible
 	itemName.visible = !itemName.visible
 	storItemImage.visible = !storItemImage.visible
+	effect.visible = !effect.visible
+	effectLabel.visible = !effectLabel.visible
+	
 
 
 
@@ -328,7 +335,8 @@ func _on_insertdata_hostiles_button_down() -> void:
 
 func _on_insertdata_item_button_down() -> void:
 	var data = {
-		"name": itemName.text
+		"name": itemName.text,
+		"effect": effect.text
 	}
 	database.insert_row("items", data)
 
@@ -374,3 +382,4 @@ func _on_deletedata_hostiles_button_down() -> void:
 
 func _on_deletedata_item_button_down() -> void:
 	database.delete_rows("items", "name = '" + itemName.text + "'")
+	print("Siker")
