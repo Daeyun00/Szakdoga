@@ -1,3 +1,4 @@
+[signal arg="dialog_started"]
 woman: You must be new... I haven't seen you around before...
 woman: Care for a drink?
 - *accept*

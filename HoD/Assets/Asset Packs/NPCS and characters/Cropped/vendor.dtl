@@ -1,3 +1,4 @@
+[signal arg="dialog_started"]
 vendor: Greetings young man!
 vendor: You must be the knight who was sent here.
 vendor: A strong knight like you needs some helping potions.

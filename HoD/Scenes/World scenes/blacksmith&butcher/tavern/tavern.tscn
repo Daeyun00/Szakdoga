@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://blrwtmbxlr247"]
+[gd_scene load_steps=86 format=4 uid="uid://blrwtmbxlr247"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_fcpxe"]
 [ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_i0mgx"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scripts/bard.gd" id="12_ebk75"]
 [ext_resource type="Script" path="res://Scripts/woman.gd" id="13_7lp80"]
 [ext_resource type="Script" path="res://Scripts/bartender_2.gd" id="14_d8cma"]
+[ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/tavern/teleport_town_center.gd" id="17_elnci"]
 
 [sub_resource type="TileSet" id="TileSet_wi826"]
 
@@ -11821,6 +11822,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xhlnx"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ailu"]
+size = Vector2(36, 59)
+
 [node name="Tavern" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -12000,6 +12004,14 @@ polygon = PackedVector2Array(-13, 755, 1402, 756, 1404, 902, -11, 900)
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(22, 753, 19, 562, 1309, 571, 1314, 756, 1392, 756, 1399, 324, -44, 310, -46, 761)
 
+[node name="Teleport_town_center" type="Area2D" parent="."]
+position = Vector2(126, 724)
+script = ExtResource("17_elnci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_town_center"]
+position = Vector2(2, 1.5)
+shape = SubResource("RectangleShape2D_7ailu")
+
 [connection signal="body_entered" from="drunkards" to="drunkards" method="_on_body_entered"]
 [connection signal="body_exited" from="drunkards" to="drunkards" method="_on_body_exited"]
 [connection signal="body_entered" from="bard" to="bard" method="_on_body_entered"]
@@ -12008,3 +12020,5 @@ polygon = PackedVector2Array(22, 753, 19, 562, 1309, 571, 1314, 756, 1392, 756, 
 [connection signal="body_exited" from="woman" to="woman" method="_on_body_exited"]
 [connection signal="body_entered" from="bartender2" to="bartender2" method="_on_body_entered"]
 [connection signal="body_exited" from="bartender2" to="bartender2" method="_on_body_exited"]
+[connection signal="area_entered" from="Teleport_town_center" to="Teleport_town_center" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_town_center" to="Teleport_town_center" method="_on_area_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://dibbb1ojb3q60"]
+[gd_scene load_steps=83 format=4 uid="uid://dibbb1ojb3q60"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_qgqhq"]
 [ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="2_lca45"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cgiye61hul65h" path="res://Assets/Asset Packs/Village/GandalfHardcore Water Tiles/GandalfHardcore Water Tiles/Calm Water.png" id="10_sexl1"]
 [ext_resource type="Texture2D" uid="uid://d3a22kf788wd" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/_NPC/Gravedigger.png" id="11_w15nm"]
 [ext_resource type="Script" path="res://Scripts/gravedigger.gd" id="12_en8ie"]
+[ext_resource type="Script" path="res://Scenes/World scenes/Weird guy scene/teleport_back.gd" id="15_gtiyj"]
 
 [sub_resource type="TileSet" id="TileSet_231b6"]
 
@@ -2622,6 +2623,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qac0n"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0au31"]
+size = Vector2(28, 77)
+
 [node name="WeirdGuy" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -2764,5 +2768,15 @@ polygon = PackedVector2Array(210, 747, 210, 567, 430, 565, 433, 789, 209, 790)
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(-5, 749, -25, 562, 430, 565, 431, 422, -125, 417, -122, 796, 29, 788)
 
+[node name="Teleport_back" type="Area2D" parent="."]
+position = Vector2(82, 735)
+script = ExtResource("15_gtiyj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_back"]
+position = Vector2(5, -27.5)
+shape = SubResource("RectangleShape2D_0au31")
+
 [connection signal="body_entered" from="gravedigger" to="gravedigger" method="_on_body_entered"]
 [connection signal="body_exited" from="gravedigger" to="gravedigger" method="_on_body_exited"]
+[connection signal="area_entered" from="Teleport_back" to="Teleport_back" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_back" to="Teleport_back" method="_on_area_exited"]

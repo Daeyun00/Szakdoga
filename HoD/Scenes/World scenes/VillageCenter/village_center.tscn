@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://co37dgctyyci6"]
+[gd_scene load_steps=93 format=4 uid="uid://co37dgctyyci6"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_hr4oh"]
 [ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="2_e4k7h"]
@@ -20,6 +20,11 @@
 [ext_resource type="Script" path="res://Scripts/saver_loader_.gd" id="18_ulqor"]
 [ext_resource type="Script" path="res://Scripts/saver_object.gd" id="19_f2ndb"]
 [ext_resource type="Texture2D" uid="uid://cexn2uy5ho3th" path="res://Assets/Graphics/Assets/GUI-fotor-20250126105351.png" id="20_ej6bp"]
+[ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/teleport_tavern.gd" id="21_qll0e"]
+[ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/teleport_back.gd" id="22_2ee22"]
+[ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/teleport_next.gd" id="23_ytwah"]
+[ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/dungeonportal.gd" id="24_ghi1h"]
+[ext_resource type="Texture2D" uid="uid://cyoncsxti8qel" path="res://Assets/Asset Packs/Dungeons & fight scenes/Pixel Art Animated Portal/sprite-sheet.png" id="25_eio0s"]
 
 [sub_resource type="TileSet" id="TileSet_yyjto"]
 
@@ -5928,6 +5933,68 @@ shadow_offset = Vector2(0, 3)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2sic"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vybaj"]
+size = Vector2(37, 76)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a5dyx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhdeb"]
+atlas = ExtResource("25_eio0s")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lwdt"]
+atlas = ExtResource("25_eio0s")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4g7o"]
+atlas = ExtResource("25_eio0s")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4dnt"]
+atlas = ExtResource("25_eio0s")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v13jp"]
+atlas = ExtResource("25_eio0s")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hevdt"]
+atlas = ExtResource("25_eio0s")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfx6j"]
+atlas = ExtResource("25_eio0s")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovsc2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhdeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lwdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4g7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4dnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v13jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hevdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfx6j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="VillageCenter" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -5950,6 +6017,18 @@ offset_top = -297.0
 offset_right = -599.0
 offset_bottom = -297.0
 scale = Vector2(0.783708, 0.7125)
+
+[node name="Menu" parent="CanvasLayer/Player/Ui" index="0"]
+offset_left = 627.0
+offset_top = 322.5
+offset_right = 747.0
+offset_bottom = 572.5
+
+[node name="Party" parent="CanvasLayer/Player/Ui" index="2"]
+offset_left = 905.0
+offset_top = 241.0
+offset_right = 1251.0
+offset_bottom = 402.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_yyjto")
@@ -6159,6 +6238,90 @@ position = Vector2(13, -8)
 scale = Vector2(-4.83435, 6.79385)
 shape = SubResource("CircleShape2D_o2sic")
 
+[node name="Teleport_tavern" type="Area2D" parent="."]
+position = Vector2(1111, 690)
+script = ExtResource("21_qll0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_tavern"]
+position = Vector2(8.5, 28)
+shape = SubResource("RectangleShape2D_vybaj")
+
+[node name="Teleport_back" type="Area2D" parent="."]
+position = Vector2(103, 689)
+script = ExtResource("22_2ee22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_back"]
+position = Vector2(8.5, 28)
+shape = SubResource("RectangleShape2D_vybaj")
+
+[node name="Teleport_next" type="Area2D" parent="."]
+position = Vector2(1266, 691)
+script = ExtResource("23_ytwah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_next"]
+position = Vector2(8.5, 28)
+shape = SubResource("RectangleShape2D_vybaj")
+
+[node name="Portal" type="Area2D" parent="."]
+script = ExtResource("24_ghi1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+position = Vector2(887, 705)
+scale = Vector2(5.35369, -5.89569)
+shape = SubResource("CircleShape2D_a5dyx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal"]
+position = Vector2(885, 714)
+scale = Vector2(1.34375, 1.34375)
+sprite_frames = SubResource("SpriteFrames_ovsc2")
+autoplay = "default"
+frame_progress = 0.879159
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Portal"]
+modulate = Color(0.853289, 0.861572, 0.871066, 1)
+z_index = 9
+offset_left = 834.0
+offset_top = 626.0
+offset_right = 943.0
+offset_bottom = 676.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("20_ej6bp")
+patch_margin_left = 8
+patch_margin_top = 10
+patch_margin_right = 9
+patch_margin_bottom = 8
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Portal"]
+z_index = 11
+offset_left = 906.0
+offset_top = 655.0
+offset_right = 974.0
+offset_bottom = 684.0
+scale = Vector2(0.410407, 0.441366)
+
+[node name="Enter" type="Button" parent="Portal/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qb0ns")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o3rmf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6obll")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_ld2uh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kvue")
+text = "Enter
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Portal"]
+z_index = 9
+offset_left = 841.0
+offset_top = 639.0
+offset_right = 933.0
+offset_bottom = 661.0
+theme_override_font_sizes/normal_font_size = 8
+text = "You can enter to the dungeons here."
+tab_size = 3
+
 [connection signal="body_entered" from="BunnyArea" to="BunnyArea" method="_on_body_entered"]
 [connection signal="body_exited" from="BunnyArea" to="BunnyArea" method="_on_body_exited"]
 [connection signal="body_entered" from="mage2" to="mage2" method="_on_body_entered"]
@@ -6169,3 +6332,13 @@ shape = SubResource("CircleShape2D_o2sic")
 [connection signal="pressed" from="HBoxContainer/Load" to="Utility/SaverLoader" method="_on_load_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="area_entered" from="Teleport_tavern" to="Teleport_tavern" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_tavern" to="Teleport_tavern" method="_on_area_exited"]
+[connection signal="area_entered" from="Teleport_back" to="Teleport_back" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_back" to="Teleport_back" method="_on_area_exited"]
+[connection signal="area_entered" from="Teleport_next" to="Teleport_next" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_next" to="Teleport_next" method="_on_area_exited"]
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
+[connection signal="body_exited" from="Portal" to="Portal" method="_on_body_exited"]
+
+[editable path="CanvasLayer/Player/Ui"]

@@ -1,3 +1,4 @@
+[signal arg="dialog_started"]
 (You can hear the fierce chopping sounds.)
 (Better not to bother him before he chops you as well.)
 [end_timeline]

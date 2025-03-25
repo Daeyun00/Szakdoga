@@ -1,8 +1,9 @@
+[signal arg="dialog_started"]
 (You feel scared. He's digging something big and chunky. Maybe a corpse?)
 gravedigger_guy: Oh.. hey..!
 gravedigger_guy: Uhm...
 gravedigger_guy: I swear... this is not what it looks like.
-gravedigger_guy: I'm searching for something. 
+gravedigger_guy: I'm searching for something.
 gravedigger_guy: I think it's hidden in here.
 gravedigger_guy: Or not.
 gravedigger_guy: Or...

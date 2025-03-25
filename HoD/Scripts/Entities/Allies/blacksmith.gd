@@ -10,7 +10,6 @@ var first_interaction : bool
 
 
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		is_player_within_area = true
@@ -48,3 +47,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_quit_pressed() -> void:
 	inventoryUI.visible = false
+	
+
+		

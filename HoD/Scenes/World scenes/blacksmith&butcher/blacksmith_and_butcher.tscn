@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://blif4ac8bfd5v"]
+[gd_scene load_steps=61 format=4 uid="uid://blif4ac8bfd5v"]
 
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_5qapa"]
 [ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/b_and_b.gd" id="1_ytaf2"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://3g5jmj5rxk5p" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/1.png" id="11_tamxf"]
 [ext_resource type="Texture2D" uid="uid://d3ua2u1h5m28f" path="res://Assets/Asset Packs/Village/Spring Flowers/Spring Flowers/5.png" id="12_740ue"]
 [ext_resource type="Texture2D" uid="uid://70ncpntc83d0" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniFox.png" id="12_p4qx6"]
+[ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="14_7hap0"]
 [ext_resource type="Texture2D" uid="uid://dh58h7uk8ciht" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Platformer Assets.png" id="15_75h20"]
 [ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/UI/Inventory_UI.tscn" id="18_v2vqc"]
 [ext_resource type="PackedScene" uid="uid://dldwi8jevyv8d" path="res://Scenes/Entities/NPCS/blacksmith_NPC.tscn" id="19_01chg"]
@@ -4980,6 +4981,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rlme"]
 size = Vector2(29.5, 71)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7w0c"]
+size = Vector2(37.5, 61.5)
+
 [node name="BlacksmithAndButcher" type="Node2D"]
 script = ExtResource("1_ytaf2")
 
@@ -5042,62 +5046,6 @@ frame_progress = 0.847577
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5w661")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="Player" parent="CanvasLayer" instance=ExtResource("8_6yt28")]
-position = Vector2(241, 692)
-
-[node name="Camera2D" type="Camera2D" parent="CanvasLayer/Player"]
-position = Vector2(-71, 8)
-zoom = Vector2(4, 4)
-limit_left = 0
-limit_top = 450
-limit_right = 1329
-limit_bottom = 800
-
-[node name="InventoryUI2" type="CanvasLayer" parent="CanvasLayer/Player"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Player/InventoryUI2"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.192157, 0.376471, 0.321569, 1)
-
-[node name="Label" type="Label" parent="CanvasLayer/Player/InventoryUI2/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -37.5
-offset_top = 50.0
-offset_right = 37.5
-offset_bottom = 76.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 60
-text = "Inventory"
-
-[node name="Inventory_UI" parent="CanvasLayer/Player/InventoryUI2/ColorRect" instance=ExtResource("18_v2vqc")]
-
-[node name="Balance" type="Label" parent="CanvasLayer/Player/InventoryUI2/ColorRect"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 166.0
-offset_top = 75.0
-offset_right = 224.0
-offset_bottom = 105.0
-text = "0"
-
-[node name="Quit" type="Button" parent="CanvasLayer/Player/InventoryUI2"]
-offset_left = 66.0
-offset_top = 66.0
-offset_right = 138.0
-offset_bottom = 112.0
-text = "quit"
-
 [node name="BlacksmithNpc" parent="." instance=ExtResource("19_01chg")]
 position = Vector2(231, 720)
 script = ExtResource("19_ecgqp")
@@ -5153,13 +5101,86 @@ position = Vector2(691, 738)
 scale = Vector2(1.40471, 1.7116)
 texture = ExtResource("5_63qak")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Teleport_back" type="Area2D" parent="."]
 position = Vector2(24, 742)
 script = ExtResource("23_4eihi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_back"]
 position = Vector2(55.25, -25.5)
 shape = SubResource("RectangleShape2D_1rlme")
 
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
-[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Player" parent="CanvasLayer" instance=ExtResource("8_6yt28")]
+position = Vector2(804, 699)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/Player"]
+position = Vector2(-71, 8)
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 450
+limit_right = 1330
+limit_bottom = 800
+
+[node name="Ui2" parent="CanvasLayer/Player" instance=ExtResource("14_7hap0")]
+offset_left = -599.0
+offset_top = -297.0
+offset_right = -599.0
+offset_bottom = -297.0
+scale = Vector2(0.783708, 0.7125)
+
+[node name="InventoryUI2" type="CanvasLayer" parent="CanvasLayer"]
+process_mode = 3
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/InventoryUI2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.376471, 0.321569, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/InventoryUI2/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 50.0
+offset_right = 37.5
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Inventory"
+
+[node name="Inventory_UI" parent="CanvasLayer/InventoryUI2/ColorRect" instance=ExtResource("18_v2vqc")]
+
+[node name="Balance" type="Label" parent="CanvasLayer/InventoryUI2/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 166.0
+offset_top = 75.0
+offset_right = 224.0
+offset_bottom = 105.0
+text = "0"
+
+[node name="Quit" type="Button" parent="CanvasLayer/InventoryUI2"]
+offset_left = 66.0
+offset_top = 66.0
+offset_right = 138.0
+offset_bottom = 112.0
+text = "quit"
+
+[node name="Teleport_next" type="Area2D" parent="."]
+position = Vector2(1351, 742)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_next"]
+position = Vector2(-50.25, -21.25)
+shape = SubResource("RectangleShape2D_b7w0c")
+
+[connection signal="area_entered" from="Teleport_back" to="Teleport_back" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_back" to="Teleport_back" method="_on_area_exited"]
+[connection signal="area_entered" from="Teleport_next" to="Teleport_next" method="_on_area_entered"]
+[connection signal="area_exited" from="Teleport_next" to="Teleport_next" method="_on_area_exited"]

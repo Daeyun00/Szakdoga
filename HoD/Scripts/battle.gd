@@ -85,7 +85,9 @@ var _thunder_token3 = 0
 
 #Thief Combo switches
 var _envenom_select = false
-var _envenom_used_combo = 0
+var _envenom_used_combo1 = 0
+var _envenom_used_combo2 = 0
+var _envenom_used_combo3 = 0
 var _envenom_token1 = 5
 var _envenom_token2 = 5
 var _envenom_token3 = 5
@@ -143,6 +145,14 @@ func _physics_process(delta: float) -> void:
 	$Top/Players/Hero_label/Hero_rage_label.text = Rage
 	$Top/Players/Mage_label/Mage_mana_label.text = Mana
 	$Top/Players/Thief_label/Thief_combo_label.text = Combo
+	
+	$Top/Players/Hero_label/Hero_ATK_label.text = str(Hero.ATK) + " ATK"
+	$Top/Players/Mage_label/Mage_ATK_label.text = str(Mage.ATK) + " ATK"
+	$Top/Players/Thief_label/Thief_ATK_label.text = str(Thief.ATK) + " ATK"
+	
+	$Top/Players/Hero_label/Hero_DEF_label.text = str(Hero.DEF) + " DEF"
+	$Top/Players/Mage_label/Mage_DEF_label.text = str(Mage.DEF) + " DEF"
+	$Top/Players/Thief_label/Thief_DEF_label.text = str(Thief.DEF) + " DEF"
 	match turn:
 		0:
 			$ActionTurn/Turns.text = "Hero's Turn"
@@ -152,6 +162,7 @@ func _physics_process(delta: float) -> void:
 			$ActionTurn/Turns.text = "Thief's Turn"
 		_:
 			$ActionTurn/Turns.text = "Enemy's Turn"
+	
 	#Option focus fix
 	if(!is_fight && !is_skill && !is_item && !is_guard && !is_flee):
 		if (!$Options/AttackMenu/Fight_button.has_focus() and !$Options/AttackMenu/Flee_button.has_focus() and !$Options/AttackMenu/Guard_button.has_focus() and !$Options/AttackMenu/Item_button.has_focus() and !$Options/AttackMenu/Skill_button.has_focus()):
@@ -324,6 +335,28 @@ func _physics_process(delta: float) -> void:
 				hostile3.DEF += 10
 			else:
 				_thunder_token3 += 1
+		#thief tokens
+		if(_envenom_token1 > 0):
+			if(_envenom_token1 > 2):
+				_envenom_token1 = 0
+			else:
+				_envenom_token1 += 1
+				hostile1.HP -= Thief.ATK*0.5*_envenom_used_combo1
+				print("t hit s1 (DoT)")
+		if(_envenom_token2 > 0):
+			if(_envenom_token2 > 2):
+				_envenom_token2 = 0
+			else:
+				_envenom_token2 += 1
+				hostile2.HP -= Thief.ATK*0.5*_envenom_used_combo2
+				print("t hit s2 (DoT)")
+		if(_envenom_token3 > 0):
+			if(_envenom_token3 > 2):
+				_envenom_token3 = 0
+			else:
+				_envenom_token3 += 1
+				hostile3.HP -= Thief.ATK*0.5*_envenom_used_combo3
+				print("t hit s3 (DoT)")
 		
 		$Top/Players/Hero_label/Hero_status.text = "Ready"
 		$Top/Players/Mage_label/Mage_status.text = "Ready"
@@ -379,7 +412,6 @@ func _fight_window(button: BaseButton) -> void:
 					$Top/Players/Thief_label/Thief_status.text = "Attack"
 				_:
 					print(":3")
-
 
 #skills
 func _skill_window(button: BaseButton) -> void:
@@ -493,6 +525,16 @@ func _on_spell_menu_button_pressed(button: BaseButton) -> void:
 					$Options.visible = true
 					$Options/AttackMenu/Fight_button.grab_focus()
 					is_skill = !is_skill
+			"Resistance":
+				if(Mage.Mana >= 20):
+					Hero.grab_focus()
+					_resistance_select = true
+				else:
+					$Top/Players/Mage_label/Mage_status.text = "Not enough Mana"
+					$Spells.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
 			"Thunder":
 				#Attacks with 10* multiplier and Breaks enemy defense
 				if(Mage.Mana >= 40):
@@ -509,10 +551,53 @@ func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 		match button.name:
 			"Envenom":
 				#Attacks with a Combo*2 and poisons them DoT for Combo turns
-				
 				if(Thief.Combo > 1):
 					hostile1.grab_focus()
 					_envenom_select = true
+				else:
+					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Combos.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Eviscerate":
+				#valami :3
+				if(Thief.Combo > 1):
+					hostile1.grab_focus()
+					_eviscerate_select = true
+				else:
+					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Combos.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Rupture":
+				#valami :3
+				if(Thief.Combo > 1):
+					hostile1.grab_focus()
+					_rupture_select = true
+				else:
+					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Combos.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Night blade":
+				#valami :3
+				if(Thief.Combo > 1):
+					hostile1.grab_focus()
+					_night_blade_select = true
+				else:
+					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Combos.visible = false
+					$Options.visible = true
+					$Options/AttackMenu/Fight_button.grab_focus()
+					is_skill = !is_skill
+			"Shadowstrike":
+				#valami :3
+				if(Thief.Combo > 1):
+					hostile1.grab_focus()
+					_shadowstrike_select = true
 				else:
 					$Top/Players/Thief_label/Thief_status.text = "No Combo"
 					$Combos.visible = false
@@ -536,6 +621,8 @@ func _on_slime_pressed() -> void:
 					print(turn)
 				2:
 					hostile1.HP -= Thief.ATK - hostile1.DEF
+					if (Thief.Combo < 10):
+						Thief.Combo += 1
 					turn += 1
 					print(turn)
 				_:
@@ -633,19 +720,20 @@ func _on_slime_pressed() -> void:
 			is_skill = !is_skill
 			_thunder_select = false
 			
-			#thief combos
-			if(_envenom_select):
-				hostile1.HP -= Thief.ATK*(Thief.Combo*2) - hostile1.DEF
-				if(_envenom_token1 == 0):
-					_envenom_token1 = 1
-				Mage.Mana -= 10
-				turn += 1
-				print(turn)
-				$Spells.visible = false
-				$Options.visible = true
-				$Options/AttackMenu/Fight_button.grab_focus()
-				is_skill = !is_skill
-				_fireball_select = false
+		#thief combos
+		if(_envenom_select):
+			hostile1.HP -= Thief.ATK*(Thief.Combo*2) - hostile1.DEF
+			if(_envenom_token1 == 0):
+				_envenom_token1 = 1
+				_envenom_used_combo1 = Thief.Combo
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_envenom_select = false
 
 func _on_slime_2_pressed() -> void:
 	if(is_fight):
@@ -755,6 +843,20 @@ func _on_slime_2_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_thunder_select = false
+		#thief combos
+		if(_envenom_select):
+			hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
+			if(_envenom_token2 == 0):
+				_envenom_token2 = 1
+				_envenom_used_combo2 = Thief.Combo
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_envenom_select = false
 
 func _on_slime_3_pressed() -> void:
 	if(is_fight):
@@ -864,6 +966,20 @@ func _on_slime_3_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_thunder_select = false
+		#thief combos
+		if(_envenom_select):
+			hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
+			if(_envenom_token2 == 0):
+				_envenom_token2 = 1
+				_envenom_used_combo2 = Thief.Combo
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_envenom_select = false
 
 func _on_hero_pressed() -> void:
 	if(_heal_I_select):
