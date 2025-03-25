@@ -83,7 +83,7 @@ func apply_item_effect(item):
 			if SPEED >= 300:
 				SPEED = 300
 				print(SPEED)
-		"Health":
+		"Healing":
 			if HP < 100:
 				HP += 10
 				print("HP increase to ", HP)

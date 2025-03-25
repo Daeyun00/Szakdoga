@@ -61,6 +61,7 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dk0lr")
 
 [node name="DetailsPanel" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_top = -135.0
 offset_right = 240.0

@@ -20,9 +20,8 @@ extends Control
 @onready var tim = $Timer
 @onready var usage_panel = $UsagePanel
 @onready var details_panel = $DetailsPanel
-@onready var hero_inventory = $UsagePanel/HeroButton/HeroInventoryUI
-@onready var mage_inventory = $UsagePanel/MageButton/MageInventoryUI
-@onready var thief_inventory = $UsagePanel/ThiefButton/ThiefInventoryUI
+@onready var inventory = $InventoryUI
+@onready var quitButton = $InventoryUI/Quit
 
 @onready var item_option = $itemOption
 
@@ -355,9 +354,8 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 		"Item_button":
 			print("Choose a character")
 			is_item = !is_item
-			item_option.visible = !item_option.visible
 			$Options.visible = false
-			$itemOption/AttackMenu/HeroInventory.grab_focus()
+			inventory.visible = true
 		"Guard_button":
 			print("Guard")
 			is_guard = !is_guard
@@ -983,31 +981,12 @@ func _on_thief_pressed() -> void:
 func _on_item_button_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-			item_option.visible = !item_option.visible
 			attackMenu.visible = !attackMenu.visible
+			inventory.visible = true
 			
 	
-func _on_kilep_hero_pressed() -> void:
-	hero_inventory.visible = false
-	attackMenu.visible = true
-	item_option.visible = false
+
 	
-func _on_kilep_mage_pressed() -> void:
-	mage_inventory.visible = false
-	attackMenu.visible = true
-	item_option.visible = false
-	
-func _on_kilep_thief_pressed() -> void:
-	thief_inventory.visible = false
-	attackMenu.visible = true
-	item_option.visible = false
-	
-func _on_hero_inventory_pressed() -> void:
-	hero_inventory.visible = true
-func _on_mage_inventory_pressed() -> void:
-	mage_inventory.visible = true
-func _on_thief_inventory_pressed() -> void:
-	thief_inventory.visible = true
 
 
 func _on_attack_menu_button_pressed(button: BaseButton) -> void:
@@ -1015,12 +994,15 @@ func _on_attack_menu_button_pressed(button: BaseButton) -> void:
 		"HeroInventory":
 			print("Hero")
 			hero = !hero
-			hero_inventory.visible = true
 		"MageInventory":
 			print("Mage")
 			mage = !mage
-			mage_inventory.visible = true
 		"ThiefInventory":
 			print("Thief")
 			thief = !thief
-			thief_inventory.visible = true
+
+
+func _on_quit_pressed() -> void:
+	if inventory.visible == true:
+		inventory.visible = false
+		$Options.visible = true
