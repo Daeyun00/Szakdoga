@@ -4,9 +4,18 @@
 [ext_resource type="Script" path="res://Scripts/party_slot.gd" id="2_cm6sc"]
 
 [node name="PartySlot" type="NinePatchRect"]
-custom_minimum_size = Vector2(163, 53)
-offset_right = 163.0
-offset_bottom = 53.0
+custom_minimum_size = Vector2(99, 13)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -10.0
+offset_right = 49.5
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 texture = ExtResource("1_rooo4")
 region_rect = Rect2(78.8927, 95.9213, 33.2739, 32.3747)
@@ -21,10 +30,10 @@ script = ExtResource("2_cm6sc")
 [node name="Name" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 10.0
-offset_top = 15.0
-offset_right = 76.0
-offset_bottom = 45.0
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 28.0
 theme_override_font_sizes/font_size = 19
 
 [node name="Icon" type="TextureRect" parent="."]
@@ -36,9 +45,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -20.0
-offset_bottom = 20.0
+offset_left = -53.0
+offset_top = -10.0
+offset_right = -8.0
+offset_bottom = 10.0
 grow_horizontal = 0
 grow_vertical = 2
 stretch_mode = 2

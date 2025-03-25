@@ -18,4 +18,5 @@ mage: Would you mind if I join you?
 	- Alright then, join me.
 mage: You won't regret your choice.
 (Mage has joined your team)
+[signal arg="mage_joined"]
 [end_timeline]
