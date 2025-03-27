@@ -52,6 +52,7 @@ func add_item(item, to_hotbar = false):
 				return true
 			elif inventory[i] == null:
 				inventory[i] = item
+				
 				inventory_updated.emit()
 				print("Item added", inventory)
 				return true

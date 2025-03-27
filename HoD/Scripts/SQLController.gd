@@ -156,7 +156,7 @@ func _on_create_table_button_down() -> void:
 		"bought":{"data_type":"bool"}
 	}
 	var inventoryTable = {
-		"id":{"data_type": "int", "auto_increment": true},
+		"id":{"data_type": "int", "primary_key": true, "not_null": true, "auto_increment": true},
 		"item_id":{"data_type": "int"}
 	}
 	var mapBattlesTable = {

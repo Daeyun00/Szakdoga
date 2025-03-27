@@ -18,7 +18,7 @@ class_name Slot
 @export var a : int = 100
 
 func _ready():
-	pass
+	SqlController.database.delete_rows("inventory", "item_id")
 
 func get_preview():
 	var preview_texture = TextureRect.new()
@@ -70,3 +70,28 @@ func buying(data):
 	print("Bought" + data.item.name)
 	Global.currency -= data.item.cost
 	Global.add_item(data.item, false)
+	if data.item.name == "Health_potion":
+		var elem = {
+			"item_id": 1
+		}
+		SqlController.database.insert_row("inventory", elem)
+	if data.item.name == "Mana potion":
+		var elem = {
+			"item_id": 2
+		}
+		SqlController.database.insert_row("inventory", elem)
+	if data.item.name == "Riptide_dagger":
+		var elem = {
+			"item_id": 3
+		}
+		SqlController.database.insert_row("inventory", elem)
+	if data.item.name == "Runic_dagger":
+		var elem = {
+			"item_id": 4
+		}
+		SqlController.database.insert_row("inventory", elem)
+	if data.item.name == "Stamina potion":
+		var elem = {
+			"item_id": 5
+		}
+		SqlController.database.insert_row("inventory", elem)
