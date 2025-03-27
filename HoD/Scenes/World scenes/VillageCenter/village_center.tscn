@@ -6018,18 +6018,6 @@ offset_right = -599.0
 offset_bottom = -297.0
 scale = Vector2(0.783708, 0.7125)
 
-[node name="Menu" parent="CanvasLayer/Player/Ui" index="0"]
-offset_left = 627.0
-offset_top = 322.5
-offset_right = 747.0
-offset_bottom = 572.5
-
-[node name="Party" parent="CanvasLayer/Player/Ui" index="2"]
-offset_left = 905.0
-offset_top = 241.0
-offset_right = 1251.0
-offset_bottom = 402.0
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_yyjto")
 format = 2
@@ -6340,5 +6328,3 @@ tab_size = 3
 [connection signal="area_exited" from="Teleport_next" to="Teleport_next" method="_on_area_exited"]
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
 [connection signal="body_exited" from="Portal" to="Portal" method="_on_body_exited"]
-
-[editable path="CanvasLayer/Player/Ui"]

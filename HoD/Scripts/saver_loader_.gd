@@ -18,8 +18,12 @@ func _on_save_pressed() -> void:
 	saved_game.player_position = player.global_position
 	saved_game.player_health = player.HP
 	saved_game.player_speed = player.SPEED
+	saved_game.animation_played = true
 	
 	ResourceSaver.save(saved_game, "user://savegame.tres")
+	Dialogic.Save.save("Default")
+
+
 
 
 
@@ -31,3 +35,4 @@ func _on_load_pressed() -> void:
 	player.SPEED = saved_game.player_speed
 	print(player.HP)
 	print(player.SPEED)
+	Dialogic.Save.load("Default")

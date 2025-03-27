@@ -69,7 +69,9 @@ directories/dtl_directory={
 glossary/default_case_sensitive=true
 layout/style_list=["res://timelines/New_File.tres"]
 layout/default_style="res://timelines/New_File.tres"
-variables={}
+variables={
+"Loc": "Main"
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -83,13 +85,17 @@ animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
 animations/cross_fade_default_length=0.5
-choices/autofocus_first=true
+choices/autofocus_first=false
 choices/delay=0.2
-choices/reveal_delay=0
+choices/reveal_delay=0.03
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+save/autosave=false
+history/simple_history_enabled=true
+text/autocolor_names=true
+history/save_on_save=true
 
 [dialogue_manager]
 
