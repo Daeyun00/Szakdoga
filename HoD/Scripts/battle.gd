@@ -88,17 +88,27 @@ var _envenom_select = false
 var _envenom_used_combo1 = 0
 var _envenom_used_combo2 = 0
 var _envenom_used_combo3 = 0
-var _envenom_token1 = 5
-var _envenom_token2 = 5
-var _envenom_token3 = 5
+var _envenom_token1 = 0
+var _envenom_token2 = 0
+var _envenom_token3 = 0
 var _eviscerate_select = false
 var _eviscerate_used_combo = 0
 var _rupture_select = false
+var _rupture_token1 = 0
+var _rupture_token2 = 0
+var _rupture_token3 = 0
+var _rupture_used_combo1 = 0
+var _rupture_used_combo2 = 0
+var _rupture_used_combo3 = 0
 var _rupture_used_combo = 0
 var _night_blade_select = false
-var _night_blade_used_combo = 0
+var _night_blade_token = 0
 var _shadowstrike_select = false
 var _shadowstrike_used_combo = 0
+var _shadowstrike_token1 = 0
+var _shadowstrike_token2 = 0
+var _shadowstrike_token3 = 0
+
 
 var turn = 0
 
@@ -107,7 +117,7 @@ var turn = 0
 func _ready() -> void:
 	_options_menu.button_focus(0)
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	#enemy focus
 	if(is_fight):
 		if($Allies/Hero.has_focus()):
@@ -173,6 +183,9 @@ func _physics_process(delta: float) -> void:
 		$Options.visible = false
 		for i in 3:
 			var rnd = randi_range(0, 2)
+			var s_strikernd1 = randi_range(0, 1)
+			var s_strikernd2 = randi_range(0, 1)
+			var s_strikernd3 = randi_range(0, 1)
 			if(slime1_taunt or slime2_taunt or slime3_taunt):
 				if(slime1_taunt and turn == 3):
 					Hero.HP -= hostile1.ATK - Hero.DEF
@@ -191,51 +204,109 @@ func _physics_process(delta: float) -> void:
 					print("s3 hit h (taunt)")
 					if(slime3_taunt_turn == 2):
 						slime3_taunt = false
-			match rnd:
-				0:
-					match turn:
-						3:
-							Hero.HP -= hostile1.ATK - Hero.DEF
-							print("s1 hit h")
-							print(turn)
-						4:
-							Hero.HP -= hostile2.ATK - Hero.DEF
-							print("s2 hit h")
-							print(turn)
-						5:
-							Hero.HP -= hostile3.ATK - Hero.DEF
-							print("s3 hit h")
-							print(turn)
-				1:
-					match turn:
-						3:
-							Mage.HP -= hostile1.ATK - Mage.DEF
-							print("s1 hit m")
-							print(turn)
-						4:
-							Mage.HP -= hostile2.ATK - Mage.DEF
-							print("s2 hit m")
-							print(turn)
-						5:
-							Mage.HP -= hostile3.ATK - Mage.DEF
-							print("s3 hit m")
-							print(turn)
-				2:
-					match turn:
-						3:
-							Thief.HP -= hostile1.ATK - Thief.DEF
-							print("s1 hit t")
-							print(turn)
-						4:
-							Thief.HP -= hostile2.ATK - Thief.DEF
-							print("s2 hit t")
-							print(turn)
-						5:
-							Thief.HP -= hostile3.ATK - Thief.DEF
-							print("s3 hit t")
-							print(turn)
-				_:
-					print("D:")
+			else:
+				match rnd:
+					0:
+						match turn:
+							3:
+								if(_shadowstrike_token1 > 1):
+									if(s_strikernd1 > 0):
+										Hero.HP -= hostile1.ATK - Hero.DEF
+										print("s1 hit h")
+										print(turn)
+								else:
+									Hero.HP -= hostile1.ATK - Hero.DEF
+									print("s1 hit h")
+									print(turn)
+							4:
+								if(_shadowstrike_token2 > 1):
+									if(s_strikernd2 > 0):
+										Hero.HP -= hostile2.ATK - Hero.DEF
+										print("s2 hit h")
+										print(turn)
+								else:
+									Hero.HP -= hostile2.ATK - Hero.DEF
+									print("s2 hit h")
+									print(turn)
+							5:
+								if(_shadowstrike_token3 > 1):
+									if(s_strikernd3 > 0):
+										Hero.HP -= hostile3.ATK - Hero.DEF
+										print("s3 hit h")
+										print(turn)
+								else:
+									Hero.HP -= hostile3.ATK - Hero.DEF
+									print("s3 hit h")
+									print(turn)
+					1:
+						match turn:
+							3:
+								if(_shadowstrike_token1 > 1):
+									if(s_strikernd1 > 0):
+										Mage.HP -= hostile1.ATK - Mage.DEF
+										print("s1 hit m")
+										print(turn)
+								else:
+									Mage.HP -= hostile1.ATK - Mage.DEF
+									print("s1 hit m")
+									print(turn)
+							4:
+								if(_shadowstrike_token2 > 1):
+									if(s_strikernd2 > 0):
+										Mage.HP -= hostile2.ATK - Mage.DEF
+										print("s2 hit m")
+										print(turn)
+								else:
+									Mage.HP -= hostile2.ATK - Mage.DEF
+									print("s2 hit m")
+									print(turn)
+							5:
+								if(_shadowstrike_token3 > 1):
+									if(s_strikernd3 > 0):
+										Mage.HP -= hostile3.ATK - Mage.DEF
+										print("s3 hit m")
+										print(turn)
+								else:
+									Mage.HP -= hostile3.ATK - Mage.DEF
+									print("s3 hit m")
+									print(turn)
+					2:
+						if(!_night_blade_token):
+							match turn:
+								3:
+									if(_shadowstrike_token1 > 1):
+										if(s_strikernd1 > 0):
+											Thief.HP -= hostile1.ATK - Thief.DEF
+											print("s1 hit t")
+											print(turn)
+									else:
+										Thief.HP -= hostile1.ATK - Thief.DEF
+										print("s1 hit t")
+										print(turn)
+								4:
+									if(_shadowstrike_token2 > 1):
+										if(s_strikernd2 > 0):
+											Thief.HP -= hostile2.ATK - Thief.DEF
+											print("s2 hit t")
+											print(turn)
+									else:
+										Thief.HP -= hostile2.ATK - Thief.DEF
+										print("s2 hit t")
+										print(turn)
+								5:
+									if(_shadowstrike_token3 > 1):
+										if(s_strikernd3 > 0):
+											Thief.HP -= hostile3.ATK - Thief.DEF
+											print("s3 hit t")
+											print(turn)
+									else:
+										Thief.HP -= hostile3.ATK - Thief.DEF
+										print("s3 hit t")
+										print(turn)
+						else:
+							print("evasion")
+					_:
+						print("D:")
 			turn += 1
 		turn = 0
 		print(turn)
@@ -342,21 +413,63 @@ func _physics_process(delta: float) -> void:
 			else:
 				_envenom_token1 += 1
 				hostile1.HP -= Thief.ATK*0.5*_envenom_used_combo1
-				print("t hit s1 (DoT)")
+				print("t hit s1 (PDoT)")
 		if(_envenom_token2 > 0):
 			if(_envenom_token2 > 2):
 				_envenom_token2 = 0
 			else:
 				_envenom_token2 += 1
 				hostile2.HP -= Thief.ATK*0.5*_envenom_used_combo2
-				print("t hit s2 (DoT)")
+				print("t hit s2 (PDoT)")
 		if(_envenom_token3 > 0):
 			if(_envenom_token3 > 2):
 				_envenom_token3 = 0
 			else:
 				_envenom_token3 += 1
 				hostile3.HP -= Thief.ATK*0.5*_envenom_used_combo3
-				print("t hit s3 (DoT)")
+				print("t hit s3 (PDoT)")
+		
+		if(_rupture_token1 > 0):
+			if(_rupture_token1 > 2):
+				_rupture_token1 = 0
+			else:
+				_rupture_token1 += 1
+				hostile1.HP -= Thief.ATK*0.5*_rupture_used_combo1
+				print("t hit s1 (BDoT)")
+		if(_rupture_token2 > 0):
+			if(_rupture_token2 > 2):
+				_rupture_token2 = 0
+			else:
+				_rupture_token2 += 1
+				hostile2.HP -= Thief.ATK*0.5*_rupture_used_combo2
+				print("t hit s2 (BDoT)")
+		if(_rupture_token3 > 0):
+			if(_rupture_token3 > 2):
+				_rupture_token3 = 0
+			else:
+				_rupture_token3 += 1
+				hostile3.HP -= Thief.ATK*0.5*_rupture_used_combo3
+				print("t hit s3 (BDoT)")
+		if(_night_blade_token>0):
+			if(_night_blade_token == 2):
+				_night_blade_token = 0
+			else:
+				_night_blade_token += 1
+		if(_shadowstrike_token1>0):
+			if(_shadowstrike_token1 == 2):
+				_shadowstrike_token1 = 0
+			else:
+				_shadowstrike_token1 += 1
+		if(_shadowstrike_token2>0):
+			if(_shadowstrike_token2 == 2):
+				_shadowstrike_token2 = 0
+			else:
+				_shadowstrike_token2 += 1
+		if(_shadowstrike_token3>0):
+			if(_shadowstrike_token3 == 2):
+				_shadowstrike_token3 = 0
+			else:
+				_shadowstrike_token3 += 1
 		
 		$Top/Players/Hero_label/Hero_status.text = "Ready"
 		$Top/Players/Mage_label/Mage_status.text = "Ready"
@@ -551,7 +664,7 @@ func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 		match button.name:
 			"Envenom":
 				#Attacks with a Combo*2 and poisons them DoT for Combo turns
-				if(Thief.Combo > 1):
+				if(Thief.Combo > 0):
 					hostile1.grab_focus()
 					_envenom_select = true
 				else:
@@ -561,8 +674,8 @@ func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 					$Options/AttackMenu/Fight_button.grab_focus()
 					is_skill = !is_skill
 			"Eviscerate":
-				#valami :3
-				if(Thief.Combo > 1):
+				#Deals high damage
+				if(Thief.Combo > 0):
 					hostile1.grab_focus()
 					_eviscerate_select = true
 				else:
@@ -572,8 +685,8 @@ func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 					$Options/AttackMenu/Fight_button.grab_focus()
 					is_skill = !is_skill
 			"Rupture":
-				#valami :3
-				if(Thief.Combo > 1):
+				#deals significant ammount of damage and stacks a bleed on enemy
+				if(Thief.Combo > 0):
 					hostile1.grab_focus()
 					_rupture_select = true
 				else:
@@ -583,19 +696,19 @@ func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 					$Options/AttackMenu/Fight_button.grab_focus()
 					is_skill = !is_skill
 			"Night blade":
-				#valami :3
-				if(Thief.Combo > 1):
+				#deals a large ammount of damage and makes all attacks towards the thief to miss.
+				if(Thief.Combo > 4):
 					hostile1.grab_focus()
 					_night_blade_select = true
 				else:
-					$Top/Players/Thief_label/Thief_status.text = "No Combo"
+					$Top/Players/Thief_label/Thief_status.text = "Not enough Combo"
 					$Combos.visible = false
 					$Options.visible = true
 					$Options/AttackMenu/Fight_button.grab_focus()
 					is_skill = !is_skill
 			"Shadowstrike":
-				#valami :3
-				if(Thief.Combo > 1):
+				#deals an average ammount of damage and blinds enemies
+				if(Thief.Combo > 0):
 					hostile1.grab_focus()
 					_shadowstrike_select = true
 				else:
@@ -722,7 +835,7 @@ func _on_slime_pressed() -> void:
 			
 		#thief combos
 		if(_envenom_select):
-			hostile1.HP -= Thief.ATK*(Thief.Combo*2) - hostile1.DEF
+			hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
 			if(_envenom_token1 == 0):
 				_envenom_token1 = 1
 				_envenom_used_combo1 = Thief.Combo
@@ -734,6 +847,56 @@ func _on_slime_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_envenom_select = false
+		
+		if (_eviscerate_select):
+			hostile1.HP -= Thief.ATK*(Thief.Combo) - hostile1.DEF
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_eviscerate_select = false
+		
+		if(_rupture_select):
+			hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
+			if(_rupture_token1 == 0):
+				_rupture_token1 = 1
+				_rupture_used_combo1 = Thief.Combo
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_rupture_select = false
+		
+		if(_night_blade_select):
+			hostile1.HP -= Thief.ATK * Thief.Combo - hostile1.DEF
+			_night_blade_token = 1
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_night_blade_select = false
+		
+		if(_shadowstrike_select):
+			hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
+			if(_shadowstrike_token1 == 0):
+				_shadowstrike_token1 = 1
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_shadowstrike_select = false
 
 func _on_slime_2_pressed() -> void:
 	if(is_fight):
@@ -857,6 +1020,56 @@ func _on_slime_2_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_envenom_select = false
+			
+		if (_eviscerate_select):
+			hostile2.HP -= Thief.ATK*(Thief.Combo) - hostile2.DEF
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_eviscerate_select = false
+		
+		if(_rupture_select):
+			hostile2.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile2.DEF
+			if(_rupture_token2 == 0):
+				_rupture_token2 = 1
+				_rupture_used_combo2 = Thief.Combo
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_rupture_select = false
+		
+		if(_night_blade_select):
+			hostile2.HP -= Thief.ATK * Thief.Combo - hostile2.DEF
+			_night_blade_token = 1
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_night_blade_select = false
+		
+		if(_shadowstrike_select):
+			hostile2.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile2.DEF
+			if(_shadowstrike_token2 == 0):
+				_shadowstrike_token2 = 1
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_shadowstrike_select = false
 
 func _on_slime_3_pressed() -> void:
 	if(is_fight):
@@ -980,6 +1193,55 @@ func _on_slime_3_pressed() -> void:
 			$Options/AttackMenu/Fight_button.grab_focus()
 			is_skill = !is_skill
 			_envenom_select = false
+		if (_eviscerate_select):
+			hostile3.HP -= Thief.ATK*(Thief.Combo) - hostile3.DEF
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_eviscerate_select = false
+		
+		if(_rupture_select):
+			hostile3.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile3.DEF
+			if(_rupture_token3 == 0):
+				_rupture_token3 = 1
+				_rupture_used_combo1 = Thief.Combo
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_rupture_select = false
+		
+		if(_night_blade_select):
+			hostile3.HP -= Thief.ATK * Thief.Combo - hostile3.DEF
+			_night_blade_token = 1
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_night_blade_select = false
+		
+		if(_shadowstrike_select):
+			hostile3.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile3.DEF
+			if(_shadowstrike_token3 == 0):
+				_shadowstrike_token3 = 1
+			Thief.Combo = 0
+			turn += 1
+			print(turn)
+			$Combos.visible = false
+			$Options.visible = true
+			$Options/AttackMenu/Fight_button.grab_focus()
+			is_skill = !is_skill
+			_shadowstrike_select = false
 
 func _on_hero_pressed() -> void:
 	if(_heal_I_select):
