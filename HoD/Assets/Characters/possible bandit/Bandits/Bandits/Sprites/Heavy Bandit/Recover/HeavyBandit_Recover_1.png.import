@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hs1dkf137tj1"
-path="res://.godot/imported/HeavyBandit_Recover_1.png-571a1c1cfe8a142a8cc9af929eeff6f7.ctex"
+path="res://.godot/imported/HeavyBandit_Recover_1.png-ced07dbd622b870442520fb23664af99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Bandits/Bandits/Sprites/Heavy Bandit/Recover/HeavyBandit_Recover_1.png"
-dest_files=["res://.godot/imported/HeavyBandit_Recover_1.png-571a1c1cfe8a142a8cc9af929eeff6f7.ctex"]
+source_file="res://Assets/Characters/possible bandit/Bandits/Bandits/Sprites/Heavy Bandit/Recover/HeavyBandit_Recover_1.png"
+dest_files=["res://.godot/imported/HeavyBandit_Recover_1.png-ced07dbd622b870442520fb23664af99.ctex"]
 
 [params]
 

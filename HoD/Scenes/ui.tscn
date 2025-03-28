@@ -1,14 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://dpcx4eduhlg7f"]
+[gd_scene load_steps=14 format=3 uid="uid://dpcx4eduhlg7f"]
 
 [ext_resource type="StyleBox" uid="uid://cxnbfwjhb7n2c" path="res://Themes & Styleboxes/hover_button.tres" id="1_idv6e"]
 [ext_resource type="StyleBox" uid="uid://dairl4xxnk5mw" path="res://Themes & Styleboxes/new_style_box_flat.tres" id="2_okg1e"]
 [ext_resource type="Texture2D" uid="uid://d8rgsdsfj26l" path="res://Assets/Graphics/Assets/GUI.png" id="3_sgr3r"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="3_uc2rs"]
-[ext_resource type="PackedScene" uid="uid://di4qu83s7fapw" path="res://Scenes/party_slot.tscn" id="4_axt8u"]
-[ext_resource type="Resource" uid="uid://gkx8223wwvx5" path="res://Scenes/UI/fino.tres" id="6_js784"]
-[ext_resource type="Script" path="res://Scripts/Character.gd" id="8_dis1i"]
-[ext_resource type="Texture2D" uid="uid://b1drbuyor1jvw" path="res://Assets/Asset Packs/NPCS and characters/Cropped/mage.png" id="10_n61ga"]
-[ext_resource type="Texture2D" uid="uid://ba0812e11nees" path="res://Assets/Asset Packs/NPCS and characters/Cropped/Light_charge-fotor-20250218205126.png" id="11_6eg1b"]
 [ext_resource type="Script" path="res://Scripts/saver_loader.gd" id="11_c3ig5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmkol"]
@@ -19,63 +14,27 @@ Button/styles/focus = SubResource("StyleBoxEmpty_vmkol")
 Button/styles/hover = ExtResource("1_idv6e")
 Button/styles/normal = ExtResource("2_okg1e")
 
-[sub_resource type="Resource" id="Resource_lijr2"]
-script = ExtResource("8_dis1i")
-title = "Thief"
-description = "A skilled thief with a very sharp sword. He will steal your money and your heart as well."
-
-[sub_resource type="Resource" id="Resource_7n5bo"]
-script = ExtResource("8_dis1i")
-title = "Mage"
-icon = ExtResource("10_n61ga")
-texture = ExtResource("11_6eg1b")
-description = "A mysterious lady with sparkling magical power. "
-
 [sub_resource type="Animation" id="Animation_n3v5g"]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Party:position")
+tracks/0/path = NodePath("Menu:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(905, 241)]
+"values": [Vector2(627, 322.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Party:visible")
+tracks/1/path = NodePath("Menu:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Menu:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(627, 322.5)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Menu:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -113,30 +72,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_fhnf8"]
 resource_name = "hide_party"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Party:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector2(453, 247.5), Vector2(905, 241)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Party:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
 
 [sub_resource type="Animation" id="Animation_nvfkh"]
 resource_name = "show_menu"
@@ -167,30 +102,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ugnhj"]
 resource_name = "show_party"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Party:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector2(905, 241), Vector2(453, 247.5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Party:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cvoa1"]
 _data = {
@@ -208,15 +119,15 @@ anchors_preset = 0
 theme = SubResource("Theme_8kpqv")
 script = ExtResource("3_uc2rs")
 menu = NodePath("Menu")
-party = NodePath("Party")
+party = NodePath("")
 animation_player = NodePath("AnimationPlayer")
-description = NodePath("Party/Description")
-party_description = NodePath("Party/Description")
+description = NodePath("")
+party_description = NodePath("")
 
 [node name="Menu" type="NinePatchRect" parent="."]
 layout_mode = 1
-offset_right = 120.0
-offset_bottom = 250.0
+offset_right = 135.0
+offset_bottom = 176.0
 scale = Vector2(0.830013, 0.785619)
 texture = ExtResource("3_sgr3r")
 region_rect = Rect2(0.781509, 32.4421, 45.5126, 46.9208)
@@ -234,10 +145,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -47.952
-offset_top = -100.815
-offset_right = 69.048
-offset_bottom = 141.185
+offset_left = -50.6328
+offset_top = -79.0898
+offset_right = 74.3672
+offset_bottom = 97.9102
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.808695, 0.840986)
@@ -251,11 +162,6 @@ text = "Export
 
 [node name="HTTPRequest" type="HTTPRequest" parent="Menu/VBoxContainer/Export"]
 
-[node name="Party" type="Button" parent="Menu/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Party"
-
 [node name="Quit" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -265,88 +171,6 @@ text = "Quit"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Party" type="NinePatchRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 147.0
-offset_top = 177.0
-offset_right = 493.0
-offset_bottom = 338.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_sgr3r")
-region_rect = Rect2(-0.538795, 33.2449, 46.7633, 45.5043)
-patch_margin_left = 8
-patch_margin_top = 7
-patch_margin_right = 6
-patch_margin_bottom = 7
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Party"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 16.0
-offset_right = 200.0
-offset_bottom = 155.0
-
-[node name="PartySlot2" parent="Party/VBoxContainer" instance=ExtResource("4_axt8u")]
-custom_minimum_size = Vector2(63, 43)
-layout_mode = 2
-character = ExtResource("6_js784")
-
-[node name="PartySlot3" parent="Party/VBoxContainer" instance=ExtResource("4_axt8u")]
-custom_minimum_size = Vector2(63, 43)
-layout_mode = 2
-character = SubResource("Resource_lijr2")
-
-[node name="PartySlot" parent="Party/VBoxContainer" instance=ExtResource("4_axt8u")]
-custom_minimum_size = Vector2(63, 43)
-layout_mode = 2
-character = SubResource("Resource_7n5bo")
-
-[node name="Description" type="NinePatchRect" parent="Party"]
-layout_mode = 0
-offset_left = 213.0
-offset_top = 27.0
-offset_right = 333.0
-offset_bottom = 136.0
-texture = ExtResource("3_sgr3r")
-region_rect = Rect2(79.6317, 96.2479, 32.4425, 31.7739)
-patch_margin_left = 8
-patch_margin_top = 7
-patch_margin_right = 8
-patch_margin_bottom = 8
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-
-[node name="Icon" type="TextureRect" parent="Party/Description"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -45.0
-offset_right = 45.0
-offset_bottom = 74.0
-grow_horizontal = 2
-stretch_mode = 4
-
-[node name="Description" type="RichTextLabel" parent="Party/Description"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -65.0
-offset_top = 74.0
-offset_right = 65.0
-offset_bottom = 127.0
-grow_horizontal = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -375,5 +199,4 @@ script = ExtResource("11_c3ig5")
 [connection signal="pressed" from="Menu/VBoxContainer/Export" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Export" to="." method="_on_resume_pressed"]
 [connection signal="request_completed" from="Menu/VBoxContainer/Export/HTTPRequest" to="." method="_on_http_request_request_completed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Party" to="." method="_on_party_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

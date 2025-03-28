@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3owgjg5ht8do"
-path="res://.godot/imported/LightBandit_Recover_1.png-20d9a837d95bb34179c2b2e57108d116.ctex"
+path="res://.godot/imported/LightBandit_Recover_1.png-2cce417f126b226707f371c0ce89b665.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Bandits/Bandits/Sprites/Light Bandit/Recover/LightBandit_Recover_1.png"
-dest_files=["res://.godot/imported/LightBandit_Recover_1.png-20d9a837d95bb34179c2b2e57108d116.ctex"]
+source_file="res://Assets/Characters/possible bandit/Bandits/Bandits/Sprites/Light Bandit/Recover/LightBandit_Recover_1.png"
+dest_files=["res://.godot/imported/LightBandit_Recover_1.png-2cce417f126b226707f371c0ce89b665.ctex"]
 
 [params]
 

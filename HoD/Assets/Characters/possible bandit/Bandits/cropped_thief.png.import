@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o7fb8ex38h7t"
-path="res://.godot/imported/cropped_thief.png-3d16cfb93bbdd72fe0f1e412b953a986.ctex"
+path="res://.godot/imported/cropped_thief.png-bbe4813b15feefc631024fd721633f20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Bandits/cropped_thief.png"
-dest_files=["res://.godot/imported/cropped_thief.png-3d16cfb93bbdd72fe0f1e412b953a986.ctex"]
+source_file="res://Assets/Characters/possible bandit/Bandits/cropped_thief.png"
+dest_files=["res://.godot/imported/cropped_thief.png-bbe4813b15feefc631024fd721633f20.ctex"]
 
 [params]
 

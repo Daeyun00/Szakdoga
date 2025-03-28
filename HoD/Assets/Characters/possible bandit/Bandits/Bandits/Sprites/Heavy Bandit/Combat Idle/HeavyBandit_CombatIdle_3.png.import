@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq15sbhhpshc1"
-path="res://.godot/imported/HeavyBandit_CombatIdle_3.png-56888c62e6a1ad1e7de689b33b96d653.ctex"
+path="res://.godot/imported/HeavyBandit_CombatIdle_3.png-7a040343895b63c2b76a1edf2935db33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Bandits/Bandits/Sprites/Heavy Bandit/Combat Idle/HeavyBandit_CombatIdle_3.png"
-dest_files=["res://.godot/imported/HeavyBandit_CombatIdle_3.png-56888c62e6a1ad1e7de689b33b96d653.ctex"]
+source_file="res://Assets/Characters/possible bandit/Bandits/Bandits/Sprites/Heavy Bandit/Combat Idle/HeavyBandit_CombatIdle_3.png"
+dest_files=["res://.godot/imported/HeavyBandit_CombatIdle_3.png-7a040343895b63c2b76a1edf2935db33.ctex"]
 
 [params]
 
