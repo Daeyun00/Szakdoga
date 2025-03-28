@@ -19,6 +19,8 @@ class_name Slot
 
 func _ready():
 	SqlController.database.delete_rows("inventory", "item_id")
+	SqlController.database.delete_rows("shopInventory", "item_id")
+	
 
 func get_preview():
 	var preview_texture = TextureRect.new()
@@ -64,7 +66,16 @@ func selling(data):
 	print("Sold" + data.item.name)
 	Global.currency += data.item.cost
 	Global.remove_item(data.item.type, data.item.effect)
-	
+	if data.item.name == "Health_potion":
+		SqlController.database.delete_rows("inventory", "item_id = " + str(1))
+	if data.item.name == "Mana potion":
+		SqlController.database.delete_rows("inventory", "item_id = " + str(2))
+	if data.item.name == "Riptide_dagger":
+		SqlController.database.delete_rows("inventory", "item_id = " + str(3))
+	if data.item.name == "Runic_dagger":
+		SqlController.database.delete_rows("inventory", "item_id = " + str(4))
+	if data.item.name == "Stamina dagger":
+		SqlController.database.delete_rows("inventory", "item_id = " + str(5))
 
 func buying(data):
 	print("Bought" + data.item.name)
@@ -75,23 +86,29 @@ func buying(data):
 			"item_id": 1
 		}
 		SqlController.database.insert_row("inventory", elem)
+		SqlController.database.update_rows("shopInventory", "item_id = " + str(1), {"bought": true})
 	if data.item.name == "Mana potion":
 		var elem = {
 			"item_id": 2
 		}
 		SqlController.database.insert_row("inventory", elem)
+		SqlController.database.update_rows("shopInventory", "item_id = " + str(2), {"bought": true})
 	if data.item.name == "Riptide_dagger":
 		var elem = {
 			"item_id": 3
 		}
 		SqlController.database.insert_row("inventory", elem)
+		SqlController.database.update_rows("shopInventory", "item_id = " + str(3), {"bought": true})
 	if data.item.name == "Runic_dagger":
 		var elem = {
 			"item_id": 4
 		}
 		SqlController.database.insert_row("inventory", elem)
+		SqlController.database.update_rows("shopInventory", "item_id = " + str(4), {"bought": true})
+		
 	if data.item.name == "Stamina potion":
 		var elem = {
 			"item_id": 5
 		}
 		SqlController.database.insert_row("inventory", elem)
+		SqlController.database.update_rows("shopInventory", "item_id = " + str(5), {"bought": true})
