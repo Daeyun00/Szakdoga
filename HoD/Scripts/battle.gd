@@ -37,6 +37,14 @@ var hero = false
 var mage = false
 var thief = false
 
+var hero_down = false
+var mage_down = false
+var thief_down = false
+
+var slime1_down = false
+var slime2_down = false
+var slime3_down = false
+
 var finished_action = false
 
 #hostile switches
@@ -112,12 +120,58 @@ var _shadowstrike_token3 = 0
 
 var turn = 0
 
-
-
 func _ready() -> void:
 	_options_menu.button_focus(0)
+	Hero.HP = 1
 
 func _process(delta: float) -> void:
+	#no 0 ally
+	if(Hero.HP <= 0):
+		Hero.HP = 0
+		$Top/Players/Hero_label/Hero_status.text = "Down"
+		hero_down = true
+	if(Mage.HP <= 0):
+		Mage.HP = 0
+		$Top/Players/Mage_label/Mage_status.text = "Down"
+		mage_down = true
+	if(Thief.HP <= 0):
+		Thief.HP = 0
+		$Top/Players/Thief_label/Thief_status.text = "Down"
+		thief_down = true
+	
+	#no 0 enemy
+	if(hostile1.HP <= 0):
+		hostile1.HP = 0
+		$Top/Enemies/Enemy1/Enemy1_HP_label.text = "Down"
+		slime1_down = true
+	if(hostile2.HP <= 0):
+		hostile2.HP = 0
+		$Top/Enemies/Enemy2/Enemy2_HP_label.text = "Down"
+		slime2_down = true
+	if(hostile3.HP <= 0):
+		hostile3.HP = 0
+		$Top/Enemies/Enemy3/Enemy3_HP_label.text = "Down"
+		slime3_down = true
+
+	#turn skips
+	if(Hero.HP < 0):
+		turn = 0
+	if(Hero.HP < 0 and Mage.HP > 0):
+		turn = 1
+	if (Hero.HP < 0 and Mage.HP < 0):
+		turn = 2
+	if (turn == 1 && Mage.HP <= 0):
+		turn = 2
+	if(turn == 2 && Thief.HP <=0 && !(hero_down and mage_down and thief_down)):
+		turn = 3
+	
+	#death
+	if(mage_down && hero_down && thief_down):
+		get_tree().quit()
+	
+	#win
+	
+	
 	#enemy focus
 	if(is_fight):
 		if($Allies/Hero.has_focus()):
@@ -163,6 +217,8 @@ func _process(delta: float) -> void:
 	$Top/Players/Hero_label/Hero_DEF_label.text = str(Hero.DEF) + " DEF"
 	$Top/Players/Mage_label/Mage_DEF_label.text = str(Mage.DEF) + " DEF"
 	$Top/Players/Thief_label/Thief_DEF_label.text = str(Thief.DEF) + " DEF"
+	if(turn == 0 and Hero.HP == 0):
+		turn = 1
 	match turn:
 		0:
 			$ActionTurn/Turns.text = "Hero's Turn"
@@ -187,19 +243,19 @@ func _process(delta: float) -> void:
 			var s_strikernd2 = randi_range(0, 1)
 			var s_strikernd3 = randi_range(0, 1)
 			if(slime1_taunt or slime2_taunt or slime3_taunt):
-				if(slime1_taunt and turn == 3):
+				if(slime1_taunt and turn == 3 and hostile1.HP > 0):
 					Hero.HP -= hostile1.ATK - Hero.DEF
 					print("s1 hit h (taunt)")
 					slime1_taunt_turn += 1
 					print(turn)
 					if(slime1_taunt_turn == 2):
 						slime1_taunt = false
-				elif(slime2_taunt and turn == 4):
+				elif(slime2_taunt and turn == 4 and hostile2.HP > 0):
 					Hero.HP -= hostile2.ATK - Hero.DEF
 					print("s2 hit h (taunt)")
 					if(slime2_taunt_turn == 2):
 						slime2_taunt = false
-				elif(slime3_taunt and turn == 5):
+				elif(slime3_taunt and turn == 5 and hostile3.HP > 0):
 					Hero.HP -= hostile3.ATK - Hero.DEF
 					print("s3 hit h (taunt)")
 					if(slime3_taunt_turn == 2):
@@ -209,17 +265,18 @@ func _process(delta: float) -> void:
 					0:
 						match turn:
 							3:
-								if(_shadowstrike_token1 > 1):
+								if(_shadowstrike_token1 > 1 and hostile1.HP > 0):
 									if(s_strikernd1 > 0):
 										Hero.HP -= hostile1.ATK - Hero.DEF
 										print("s1 hit h")
 										print(turn)
 								else:
-									Hero.HP -= hostile1.ATK - Hero.DEF
-									print("s1 hit h")
-									print(turn)
+									if(hostile1.HP > 0):
+										Hero.HP -= hostile1.ATK - Hero.DEF
+										print("s1 hit h")
+										print(turn)
 							4:
-								if(_shadowstrike_token2 > 1):
+								if(_shadowstrike_token2 > 1 and hostile2.HP > 0):
 									if(s_strikernd2 > 0):
 										Hero.HP -= hostile2.ATK - Hero.DEF
 										print("s2 hit h")
@@ -229,7 +286,7 @@ func _process(delta: float) -> void:
 									print("s2 hit h")
 									print(turn)
 							5:
-								if(_shadowstrike_token3 > 1):
+								if(_shadowstrike_token3 > 1 and hostile3.HP > 0):
 									if(s_strikernd3 > 0):
 										Hero.HP -= hostile3.ATK - Hero.DEF
 										print("s3 hit h")
@@ -241,17 +298,18 @@ func _process(delta: float) -> void:
 					1:
 						match turn:
 							3:
-								if(_shadowstrike_token1 > 1):
+								if(_shadowstrike_token1 > 1 and hostile1.HP > 0):
 									if(s_strikernd1 > 0):
 										Mage.HP -= hostile1.ATK - Mage.DEF
 										print("s1 hit m")
 										print(turn)
 								else:
-									Mage.HP -= hostile1.ATK - Mage.DEF
-									print("s1 hit m")
-									print(turn)
+									if(hostile1.HP > 0 and hostile1.HP > 0):
+										Mage.HP -= hostile1.ATK - Mage.DEF
+										print("s1 hit m")
+										print(turn)
 							4:
-								if(_shadowstrike_token2 > 1):
+								if(_shadowstrike_token2 > 1 and hostile2.HP > 0):
 									if(s_strikernd2 > 0):
 										Mage.HP -= hostile2.ATK - Mage.DEF
 										print("s2 hit m")
@@ -261,7 +319,7 @@ func _process(delta: float) -> void:
 									print("s2 hit m")
 									print(turn)
 							5:
-								if(_shadowstrike_token3 > 1):
+								if(_shadowstrike_token3 > 1 and hostile3.HP > 0):
 									if(s_strikernd3 > 0):
 										Mage.HP -= hostile3.ATK - Mage.DEF
 										print("s3 hit m")
@@ -274,17 +332,18 @@ func _process(delta: float) -> void:
 						if(!_night_blade_token):
 							match turn:
 								3:
-									if(_shadowstrike_token1 > 1):
+									if(_shadowstrike_token1 > 1 and hostile1.HP > 0):
 										if(s_strikernd1 > 0):
 											Thief.HP -= hostile1.ATK - Thief.DEF
 											print("s1 hit t")
 											print(turn)
 									else:
-										Thief.HP -= hostile1.ATK - Thief.DEF
-										print("s1 hit t")
-										print(turn)
+										if(hostile1.HP > 0):
+											Thief.HP -= hostile1.ATK - Thief.DEF
+											print("s1 hit t")
+											print(turn)
 								4:
-									if(_shadowstrike_token2 > 1):
+									if(_shadowstrike_token2 > 1 and hostile2.HP > 0):
 										if(s_strikernd2 > 0):
 											Thief.HP -= hostile2.ATK - Thief.DEF
 											print("s2 hit t")
@@ -294,7 +353,7 @@ func _process(delta: float) -> void:
 										print("s2 hit t")
 										print(turn)
 								5:
-									if(_shadowstrike_token3 > 1):
+									if(_shadowstrike_token3 > 1 and hostile3.HP > 0):
 										if(s_strikernd3 > 0):
 											Thief.HP -= hostile3.ATK - Thief.DEF
 											print("s3 hit t")
