@@ -779,528 +779,538 @@ func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 
 #enemy functions
 func _on_slime_pressed() -> void:
-	if(is_fight):
-		match turn:
-				0:
-					hostile1.HP -= Hero.ATK - hostile1.DEF
-					if (Hero.Rage < 100):
-						Hero.Rage += 5
-					turn += 1
-					print(turn)
-				1:
-					hostile1.HP -= Mage.ATK/2 - hostile1.DEF
-					turn += 1
-					print(turn)
-				2:
-					hostile1.HP -= Thief.ATK - hostile1.DEF
-					if (Thief.Combo < 10):
-						Thief.Combo += 1
-					turn += 1
-					print(turn)
-				_:
-					print("o_o")
-					print(turn)
-		hostile1.release_focus()
-		$Options.visible = true
-		$Options/AttackMenu/Fight_button.grab_focus()
-		is_fight = !is_fight
-	if(is_skill):
-		#Hero skills
-		if(_charge_select):
-			hostile1.HP -= Hero.ATK*3 - hostile1.DEF
-			Hero.Rage -= 5
-			turn += 1
-			print(turn)
-			$Martials.visible = false
+	if(!slime1_down):
+		if(is_fight):
+			match turn:
+					0:
+						hostile1.HP -= Hero.ATK - hostile1.DEF
+						if (Hero.Rage < 100):
+							Hero.Rage += 5
+						turn += 1
+						print(turn)
+					1:
+						hostile1.HP -= Mage.ATK/2 - hostile1.DEF
+						turn += 1
+						print(turn)
+					2:
+						hostile1.HP -= Thief.ATK - hostile1.DEF
+						if (Thief.Combo < 10):
+							Thief.Combo += 1
+						turn += 1
+						print(turn)
+					_:
+						print("o_o")
+						print(turn)
+			hostile1.release_focus()
 			$Options.visible = true
 			$Options/AttackMenu/Fight_button.grab_focus()
-			_charge_select = false
-			is_skill = !is_skill
-		if(_taunt_select):
-			slime1_taunt = true
-			Hero.Rage -= 10
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			_taunt_select = false
-			is_skill = !is_skill
-		if(_Defensive_attack_select):
-			hostile1.HP -= Hero.ATK*2 - hostile1.DEF
-			Hero.Rage -= 5
-			Hero.DEF += 10
-			_defense_token = 1
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_Defensive_attack_select = false
-		if(_bloodlust_select):
-			if(_bloodlust_token == 0):
-				Hero.ATK += 10
-			hostile1.HP -= Hero.ATK*4 - hostile1.DEF
-			Hero.Rage -= 40
-			_bloodlust_token = 1
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_bloodlust_select = false
-		if(_decimate_select):
-			hostile1.HP -= Hero.ATK*15
-			Hero.DEF -= 20
-			if(_defense_token > 0):
-				Hero.DEF -= 10
-			_decimate_token = 1
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_decimate_select = false
+			is_fight = !is_fight
+		if(is_skill):
+			#Hero skills
+			if(_charge_select):
+				hostile1.HP -= Hero.ATK*3 - hostile1.DEF
+				Hero.Rage -= 5
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				_charge_select = false
+				is_skill = !is_skill
+			if(_taunt_select):
+				slime1_taunt = true
+				Hero.Rage -= 10
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				_taunt_select = false
+				is_skill = !is_skill
+			if(_Defensive_attack_select):
+				hostile1.HP -= Hero.ATK*2 - hostile1.DEF
+				Hero.Rage -= 5
+				Hero.DEF += 10
+				_defense_token = 1
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_Defensive_attack_select = false
+			if(_bloodlust_select):
+				if(_bloodlust_token == 0):
+					Hero.ATK += 10
+				hostile1.HP -= Hero.ATK*4 - hostile1.DEF
+				Hero.Rage -= 40
+				_bloodlust_token = 1
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_bloodlust_select = false
+			if(_decimate_select):
+				hostile1.HP -= Hero.ATK*15
+				Hero.DEF -= 20
+				if(_defense_token > 0):
+					Hero.DEF -= 10
+				_decimate_token = 1
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_decimate_select = false
+				
+			#Mage spells
+			if(_fireball_select):
+				hostile1.HP -= Mage.ATK*2 - hostile1.DEF
+				if(_fireball_token1 == 0):
+					_fireball_token1 = 1
+				Mage.Mana -= 10
+				turn += 1
+				print(turn)
+				$Spells.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_fireball_select = false
+			if(_thunder_select):
+				if(_thunder_token1 == 0):
+					hostile1.DEF -= 10
+				hostile1.HP -= Mage.ATK*10 - hostile1.DEF
+				_thunder_token1 = 1
+				Mage.Mana -= 40
+				turn += 1
+				print(turn)
+				$Spells.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_thunder_select = false
+				
+			#thief combos
+			if(_envenom_select):
+				hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
+				if(_envenom_token1 == 0):
+					_envenom_token1 = 1
+					_envenom_used_combo1 = Thief.Combo
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_envenom_select = false
 			
-		#Mage spells
-		if(_fireball_select):
-			hostile1.HP -= Mage.ATK*2 - hostile1.DEF
-			if(_fireball_token1 == 0):
-				_fireball_token1 = 1
-			Mage.Mana -= 10
-			turn += 1
-			print(turn)
-			$Spells.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_fireball_select = false
-		if(_thunder_select):
-			if(_thunder_token1 == 0):
-				hostile1.DEF -= 10
-			hostile1.HP -= Mage.ATK*10 - hostile1.DEF
-			_thunder_token1 = 1
-			Mage.Mana -= 40
-			turn += 1
-			print(turn)
-			$Spells.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_thunder_select = false
+			if (_eviscerate_select):
+				hostile1.HP -= Thief.ATK*(Thief.Combo) - hostile1.DEF
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_eviscerate_select = false
 			
-		#thief combos
-		if(_envenom_select):
-			hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
-			if(_envenom_token1 == 0):
-				_envenom_token1 = 1
-				_envenom_used_combo1 = Thief.Combo
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_envenom_select = false
-		
-		if (_eviscerate_select):
-			hostile1.HP -= Thief.ATK*(Thief.Combo) - hostile1.DEF
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_eviscerate_select = false
-		
-		if(_rupture_select):
-			hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
-			if(_rupture_token1 == 0):
-				_rupture_token1 = 1
-				_rupture_used_combo1 = Thief.Combo
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_rupture_select = false
-		
-		if(_night_blade_select):
-			hostile1.HP -= Thief.ATK * Thief.Combo - hostile1.DEF
-			_night_blade_token = 1
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_night_blade_select = false
-		
-		if(_shadowstrike_select):
-			hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
-			if(_shadowstrike_token1 == 0):
-				_shadowstrike_token1 = 1
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_shadowstrike_select = false
+			if(_rupture_select):
+				hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
+				if(_rupture_token1 == 0):
+					_rupture_token1 = 1
+					_rupture_used_combo1 = Thief.Combo
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_rupture_select = false
+			
+			if(_night_blade_select):
+				hostile1.HP -= Thief.ATK * Thief.Combo - hostile1.DEF
+				_night_blade_token = 1
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_night_blade_select = false
+			
+			if(_shadowstrike_select):
+				hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
+				if(_shadowstrike_token1 == 0):
+					_shadowstrike_token1 = 1
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_shadowstrike_select = false
+	else:
+		print("Enemy down")
 
 func _on_slime_2_pressed() -> void:
-	if(is_fight):
-		match turn:
-				0:
-					hostile2.HP -= Hero.ATK - hostile2.DEF
-					if (Hero.Rage < 100):
-						Hero.Rage += 5
-					turn += 1
-					print(turn)
-				1:
-					hostile2.HP -= Mage.ATK/2 - hostile2.DEF
-					turn += 1
-					print(turn)
-				2:
-					hostile2.HP -= Thief.ATK - hostile2.DEF
-					turn += 1
-					print(turn)
-				_:
-					print("o_o")
-					print(turn)
-		hostile2.release_focus()
-		$Options.visible = true
-		$Options/AttackMenu/Fight_button.grab_focus()
-		is_fight = !is_fight
-	if(is_skill):
-		if(_charge_select):
-			hostile2.HP -= Hero.ATK*3 - hostile2.DEF
-			Hero.Rage -= 5
-			turn += 1
-			print(turn)
-			$Martials.visible = false
+	if(slime2_down):
+		if(is_fight):
+			match turn:
+					0:
+						hostile2.HP -= Hero.ATK - hostile2.DEF
+						if (Hero.Rage < 100):
+							Hero.Rage += 5
+						turn += 1
+						print(turn)
+					1:
+						hostile2.HP -= Mage.ATK/2 - hostile2.DEF
+						turn += 1
+						print(turn)
+					2:
+						hostile2.HP -= Thief.ATK - hostile2.DEF
+						turn += 1
+						print(turn)
+					_:
+						print("o_o")
+						print(turn)
+			hostile2.release_focus()
 			$Options.visible = true
 			$Options/AttackMenu/Fight_button.grab_focus()
-			_charge_select = false
-			is_skill = !is_skill
-		elif(_taunt_select):
-			slime2_taunt = true
-			Hero.Rage -= 10
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			_taunt_select = false
-			is_skill = !is_skill
-		if(_Defensive_attack_select):
-			hostile2.HP -= Hero.ATK*2 - hostile2.DEF
-			Hero.Rage -= 5
-			Hero.DEF += 10
-			_defense_token = 1
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_Defensive_attack_select = false
-		if(_bloodlust_select):
-			if(_bloodlust_token == 0):
-				Hero.ATK += 10
-			hostile2.HP -= Hero.ATK*4 - hostile2.DEF
-			Hero.Rage -= 40
-			_bloodlust_token = 1
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_bloodlust_select = false
-		if(_decimate_select):
-			hostile2.HP -= Hero.ATK*15
-			Hero.DEF -= 20
-			if(_defense_token > 0):
-				Hero.DEF -= 10
-			_decimate_token = 1
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_decimate_select = false
-		if(_fireball_select):
-			hostile2.HP -= Mage.ATK*2 - hostile2.DEF
-			if(_fireball_token2 == 0):
-				_fireball_token2 = 1
-			Mage.Mana -= 10
-			turn += 1
-			print(turn)
-			$Spells.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_fireball_select = false
-		if(_thunder_select):
-			if(_thunder_token2 == 0):
-				hostile1.DEF -= 10
-			hostile2.HP -= Mage.ATK*10 - hostile2.DEF
-			_thunder_token2 = 1
-			Mage.Mana -= 40
-			turn += 1
-			print(turn)
-			$Spells.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_thunder_select = false
-		#thief combos
-		if(_envenom_select):
-			hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
-			if(_envenom_token2 == 0):
-				_envenom_token2 = 1
-				_envenom_used_combo2 = Thief.Combo
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_envenom_select = false
+			is_fight = !is_fight
+		if(is_skill):
+			if(_charge_select):
+				hostile2.HP -= Hero.ATK*3 - hostile2.DEF
+				Hero.Rage -= 5
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				_charge_select = false
+				is_skill = !is_skill
+			elif(_taunt_select):
+				slime2_taunt = true
+				Hero.Rage -= 10
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				_taunt_select = false
+				is_skill = !is_skill
+			if(_Defensive_attack_select):
+				hostile2.HP -= Hero.ATK*2 - hostile2.DEF
+				Hero.Rage -= 5
+				Hero.DEF += 10
+				_defense_token = 1
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_Defensive_attack_select = false
+			if(_bloodlust_select):
+				if(_bloodlust_token == 0):
+					Hero.ATK += 10
+				hostile2.HP -= Hero.ATK*4 - hostile2.DEF
+				Hero.Rage -= 40
+				_bloodlust_token = 1
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_bloodlust_select = false
+			if(_decimate_select):
+				hostile2.HP -= Hero.ATK*15
+				Hero.DEF -= 20
+				if(_defense_token > 0):
+					Hero.DEF -= 10
+				_decimate_token = 1
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_decimate_select = false
+			if(_fireball_select):
+				hostile2.HP -= Mage.ATK*2 - hostile2.DEF
+				if(_fireball_token2 == 0):
+					_fireball_token2 = 1
+				Mage.Mana -= 10
+				turn += 1
+				print(turn)
+				$Spells.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_fireball_select = false
+			if(_thunder_select):
+				if(_thunder_token2 == 0):
+					hostile1.DEF -= 10
+				hostile2.HP -= Mage.ATK*10 - hostile2.DEF
+				_thunder_token2 = 1
+				Mage.Mana -= 40
+				turn += 1
+				print(turn)
+				$Spells.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_thunder_select = false
+			#thief combos
+			if(_envenom_select):
+				hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
+				if(_envenom_token2 == 0):
+					_envenom_token2 = 1
+					_envenom_used_combo2 = Thief.Combo
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_envenom_select = false
+				
+			if (_eviscerate_select):
+				hostile2.HP -= Thief.ATK*(Thief.Combo) - hostile2.DEF
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_eviscerate_select = false
 			
-		if (_eviscerate_select):
-			hostile2.HP -= Thief.ATK*(Thief.Combo) - hostile2.DEF
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_eviscerate_select = false
-		
-		if(_rupture_select):
-			hostile2.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile2.DEF
-			if(_rupture_token2 == 0):
-				_rupture_token2 = 1
-				_rupture_used_combo2 = Thief.Combo
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_rupture_select = false
-		
-		if(_night_blade_select):
-			hostile2.HP -= Thief.ATK * Thief.Combo - hostile2.DEF
-			_night_blade_token = 1
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_night_blade_select = false
-		
-		if(_shadowstrike_select):
-			hostile2.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile2.DEF
-			if(_shadowstrike_token2 == 0):
-				_shadowstrike_token2 = 1
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_shadowstrike_select = false
+			if(_rupture_select):
+				hostile2.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile2.DEF
+				if(_rupture_token2 == 0):
+					_rupture_token2 = 1
+					_rupture_used_combo2 = Thief.Combo
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_rupture_select = false
+			
+			if(_night_blade_select):
+				hostile2.HP -= Thief.ATK * Thief.Combo - hostile2.DEF
+				_night_blade_token = 1
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_night_blade_select = false
+			
+			if(_shadowstrike_select):
+				hostile2.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile2.DEF
+				if(_shadowstrike_token2 == 0):
+					_shadowstrike_token2 = 1
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_shadowstrike_select = false
+	else:
+		print("enemy down")
+
 
 func _on_slime_3_pressed() -> void:
-	if(is_fight):
-		match turn:
-				0:
-					hostile3.HP -= Hero.ATK - hostile3.DEF
-					if (Hero.Rage < 100):
-						Hero.Rage += 5
-					turn += 1
-					print(turn)
-				1:
-					hostile3.HP -= Mage.ATK/2 - hostile3.DEF
-					turn += 1
-					print(turn)
-				2:
-					hostile3.HP -= Thief.ATK - hostile3.DEF
-					turn += 1
-					print(turn)
-				_:
-					print("o_o")
-					print(turn)
-		hostile3.release_focus()
-		$Options.visible = true
-		$Options/AttackMenu/Fight_button.grab_focus()
-		is_fight = !is_fight
-	if(is_skill):
-		if(_charge_select):
-			hostile3.HP -= Hero.ATK*3 - hostile3.DEF
-			Hero.Rage -= 5
-			turn += 1
-			print(turn)
-			$Martials.visible = false
+	if(slime3_down):
+		if(is_fight):
+			match turn:
+					0:
+						hostile3.HP -= Hero.ATK - hostile3.DEF
+						if (Hero.Rage < 100):
+							Hero.Rage += 5
+						turn += 1
+						print(turn)
+					1:
+						hostile3.HP -= Mage.ATK/2 - hostile3.DEF
+						turn += 1
+						print(turn)
+					2:
+						hostile3.HP -= Thief.ATK - hostile3.DEF
+						turn += 1
+						print(turn)
+					_:
+						print("o_o")
+						print(turn)
+			hostile3.release_focus()
 			$Options.visible = true
 			$Options/AttackMenu/Fight_button.grab_focus()
-			_charge_select = false
-			is_skill = !is_skill
-		elif(_taunt_select):
-			slime3_taunt = true
-			Hero.Rage -= 10
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			_taunt_select = false
-			is_skill = !is_skill
-		if(_Defensive_attack_select):
-			hostile3.HP -= Hero.ATK*2 - hostile3.DEF
-			Hero.Rage -= 5
-			Hero.DEF += 10
-			_defense_token = 1
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_Defensive_attack_select = false
-		if(_bloodlust_select):
-			if(_bloodlust_token == 0):
-				Hero.ATK += 10
-			hostile3.HP -= Hero.ATK*4 - hostile3.DEF
-			Hero.Rage -= 40
-			_bloodlust_token = 1
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_bloodlust_select = false
-		if(_decimate_select):
-			hostile3.HP -= Hero.ATK*15
-			Hero.DEF -= 20
-			if(_defense_token > 0):
-				Hero.DEF -= 10
-			_decimate_token = 1
-			turn += 1
-			print(turn)
-			$Martials.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_decimate_select = false
-		if(_fireball_select):
-			hostile3.HP -= Mage.ATK*2 - hostile3.DEF
-			if(_fireball_token3 == 0):
-				_fireball_token3 = 1
-			Mage.Mana -= 10
-			turn += 1
-			print(turn)
-			$Spells.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_fireball_select = false
-		if(_thunder_select):
-			if(_thunder_token3 == 0):
-				hostile1.DEF -= 10
-			hostile3.HP -= Mage.ATK*10 - hostile3.DEF
-			_thunder_token3 = 1
-			Mage.Mana -= 40
-			turn += 1
-			print(turn)
-			$Spells.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_thunder_select = false
-		#thief combos
-		if(_envenom_select):
-			hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
-			if(_envenom_token2 == 0):
-				_envenom_token2 = 1
-				_envenom_used_combo2 = Thief.Combo
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_envenom_select = false
-		if (_eviscerate_select):
-			hostile3.HP -= Thief.ATK*(Thief.Combo) - hostile3.DEF
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_eviscerate_select = false
-		
-		if(_rupture_select):
-			hostile3.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile3.DEF
-			if(_rupture_token3 == 0):
-				_rupture_token3 = 1
-				_rupture_used_combo1 = Thief.Combo
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_rupture_select = false
-		
-		if(_night_blade_select):
-			hostile3.HP -= Thief.ATK * Thief.Combo - hostile3.DEF
-			_night_blade_token = 1
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_night_blade_select = false
-		
-		if(_shadowstrike_select):
-			hostile3.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile3.DEF
-			if(_shadowstrike_token3 == 0):
-				_shadowstrike_token3 = 1
-			Thief.Combo = 0
-			turn += 1
-			print(turn)
-			$Combos.visible = false
-			$Options.visible = true
-			$Options/AttackMenu/Fight_button.grab_focus()
-			is_skill = !is_skill
-			_shadowstrike_select = false
+			is_fight = !is_fight
+		if(is_skill):
+			if(_charge_select):
+				hostile3.HP -= Hero.ATK*3 - hostile3.DEF
+				Hero.Rage -= 5
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				_charge_select = false
+				is_skill = !is_skill
+			elif(_taunt_select):
+				slime3_taunt = true
+				Hero.Rage -= 10
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				_taunt_select = false
+				is_skill = !is_skill
+			if(_Defensive_attack_select):
+				hostile3.HP -= Hero.ATK*2 - hostile3.DEF
+				Hero.Rage -= 5
+				Hero.DEF += 10
+				_defense_token = 1
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_Defensive_attack_select = false
+			if(_bloodlust_select):
+				if(_bloodlust_token == 0):
+					Hero.ATK += 10
+				hostile3.HP -= Hero.ATK*4 - hostile3.DEF
+				Hero.Rage -= 40
+				_bloodlust_token = 1
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_bloodlust_select = false
+			if(_decimate_select):
+				hostile3.HP -= Hero.ATK*15
+				Hero.DEF -= 20
+				if(_defense_token > 0):
+					Hero.DEF -= 10
+				_decimate_token = 1
+				turn += 1
+				print(turn)
+				$Martials.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_decimate_select = false
+			if(_fireball_select):
+				hostile3.HP -= Mage.ATK*2 - hostile3.DEF
+				if(_fireball_token3 == 0):
+					_fireball_token3 = 1
+				Mage.Mana -= 10
+				turn += 1
+				print(turn)
+				$Spells.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_fireball_select = false
+			if(_thunder_select):
+				if(_thunder_token3 == 0):
+					hostile1.DEF -= 10
+				hostile3.HP -= Mage.ATK*10 - hostile3.DEF
+				_thunder_token3 = 1
+				Mage.Mana -= 40
+				turn += 1
+				print(turn)
+				$Spells.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_thunder_select = false
+			#thief combos
+			if(_envenom_select):
+				hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
+				if(_envenom_token2 == 0):
+					_envenom_token2 = 1
+					_envenom_used_combo2 = Thief.Combo
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_envenom_select = false
+			if (_eviscerate_select):
+				hostile3.HP -= Thief.ATK*(Thief.Combo) - hostile3.DEF
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_eviscerate_select = false
+			
+			if(_rupture_select):
+				hostile3.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile3.DEF
+				if(_rupture_token3 == 0):
+					_rupture_token3 = 1
+					_rupture_used_combo1 = Thief.Combo
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_rupture_select = false
+			
+			if(_night_blade_select):
+				hostile3.HP -= Thief.ATK * Thief.Combo - hostile3.DEF
+				_night_blade_token = 1
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_night_blade_select = false
+			
+			if(_shadowstrike_select):
+				hostile3.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile3.DEF
+				if(_shadowstrike_token3 == 0):
+					_shadowstrike_token3 = 1
+				Thief.Combo = 0
+				turn += 1
+				print(turn)
+				$Combos.visible = false
+				$Options.visible = true
+				$Options/AttackMenu/Fight_button.grab_focus()
+				is_skill = !is_skill
+				_shadowstrike_select = false
+	else:
+		print("enemy down")
 
 func _on_hero_pressed() -> void:
 	if(_heal_I_select):

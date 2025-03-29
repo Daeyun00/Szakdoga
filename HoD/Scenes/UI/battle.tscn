@@ -486,10 +486,10 @@ grow_horizontal = 0
 
 [node name="Hero" parent="Allies" instance=ExtResource("4_o04v0")]
 layout_mode = 0
-offset_left = 753.0
-offset_top = 655.0
-offset_right = 806.0
-offset_bottom = 741.0
+offset_left = 754.0
+offset_top = 647.0
+offset_right = 807.0
+offset_bottom = 733.0
 
 [node name="Mage" parent="Allies" instance=ExtResource("7_3yu3a")]
 layout_mode = 0
