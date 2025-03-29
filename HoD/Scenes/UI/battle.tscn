@@ -35,10 +35,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -622.0
-offset_top = 29.0
-offset_right = 657.0
-offset_bottom = 179.0
+offset_left = -619.0
+offset_top = 24.0
+offset_right = 660.0
+offset_bottom = 174.0
 grow_horizontal = 2
 alignment = 1
 
@@ -274,10 +274,10 @@ text = "Ready"
 [node name="Options" parent="." instance=ExtResource("1_j3yfj")]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-offset_left = 326.0
-offset_top = 29.0
-offset_right = 476.0
-offset_bottom = 179.0
+offset_left = 336.0
+offset_top = 24.0
+offset_right = 486.0
+offset_bottom = 174.0
 size_flags_stretch_ratio = 2.29
 
 [node name="AttackMenu" type="VBoxContainer" parent="Options"]
@@ -325,10 +325,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -184.0
-offset_right = 104.0
-offset_bottom = -130.0
+offset_left = -67.0
+offset_top = -160.0
+offset_right = 95.0
+offset_bottom = -106.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_s5klw")
@@ -345,14 +345,172 @@ offset_right = 151.0
 offset_bottom = 41.0
 text = "Hero's Turn"
 
+[node name="Effects" type="Node" parent="."]
+
+[node name="Slime1_effect" type="NinePatchRect" parent="Effects"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -619.0
+offset_top = -176.0
+offset_right = -251.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s5klw")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Name" type="Label" parent="Effects/Slime1_effect"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 151.0
+offset_bottom = 41.0
+text = "Slime:"
+
+[node name="Slime2_effect" type="NinePatchRect" parent="Effects"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -619.0
+offset_top = -112.0
+offset_right = -251.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s5klw")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Name" type="Label" parent="Effects/Slime2_effect"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 151.0
+offset_bottom = 41.0
+text = "Slime:"
+
+[node name="Slime3_effect" type="NinePatchRect" parent="Effects"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -619.0
+offset_top = -48.0
+offset_right = -251.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s5klw")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Name" type="Label" parent="Effects/Slime3_effect"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 151.0
+offset_bottom = 41.0
+text = "Slime:"
+
+[node name="Hero_effect" type="NinePatchRect" parent="Effects"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 293.0
+offset_top = -176.0
+offset_right = 661.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s5klw")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Name" type="Label" parent="Effects/Hero_effect"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 151.0
+offset_bottom = 41.0
+text = "Hero:"
+
+[node name="Mage_effect" type="NinePatchRect" parent="Effects"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 293.0
+offset_top = -112.0
+offset_right = 661.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s5klw")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Name" type="Label" parent="Effects/Mage_effect"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 151.0
+offset_bottom = 41.0
+text = "Mage:"
+
+[node name="Thief_effect" type="NinePatchRect" parent="Effects"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 293.0
+offset_top = -48.0
+offset_right = 661.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s5klw")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Name" type="Label" parent="Effects/Thief_effect"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 151.0
+offset_bottom = 41.0
+text = "Thief"
+
 [node name="Spells" parent="." instance=ExtResource("1_j3yfj")]
 visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_left = 326.0
-offset_top = 29.0
-offset_right = 476.0
-offset_bottom = 179.0
+offset_left = 336.0
+offset_top = 24.0
+offset_right = 486.0
+offset_bottom = 174.0
 size_flags_stretch_ratio = 2.29
 
 [node name="SpellMenu" type="VBoxContainer" parent="Spells"]
@@ -392,10 +550,10 @@ text = "Thunder
 visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_left = 327.0
-offset_top = 29.0
-offset_right = 477.0
-offset_bottom = 179.0
+offset_left = 336.0
+offset_top = 24.0
+offset_right = 486.0
+offset_bottom = 174.0
 size_flags_stretch_ratio = 2.29
 
 [node name="ComboMenu" type="VBoxContainer" parent="Combos"]
@@ -437,10 +595,10 @@ text = "Shadowstrike"
 visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_left = 326.0
-offset_top = 29.0
-offset_right = 476.0
-offset_bottom = 179.0
+offset_left = 336.0
+offset_top = 24.0
+offset_right = 486.0
+offset_bottom = 174.0
 size_flags_stretch_ratio = 2.29
 
 [node name="MatialMenu" type="VBoxContainer" parent="Martials"]
