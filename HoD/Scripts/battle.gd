@@ -724,7 +724,7 @@ func _on_spell_menu_button_pressed(button: BaseButton) -> void:
 func _on_combo_menu_button_pressed(button: BaseButton) -> void:
 		match button.name:
 			"Envenom":
-				#Attacks with a Combo*2 and poisons them DoT for Combo turns
+				#Attacks with a Combo*2 and poisons them DoT for 2 turns
 				if(Thief.Combo > 0):
 					hostile1.grab_focus()
 					_envenom_select = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dk2q27uc065mt"]
+[gd_scene load_steps=27 format=3 uid="uid://dk2q27uc065mt"]
 
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
 [ext_resource type="Script" path="res://Scripts/battle.gd" id="1_kdno6"]
@@ -12,11 +12,20 @@
 [ext_resource type="Texture2D" uid="uid://bbw5r3sskp6di" path="res://Assets/Icons/Icon.1_05.png" id="7_v14gd"]
 [ext_resource type="Texture2D" uid="uid://3a1soooo5bb5" path="res://Assets/Icons/Icon.1_04.png" id="8_c6jbm"]
 [ext_resource type="PackedScene" uid="uid://1ympmth3dktk" path="res://Scenes/Entities/Thief.tscn" id="8_mbssg"]
+[ext_resource type="Texture2D" uid="uid://bmeo6rvcrivyy" path="res://Assets/Icons/Icons8_83.png" id="8_uhe6c"]
 [ext_resource type="Script" path="res://Scenes/UI/hostiles.gd" id="9_5a74e"]
+[ext_resource type="Texture2D" uid="uid://d3lsssr7e48uu" path="res://Assets/Icons/Icon.1_06.png" id="9_kkag1"]
+[ext_resource type="Texture2D" uid="uid://b1l8ntxow0rix" path="res://Assets/Icons/Icon.4_35.png" id="9_lx21h"]
 [ext_resource type="Texture2D" uid="uid://dneb3dvipjbbd" path="res://Assets/Icons/Icon.4_79.png" id="9_uo1as"]
+[ext_resource type="Texture2D" uid="uid://c23p4uflsvlst" path="res://Assets/Icons/Icon.1_69.png" id="10_7aq0s"]
 [ext_resource type="PackedScene" uid="uid://cm8v207vtkw2v" path="res://Scenes/UI/Inventory_UI.tscn" id="10_hwffx"]
 [ext_resource type="Texture2D" uid="uid://cd4vtoyitm3ks" path="res://Assets/Icons/Icon.1_90.png" id="10_yiwiw"]
+[ext_resource type="Texture2D" uid="uid://02vryytwtv4q" path="res://Assets/Icons/Icon.1_19.png" id="11_qbdve"]
+[ext_resource type="Texture2D" uid="uid://c3lef87wpcpcp" path="res://Assets/Icons/Icons8_10.png" id="12_f7tib"]
+[ext_resource type="Texture2D" uid="uid://bq7xurenwohiy" path="res://Assets/Icons/Icon.1_35.png" id="12_n1lq3"]
 [ext_resource type="AudioStream" uid="uid://bdmjr7nsm3toq" path="res://Sounds/Music/The Last Encounter Medium Loop.wav" id="12_p6uyo"]
+[ext_resource type="Texture2D" uid="uid://bjmlwc3dgkv4t" path="res://Assets/Icons/Icons8_47.png" id="13_j3rkr"]
+[ext_resource type="Texture2D" uid="uid://c2jbpi525cqg5" path="res://Assets/Icons/Icon.7_75.png" id="18_nibtr"]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -378,9 +387,46 @@ offset_bottom = 41.0
 text = "Slime:"
 
 [node name="Taunt-Icon" type="Sprite2D" parent="Effects/Slime1_effect"]
+visible = false
 position = Vector2(96, 24)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("7_v14gd")
+
+[node name="Thunder-Icon" type="Sprite2D" parent="Effects/Slime1_effect"]
+visible = false
+position = Vector2(176, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_uhe6c")
+
+[node name="Fireball-Icon" type="Sprite2D" parent="Effects/Slime1_effect"]
+visible = false
+position = Vector2(136, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_lx21h")
+
+[node name="Envenom-Icon" type="Sprite2D" parent="Effects/Slime1_effect"]
+visible = false
+position = Vector2(216, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("10_7aq0s")
+
+[node name="Bleed-Icon" type="Sprite2D" parent="Effects/Slime1_effect"]
+visible = false
+position = Vector2(256, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("11_qbdve")
+
+[node name="Shadowstrike-Icon" type="Sprite2D" parent="Effects/Slime1_effect"]
+visible = false
+position = Vector2(296, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("12_n1lq3")
+
+[node name="Down-Icon" type="Sprite2D" parent="Effects/Slime1_effect"]
+visible = false
+position = Vector2(336, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("13_j3rkr")
 
 [node name="Slime2_effect" type="NinePatchRect" parent="Effects"]
 anchors_preset = 8
@@ -408,10 +454,47 @@ offset_right = 151.0
 offset_bottom = 41.0
 text = "Slime:"
 
-[node name="Taunt-Icon2" type="Sprite2D" parent="Effects/Slime2_effect"]
+[node name="Taunt-Icon" type="Sprite2D" parent="Effects/Slime2_effect"]
+visible = false
 position = Vector2(96, 24)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("7_v14gd")
+
+[node name="Thunder-Icon" type="Sprite2D" parent="Effects/Slime2_effect"]
+visible = false
+position = Vector2(176, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_uhe6c")
+
+[node name="Fireball-Icon" type="Sprite2D" parent="Effects/Slime2_effect"]
+visible = false
+position = Vector2(136, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_lx21h")
+
+[node name="Envenom-Icon" type="Sprite2D" parent="Effects/Slime2_effect"]
+visible = false
+position = Vector2(216, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("10_7aq0s")
+
+[node name="Bleed-Icon" type="Sprite2D" parent="Effects/Slime2_effect"]
+visible = false
+position = Vector2(256, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("11_qbdve")
+
+[node name="Shadowstrike-Icon" type="Sprite2D" parent="Effects/Slime2_effect"]
+visible = false
+position = Vector2(296, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("12_n1lq3")
+
+[node name="Down-Icon" type="Sprite2D" parent="Effects/Slime2_effect"]
+visible = false
+position = Vector2(336, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("13_j3rkr")
 
 [node name="Slime3_effect" type="NinePatchRect" parent="Effects"]
 anchors_preset = 8
@@ -439,10 +522,47 @@ offset_right = 151.0
 offset_bottom = 41.0
 text = "Slime:"
 
-[node name="Taunt-Icon3" type="Sprite2D" parent="Effects/Slime3_effect"]
+[node name="Taunt-Icon" type="Sprite2D" parent="Effects/Slime3_effect"]
+visible = false
 position = Vector2(96, 24)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("7_v14gd")
+
+[node name="Thunder-Icon" type="Sprite2D" parent="Effects/Slime3_effect"]
+visible = false
+position = Vector2(176, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_uhe6c")
+
+[node name="Fireball-Icon" type="Sprite2D" parent="Effects/Slime3_effect"]
+visible = false
+position = Vector2(136, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_lx21h")
+
+[node name="Envenom-Icon" type="Sprite2D" parent="Effects/Slime3_effect"]
+visible = false
+position = Vector2(216, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("10_7aq0s")
+
+[node name="Bleed-Icon" type="Sprite2D" parent="Effects/Slime3_effect"]
+visible = false
+position = Vector2(256, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("11_qbdve")
+
+[node name="Shadowstrike-Icon" type="Sprite2D" parent="Effects/Slime3_effect"]
+visible = false
+position = Vector2(296, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("12_n1lq3")
+
+[node name="Down-Icon" type="Sprite2D" parent="Effects/Slime3_effect"]
+visible = false
+position = Vector2(336, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("13_j3rkr")
 
 [node name="Hero_effect" type="NinePatchRect" parent="Effects"]
 anchors_preset = 8
@@ -471,19 +591,40 @@ offset_bottom = 41.0
 text = "Hero:"
 
 [node name="Defensive-Icon" type="Sprite2D" parent="Effects/Hero_effect"]
+visible = false
 position = Vector2(96, 24)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("8_c6jbm")
 
 [node name="Bloodlust-Icon" type="Sprite2D" parent="Effects/Hero_effect"]
+visible = false
 position = Vector2(136, 24)
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("9_uo1as")
+texture = ExtResource("9_kkag1")
 
 [node name="Decimate-Icon" type="Sprite2D" parent="Effects/Hero_effect"]
+visible = false
 position = Vector2(176, 24)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_yiwiw")
+
+[node name="Empower-Icon" type="Sprite2D" parent="Effects/Hero_effect"]
+visible = false
+position = Vector2(216, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_uo1as")
+
+[node name="Resistance-Icon" type="Sprite2D" parent="Effects/Hero_effect"]
+visible = false
+position = Vector2(256, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("12_f7tib")
+
+[node name="Down-Icon" type="Sprite2D" parent="Effects/Hero_effect"]
+visible = false
+position = Vector2(296, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("13_j3rkr")
 
 [node name="Mage_effect" type="NinePatchRect" parent="Effects"]
 anchors_preset = 8
@@ -511,6 +652,24 @@ offset_right = 151.0
 offset_bottom = 41.0
 text = "Mage:"
 
+[node name="Empower-Icon" type="Sprite2D" parent="Effects/Mage_effect"]
+visible = false
+position = Vector2(104, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_uo1as")
+
+[node name="Resistance-Icon" type="Sprite2D" parent="Effects/Mage_effect"]
+visible = false
+position = Vector2(144, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("12_f7tib")
+
+[node name="Down-Icon" type="Sprite2D" parent="Effects/Mage_effect"]
+visible = false
+position = Vector2(184, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("13_j3rkr")
+
 [node name="Thief_effect" type="NinePatchRect" parent="Effects"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -535,7 +694,31 @@ offset_left = 11.0
 offset_top = 11.0
 offset_right = 151.0
 offset_bottom = 41.0
-text = "Thief"
+text = "Thief:"
+
+[node name="Night-Blade-Icon" type="Sprite2D" parent="Effects/Thief_effect"]
+visible = false
+position = Vector2(104, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("18_nibtr")
+
+[node name="Empower-Icon" type="Sprite2D" parent="Effects/Thief_effect"]
+visible = false
+position = Vector2(144, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_uo1as")
+
+[node name="Resistance-Icon" type="Sprite2D" parent="Effects/Thief_effect"]
+visible = false
+position = Vector2(184, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("12_f7tib")
+
+[node name="Down-Icon" type="Sprite2D" parent="Effects/Thief_effect"]
+visible = false
+position = Vector2(224, 24)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("13_j3rkr")
 
 [node name="Spells" parent="." instance=ExtResource("1_j3yfj")]
 visible = false
