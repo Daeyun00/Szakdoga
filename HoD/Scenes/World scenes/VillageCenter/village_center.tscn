@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://co37dgctyyci6"]
+[gd_scene load_steps=94 format=4 uid="uid://co37dgctyyci6"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_hr4oh"]
 [ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="2_e4k7h"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/teleport_next.gd" id="23_ytwah"]
 [ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/dungeonportal.gd" id="24_ghi1h"]
 [ext_resource type="Texture2D" uid="uid://cyoncsxti8qel" path="res://Assets/Asset Packs/Dungeons & fight scenes/Pixel Art Animated Portal/sprite-sheet.png" id="25_eio0s"]
+[ext_resource type="AudioStream" uid="uid://b2nos5n34uk3" path="res://Sounds/MUZSIK/Game/Fantasy_Starter_Pack/WAVs/Open_World_Happiness_Full.WAV" id="26_jchor"]
 
 [sub_resource type="TileSet" id="TileSet_yyjto"]
 
@@ -6311,6 +6312,10 @@ offset_bottom = 661.0
 theme_override_font_sizes/normal_font_size = 8
 text = "You can enter to the dungeons here."
 tab_size = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_jchor")
+autoplay = true
 
 [connection signal="body_entered" from="BunnyArea" to="BunnyArea" method="_on_body_entered"]
 [connection signal="body_exited" from="BunnyArea" to="BunnyArea" method="_on_body_exited"]

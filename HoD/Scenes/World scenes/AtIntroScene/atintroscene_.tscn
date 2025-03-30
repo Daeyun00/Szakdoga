@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=4 uid="uid://kyr0ne42cges"]
+[gd_scene load_steps=100 format=4 uid="uid://kyr0ne42cges"]
 
 [ext_resource type="Script" path="res://Scenes/World scenes/AtIntroScene/atintroscene_.gd" id="1_e3gy1"]
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_pw5ux"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Scripts/mapchangingarea.gd" id="25_bp6k4"]
 [ext_resource type="Script" path="res://Scripts/inventoryarea.gd" id="26_2cuqq"]
 [ext_resource type="PackedScene" uid="uid://cuqfe04m57ghk" path="res://Scenes/World scenes/AtIntroScene/intro_screen.tscn" id="27_xjr4o"]
+[ext_resource type="AudioStream" uid="uid://ifltf2tpd4p6" path="res://Sounds/MUZSIK/Game/Fantasy_Starter_Pack/WAVs/Open_World_Endless_Full.WAV" id="28_vksxm"]
 [ext_resource type="Texture2D" uid="uid://cvibt66lbss8q" path="res://Assets/Asset Packs/Animals/MinifolksForestAnimals/Outline/MiniBird.png" id="28_wgwth"]
 [ext_resource type="Texture2D" uid="uid://dy8prl1fbrp54" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/Animated Sprites/Campfire with food sheet.png" id="29_bbewp"]
 
@@ -3212,6 +3213,10 @@ offset_bottom = -257.0
 scale = Vector2(0.783708, 0.7125)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("28_vksxm")
+autoplay = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

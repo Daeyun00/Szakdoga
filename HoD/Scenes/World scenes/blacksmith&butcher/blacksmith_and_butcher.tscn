@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://blif4ac8bfd5v"]
+[gd_scene load_steps=62 format=4 uid="uid://blif4ac8bfd5v"]
 
 [ext_resource type="Texture2D" uid="uid://dyqg2ddx32aas" path="res://Assets/Asset Packs/Village/GandalfHardcore FREE Platformer Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_5qapa"]
 [ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/b_and_b.gd" id="1_ytaf2"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://Scripts/blacksmith_npc.gd" id="19_ecgqp"]
 [ext_resource type="PackedScene" uid="uid://p4uw4mc50we6" path="res://Scenes/Entities/NPCS/butcher_NPC.tscn" id="19_gsv5j"]
 [ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/teleport_back_intro.gd" id="23_4eihi"]
+[ext_resource type="AudioStream" uid="uid://c37latlmqagf" path="res://Sounds/MUZSIK/Game/RPG_Music_Lite_II/WAVs/Guitar_Folk_Music/Loops/Guitar_Folk_Music_V4_FastTempo_Loop.WAV" id="25_masbs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fg5qn"]
 texture = ExtResource("7_rb4bm")
@@ -5181,6 +5182,10 @@ position = Vector2(1351, 742)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_next"]
 position = Vector2(-69.25, -36.25)
 shape = SubResource("RectangleShape2D_b7w0c")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_masbs")
+autoplay = true
 
 [connection signal="area_entered" from="Teleport_back" to="Teleport_back" method="_on_area_entered"]
 [connection signal="area_exited" from="Teleport_back" to="Teleport_back" method="_on_area_exited"]

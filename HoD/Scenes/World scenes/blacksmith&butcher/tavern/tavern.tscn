@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=4 uid="uid://blrwtmbxlr247"]
+[gd_scene load_steps=87 format=4 uid="uid://blrwtmbxlr247"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_fcpxe"]
 [ext_resource type="Texture2D" uid="uid://d4e2ci832coiy" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/VP2_Main.png" id="2_i0mgx"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Scripts/woman.gd" id="13_7lp80"]
 [ext_resource type="Script" path="res://Scripts/bartender_2.gd" id="14_d8cma"]
 [ext_resource type="Script" path="res://Scenes/World scenes/blacksmith&butcher/tavern/teleport_town_center.gd" id="17_elnci"]
+[ext_resource type="AudioStream" uid="uid://cmdmqkr5qewae" path="res://Sounds/MUZSIK/Game/RPG_Music_Lite_II/WAVs/Guitar_Folk_Music/Loops/Guitar_Folk_Music_V1_Loop.WAV" id="18_p1vh1"]
 
 [sub_resource type="TileSet" id="TileSet_wi826"]
 
@@ -12013,6 +12014,10 @@ script = ExtResource("17_elnci")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_town_center"]
 position = Vector2(2, 1.5)
 shape = SubResource("RectangleShape2D_7ailu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_p1vh1")
+autoplay = true
 
 [connection signal="body_entered" from="drunkards" to="drunkards" method="_on_body_entered"]
 [connection signal="body_exited" from="drunkards" to="drunkards" method="_on_body_exited"]
