@@ -888,10 +888,10 @@ script = ExtResource("9_5a74e")
 
 [node name="Slime" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0
-offset_left = 471.0
-offset_top = 674.0
-offset_right = 533.0
-offset_bottom = 730.0
+offset_left = 472.0
+offset_top = 672.0
+offset_right = 534.0
+offset_bottom = 728.0
 
 [node name="Slime2" parent="Hostiles" instance=ExtResource("5_manfw")]
 layout_mode = 0

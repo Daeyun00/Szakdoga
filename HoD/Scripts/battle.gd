@@ -122,7 +122,7 @@ var turn = 0
 
 func _ready() -> void:
 	_options_menu.button_focus(0)
-	Hero.HP = 1
+	
 
 func _process(delta: float) -> void:
 	#no 0 ally
@@ -375,24 +375,28 @@ func _process(delta: float) -> void:
 				_defense_token = 0
 				if(!_decimate_token):
 					Hero.DEF -= 10
+				$"Effects/Hero_effect/Defensive-Icon".visible = false
 			else:
 				_defense_token += 1
 		if(_bloodlust_token>0):
 			if(_bloodlust_token > 2):
 				_bloodlust_token = 0
 				Hero.ATK -= 10
+				$"Effects/Hero_effect/Bloodlust-Icon".visible = false
 			else:
 				_bloodlust_token += 1
 		if(_decimate_token>0):
 			if(_decimate_token > 2):
 				_decimate_token = 0
 				Hero.DEF += 20
+				$"Effects/Hero_effect/Decimate-Icon".visible = false
 			else:
 				_decimate_token += 1
 		#mage token
 		if(_fireball_token1 > 0):
 			if(_fireball_token1 > 2):
 				_fireball_token1 = 0
+				$"Effects/Slime1_effect/Fireball-Icon".visible = false
 			else:
 				_fireball_token1 += 1
 				hostile1.HP -= Mage.ATK*0.5
@@ -400,6 +404,7 @@ func _process(delta: float) -> void:
 		if(_fireball_token2 > 0):
 			if(_fireball_token2 > 2):
 				_fireball_token2 = 0
+				$"Effects/Slime2_effect/Fireball-Icon".visible = false
 			else:
 				_fireball_token2 += 1
 				hostile2.HP -= Mage.ATK*0.5
@@ -407,6 +412,7 @@ func _process(delta: float) -> void:
 		if(_fireball_token3 > 0):
 			if(_fireball_token3 > 2):
 				_fireball_token3 = 0
+				$"Effects/Slime3_effect/Fireball-Icon".visible = false
 			else:
 				_fireball_token3 += 1
 				hostile3.HP -= Mage.ATK*0.5
@@ -415,60 +421,70 @@ func _process(delta: float) -> void:
 			if (_empower_token1 > 2):
 				_empower_token1 = 0
 				Hero.ATK -= 10
+				$"Effects/Hero_effect/Empower-Icon".visible = false
 			else:
 				_empower_token1 += 1
 		if(_empower_token2 > 0):
 			if (_empower_token2 > 2):
 				_empower_token2 = 0
 				Mage.ATK -= 10
+				$"Effects/Mage_effect/Empower-Icon".visible = false
 			else:
 				_empower_token1 += 1
 		if(_empower_token3 > 0):
 			if (_empower_token3 > 2):
 				_empower_token3 = 0
 				Thief.ATK -= 10
+				$"Effects/Thief_effect/Empower-Icon".visible = false
 			else:
 				_empower_token3 += 1
 		if(_resistance_token1 > 0):
 			if (_resistance_token1 > 2):
 				_resistance_token1 = 0
 				Hero.DEF -= 10
+				$"Effects/Hero_effect/Resistance-Icon".visible = false
 			else:
 				_resistance_token1 += 1
 		if(_resistance_token2 > 0):
 			if (_resistance_token2 > 2):
 				_resistance_token2 = 0
 				Mage.DEF -= 10
+				$"Effects/Mage_effect/Resistance-Icon".visible = false
 			else:
 				_resistance_token1 += 1
 		if(_resistance_token3 > 0):
 			if (_resistance_token3 > 2):
 				_resistance_token3 = 0
 				Thief.DEF -= 10
+				$"Effects/Thief_effect/Resistance-Icon".visible = false
 			else:
 				_resistance_token3 += 1
 		if(_thunder_token1 > 0):
 			if(_thunder_token1 > 2):
 				_thunder_token1 = 0
 				hostile1.DEF += 10
+				$"Effects/Slime1_effect/Thunder-Icon".visible = false
 			else:
 				_thunder_token1 += 1
 		if(_thunder_token2 > 0):
 			if(_thunder_token2 > 2):
 				_thunder_token2 = 0
 				hostile2.DEF += 10
+				$"Effects/Slime2_effect/Thunder-Icon".visible = false
 			else:
 				_thunder_token2 += 1
 		if(_thunder_token3 > 0):
 			if(_thunder_token3 > 2):
 				_thunder_token3 = 0
 				hostile3.DEF += 10
+				$"Effects/Slime3_effect/Thunder-Icon"
 			else:
 				_thunder_token3 += 1
 		#thief tokens
 		if(_envenom_token1 > 0):
 			if(_envenom_token1 > 2):
 				_envenom_token1 = 0
+				$"Effects/Slime1_effect/Envenom-Icon".visible = false
 			else:
 				_envenom_token1 += 1
 				hostile1.HP -= Thief.ATK*0.5*_envenom_used_combo1
@@ -476,6 +492,7 @@ func _process(delta: float) -> void:
 		if(_envenom_token2 > 0):
 			if(_envenom_token2 > 2):
 				_envenom_token2 = 0
+				$"Effects/Slime2_effect/Envenom-Icon".visible = false
 			else:
 				_envenom_token2 += 1
 				hostile2.HP -= Thief.ATK*0.5*_envenom_used_combo2
@@ -483,6 +500,7 @@ func _process(delta: float) -> void:
 		if(_envenom_token3 > 0):
 			if(_envenom_token3 > 2):
 				_envenom_token3 = 0
+				$"Effects/Slime3_effect/Envenom-Icon".visible = false
 			else:
 				_envenom_token3 += 1
 				hostile3.HP -= Thief.ATK*0.5*_envenom_used_combo3
@@ -491,6 +509,7 @@ func _process(delta: float) -> void:
 		if(_rupture_token1 > 0):
 			if(_rupture_token1 > 2):
 				_rupture_token1 = 0
+				$"Effects/Slime1_effect/Bleed-Icon".visible = false
 			else:
 				_rupture_token1 += 1
 				hostile1.HP -= Thief.ATK*0.5*_rupture_used_combo1
@@ -498,6 +517,7 @@ func _process(delta: float) -> void:
 		if(_rupture_token2 > 0):
 			if(_rupture_token2 > 2):
 				_rupture_token2 = 0
+				$"Effects/Slime2_effect/Bleed-Icon".visible = false
 			else:
 				_rupture_token2 += 1
 				hostile2.HP -= Thief.ATK*0.5*_rupture_used_combo2
@@ -505,6 +525,7 @@ func _process(delta: float) -> void:
 		if(_rupture_token3 > 0):
 			if(_rupture_token3 > 2):
 				_rupture_token3 = 0
+				$"Effects/Slime3_effect/Bleed-Icon".visible = false
 			else:
 				_rupture_token3 += 1
 				hostile3.HP -= Thief.ATK*0.5*_rupture_used_combo3
@@ -512,21 +533,25 @@ func _process(delta: float) -> void:
 		if(_night_blade_token>0):
 			if(_night_blade_token == 2):
 				_night_blade_token = 0
+				$"Effects/Thief_effect/Night-Blade-Icon".visible = false
 			else:
 				_night_blade_token += 1
 		if(_shadowstrike_token1>0):
 			if(_shadowstrike_token1 == 2):
 				_shadowstrike_token1 = 0
+				$"Effects/Slime1_effect/Shadowstrike-Icon".visible = false
 			else:
 				_shadowstrike_token1 += 1
 		if(_shadowstrike_token2>0):
 			if(_shadowstrike_token2 == 2):
 				_shadowstrike_token2 = 0
+				$"Effects/Slime2_effect/Shadowstrike-Icon".visible = false
 			else:
 				_shadowstrike_token2 += 1
 		if(_shadowstrike_token3>0):
 			if(_shadowstrike_token3 == 2):
 				_shadowstrike_token3 = 0
+				$"Effects/Slime3_effect/Shadowstrike-Icon".visible = false
 			else:
 				_shadowstrike_token3 += 1
 		
@@ -652,7 +677,7 @@ func _on_matial_menu_button_pressed(button: BaseButton) -> void:
 				is_skill = !is_skill
 		"Decimate":
 			#Attacks with *15 multiplier but decreases DEF by 20 for three turns disables defensive stance if active
-			if(Hero.Rage >= 60):
+			if(Hero.Rage >= 20):
 				hostile1.grab_focus()
 				_decimate_select = true
 			else:
@@ -823,6 +848,7 @@ func _on_slime_pressed() -> void:
 				slime1_taunt = true
 				Hero.Rage -= 10
 				turn += 1
+				$"Effects/Slime1_effect/Taunt-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -835,6 +861,7 @@ func _on_slime_pressed() -> void:
 				Hero.DEF += 10
 				_defense_token = 1
 				turn += 1
+				$"Effects/Hero_effect/Defensive-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -848,6 +875,7 @@ func _on_slime_pressed() -> void:
 				Hero.Rage -= 40
 				_bloodlust_token = 1
 				turn += 1
+				$"Effects/Hero_effect/Bloodlust-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -855,12 +883,13 @@ func _on_slime_pressed() -> void:
 				is_skill = !is_skill
 				_bloodlust_select = false
 			if(_decimate_select):
-				hostile1.HP -= Hero.ATK*15
+				hostile1.HP -= Hero.ATK*30
 				Hero.DEF -= 20
 				if(_defense_token > 0):
 					Hero.DEF -= 10
 				_decimate_token = 1
 				turn += 1
+				$"Effects/Hero_effect/Decimate-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -874,6 +903,7 @@ func _on_slime_pressed() -> void:
 				if(_fireball_token1 == 0):
 					_fireball_token1 = 1
 				Mage.Mana -= 10
+				$"Effects/Slime1_effect/Fireball-Icon".visible = true
 				turn += 1
 				print(turn)
 				$Spells.visible = false
@@ -888,6 +918,7 @@ func _on_slime_pressed() -> void:
 				_thunder_token1 = 1
 				Mage.Mana -= 40
 				turn += 1
+				$"Effects/Slime1_effect/Thunder-Icon".visible = true
 				print(turn)
 				$Spells.visible = false
 				$Options.visible = true
@@ -903,6 +934,7 @@ func _on_slime_pressed() -> void:
 					_envenom_used_combo1 = Thief.Combo
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Slime1_effect/Envenom-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -928,6 +960,7 @@ func _on_slime_pressed() -> void:
 					_rupture_used_combo1 = Thief.Combo
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Slime1_effect/Bleed-Icon".visible
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -940,6 +973,7 @@ func _on_slime_pressed() -> void:
 				_night_blade_token = 1
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Thief_effect/Night-Blade-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -953,6 +987,7 @@ func _on_slime_pressed() -> void:
 					_shadowstrike_token1 = 1
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Slime1_effect/Shadowstrike-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -963,7 +998,7 @@ func _on_slime_pressed() -> void:
 		print("Enemy down")
 
 func _on_slime_2_pressed() -> void:
-	if(slime2_down):
+	if(!slime2_down):
 		if(is_fight):
 			match turn:
 					0:
@@ -1002,6 +1037,7 @@ func _on_slime_2_pressed() -> void:
 				slime2_taunt = true
 				Hero.Rage -= 10
 				turn += 1
+				$"Effects/Slime2_effect/Taunt-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -1014,6 +1050,7 @@ func _on_slime_2_pressed() -> void:
 				Hero.DEF += 10
 				_defense_token = 1
 				turn += 1
+				$"Effects/Hero_effect/Defensive-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -1027,6 +1064,7 @@ func _on_slime_2_pressed() -> void:
 				Hero.Rage -= 40
 				_bloodlust_token = 1
 				turn += 1
+				$"Effects/Hero_effect/Bloodlust-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -1034,12 +1072,13 @@ func _on_slime_2_pressed() -> void:
 				is_skill = !is_skill
 				_bloodlust_select = false
 			if(_decimate_select):
-				hostile2.HP -= Hero.ATK*15
+				hostile2.HP -= Hero.ATK*30
 				Hero.DEF -= 20
 				if(_defense_token > 0):
 					Hero.DEF -= 10
 				_decimate_token = 1
 				turn += 1
+				$"Effects/Hero_effect/Decimate-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -1052,6 +1091,7 @@ func _on_slime_2_pressed() -> void:
 					_fireball_token2 = 1
 				Mage.Mana -= 10
 				turn += 1
+				$"Effects/Slime2_effect/Fireball-Icon".visible = true
 				print(turn)
 				$Spells.visible = false
 				$Options.visible = true
@@ -1065,6 +1105,7 @@ func _on_slime_2_pressed() -> void:
 				_thunder_token2 = 1
 				Mage.Mana -= 40
 				turn += 1
+				$"Effects/Slime2_effect/Thunder-Icon".visible = true
 				print(turn)
 				$Spells.visible = false
 				$Options.visible = true
@@ -1079,6 +1120,7 @@ func _on_slime_2_pressed() -> void:
 					_envenom_used_combo2 = Thief.Combo
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Slime2_effect/Envenom-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -1104,6 +1146,7 @@ func _on_slime_2_pressed() -> void:
 					_rupture_used_combo2 = Thief.Combo
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Slime2_effect/Bleed-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -1116,6 +1159,7 @@ func _on_slime_2_pressed() -> void:
 				_night_blade_token = 1
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Thief_effect/Night-Blade-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -1129,6 +1173,7 @@ func _on_slime_2_pressed() -> void:
 					_shadowstrike_token2 = 1
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Slime2_effect/Shadowstrike-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -1140,7 +1185,7 @@ func _on_slime_2_pressed() -> void:
 
 
 func _on_slime_3_pressed() -> void:
-	if(slime3_down):
+	if(!slime3_down):
 		if(is_fight):
 			match turn:
 					0:
@@ -1179,6 +1224,7 @@ func _on_slime_3_pressed() -> void:
 				slime3_taunt = true
 				Hero.Rage -= 10
 				turn += 1
+				$"Effects/Slime3_effect/Taunt-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -1191,6 +1237,7 @@ func _on_slime_3_pressed() -> void:
 				Hero.DEF += 10
 				_defense_token = 1
 				turn += 1
+				$"Effects/Hero_effect/Defensive-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -1204,6 +1251,7 @@ func _on_slime_3_pressed() -> void:
 				Hero.Rage -= 40
 				_bloodlust_token = 1
 				turn += 1
+				$"Effects/Hero_effect/Bloodlust-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -1217,6 +1265,7 @@ func _on_slime_3_pressed() -> void:
 					Hero.DEF -= 10
 				_decimate_token = 1
 				turn += 1
+				$"Effects/Hero_effect/Decimate-Icon".visible = true
 				print(turn)
 				$Martials.visible = false
 				$Options.visible = true
@@ -1229,6 +1278,7 @@ func _on_slime_3_pressed() -> void:
 					_fireball_token3 = 1
 				Mage.Mana -= 10
 				turn += 1
+				$"Effects/Slime3_effect/Fireball-Icon".visible = true
 				print(turn)
 				$Spells.visible = false
 				$Options.visible = true
@@ -1242,6 +1292,7 @@ func _on_slime_3_pressed() -> void:
 				_thunder_token3 = 1
 				Mage.Mana -= 40
 				turn += 1
+				$"Effects/Slime3_effect/Thunder-Icon".visible = true
 				print(turn)
 				$Spells.visible = false
 				$Options.visible = true
@@ -1256,6 +1307,7 @@ func _on_slime_3_pressed() -> void:
 					_envenom_used_combo2 = Thief.Combo
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Slime3_effect/Envenom-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -1280,6 +1332,7 @@ func _on_slime_3_pressed() -> void:
 					_rupture_used_combo1 = Thief.Combo
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Slime3_effect/Bleed-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -1292,6 +1345,7 @@ func _on_slime_3_pressed() -> void:
 				_night_blade_token = 1
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Thief_effect/Night-Blade-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -1305,6 +1359,7 @@ func _on_slime_3_pressed() -> void:
 					_shadowstrike_token3 = 1
 				Thief.Combo = 0
 				turn += 1
+				$"Effects/Slime3_effect/Shadowstrike-Icon".visible = true
 				print(turn)
 				$Combos.visible = false
 				$Options.visible = true
@@ -1316,7 +1371,7 @@ func _on_slime_3_pressed() -> void:
 
 func _on_hero_pressed() -> void:
 	if(_heal_I_select):
-		Hero.HP += Hero.MaxHP*0.1
+		Hero.HP += Hero.MaxHP*0.3
 		print("HEAL: " + str(Mage.MaxHP*0.1))
 		Mage.Mana -= 5
 		turn += 1
@@ -1333,6 +1388,7 @@ func _on_hero_pressed() -> void:
 		_empower_token1 = 1
 		Mage.Mana -= 35
 		turn += 1
+		$"Effects/Hero_effect/Empower-Icon".visible = true
 		print(turn)
 		$Spells.visible = false
 		$Options.visible = true
@@ -1345,6 +1401,7 @@ func _on_hero_pressed() -> void:
 		_resistance_token1 = 1
 		Mage.Mana -= 20
 		turn += 1
+		$"Effects/Hero_effect/Resistance-Icon".visible = true
 		print(turn)
 		$Spells.visible = false
 		$Options.visible = true
@@ -1354,7 +1411,7 @@ func _on_hero_pressed() -> void:
 
 func _on_mage_pressed() -> void:
 	if(_heal_I_select):
-		Mage.HP += Mage.MaxHP*0.1
+		Mage.HP += Mage.MaxHP*0.3
 		print("HEAL: " + str(Mage.MaxHP*0.1))
 		Mage.Mana -= 5
 		turn += 1
@@ -1370,6 +1427,7 @@ func _on_mage_pressed() -> void:
 		_empower_token2 = 1
 		Mage.Mana -= 30
 		turn += 1
+		$"Effects/Mage_effect/Empower-Icon".visible = true
 		print(turn)
 		$Spells.visible = false
 		$Options.visible = true
@@ -1382,6 +1440,7 @@ func _on_mage_pressed() -> void:
 		_resistance_token2 = 1
 		Mage.Mana -= 20
 		turn += 1
+		$"Effects/Mage_effect/Resistance-Icon".visible = true
 		print(turn)
 		$Spells.visible = false
 		$Options.visible = true
@@ -1391,7 +1450,7 @@ func _on_mage_pressed() -> void:
 
 func _on_thief_pressed() -> void:
 	if(_heal_I_select):
-		Thief.HP += Thief.MaxHP*0.1
+		Thief.HP += Thief.MaxHP*0.3
 		print("HEAL: " + str(Mage.MaxHP*0.1))
 		Mage.Mana -= 5
 		turn += 1
@@ -1408,6 +1467,7 @@ func _on_thief_pressed() -> void:
 		_empower_token3 = 1
 		Mage.Mana -= 35
 		turn += 1
+		$"Effects/Thief_effect/Empower-Icon".visible = true
 		print(turn)
 		$Spells.visible = false
 		$Options.visible = true
@@ -1420,6 +1480,7 @@ func _on_thief_pressed() -> void:
 		_resistance_token3 = 1
 		Mage.Mana -= 20
 		turn += 1
+		$"Effects/Thief_effect/Resistance-Icon".visible = true
 		print(turn)
 		$Spells.visible = false
 		$Options.visible = true
@@ -1454,4 +1515,15 @@ func _on_attack_menu_button_pressed(button: BaseButton) -> void:
 func _on_quit_pressed() -> void:
 	if inventory.visible == true:
 		inventory.visible = false
-		$Options.visible = true
+	match(turn):
+		0:
+			turn += 1
+			$Top/Players/Hero_label/Hero_status.text = "Item"
+		1:
+			turn += 1
+			$Top/Players/Mage_label/Mage_status.text = "Item"
+		2:
+			turn += 1
+			$Top/Players/Thief_label/Thief_status.text = "item"
+		_:
+			print("???")
