@@ -11837,16 +11837,18 @@ position = Vector2(241, 692)
 position = Vector2(-71, 8)
 zoom = Vector2(4, 4)
 limit_left = 0
-limit_top = 503
-limit_right = 1300
+limit_top = 450
+limit_right = 1303
 limit_bottom = 800
 
 [node name="Ui" parent="CanvasLayer/Player" instance=ExtResource("2_tjdlt")]
-offset_left = -599.0
-offset_top = -297.0
-offset_right = -599.0
-offset_bottom = -297.0
+offset_left = -592.0
+offset_top = -257.0
+offset_right = -592.0
+offset_bottom = -257.0
 scale = Vector2(0.783708, 0.7125)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wi826")

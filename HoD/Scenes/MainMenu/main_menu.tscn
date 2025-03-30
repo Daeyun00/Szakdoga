@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bwjadjll5nujd"]
+[gd_scene load_steps=29 format=3 uid="uid://bwjadjll5nujd"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_wrdi1"]
 [ext_resource type="FontFile" uid="uid://dci2rru584vmr" path="res://Assets/Graphics/Assets/PixelatedDisplay.ttf" id="2_l7g3q"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://l4iol1xhy52n" path="res://Assets/Bgs/Clouds/Clouds 3/4.png" id="7_kpy4f"]
 [ext_resource type="PackedScene" uid="uid://dcohejogf88sa" path="res://Scenes/action_button.tscn" id="7_ledkc"]
 [ext_resource type="Script" path="res://Scripts/backbutton.gd" id="8_7u5sx"]
+[ext_resource type="Texture2D" uid="uid://cexn2uy5ho3th" path="res://Assets/Graphics/Assets/GUI-fotor-20250126105351.png" id="14_cf10l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tgaa"]
 texture = ExtResource("3_qg3aw")
@@ -261,6 +262,19 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_k8one")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g7g3w")
 theme_override_styles/normal = SubResource("StyleBoxFlat_v0rh2")
 text = "Start game
+"
+
+[node name="Resume" type="Button" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_pressed_color = Color(0.0737517, 0.0795674, 0.134604, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qhfgo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k8one")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g7g3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0rh2")
+text = "Resume
 "
 
 [node name="Options" type="Button" parent="Menu"]
@@ -581,7 +595,53 @@ text = "Back
 alignment = 0
 script = ExtResource("8_7u5sx")
 
+[node name="resume_error" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 485.0
+offset_top = 299.0
+offset_right = 888.0
+offset_bottom = 415.0
+texture = ExtResource("14_cf10l")
+region_rect = Rect2(0.184029, 0.949108, 48.1178, 49.3148)
+patch_margin_left = 9
+patch_margin_top = 11
+patch_margin_right = 9
+patch_margin_bottom = 9
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="resume_error"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.5
+offset_top = -37.0
+offset_right = 199.5
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[center]File Data does not exist.
+Start a new game to create a save."
+
+[node name="ok" type="Button" parent="resume_error"]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 71.0
+offset_right = 394.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qhfgo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k8one")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0rh2")
+text = "Ok"
+
 [connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/Options" to="Menu/Options" method="_on_pressed"]
 [connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]
 [connection signal="toggled" from="Ui/Settings/Video/HBoxContainer/Checks/Fullscreen" to="Ui/Settings/Video" method="_on_fullscreen_toggled"]
@@ -593,3 +653,4 @@ script = ExtResource("8_7u5sx")
 [connection signal="value_changed" from="Ui/Settings/Audio/HBoxContainer/Sliders/SoundFX" to="Ui/Settings/Audio" method="_on_sound_fx_value_changed"]
 [connection signal="pressed" from="Ui/Settings/Audio/Back" to="Ui/Settings/Audio/Back" method="_on_pressed"]
 [connection signal="pressed" from="Ui/Settings/Controls/Back" to="Ui/Settings/Controls/Back" method="_on_pressed"]
+[connection signal="pressed" from="resume_error/ok" to="." method="_on_ok_pressed"]

@@ -2632,22 +2632,24 @@ size = Vector2(28, 77)
 follow_viewport_enabled = true
 
 [node name="Player" parent="CanvasLayer" instance=ExtResource("9_i42hw")]
-position = Vector2(195, 694)
+position = Vector2(241, 692)
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer/Player"]
 position = Vector2(-71, 8)
-zoom = Vector2(5, 5)
-limit_left = 13
+zoom = Vector2(4, 4)
+limit_left = 0
 limit_top = 450
-limit_right = 300
-limit_bottom = 783
+limit_right = 1303
+limit_bottom = 800
 
 [node name="Ui" parent="CanvasLayer/Player" instance=ExtResource("2_lca45")]
-offset_left = -599.0
-offset_top = -297.0
-offset_right = -599.0
-offset_bottom = -297.0
+offset_left = -592.0
+offset_top = -257.0
+offset_right = -592.0
+offset_bottom = -257.0
 scale = Vector2(0.783708, 0.7125)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_231b6")
