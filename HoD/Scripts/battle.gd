@@ -31,6 +31,9 @@ var is_fight = false
 var is_skill = false
 var is_item = false
 var is_guard = false
+var hero_guard = false
+var mage_guard = false
+var thief_guard = false
 var is_flee = false
 
 var hero = false
@@ -125,32 +128,49 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	#no res
+	if(hero_down):
+		if(Hero.HP > 0):
+			Hero.HP = 0
+	if(mage_down):
+		if(Mage.HP > 0):
+			Mage.HP = 0
+	if(thief_down):
+		if(Thief.HP > 0):
+			Thief.HP = 0
+	
 	#no 0 ally
 	if(Hero.HP <= 0):
 		Hero.HP = 0
 		$Top/Players/Hero_label/Hero_status.text = "Down"
+		$"Effects/Hero_effect/Down-Icon".visible = true
 		hero_down = true
 	if(Mage.HP <= 0):
 		Mage.HP = 0
 		$Top/Players/Mage_label/Mage_status.text = "Down"
+		$"Effects/Mage_effect/Down-Icon".visible = true
 		mage_down = true
 	if(Thief.HP <= 0):
 		Thief.HP = 0
 		$Top/Players/Thief_label/Thief_status.text = "Down"
+		$"Effects/Thief_effect/Down-Icon".visible = true
 		thief_down = true
 	
 	#no 0 enemy
 	if(hostile1.HP <= 0):
 		hostile1.HP = 0
 		$Top/Enemies/Enemy1/Enemy1_HP_label.text = "Down"
+		$"Effects/Slime1_effect/Down-Icon".visible = true
 		slime1_down = true
 	if(hostile2.HP <= 0):
 		hostile2.HP = 0
 		$Top/Enemies/Enemy2/Enemy2_HP_label.text = "Down"
+		$"Effects/Slime2_effect/Down-Icon".visible = true
 		slime2_down = true
 	if(hostile3.HP <= 0):
 		hostile3.HP = 0
 		$Top/Enemies/Enemy3/Enemy3_HP_label.text = "Down"
+		$"Effects/Slime3_effect/Down-Icon".visible = true
 		slime3_down = true
 
 	#turn skips
@@ -170,7 +190,8 @@ func _process(delta: float) -> void:
 		get_tree().quit()
 	
 	#win
-	
+	if(slime1_down && slime2_down && slime3_down):
+		get_tree().change_scene_to_file("res://Scenes/World scenes/VillageCenter/village_center.tscn")
 	
 	#enemy focus
 	if(is_fight):
@@ -367,8 +388,15 @@ func _process(delta: float) -> void:
 					_:
 						print("D:")
 			turn += 1
+		if(hero_guard):
+			Hero.DEF -= 5
+		if(mage_guard):
+			Mage.DEF -= 5
+		if(thief_guard):
+			Thief.DEF -= 5
 		turn = 0
 		print(turn)
+		$Options/AttackMenu/Fight_button.grab_focus()
 		#hero token
 		if(_defense_token>0):
 			if(_defense_token > 2):
@@ -587,9 +615,35 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 			$Options.visible = false
 			inventory.visible = true
 		"Guard_button":
+			match turn:
+				0:
+					Hero.DEF += 5
+					hero_guard = true
+					$Top/Players/Hero_label/Hero_status.text = "Guard"
+					turn += 1
+					print(turn)
+				1:
+					Mage.DEF += 5
+					mage_guard = true
+					$Top/Players/Mage_label/Mage_status.text = "Guard"
+					turn += 1
+					print(turn)
+				2:
+					Thief.DEF += 5
+					thief_guard = true
+					$Top/Players/Thief_label/Thief_status.text = "Guard"
+					turn += 1
+					print(turn)
+				_:
+					print("...???")
 			print("Guard")
 			is_guard = !is_guard
 		"Flee_button":
+			var rnd = randi_range(0, 1);
+			if(rnd == 0):
+				turn = 3
+			if(rnd == 1):
+				get_tree().change_scene_to_file("res://Scenes/World scenes/VillageCenter/village_center.tscn")
 			print("Flee")
 			is_flee = !is_flee
 		_:
@@ -702,8 +756,8 @@ func _on_spell_menu_button_pressed(button: BaseButton) -> void:
 					$Options/AttackMenu/Fight_button.grab_focus()
 					is_skill = !is_skill
 			"Heal I":
-				#Heals a selected ally by their MaxHP's 10%
-				if(Mage.Mana >= 5):
+				#Heals a selected ally by their MaxHP's 20%
+				if(Mage.Mana >= 10):
 					Hero.grab_focus()
 					_heal_I_select = true
 				else:
@@ -1371,9 +1425,9 @@ func _on_slime_3_pressed() -> void:
 
 func _on_hero_pressed() -> void:
 	if(_heal_I_select):
-		Hero.HP += Hero.MaxHP*0.3
+		Hero.HP += Hero.MaxHP*0.2
 		print("HEAL: " + str(Mage.MaxHP*0.1))
-		Mage.Mana -= 5
+		Mage.Mana -= 10
 		turn += 1
 		print(turn)
 		$Spells.visible = false
@@ -1411,9 +1465,9 @@ func _on_hero_pressed() -> void:
 
 func _on_mage_pressed() -> void:
 	if(_heal_I_select):
-		Mage.HP += Mage.MaxHP*0.3
+		Mage.HP += Mage.MaxHP*0.2
 		print("HEAL: " + str(Mage.MaxHP*0.1))
-		Mage.Mana -= 5
+		Mage.Mana -= 10
 		turn += 1
 		print(turn)
 		$Spells.visible = false
@@ -1450,9 +1504,9 @@ func _on_mage_pressed() -> void:
 
 func _on_thief_pressed() -> void:
 	if(_heal_I_select):
-		Thief.HP += Thief.MaxHP*0.3
+		Thief.HP += Thief.MaxHP*0.2
 		print("HEAL: " + str(Mage.MaxHP*0.1))
-		Mage.Mana -= 5
+		Mage.Mana -= 10
 		turn += 1
 		print(turn)
 		$Spells.visible = false
@@ -1493,11 +1547,6 @@ func _on_item_button_gui_input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			attackMenu.visible = !attackMenu.visible
 			inventory.visible = true
-			
-	
-
-	
-
 
 func _on_attack_menu_button_pressed(button: BaseButton) -> void:
 	match button.name:
