@@ -2761,7 +2761,6 @@ scale = Vector2(3.04053, 2.69535)
 shape = SubResource("CircleShape2D_qac0n")
 
 [node name="collisions" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(1, 746, 210, 747, 210, 788, 2, 789)
