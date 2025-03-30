@@ -688,6 +688,7 @@ func _on_spell_menu_button_pressed(button: BaseButton) -> void:
 					$Options/AttackMenu/Fight_button.grab_focus()
 					is_skill = !is_skill
 			"Empower":
+				#Grants attack to ally
 				if(Mage.Mana >= 5):
 					Hero.grab_focus()
 					_empower_select = true
@@ -698,6 +699,7 @@ func _on_spell_menu_button_pressed(button: BaseButton) -> void:
 					$Options/AttackMenu/Fight_button.grab_focus()
 					is_skill = !is_skill
 			"Resistance":
+				#Grants defense to ally
 				if(Mage.Mana >= 20):
 					Hero.grab_focus()
 					_resistance_select = true
