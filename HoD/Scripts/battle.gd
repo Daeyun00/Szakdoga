@@ -125,6 +125,15 @@ var turn = 0
 
 func _ready() -> void:
 	_options_menu.button_focus(0)
+	SqlController.database.insert_row("map_battle", {"enemy": 3, "quantity": 1})
+	SqlController.database.insert_row("allies", {"name": "hero", "lvl": 1, "exp": 0, "gold": Global.currency, "atk": Hero.ATK, "max_att": 2, "def": Hero.DEF, "max_def": 100, "hp": $Allies/Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
+	SqlController.database.insert_row("allies", {"name": "mage", "lvl": 1, "exp": 0, "gold": Global.currency, "atk": Mage.ATK, "max_att": 2, "def": Mage.DEF, "max_def": 100, "hp": $Allies/Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
+	SqlController.database.insert_row("allies", {"name": "thief", "lvl": 1, "exp": 0, "gold": Global.currency, "atk": Thief.ATK, "max_att": 2, "def": Thief.DEF, "max_def": 100, "hp": $Allies/Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
+	
+	SqlController.database.insert_row("hostiles", {"name": "hostile1", "atk": hostile1.ATK, "max_att": hostile1.ATK, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
+	SqlController.database.insert_row("hostiles", {"name": "hostile2", "atk": hostile2.ATK, "max_att": hostile2.ATK, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
+	SqlController.database.insert_row("hostiles", {"name": "hostile3", "atk": hostile3.ATK, "max_att": hostile3.ATK, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
+
 	
 
 func _process(delta: float) -> void:
@@ -132,26 +141,32 @@ func _process(delta: float) -> void:
 	if(hero_down):
 		if(Hero.HP > 0):
 			Hero.HP = 0
+			SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 	if(mage_down):
 		if(Mage.HP > 0):
 			Mage.HP = 0
+			SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 	if(thief_down):
 		if(Thief.HP > 0):
 			Thief.HP = 0
+			SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 	
 	#no 0 ally
 	if(Hero.HP <= 0):
 		Hero.HP = 0
+		SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 		$Top/Players/Hero_label/Hero_status.text = "Down"
 		$"Effects/Hero_effect/Down-Icon".visible = true
 		hero_down = true
 	if(Mage.HP <= 0):
 		Mage.HP = 0
+		SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 		$Top/Players/Mage_label/Mage_status.text = "Down"
 		$"Effects/Mage_effect/Down-Icon".visible = true
 		mage_down = true
 	if(Thief.HP <= 0):
 		Thief.HP = 0
+		SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 		$Top/Players/Thief_label/Thief_status.text = "Down"
 		$"Effects/Thief_effect/Down-Icon".visible = true
 		thief_down = true
@@ -159,16 +174,19 @@ func _process(delta: float) -> void:
 	#no 0 enemy
 	if(hostile1.HP <= 0):
 		hostile1.HP = 0
+		SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 		$Top/Enemies/Enemy1/Enemy1_HP_label.text = "Down"
 		$"Effects/Slime1_effect/Down-Icon".visible = true
 		slime1_down = true
 	if(hostile2.HP <= 0):
 		hostile2.HP = 0
+		SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 		$Top/Enemies/Enemy2/Enemy2_HP_label.text = "Down"
 		$"Effects/Slime2_effect/Down-Icon".visible = true
 		slime2_down = true
 	if(hostile3.HP <= 0):
 		hostile3.HP = 0
+		SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 		$Top/Enemies/Enemy3/Enemy3_HP_label.text = "Down"
 		$"Effects/Slime3_effect/Down-Icon".visible = true
 		slime3_down = true
@@ -266,6 +284,7 @@ func _process(delta: float) -> void:
 			if(slime1_taunt or slime2_taunt or slime3_taunt):
 				if(slime1_taunt and turn == 3 and hostile1.HP > 0):
 					Hero.HP -= hostile1.ATK - Hero.DEF
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 					print("s1 hit h (taunt)")
 					slime1_taunt_turn += 1
 					print(turn)
@@ -273,11 +292,13 @@ func _process(delta: float) -> void:
 						slime1_taunt = false
 				elif(slime2_taunt and turn == 4 and hostile2.HP > 0):
 					Hero.HP -= hostile2.ATK - Hero.DEF
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 					print("s2 hit h (taunt)")
 					if(slime2_taunt_turn == 2):
 						slime2_taunt = false
 				elif(slime3_taunt and turn == 5 and hostile3.HP > 0):
 					Hero.HP -= hostile3.ATK - Hero.DEF
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 					print("s3 hit h (taunt)")
 					if(slime3_taunt_turn == 2):
 						slime3_taunt = false
@@ -289,31 +310,37 @@ func _process(delta: float) -> void:
 								if(_shadowstrike_token1 > 1 and hostile1.HP > 0):
 									if(s_strikernd1 > 0):
 										Hero.HP -= hostile1.ATK - Hero.DEF
+										SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 										print("s1 hit h")
 										print(turn)
 								else:
 									if(hostile1.HP > 0):
 										Hero.HP -= hostile1.ATK - Hero.DEF
+										SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 										print("s1 hit h")
 										print(turn)
 							4:
 								if(_shadowstrike_token2 > 1 and hostile2.HP > 0):
 									if(s_strikernd2 > 0):
 										Hero.HP -= hostile2.ATK - Hero.DEF
+										SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 										print("s2 hit h")
 										print(turn)
 								else:
 									Hero.HP -= hostile2.ATK - Hero.DEF
+									SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 									print("s2 hit h")
 									print(turn)
 							5:
 								if(_shadowstrike_token3 > 1 and hostile3.HP > 0):
 									if(s_strikernd3 > 0):
 										Hero.HP -= hostile3.ATK - Hero.DEF
+										SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 										print("s3 hit h")
 										print(turn)
 								else:
 									Hero.HP -= hostile3.ATK - Hero.DEF
+									SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 									print("s3 hit h")
 									print(turn)
 					1:
@@ -322,31 +349,37 @@ func _process(delta: float) -> void:
 								if(_shadowstrike_token1 > 1 and hostile1.HP > 0):
 									if(s_strikernd1 > 0):
 										Mage.HP -= hostile1.ATK - Mage.DEF
+										SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 										print("s1 hit m")
 										print(turn)
 								else:
 									if(hostile1.HP > 0 and hostile1.HP > 0):
 										Mage.HP -= hostile1.ATK - Mage.DEF
+										SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 										print("s1 hit m")
 										print(turn)
 							4:
 								if(_shadowstrike_token2 > 1 and hostile2.HP > 0):
 									if(s_strikernd2 > 0):
 										Mage.HP -= hostile2.ATK - Mage.DEF
+										SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 										print("s2 hit m")
 										print(turn)
 								else:
 									Mage.HP -= hostile2.ATK - Mage.DEF
+									SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 									print("s2 hit m")
 									print(turn)
 							5:
 								if(_shadowstrike_token3 > 1 and hostile3.HP > 0):
 									if(s_strikernd3 > 0):
 										Mage.HP -= hostile3.ATK - Mage.DEF
+										SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 										print("s3 hit m")
 										print(turn)
 								else:
 									Mage.HP -= hostile3.ATK - Mage.DEF
+									SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 									print("s3 hit m")
 									print(turn)
 					2:
@@ -356,31 +389,37 @@ func _process(delta: float) -> void:
 									if(_shadowstrike_token1 > 1 and hostile1.HP > 0):
 										if(s_strikernd1 > 0):
 											Thief.HP -= hostile1.ATK - Thief.DEF
+											SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 											print("s1 hit t")
 											print(turn)
 									else:
 										if(hostile1.HP > 0):
 											Thief.HP -= hostile1.ATK - Thief.DEF
+											SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 											print("s1 hit t")
 											print(turn)
 								4:
 									if(_shadowstrike_token2 > 1 and hostile2.HP > 0):
 										if(s_strikernd2 > 0):
 											Thief.HP -= hostile2.ATK - Thief.DEF
+											SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 											print("s2 hit t")
 											print(turn)
 									else:
 										Thief.HP -= hostile2.ATK - Thief.DEF
+										SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 										print("s2 hit t")
 										print(turn)
 								5:
 									if(_shadowstrike_token3 > 1 and hostile3.HP > 0):
 										if(s_strikernd3 > 0):
 											Thief.HP -= hostile3.ATK - Thief.DEF
+											SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 											print("s3 hit t")
 											print(turn)
 									else:
 										Thief.HP -= hostile3.ATK - Thief.DEF
+										SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 										print("s3 hit t")
 										print(turn)
 						else:
@@ -390,10 +429,13 @@ func _process(delta: float) -> void:
 			turn += 1
 		if(hero_guard):
 			Hero.DEF -= 5
+			SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 		if(mage_guard):
 			Mage.DEF -= 5
+			SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 		if(thief_guard):
 			Thief.DEF -= 5
+			SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 		turn = 0
 		print(turn)
 		$Options/AttackMenu/Fight_button.grab_focus()
@@ -403,6 +445,7 @@ func _process(delta: float) -> void:
 				_defense_token = 0
 				if(!_decimate_token):
 					Hero.DEF -= 10
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				$"Effects/Hero_effect/Defensive-Icon".visible = false
 			else:
 				_defense_token += 1
@@ -410,6 +453,7 @@ func _process(delta: float) -> void:
 			if(_bloodlust_token > 2):
 				_bloodlust_token = 0
 				Hero.ATK -= 10
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				$"Effects/Hero_effect/Bloodlust-Icon".visible = false
 			else:
 				_bloodlust_token += 1
@@ -417,6 +461,7 @@ func _process(delta: float) -> void:
 			if(_decimate_token > 2):
 				_decimate_token = 0
 				Hero.DEF += 20
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				$"Effects/Hero_effect/Decimate-Icon".visible = false
 			else:
 				_decimate_token += 1
@@ -428,6 +473,7 @@ func _process(delta: float) -> void:
 			else:
 				_fireball_token1 += 1
 				hostile1.HP -= Mage.ATK*0.5
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				print("m hit s1 (DoT)")
 		if(_fireball_token2 > 0):
 			if(_fireball_token2 > 2):
@@ -436,6 +482,7 @@ func _process(delta: float) -> void:
 			else:
 				_fireball_token2 += 1
 				hostile2.HP -= Mage.ATK*0.5
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				print("m hit s2 (DoT)")
 		if(_fireball_token3 > 0):
 			if(_fireball_token3 > 2):
@@ -444,11 +491,13 @@ func _process(delta: float) -> void:
 			else:
 				_fireball_token3 += 1
 				hostile3.HP -= Mage.ATK*0.5
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				print("m hit s3 (DoT)")
 		if(_empower_token1 > 0):
 			if (_empower_token1 > 2):
 				_empower_token1 = 0
 				Hero.ATK -= 10
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				$"Effects/Hero_effect/Empower-Icon".visible = false
 			else:
 				_empower_token1 += 1
@@ -456,6 +505,7 @@ func _process(delta: float) -> void:
 			if (_empower_token2 > 2):
 				_empower_token2 = 0
 				Mage.ATK -= 10
+				SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Hero.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 				$"Effects/Mage_effect/Empower-Icon".visible = false
 			else:
 				_empower_token1 += 1
@@ -463,6 +513,7 @@ func _process(delta: float) -> void:
 			if (_empower_token3 > 2):
 				_empower_token3 = 0
 				Thief.ATK -= 10
+				SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 				$"Effects/Thief_effect/Empower-Icon".visible = false
 			else:
 				_empower_token3 += 1
@@ -470,6 +521,7 @@ func _process(delta: float) -> void:
 			if (_resistance_token1 > 2):
 				_resistance_token1 = 0
 				Hero.DEF -= 10
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				$"Effects/Hero_effect/Resistance-Icon".visible = false
 			else:
 				_resistance_token1 += 1
@@ -477,6 +529,7 @@ func _process(delta: float) -> void:
 			if (_resistance_token2 > 2):
 				_resistance_token2 = 0
 				Mage.DEF -= 10
+				SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 				$"Effects/Mage_effect/Resistance-Icon".visible = false
 			else:
 				_resistance_token1 += 1
@@ -484,6 +537,7 @@ func _process(delta: float) -> void:
 			if (_resistance_token3 > 2):
 				_resistance_token3 = 0
 				Thief.DEF -= 10
+				SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 				$"Effects/Thief_effect/Resistance-Icon".visible = false
 			else:
 				_resistance_token3 += 1
@@ -491,6 +545,7 @@ func _process(delta: float) -> void:
 			if(_thunder_token1 > 2):
 				_thunder_token1 = 0
 				hostile1.DEF += 10
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				$"Effects/Slime1_effect/Thunder-Icon".visible = false
 			else:
 				_thunder_token1 += 1
@@ -498,6 +553,7 @@ func _process(delta: float) -> void:
 			if(_thunder_token2 > 2):
 				_thunder_token2 = 0
 				hostile2.DEF += 10
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				$"Effects/Slime2_effect/Thunder-Icon".visible = false
 			else:
 				_thunder_token2 += 1
@@ -505,6 +561,7 @@ func _process(delta: float) -> void:
 			if(_thunder_token3 > 2):
 				_thunder_token3 = 0
 				hostile3.DEF += 10
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				$"Effects/Slime3_effect/Thunder-Icon"
 			else:
 				_thunder_token3 += 1
@@ -516,6 +573,7 @@ func _process(delta: float) -> void:
 			else:
 				_envenom_token1 += 1
 				hostile1.HP -= Thief.ATK*0.5*_envenom_used_combo1
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				print("t hit s1 (PDoT)")
 		if(_envenom_token2 > 0):
 			if(_envenom_token2 > 2):
@@ -524,6 +582,7 @@ func _process(delta: float) -> void:
 			else:
 				_envenom_token2 += 1
 				hostile2.HP -= Thief.ATK*0.5*_envenom_used_combo2
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				print("t hit s2 (PDoT)")
 		if(_envenom_token3 > 0):
 			if(_envenom_token3 > 2):
@@ -532,6 +591,7 @@ func _process(delta: float) -> void:
 			else:
 				_envenom_token3 += 1
 				hostile3.HP -= Thief.ATK*0.5*_envenom_used_combo3
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				print("t hit s3 (PDoT)")
 		
 		if(_rupture_token1 > 0):
@@ -541,6 +601,7 @@ func _process(delta: float) -> void:
 			else:
 				_rupture_token1 += 1
 				hostile1.HP -= Thief.ATK*0.5*_rupture_used_combo1
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				print("t hit s1 (BDoT)")
 		if(_rupture_token2 > 0):
 			if(_rupture_token2 > 2):
@@ -549,6 +610,7 @@ func _process(delta: float) -> void:
 			else:
 				_rupture_token2 += 1
 				hostile2.HP -= Thief.ATK*0.5*_rupture_used_combo2
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				print("t hit s2 (BDoT)")
 		if(_rupture_token3 > 0):
 			if(_rupture_token3 > 2):
@@ -557,6 +619,7 @@ func _process(delta: float) -> void:
 			else:
 				_rupture_token3 += 1
 				hostile3.HP -= Thief.ATK*0.5*_rupture_used_combo3
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				print("t hit s3 (BDoT)")
 		if(_night_blade_token>0):
 			if(_night_blade_token == 2):
@@ -618,18 +681,21 @@ func _on_v_box_container_button_pressed(button: BaseButton) -> void:
 			match turn:
 				0:
 					Hero.DEF += 5
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 					hero_guard = true
 					$Top/Players/Hero_label/Hero_status.text = "Guard"
 					turn += 1
 					print(turn)
 				1:
 					Mage.DEF += 5
+					SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 					mage_guard = true
 					$Top/Players/Mage_label/Mage_status.text = "Guard"
 					turn += 1
 					print(turn)
 				2:
 					Thief.DEF += 5
+					SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 					thief_guard = true
 					$Top/Players/Thief_label/Thief_status.text = "Guard"
 					turn += 1
@@ -865,16 +931,19 @@ func _on_slime_pressed() -> void:
 			match turn:
 					0:
 						hostile1.HP -= Hero.ATK - hostile1.DEF
+						SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 						if (Hero.Rage < 100):
 							Hero.Rage += 5
 						turn += 1
 						print(turn)
 					1:
 						hostile1.HP -= Mage.ATK/2 - hostile1.DEF
+						SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 						turn += 1
 						print(turn)
 					2:
 						hostile1.HP -= Thief.ATK - hostile1.DEF
+						SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 						if (Thief.Combo < 10):
 							Thief.Combo += 1
 						turn += 1
@@ -890,6 +959,7 @@ func _on_slime_pressed() -> void:
 			#Hero skills
 			if(_charge_select):
 				hostile1.HP -= Hero.ATK*3 - hostile1.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				Hero.Rage -= 5
 				turn += 1
 				print(turn)
@@ -911,8 +981,10 @@ func _on_slime_pressed() -> void:
 				is_skill = !is_skill
 			if(_Defensive_attack_select):
 				hostile1.HP -= Hero.ATK*2 - hostile1.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				Hero.Rage -= 5
 				Hero.DEF += 10
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				_defense_token = 1
 				turn += 1
 				$"Effects/Hero_effect/Defensive-Icon".visible = true
@@ -925,7 +997,9 @@ func _on_slime_pressed() -> void:
 			if(_bloodlust_select):
 				if(_bloodlust_token == 0):
 					Hero.ATK += 10
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				hostile1.HP -= Hero.ATK*4 - hostile1.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				Hero.Rage -= 40
 				_bloodlust_token = 1
 				turn += 1
@@ -938,9 +1012,12 @@ func _on_slime_pressed() -> void:
 				_bloodlust_select = false
 			if(_decimate_select):
 				hostile1.HP -= Hero.ATK*30
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				Hero.DEF -= 20
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				if(_defense_token > 0):
 					Hero.DEF -= 10
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				_decimate_token = 1
 				turn += 1
 				$"Effects/Hero_effect/Decimate-Icon".visible = true
@@ -968,7 +1045,9 @@ func _on_slime_pressed() -> void:
 			if(_thunder_select):
 				if(_thunder_token1 == 0):
 					hostile1.DEF -= 10
+					SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				hostile1.HP -= Mage.ATK*10 - hostile1.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				_thunder_token1 = 1
 				Mage.Mana -= 40
 				turn += 1
@@ -983,6 +1062,7 @@ func _on_slime_pressed() -> void:
 			#thief combos
 			if(_envenom_select):
 				hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				if(_envenom_token1 == 0):
 					_envenom_token1 = 1
 					_envenom_used_combo1 = Thief.Combo
@@ -998,6 +1078,7 @@ func _on_slime_pressed() -> void:
 			
 			if (_eviscerate_select):
 				hostile1.HP -= Thief.ATK*(Thief.Combo) - hostile1.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				Thief.Combo = 0
 				turn += 1
 				print(turn)
@@ -1009,6 +1090,7 @@ func _on_slime_pressed() -> void:
 			
 			if(_rupture_select):
 				hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				if(_rupture_token1 == 0):
 					_rupture_token1 = 1
 					_rupture_used_combo1 = Thief.Combo
@@ -1024,6 +1106,7 @@ func _on_slime_pressed() -> void:
 			
 			if(_night_blade_select):
 				hostile1.HP -= Thief.ATK * Thief.Combo - hostile1.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				_night_blade_token = 1
 				Thief.Combo = 0
 				turn += 1
@@ -1037,6 +1120,7 @@ func _on_slime_pressed() -> void:
 			
 			if(_shadowstrike_select):
 				hostile1.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile1.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				if(_shadowstrike_token1 == 0):
 					_shadowstrike_token1 = 1
 				Thief.Combo = 0
@@ -1057,16 +1141,19 @@ func _on_slime_2_pressed() -> void:
 			match turn:
 					0:
 						hostile2.HP -= Hero.ATK - hostile2.DEF
+						SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 						if (Hero.Rage < 100):
 							Hero.Rage += 5
 						turn += 1
 						print(turn)
 					1:
 						hostile2.HP -= Mage.ATK/2 - hostile2.DEF
+						SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 						turn += 1
 						print(turn)
 					2:
 						hostile2.HP -= Thief.ATK - hostile2.DEF
+						SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 						turn += 1
 						print(turn)
 					_:
@@ -1079,6 +1166,7 @@ func _on_slime_2_pressed() -> void:
 		if(is_skill):
 			if(_charge_select):
 				hostile2.HP -= Hero.ATK*3 - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				Hero.Rage -= 5
 				turn += 1
 				print(turn)
@@ -1100,8 +1188,10 @@ func _on_slime_2_pressed() -> void:
 				is_skill = !is_skill
 			if(_Defensive_attack_select):
 				hostile2.HP -= Hero.ATK*2 - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				Hero.Rage -= 5
 				Hero.DEF += 10
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				_defense_token = 1
 				turn += 1
 				$"Effects/Hero_effect/Defensive-Icon".visible = true
@@ -1114,7 +1204,9 @@ func _on_slime_2_pressed() -> void:
 			if(_bloodlust_select):
 				if(_bloodlust_token == 0):
 					Hero.ATK += 10
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				hostile2.HP -= Hero.ATK*4 - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				Hero.Rage -= 40
 				_bloodlust_token = 1
 				turn += 1
@@ -1127,9 +1219,12 @@ func _on_slime_2_pressed() -> void:
 				_bloodlust_select = false
 			if(_decimate_select):
 				hostile2.HP -= Hero.ATK*30
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				Hero.DEF -= 20
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				if(_defense_token > 0):
 					Hero.DEF -= 10
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				_decimate_token = 1
 				turn += 1
 				$"Effects/Hero_effect/Decimate-Icon".visible = true
@@ -1141,6 +1236,7 @@ func _on_slime_2_pressed() -> void:
 				_decimate_select = false
 			if(_fireball_select):
 				hostile2.HP -= Mage.ATK*2 - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				if(_fireball_token2 == 0):
 					_fireball_token2 = 1
 				Mage.Mana -= 10
@@ -1155,7 +1251,9 @@ func _on_slime_2_pressed() -> void:
 			if(_thunder_select):
 				if(_thunder_token2 == 0):
 					hostile1.DEF -= 10
+					SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				hostile2.HP -= Mage.ATK*10 - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				_thunder_token2 = 1
 				Mage.Mana -= 40
 				turn += 1
@@ -1169,6 +1267,7 @@ func _on_slime_2_pressed() -> void:
 			#thief combos
 			if(_envenom_select):
 				hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				if(_envenom_token2 == 0):
 					_envenom_token2 = 1
 					_envenom_used_combo2 = Thief.Combo
@@ -1184,6 +1283,7 @@ func _on_slime_2_pressed() -> void:
 				
 			if (_eviscerate_select):
 				hostile2.HP -= Thief.ATK*(Thief.Combo) - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				Thief.Combo = 0
 				turn += 1
 				print(turn)
@@ -1195,6 +1295,7 @@ func _on_slime_2_pressed() -> void:
 			
 			if(_rupture_select):
 				hostile2.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				if(_rupture_token2 == 0):
 					_rupture_token2 = 1
 					_rupture_used_combo2 = Thief.Combo
@@ -1210,6 +1311,7 @@ func _on_slime_2_pressed() -> void:
 			
 			if(_night_blade_select):
 				hostile2.HP -= Thief.ATK * Thief.Combo - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				_night_blade_token = 1
 				Thief.Combo = 0
 				turn += 1
@@ -1223,6 +1325,7 @@ func _on_slime_2_pressed() -> void:
 			
 			if(_shadowstrike_select):
 				hostile2.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				if(_shadowstrike_token2 == 0):
 					_shadowstrike_token2 = 1
 				Thief.Combo = 0
@@ -1244,16 +1347,19 @@ func _on_slime_3_pressed() -> void:
 			match turn:
 					0:
 						hostile3.HP -= Hero.ATK - hostile3.DEF
+						SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 						if (Hero.Rage < 100):
 							Hero.Rage += 5
 						turn += 1
 						print(turn)
 					1:
 						hostile3.HP -= Mage.ATK/2 - hostile3.DEF
+						SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 						turn += 1
 						print(turn)
 					2:
 						hostile3.HP -= Thief.ATK - hostile3.DEF
+						SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 						turn += 1
 						print(turn)
 					_:
@@ -1266,6 +1372,7 @@ func _on_slime_3_pressed() -> void:
 		if(is_skill):
 			if(_charge_select):
 				hostile3.HP -= Hero.ATK*3 - hostile3.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				Hero.Rage -= 5
 				turn += 1
 				print(turn)
@@ -1287,8 +1394,10 @@ func _on_slime_3_pressed() -> void:
 				is_skill = !is_skill
 			if(_Defensive_attack_select):
 				hostile3.HP -= Hero.ATK*2 - hostile3.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				Hero.Rage -= 5
 				Hero.DEF += 10
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				_defense_token = 1
 				turn += 1
 				$"Effects/Hero_effect/Defensive-Icon".visible = true
@@ -1301,7 +1410,9 @@ func _on_slime_3_pressed() -> void:
 			if(_bloodlust_select):
 				if(_bloodlust_token == 0):
 					Hero.ATK += 10
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				hostile3.HP -= Hero.ATK*4 - hostile3.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				Hero.Rage -= 40
 				_bloodlust_token = 1
 				turn += 1
@@ -1314,9 +1425,12 @@ func _on_slime_3_pressed() -> void:
 				_bloodlust_select = false
 			if(_decimate_select):
 				hostile3.HP -= Hero.ATK*15
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				Hero.DEF -= 20
+				SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				if(_defense_token > 0):
 					Hero.DEF -= 10
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				_decimate_token = 1
 				turn += 1
 				$"Effects/Hero_effect/Decimate-Icon".visible = true
@@ -1328,6 +1442,7 @@ func _on_slime_3_pressed() -> void:
 				_decimate_select = false
 			if(_fireball_select):
 				hostile3.HP -= Mage.ATK*2 - hostile3.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				if(_fireball_token3 == 0):
 					_fireball_token3 = 1
 				Mage.Mana -= 10
@@ -1342,7 +1457,9 @@ func _on_slime_3_pressed() -> void:
 			if(_thunder_select):
 				if(_thunder_token3 == 0):
 					hostile1.DEF -= 10
+					SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				hostile3.HP -= Mage.ATK*10 - hostile3.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile1'", {"atk": hostile1.ATK, "max_att": 2, "def": hostile1.DEF, "max_def": 100, "hp": $Hostiles/Slime.HP, "max_hp": $Hostiles/Slime.MaxHP})
 				_thunder_token3 = 1
 				Mage.Mana -= 40
 				turn += 1
@@ -1356,6 +1473,7 @@ func _on_slime_3_pressed() -> void:
 			#thief combos
 			if(_envenom_select):
 				hostile2.HP -= Thief.ATK*(Thief.Combo*2) - hostile2.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile2'", {"atk": hostile2.ATK, "max_att": 2, "def": hostile2.DEF, "max_def": 100, "hp": $Hostiles/Slime2.HP, "max_hp": $Hostiles/Slime2.MaxHP})
 				if(_envenom_token2 == 0):
 					_envenom_token2 = 1
 					_envenom_used_combo2 = Thief.Combo
@@ -1370,6 +1488,7 @@ func _on_slime_3_pressed() -> void:
 				_envenom_select = false
 			if (_eviscerate_select):
 				hostile3.HP -= Thief.ATK*(Thief.Combo) - hostile3.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				Thief.Combo = 0
 				turn += 1
 				print(turn)
@@ -1381,6 +1500,7 @@ func _on_slime_3_pressed() -> void:
 			
 			if(_rupture_select):
 				hostile3.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile3.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				if(_rupture_token3 == 0):
 					_rupture_token3 = 1
 					_rupture_used_combo1 = Thief.Combo
@@ -1396,6 +1516,7 @@ func _on_slime_3_pressed() -> void:
 			
 			if(_night_blade_select):
 				hostile3.HP -= Thief.ATK * Thief.Combo - hostile3.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				_night_blade_token = 1
 				Thief.Combo = 0
 				turn += 1
@@ -1409,6 +1530,7 @@ func _on_slime_3_pressed() -> void:
 			
 			if(_shadowstrike_select):
 				hostile3.HP -= Thief.ATK*0.3*(Thief.Combo*2) - hostile3.DEF
+				SqlController.database.update_rows("hostiles", "name = 'hostile3'", {"atk": hostile3.ATK, "max_att": 2, "def": hostile3.DEF, "max_def": 100, "hp": $Hostiles/Slime3.HP, "max_hp": $Hostiles/Slime3.MaxHP})
 				if(_shadowstrike_token3 == 0):
 					_shadowstrike_token3 = 1
 				Thief.Combo = 0
@@ -1426,6 +1548,7 @@ func _on_slime_3_pressed() -> void:
 func _on_hero_pressed() -> void:
 	if(_heal_I_select):
 		Hero.HP += Hero.MaxHP*0.2
+		SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 		print("HEAL: " + str(Mage.MaxHP*0.1))
 		Mage.Mana -= 10
 		turn += 1
@@ -1438,6 +1561,7 @@ func _on_hero_pressed() -> void:
 	if(_empower_select):
 		if(_empower_token3 == 0):
 			Hero.ATK += 10
+			SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 			Hero.Rage += 5
 		_empower_token1 = 1
 		Mage.Mana -= 35
@@ -1452,6 +1576,7 @@ func _on_hero_pressed() -> void:
 	if(_resistance_select):
 		if(_resistance_token1 == 0):
 			Hero.DEF += 10
+			SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 		_resistance_token1 = 1
 		Mage.Mana -= 20
 		turn += 1
@@ -1466,6 +1591,7 @@ func _on_hero_pressed() -> void:
 func _on_mage_pressed() -> void:
 	if(_heal_I_select):
 		Mage.HP += Mage.MaxHP*0.2
+		SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 		print("HEAL: " + str(Mage.MaxHP*0.1))
 		Mage.Mana -= 10
 		turn += 1
@@ -1478,6 +1604,7 @@ func _on_mage_pressed() -> void:
 	if(_empower_select):
 		if(_empower_token2 == 0):
 			Mage.ATK += 10
+			SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 		_empower_token2 = 1
 		Mage.Mana -= 30
 		turn += 1
@@ -1491,6 +1618,7 @@ func _on_mage_pressed() -> void:
 	if(_resistance_select):
 		if(_resistance_token2 == 0):
 			Mage.DEF += 10
+			SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 		_resistance_token2 = 1
 		Mage.Mana -= 20
 		turn += 1
@@ -1505,6 +1633,7 @@ func _on_mage_pressed() -> void:
 func _on_thief_pressed() -> void:
 	if(_heal_I_select):
 		Thief.HP += Thief.MaxHP*0.2
+		SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 		print("HEAL: " + str(Mage.MaxHP*0.1))
 		Mage.Mana -= 10
 		turn += 1
@@ -1517,6 +1646,7 @@ func _on_thief_pressed() -> void:
 	if(_empower_select):
 		if(_empower_token3 == 0):
 			Thief.ATK += 10
+			SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 			Thief.Combo += 1
 		_empower_token3 = 1
 		Mage.Mana -= 35
@@ -1531,6 +1661,7 @@ func _on_thief_pressed() -> void:
 	if(_resistance_select):
 		if(_resistance_token3 == 0):
 			Thief.DEF += 10
+			SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Thief.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 		_resistance_token3 = 1
 		Mage.Mana -= 20
 		turn += 1

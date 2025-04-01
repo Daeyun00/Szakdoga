@@ -7,6 +7,8 @@ func _process(delta: float) -> void:
 	if(teleport_ready && Input.is_action_pressed("ui_up")):
 		get_tree().change_scene_to_file("res://Scenes/World scenes/VillageCenter/village_center.tscn")
 	
+	
+
 func _on_area_entered(area: Area2D) -> void:
 	teleport_ready = true
 

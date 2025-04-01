@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://co37dgctyyci6"]
+[gd_scene load_steps=95 format=4 uid="uid://co37dgctyyci6"]
 
 [ext_resource type="Texture2D" uid="uid://gke4x0nxhhqm" path="res://Assets/Asset Packs/SSW_VP1_v1.0/_PNG/Tavern.png" id="1_hr4oh"]
 [ext_resource type="PackedScene" uid="uid://dpcx4eduhlg7f" path="res://Scenes/ui.tscn" id="2_e4k7h"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/dungeonportal.gd" id="24_ghi1h"]
 [ext_resource type="Texture2D" uid="uid://cyoncsxti8qel" path="res://Assets/Asset Packs/Dungeons & fight scenes/Pixel Art Animated Portal/sprite-sheet.png" id="25_eio0s"]
 [ext_resource type="AudioStream" uid="uid://b2nos5n34uk3" path="res://Sounds/MUZSIK/Game/Fantasy_Starter_Pack/WAVs/Open_World_Happiness_Full.WAV" id="26_jchor"]
+[ext_resource type="Script" path="res://Scenes/World scenes/VillageCenter/enter.gd" id="26_suu34"]
 
 [sub_resource type="TileSet" id="TileSet_yyjto"]
 
@@ -6302,6 +6303,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_ld2uh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kvue")
 text = "Enter
 "
+script = ExtResource("26_suu34")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Portal"]
 z_index = 9
@@ -6335,3 +6337,4 @@ autoplay = true
 [connection signal="area_exited" from="Teleport_next" to="Teleport_next" method="_on_area_exited"]
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
 [connection signal="body_exited" from="Portal" to="Portal" method="_on_body_exited"]
+[connection signal="pressed" from="Portal/HBoxContainer/Enter" to="Portal/HBoxContainer/Enter" method="_on_pressed"]
