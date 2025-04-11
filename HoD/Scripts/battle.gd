@@ -27,6 +27,8 @@ extends Control
 
 signal interacted(jezus: bool)
 
+var item
+
 var is_fight = false
 var is_skill = false
 var is_item = false
@@ -1699,9 +1701,37 @@ func _on_quit_pressed() -> void:
 		0:
 			turn += 1
 			$Top/Players/Hero_label/Hero_status.text = "Item"
+			
+			match item["effect"]:
+				"Healing":
+					if Hero.Hp < 100:
+						Hero.HP += 10
+						print("HP increase to ", Hero.HP)
+					if Hero.HP >= 100:
+						Hero.HP = 100
+				"Stamina":
+					Hero.Rage += 15
+				"dagger":
+					Hero.ATK += 20
+				_:
+					print("There is no effect for this item")
 		1:
 			turn += 1
 			$Top/Players/Mage_label/Mage_status.text = "Item"
+			
+			match item["effect"]:
+				"Healing":
+					if Mage.Hp < 100:
+						Mage.HP += 10
+						print("HP increase to ", Mage.HP)
+					if Mage.HP >= 100:
+						Mage.HP = 100
+				"Mana":
+					Hero.Mana += 15
+				"Stamina":
+					Mage.Rage += 15
+				_:
+					print("There is no effect for this item")
 		2:
 			turn += 1
 			$Top/Players/Thief_label/Thief_status.text = "item"
