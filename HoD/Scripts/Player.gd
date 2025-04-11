@@ -13,6 +13,7 @@ var is_paused : bool
 @onready var inventory_hotbar = $Inventory_Hotbar
 @onready var shopInterac_ui = $InteractUI2
 @onready var money = $InventoryUI/ColorRect/Cost
+@onready var player = $"."
 
 
 
@@ -72,6 +73,7 @@ func _input(event):
 	if event.is_action_pressed("ui_inventory"):
 		inventory_ui.visible = !inventory_ui.visible
 		inventory_hotbar.visible = !inventory_hotbar.visible
+		player.visible = !player.visible
 		
 		
 func apply_item_effect(item):

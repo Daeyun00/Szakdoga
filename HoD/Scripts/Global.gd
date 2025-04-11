@@ -28,7 +28,7 @@ var hotbar_inventory = []
 
 func _ready(): 
 	# Initializes the inventory with 30 slots (spread over 9 blocks per row)
-	inventory.resize(30) 
+	inventory.resize(5) 
 	# Hotbar size
 	hotbar_inventory.resize(hotbar_size) 
 	

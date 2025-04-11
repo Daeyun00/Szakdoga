@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://dk2q27uc065mt"]
+[gd_scene load_steps=25 format=3 uid="uid://dk2q27uc065mt"]
 
 [ext_resource type="PackedScene" uid="uid://bccp5hclu5gk" path="res://Scenes/Other/window_default.tscn" id="1_j3yfj"]
 [ext_resource type="Script" path="res://Scripts/battle.gd" id="1_kdno6"]
-[ext_resource type="Texture2D" uid="uid://dy2ttus5rubyb" path="res://Assets/Backgrounds_Fight/7MF3Jn.png" id="2_o3m4s"]
 [ext_resource type="FontVariation" uid="uid://bppspbqj0rwmh" path="res://Utility/themes/default_font.tres" id="2_q03yh"]
 [ext_resource type="Script" path="res://Scripts/Attack_Menu.gd" id="4_dtoku"]
 [ext_resource type="PackedScene" uid="uid://codr4bxbre4uq" path="res://Scenes/Entities/Hero.tscn" id="4_o04v0"]
@@ -12,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bbw5r3sskp6di" path="res://Assets/Icons/Icon.1_05.png" id="7_v14gd"]
 [ext_resource type="Texture2D" uid="uid://3a1soooo5bb5" path="res://Assets/Icons/Icon.1_04.png" id="8_c6jbm"]
 [ext_resource type="PackedScene" uid="uid://1ympmth3dktk" path="res://Scenes/Entities/Thief.tscn" id="8_mbssg"]
-[ext_resource type="Texture2D" uid="uid://bmeo6rvcrivyy" path="res://Assets/Icons/Icons8_83.png" id="8_uhe6c"]
 [ext_resource type="Script" path="res://Scenes/UI/hostiles.gd" id="9_5a74e"]
 [ext_resource type="Texture2D" uid="uid://d3lsssr7e48uu" path="res://Assets/Icons/Icon.1_06.png" id="9_kkag1"]
 [ext_resource type="Texture2D" uid="uid://b1l8ntxow0rix" path="res://Assets/Icons/Icon.4_35.png" id="9_lx21h"]
@@ -40,7 +38,6 @@ script = ExtResource("1_kdno6")
 texture_filter = 3
 position = Vector2(685.5, 384.5)
 scale = Vector2(0.768841, 0.867564)
-texture = ExtResource("2_o3m4s")
 
 [node name="Top" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(1000, 150)
@@ -396,7 +393,6 @@ texture = ExtResource("7_v14gd")
 visible = false
 position = Vector2(176, 24)
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("8_uhe6c")
 
 [node name="Fireball-Icon" type="Sprite2D" parent="Effects/Slime1_effect"]
 visible = false
@@ -464,7 +460,6 @@ texture = ExtResource("7_v14gd")
 visible = false
 position = Vector2(176, 24)
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("8_uhe6c")
 
 [node name="Fireball-Icon" type="Sprite2D" parent="Effects/Slime2_effect"]
 visible = false
@@ -532,7 +527,6 @@ texture = ExtResource("7_v14gd")
 visible = false
 position = Vector2(176, 24)
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("8_uhe6c")
 
 [node name="Fireball-Icon" type="Sprite2D" parent="Effects/Slime3_effect"]
 visible = false
