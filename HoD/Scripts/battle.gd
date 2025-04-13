@@ -125,6 +125,17 @@ var turn = 0
 
 func _ready() -> void:
 	_options_menu.button_focus(0)
+	
+	SqlController.database.delete_rows("map_battle", "quantity = '1'")
+	
+	SqlController.database.delete_rows("allies", "name = 'hero'")
+	SqlController.database.delete_rows("allies", "name = 'mage'")
+	SqlController.database.delete_rows("allies", "name = 'thief'")
+	
+	SqlController.database.delete_rows("hostiles", "name = 'hostile1'")
+	SqlController.database.delete_rows("hostiles", "name = 'hostile2'")
+	SqlController.database.delete_rows("hostiles", "name = 'hostile3'")
+	
 	SqlController.database.insert_row("map_battle", {"enemy": 3, "quantity": 1})
 	SqlController.database.insert_row("allies", {"name": "hero", "lvl": 1, "exp": 0, "gold": Global.currency, "atk": Hero.ATK, "max_att": 2, "def": Hero.DEF, "max_def": 100, "hp": $Allies/Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 	SqlController.database.insert_row("allies", {"name": "mage", "lvl": 1, "exp": 0, "gold": Global.currency, "atk": Mage.ATK, "max_att": 2, "def": Mage.DEF, "max_def": 100, "hp": $Allies/Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
@@ -1707,14 +1718,18 @@ func apply_item_effect(item):
 						Hero.HP += 10
 						SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 						print("HP increase to ", Hero.HP)
+						inventory.visible = false
 					if Hero.HP >= 100:
 						Hero.HP = 100
 						SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
+						inventory.visible = false
 				"Stamina":
 					Hero.Rage += 15
+					inventory.visible = false
 				"dagger":
 					Hero.ATK += 20
 					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
+					inventory.visible = false
 				_:
 					print("There is no effect for this item")
 		1:
@@ -1727,12 +1742,16 @@ func apply_item_effect(item):
 						Mage.HP += 10
 						SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 						print("HP increase to ", Mage.HP)
+						inventory.visible = false
 					if Mage.HP >= 100:
 						Mage.HP = 100
+						SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 				"Mana":
 					Mage.Mana += 15
+					inventory.visible = false
 				"Stamina":
 					Mage.Rage += 15
+					inventory.visible = false
 				_:
 					print("There is no effect for this item")
 		2:
@@ -1744,8 +1763,10 @@ func apply_item_effect(item):
 						Thief.HP += 10
 						SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 						print("HP increase to ", Mage.HP)
+						inventory.visible = false
 					if Thief.HP >= 100:
 						Thief.HP = 100
+						inventory.visible = false
 				_:
 					print("There is no effect for this item")
 		_:
