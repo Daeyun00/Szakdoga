@@ -27,8 +27,6 @@ extends Control
 
 signal interacted(jezus: bool)
 
-var item
-
 var is_fight = false
 var is_skill = false
 var is_item = false
@@ -1697,6 +1695,7 @@ func _on_attack_menu_button_pressed(button: BaseButton) -> void:
 func _on_quit_pressed() -> void:
 	if inventory.visible == true:
 		inventory.visible = false
+func apply_item_effect(item):
 	match(turn):
 		0:
 			turn += 1
@@ -1706,13 +1705,16 @@ func _on_quit_pressed() -> void:
 				"Healing":
 					if Hero.Hp < 100:
 						Hero.HP += 10
+						SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 						print("HP increase to ", Hero.HP)
 					if Hero.HP >= 100:
 						Hero.HP = 100
+						SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				"Stamina":
 					Hero.Rage += 15
 				"dagger":
 					Hero.ATK += 20
+					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 				_:
 					print("There is no effect for this item")
 		1:
@@ -1723,11 +1725,12 @@ func _on_quit_pressed() -> void:
 				"Healing":
 					if Mage.Hp < 100:
 						Mage.HP += 10
+						SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 						print("HP increase to ", Mage.HP)
 					if Mage.HP >= 100:
 						Mage.HP = 100
 				"Mana":
-					Hero.Mana += 15
+					Mage.Mana += 15
 				"Stamina":
 					Mage.Rage += 15
 				_:
@@ -1735,5 +1738,15 @@ func _on_quit_pressed() -> void:
 		2:
 			turn += 1
 			$Top/Players/Thief_label/Thief_status.text = "item"
+			match item["effect"]:
+				"Healing":
+					if Thief.Hp < 100:
+						Thief.HP += 10
+						SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
+						print("HP increase to ", Mage.HP)
+					if Thief.HP >= 100:
+						Thief.HP = 100
+				_:
+					print("There is no effect for this item")
 		_:
 			print("???")
