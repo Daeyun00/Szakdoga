@@ -1707,6 +1707,7 @@ func _on_attack_menu_button_pressed(button: BaseButton) -> void:
 func _on_quit_pressed() -> void:
 	if inventory.visible == true:
 		inventory.visible = false
+		attackMenu.visible = true
 func apply_item_effect(item):
 	match(turn):
 		0:

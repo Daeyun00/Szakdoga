@@ -176,14 +176,6 @@ text = "Inventory"
 
 [node name="Inventory_UI" parent="InventoryUI/ColorRect" instance=ExtResource("20_35uxx")]
 
-[node name="Cost" type="Label" parent="InventoryUI/ColorRect"]
-layout_mode = 0
-offset_left = 199.0
-offset_top = 71.0
-offset_right = 340.0
-offset_bottom = 101.0
-text = "100"
-
 [node name="Quit" type="Button" parent="InventoryUI"]
 offset_left = 66.0
 offset_top = 66.0
