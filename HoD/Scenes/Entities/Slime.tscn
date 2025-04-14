@@ -1,36 +1,36 @@
-[gd_scene load_steps=19 format=3 uid="uid://c14j6sxrgxwv"]
+[gd_scene load_steps=26 format=3 uid="uid://c14j6sxrgxwv"]
 
 [ext_resource type="Texture2D" uid="uid://dung2pen6u2j6" path="res://Assets/Enemies/Slimes/slime_idle2.png" id="1_xubi6"]
 [ext_resource type="Script" path="res://Scripts/Entities/Hostiles/slime.gd" id="1_yrspg"]
 [ext_resource type="Texture2D" uid="uid://3s58ojpcitwx" path="res://Assets/Enemies/Slimes/slime_idle3.png" id="2_flbp0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cj0s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a50ow"]
 atlas = ExtResource("1_xubi6")
-region = Rect2(0, 138, 79, 69)
+region = Rect2(480, 288, 80, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_el7uh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fs6w"]
 atlas = ExtResource("1_xubi6")
-region = Rect2(79, 138, 79, 69)
+region = Rect2(400, 288, 80, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8su0h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6pt6"]
 atlas = ExtResource("1_xubi6")
-region = Rect2(158, 138, 79, 69)
+region = Rect2(320, 288, 80, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ags1x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4br8"]
 atlas = ExtResource("1_xubi6")
-region = Rect2(237, 138, 79, 69)
+region = Rect2(240, 288, 80, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ne25i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1tfj"]
 atlas = ExtResource("1_xubi6")
-region = Rect2(316, 138, 79, 69)
+region = Rect2(160, 288, 80, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_elybp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6by6c"]
 atlas = ExtResource("1_xubi6")
-region = Rect2(395, 138, 79, 69)
+region = Rect2(80, 288, 80, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwytc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_it8m6"]
 atlas = ExtResource("1_xubi6")
-region = Rect2(474, 138, 79, 69)
+region = Rect2(0, 288, 80, 72)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4dj0"]
 atlas = ExtResource("2_flbp0")
@@ -60,32 +60,60 @@ region = Rect2(400, 432, 80, 72)
 atlas = ExtResource("2_flbp0")
 region = Rect2(480, 432, 80, 72)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptt3w"]
+atlas = ExtResource("1_xubi6")
+region = Rect2(480, 0, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reqo6"]
+atlas = ExtResource("1_xubi6")
+region = Rect2(400, 0, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk1as"]
+atlas = ExtResource("1_xubi6")
+region = Rect2(320, 0, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myiry"]
+atlas = ExtResource("1_xubi6")
+region = Rect2(240, 0, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ita7j"]
+atlas = ExtResource("1_xubi6")
+region = Rect2(160, 0, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ui2m"]
+atlas = ExtResource("1_xubi6")
+region = Rect2(80, 0, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eavo1"]
+atlas = ExtResource("1_xubi6")
+region = Rect2(0, 0, 80, 72)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_gucyg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2cj0s")
+"texture": SubResource("AtlasTexture_a50ow")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_el7uh")
+"texture": SubResource("AtlasTexture_7fs6w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8su0h")
+"texture": SubResource("AtlasTexture_q6pt6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ags1x")
+"texture": SubResource("AtlasTexture_e4br8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ne25i")
+"texture": SubResource("AtlasTexture_u1tfj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_elybp")
+"texture": SubResource("AtlasTexture_6by6c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mwytc")
+"texture": SubResource("AtlasTexture_it8m6")
 }],
 "loop": true,
-"name": &"default",
+"name": &"green_slime",
 "speed": 10.0
 }, {
 "frames": [{
@@ -111,7 +139,33 @@ animations = [{
 "texture": SubResource("AtlasTexture_bykkw")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"grey_slime",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptt3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reqo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk1as")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myiry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ita7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ui2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eavo1")
+}],
+"loop": true,
+"name": &"pink_slime",
 "speed": 10.0
 }]
 
@@ -124,8 +178,8 @@ script = ExtResource("1_yrspg")
 position = Vector2(52, 18)
 scale = Vector2(2.42405, 2.19565)
 sprite_frames = SubResource("SpriteFrames_gucyg")
-animation = &"new_animation"
-autoplay = "new_animation"
-frame_progress = 0.953545
+animation = &"grey_slime"
+autoplay = "grey_slime"
+frame_progress = 0.5167
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

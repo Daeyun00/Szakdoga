@@ -25,6 +25,10 @@ extends Control
 
 @onready var item_option = $itemOption
 
+#slimes :3
+@onready var slime1_color = $Hostiles/Slime.get_node("AnimatedSprite2D")
+@onready var slime2_color = $Hostiles/Slime2.get_node("AnimatedSprite2D")
+
 signal interacted(jezus: bool)
 
 var is_fight = false
@@ -124,6 +128,10 @@ var _shadowstrike_token3 = 0
 var turn = 0
 
 func _ready() -> void:
+	#SLIMEEESSSSSS
+	slime1_color.play("pink_slime")
+	slime2_color.play("green_slime")
+	
 	_options_menu.button_focus(0)
 	Global.set_battle_reference(self)
 	
