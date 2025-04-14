@@ -57,6 +57,16 @@ func set_item(new_item):
 # Remove item from inventory and drop it back into the world        		
 func _on_drop_button_pressed():
 	if item != null:
+		if item["name"] == "Health_potion":
+			SqlController.database.delete_rows("inventory", "item_id = '1'")
+		if item["name"] == "Mana potion":
+			SqlController.database.delete_rows("inventory", "item_id = '2'")
+		if item["name"] == "Riptride_dagger":
+			SqlController.database.delete_rows("inventory", "item_id = '3'")
+		if item["name"] == "Runic_dagger":
+			SqlController.database.delete_rows("inventory", "item_id = '4'")
+		if item["name"] == "Stamina potion":
+			SqlController.database.delete_rows("inventory", "item_id = '5'")
 		var drop_position = Global.player_node.global_position
 		var drop_offset = Vector2(0, 50)
 		drop_offset = drop_offset.rotated(Global.player_node.rotation)
@@ -64,6 +74,7 @@ func _on_drop_button_pressed():
 		Global.remove_item(item["type"], item["effect"])
 		Global.remove_hotbar_item(item["type"], item["effect"])
 		usage_panel.visible = false
+		
 
 # Remove item from inventory, use it, and apply its effect (if possible)		
 func _on_use_button_pressed():
@@ -73,6 +84,16 @@ func _on_use_button_pressed():
 			Global.player_node.apply_item_effect(item)
 			Global.remove_item(item["type"], item["effect"])
 			Global.remove_hotbar_item(item["type"], item["effect"])
+			if item["name"] == "Health_potion":
+				SqlController.database.delete_rows("inventory", "item_id = '1'")
+			if item["name"] == "Mana potion":
+				SqlController.database.delete_rows("inventory", "item_id = '2'")
+			if item["name"] == "Riptride_dagger":
+				SqlController.database.delete_rows("inventory", "item_id = '3'")
+			if item["name"] == "Runic_dagger":
+				SqlController.database.delete_rows("inventory", "item_id = '4'")
+			if item["name"] == "Stamina potion":
+				SqlController.database.delete_rows("inventory", "item_id = '1'")
 		else:
 			print("Player could not be found")
 

@@ -5,6 +5,7 @@ extends Inventory
 
 func _ready():
 	load_items(items)
+	SqlController.database.delete_rows("shopInventory", "bought = '0'")
 	SqlController.database.insert_row("shopInventory", {"item_id": 1, "cost": 40, "bought": false})
 	SqlController.database.insert_row("shopInventory", {"item_id": 2, "cost": 50, "bought": false})
 	SqlController.database.insert_row("shopInventory", {"item_id": 3, "cost": 35, "bought": false})
