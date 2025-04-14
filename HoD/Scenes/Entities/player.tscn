@@ -139,6 +139,7 @@ offset_right = -146.0
 offset_bottom = -356.0
 grow_horizontal = 0
 grow_vertical = 0
+color = Color(0.340339, 0.340339, 0.340339, 1)
 
 [node name="Label" type="Label" parent="InteractUI/ColorRect"]
 layout_mode = 0

@@ -11,6 +11,7 @@ extends Control
 @onready var item_effect = $DetailsPanel/ItemEffect
 @onready var usage_panel = $UsagePanel
 @onready var assign_button = $UsagePanel/AssignButton
+@onready var dropButton = $UsagePanel/DropButton
 @onready var outer_border = $OuterBorder
 
 # Signals
@@ -80,22 +81,24 @@ func _on_drop_button_pressed():
 func _on_use_button_pressed():
 	usage_panel.visible = false
 	if item != null and item["effect"] != "":
-		if Global.player_node:
+		if Global.battle_control:
+			Global.battle_control.apply_item_effect(item)
+			Global.remove_item(item["type"], item["effect"])
+			Global.remove_hotbar_item(item["type"], item["effect"])
+		elif Global.player_node:
 			Global.player_node.apply_item_effect(item)
 			Global.remove_item(item["type"], item["effect"])
 			Global.remove_hotbar_item(item["type"], item["effect"])
-			if item["name"] == "Health_potion":
-				SqlController.database.delete_rows("inventory", "item_id = '1'")
-			if item["name"] == "Mana potion":
-				SqlController.database.delete_rows("inventory", "item_id = '2'")
-			if item["name"] == "Riptride_dagger":
-				SqlController.database.delete_rows("inventory", "item_id = '3'")
-			if item["name"] == "Runic_dagger":
-				SqlController.database.delete_rows("inventory", "item_id = '4'")
-			if item["name"] == "Stamina potion":
-				SqlController.database.delete_rows("inventory", "item_id = '1'")
-		else:
-			print("Player could not be found")
+		if item["name"] == "Health_potion":
+			SqlController.database.delete_rows("inventory", "item_id = '1'")
+		if item["name"] == "Mana potion":
+			SqlController.database.delete_rows("inventory", "item_id = '2'")
+		if item["name"] == "Riptride_dagger":
+			SqlController.database.delete_rows("inventory", "item_id = '3'")
+		if item["name"] == "Runic_dagger":
+			SqlController.database.delete_rows("inventory", "item_id = '4'")
+		if item["name"] == "Stamina potion":
+			SqlController.database.delete_rows("inventory", "item_id = '5'")
 
 # Updates hotbar assignment status
 func update_assignment_status():
@@ -123,6 +126,10 @@ func _on_item_button_gui_input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			if item != null:
 				usage_panel.visible = !usage_panel.visible
+				if Global.battle_control:
+					dropButton.disabled = true
+					assign_button.disabled = true
+
 		# Dragging item
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			if event.is_pressed():

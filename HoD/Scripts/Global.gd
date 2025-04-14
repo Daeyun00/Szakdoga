@@ -5,6 +5,8 @@ extends Node
 # Scene and node references
 @onready var inventory_slot_scene = preload("res://Scenes/UI/Inventory_Slot.tscn")
 var player_node: Node = null
+var battle_control : Control = null
+
 
 #gold init
 @onready var currency : int = 100
@@ -35,6 +37,9 @@ func _ready():
 # Sets the player reference for inventory interactions
 func set_player_reference(player):
 	player_node = player
+ 
+func set_battle_reference(battle):
+	battle_control = battle
 	
 # Adds an item to the inventory, returns true if successful
 func add_item(item, to_hotbar = false):
@@ -48,6 +53,16 @@ func add_item(item, to_hotbar = false):
 			if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["effect"] == item["effect"]:
 				inventory[i]["quantity"] += item["quantity"]
 				inventory_updated.emit()
+				if item["name"] == "Health_potion":
+					SqlController.database.insert_row("inventory", {"item_id": 1})
+				if item["name"] == "Mana potion":
+					SqlController.database.insert_row("inventory", {"item_id": 2})
+				if item["name"] == "Riptide_dagger":
+					SqlController.database.insert_row("inventory", {"item_id": 3})
+				if item["name"] == "Runic_dagger":
+					SqlController.database.insert_row("inventory", {"item_id": 4})
+				if item["name"] == "Stamina potion":
+					SqlController.database.insert_row("inventory", {"item_id": 5})
 				print("Item added", inventory)
 				return true
 			elif inventory[i] == null:

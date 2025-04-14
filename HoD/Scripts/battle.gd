@@ -125,6 +125,7 @@ var turn = 0
 
 func _ready() -> void:
 	_options_menu.button_focus(0)
+	Global.set_battle_reference(self)
 	
 	SqlController.database.delete_rows("map_battle", "quantity = '1'")
 	
@@ -1719,17 +1720,21 @@ func apply_item_effect(item):
 						SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 						print("HP increase to ", Hero.HP)
 						inventory.visible = false
+						attackMenu.visible = true
 					if Hero.HP >= 100:
 						Hero.HP = 100
 						SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 						inventory.visible = false
+						attackMenu.visible = true
 				"Stamina":
 					Hero.Rage += 15
 					inventory.visible = false
+					attackMenu.visible = true
 				"dagger":
 					Hero.ATK += 20
 					SqlController.database.update_rows("allies", "name = 'hero'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Hero.ATK, "max_att": Hero.ATK, "def": Hero.DEF, "max_def": 100, "hp": Hero.HP, "max_hp": $Allies/Hero.MaxHP, "resource": 2})
 					inventory.visible = false
+					attackMenu.visible = true
 				_:
 					print("There is no effect for this item")
 		1:
@@ -1743,15 +1748,18 @@ func apply_item_effect(item):
 						SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 						print("HP increase to ", Mage.HP)
 						inventory.visible = false
+						attackMenu.visible = true
 					if Mage.HP >= 100:
 						Mage.HP = 100
 						SqlController.database.update_rows("allies", "name = 'mage'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Mage.ATK, "max_att": Mage.ATK, "def": Mage.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Mage.MaxHP, "resource": 2})
 				"Mana":
 					Mage.Mana += 15
 					inventory.visible = false
+					attackMenu.visible = true
 				"Stamina":
 					Mage.Rage += 15
 					inventory.visible = false
+					attackMenu.visible = true
 				_:
 					print("There is no effect for this item")
 		2:
@@ -1764,9 +1772,11 @@ func apply_item_effect(item):
 						SqlController.database.update_rows("allies", "name = 'thief'", {"lvl": 1, "exp": 1, "gold": Global.currency, "atk": Thief.ATK, "max_att": Thief.ATK, "def": Thief.DEF, "max_def": 100, "hp": Mage.HP, "max_hp": $Allies/Thief.MaxHP, "resource": 2})
 						print("HP increase to ", Mage.HP)
 						inventory.visible = false
+						attackMenu.visible = true
 					if Thief.HP >= 100:
 						Thief.HP = 100
 						inventory.visible = false
+						attackMenu.visible = true
 				_:
 					print("There is no effect for this item")
 		_:

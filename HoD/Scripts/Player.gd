@@ -92,16 +92,13 @@ func apply_item_effect(item):
 			if HP >= 100:
 				HP = 100
 				print(HP)
-		"Armor":
+		"dagger":
 			if SPEED > 0 and  SPEED < 300:
 				SPEED -= 30
 				print("Speed: ", SPEED)
 			if SPEED <= 0:
 				SPEED = 0
 				print(SPEED)
-		"Slot Boost":
-			Global.increase_inventory_size(5)
-			print("Slots increased to ", Global.inventory.size())
 		_:
 			print("There is no effect for this item")
 
