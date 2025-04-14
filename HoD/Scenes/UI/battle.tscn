@@ -857,24 +857,24 @@ grow_horizontal = 0
 
 [node name="Hero" parent="Allies" instance=ExtResource("4_o04v0")]
 layout_mode = 0
-offset_left = 754.0
-offset_top = 647.0
-offset_right = 807.0
-offset_bottom = 733.0
+offset_left = 749.0
+offset_top = 584.0
+offset_right = 829.0
+offset_bottom = 720.0
 
 [node name="Mage" parent="Allies" instance=ExtResource("7_3yu3a")]
 layout_mode = 0
-offset_left = 867.0
-offset_top = 650.0
-offset_right = 920.0
-offset_bottom = 736.0
+offset_left = 869.0
+offset_top = 592.0
+offset_right = 941.0
+offset_bottom = 728.0
 
 [node name="Thief" parent="Allies" instance=ExtResource("8_mbssg")]
 layout_mode = 0
-offset_left = 998.0
-offset_top = 649.0
-offset_right = 1051.0
-offset_bottom = 735.0
+offset_left = 957.0
+offset_top = 600.0
+offset_right = 1029.0
+offset_bottom = 728.0
 
 [node name="Hostiles" type="Control" parent="."]
 layout_mode = 1

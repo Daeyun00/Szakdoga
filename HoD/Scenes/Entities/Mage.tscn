@@ -1,41 +1,59 @@
 [gd_scene load_steps=11 format=3 uid="uid://bjvkuq7dm0bfu"]
 
-[ext_resource type="Texture2D" uid="uid://css1bduwlostk" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" id="1_7l5cs"]
 [ext_resource type="Script" path="res://Scripts/Entities/Allies/mage.gd" id="1_vbf37"]
-[ext_resource type="Texture2D" uid="uid://bp1chu7wmgf18" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_1.png" id="2_ynigh"]
-[ext_resource type="Texture2D" uid="uid://h58ta8oshxrq" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_2.png" id="3_t2d82"]
-[ext_resource type="Texture2D" uid="uid://cc33h0h6qhf62" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_3.png" id="4_da5xc"]
-[ext_resource type="Texture2D" uid="uid://ckdj5ic2vwsef" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_4.png" id="5_wupbw"]
-[ext_resource type="Texture2D" uid="uid://b1q3wi7wvlbmr" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_5.png" id="6_173t5"]
-[ext_resource type="Texture2D" uid="uid://cs8ywfelvdi7b" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_6.png" id="7_oarix"]
-[ext_resource type="Texture2D" uid="uid://04kqvebows6n" path="res://Assets/Characters/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_7.png" id="8_nl4o5"]
+[ext_resource type="Texture2D" uid="uid://cvix2oyqv3f4t" path="res://Assets/Asset Packs/NPCS and characters/free-wizard-sprite-sheets-pixel-art/Lightning Mage/Idle.png" id="2_eykpc"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2klb5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjtpe"]
+atlas = ExtResource("2_eykpc")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riok3"]
+atlas = ExtResource("2_eykpc")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj4ja"]
+atlas = ExtResource("2_eykpc")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qne1n"]
+atlas = ExtResource("2_eykpc")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkdpy"]
+atlas = ExtResource("2_eykpc")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgrog"]
+atlas = ExtResource("2_eykpc")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36bgb"]
+atlas = ExtResource("2_eykpc")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iro3e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7l5cs")
+"texture": SubResource("AtlasTexture_gjtpe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_ynigh")
+"texture": SubResource("AtlasTexture_riok3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_t2d82")
+"texture": SubResource("AtlasTexture_gj4ja")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_da5xc")
+"texture": SubResource("AtlasTexture_qne1n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_wupbw")
+"texture": SubResource("AtlasTexture_gkdpy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_173t5")
+"texture": SubResource("AtlasTexture_rgrog")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_oarix")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_nl4o5")
+"texture": SubResource("AtlasTexture_36bgb")
 }],
 "loop": true,
 "name": &"default",
@@ -43,15 +61,15 @@ animations = [{
 }]
 
 [node name="Mage" type="Button"]
-offset_left = 811.0
-offset_top = 605.0
-offset_right = 864.0
-offset_bottom = 691.0
+offset_left = 864.0
+offset_top = 640.0
+offset_right = 933.0
+offset_bottom = 774.0
 script = ExtResource("1_vbf37")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(21.9999, 27.9999)
-scale = Vector2(1.995, 2.11818)
-sprite_frames = SubResource("SpriteFrames_2klb5")
+[node name="mage" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, -1.90735e-05)
+scale = Vector2(1.91986, 2.15201)
+sprite_frames = SubResource("SpriteFrames_iro3e")
 autoplay = "default"
 flip_h = true
